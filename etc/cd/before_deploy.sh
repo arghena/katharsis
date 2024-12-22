@@ -150,7 +150,7 @@ Conflicts: $conflictname
 Description: CLI tool for generating RSS feeds.
 EOF
 
-    fakeroot dpkg-deb -Zxz --build "$tempdir" "${dpkgname}_${version/-canary./~canary}-1_${architecture}.deb"
+    fakeroot dpkg-deb -Zxz --build "$tempdir" "${dpkgname}_${version}_${architecture}.deb"
 }
 
 

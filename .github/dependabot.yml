@@ -1,11 +1,17 @@
 version: 2
 updates:
   - package-ecosystem: cargo
-    directory: "/"
+    directory: '/'
     schedule:
       interval: daily
     open-pull-requests-limit: 10
-  - package-ecosystem: "github-actions"
-    directory: "/"
+    labels: [ 'dependency' ]
+    commit-message:
+      prefix: 'dep'
+  - package-ecosystem: github-actions
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: daily
+    labels: [ 'action' ]
+    commit-message:
+      prefix: 'act'

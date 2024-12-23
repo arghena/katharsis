@@ -41,17 +41,17 @@ Modify your .zshrc or .bashrc file by adding the following configuration:
 export PATH=$HOME/Formulae/bin:$PATH
 ```
 
-You can also add an alias in the .zshrc or .bashrc file:
-
-```bash
-alias rss=katharsis
-```
-
-Alternatively, you can rename the binary file directly:
-
-```bash
-mv ~/Formulae/bin/katharsis ~/Formulae/bin/rss
-```
+> Typing `katharsis` might be cumbersome, so you can use a shorter alias like `rss` in your .zshrc or .bashrc file instead:
+>
+> ```bash
+> alias rss=katharsis
+> ```
+> 
+> Alternatively, you can rename the binary file directly:
+> 
+> ```bash
+> mv ~/Formulae/bin/katharsis ~/Formulae/bin/rss
+> ```
 
 Run the following command to apply the changes:
 

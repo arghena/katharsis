@@ -160,7 +160,7 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
         .build()
 }
 
-/// Build the RSS feed based on the fields in the config file.
+/// Build the RSS feed based on the fields in the config file, and return the parsed [`Channel`].
 ///
 /// # Examples
 ///

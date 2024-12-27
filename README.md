@@ -1,7 +1,9 @@
-<p align="center">
-  <img width="128px" src="https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/logo.svg" alt="logo" />
-</p>
-<p align="center">
+<div align="center">
+  <a href="https://github.com/kurosakishigure/katharsis">
+    <img width="128px" src="https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/logo.svg" alt="logo" />
+  </a>
+  <h1>Katharsis</h1>
+
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/ci.yml">
     <img src="https://github.com/kurosakishigure/katharsis/workflows/CI/badge.svg" alt="CI">
   </a>
@@ -11,7 +13,9 @@
   <a href="https://coveralls.io/github/kurosakishigure/katharsis?branch=refs/tags/v1.0.0-canary.13">
     <img src="https://coveralls.io/repos/github/kurosakishigure/katharsis/badge.svg?branch=refs/tags/v1.0.0-canary.13" alt="Coverage Status">
   </a>
-</p>
+</div>
+
+![demo](https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/demo.gif)
 
 ## How to use
 

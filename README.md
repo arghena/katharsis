@@ -2,7 +2,7 @@
   <a href="https://github.com/kurosakishigure/katharsis">
     <img height="128" src="https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/logo.svg" alt="logo" />
   </a>
-  <h1>Katharsis</h1>
+  <h1 style="margin-top: 0">Katharsis</h1>
 
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/ci.yml">
     <img src="https://github.com/kurosakishigure/katharsis/workflows/CI/badge.svg" alt="CI">

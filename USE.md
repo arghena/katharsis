@@ -46,12 +46,6 @@ export PATH=$HOME/Formulae/bin:$PATH
 > ```bash
 > alias rss=katharsis
 > ```
-> 
-> Alternatively, you can rename the binary file directly:
-> 
-> ```bash
-> mv ~/Formulae/bin/katharsis ~/Formulae/bin/rss
-> ```
 
 Run the following command to apply the changes:
 

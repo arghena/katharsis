@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/kurosakishigure/katharsis">
-    <img width="128px" src="https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/logo.svg" alt="logo" />
+    <img height="128" src="https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/logo.svg" alt="logo" />
   </a>
   <h1>Katharsis</h1>
 

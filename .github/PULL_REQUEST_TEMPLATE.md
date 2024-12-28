@@ -53,6 +53,7 @@ Please check the following before submitting the PR:
 - [ ] Link the relevant issue to this PR (if applicable)
 - [ ] Add labels to this PR
 - [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
+- [ ] I have already updated the related templates accordingly (if applicable)
 
 ### Additional Notes
 

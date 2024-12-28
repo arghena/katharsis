@@ -4,18 +4,18 @@ Choose the right checklist for the change(s) that you're making:
 
 ### Description
 
-Please include a summary of the changes and the related issue (if applicable).  
+Please include a summary of the changes and the related issue (if applicable).
 Explain the reason for the changes and any context that might be helpful for the reviewer.
 
-- **What is the purpose of this PR?**  
-- **What problem does it solve?**  
+- **What is the purpose of this PR?**
+- **What problem does it solve?**
 - **Are there any breaking changes or backwards compatibility issues?**
 
 ### Related Issue
 
 If this PR addresses an existing issue, please provide a reference to it (e.g., "Fixes #123" or "Closes #456").
 
-Example:  
+Example:
 - Closes #123
 - Fixes #456
 
@@ -34,7 +34,7 @@ Please delete options that are not relevant:
 
 ### How Has This Been Tested?
 
-Please describe the tests that you ran to verify your changes.  
+Please describe the tests that you ran to verify your changes.
 Include any details about the environment or specific configurations used during testing.
 
 - [ ] I have run unit tests
@@ -45,14 +45,11 @@ Include any details about the environment or specific configurations used during
 
 Please check the following before submitting the PR:
 
-- [ ] My code follows the coding style guidelines of this project
+- [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
+- [ ] I have already updated the related templates accordingly (if applicable)
 - [ ] I have written or updated relevant documentation (if applicable)
 - [ ] I have added or updated tests to cover my changes (if applicable)
-- [ ] All new and existing tests pass
 - [ ] I have reviewed my code for any potential issues
-- [ ] Link the relevant issue to this PR (if applicable)
-- [ ] Add labels to this PR
-- [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
 
 ### Additional Notes
 

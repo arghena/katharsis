@@ -2,7 +2,7 @@
 To make sure your PR is handled as smoothly as possible we request that you follow the checklist sections below.
 Choose the right checklist for the change(s) that you're making:
 
-## Description
+### Description
 
 Please include a summary of the changes and the related issue (if applicable).  
 Explain the reason for the changes and any context that might be helpful for the reviewer.
@@ -11,7 +11,7 @@ Explain the reason for the changes and any context that might be helpful for the
 - **What problem does it solve?**  
 - **Are there any breaking changes or backwards compatibility issues?**
 
-## Related Issue
+### Related Issue
 
 If this PR addresses an existing issue, please provide a reference to it (e.g., "Fixes #123" or "Closes #456").
 
@@ -19,7 +19,7 @@ Example:
 - Closes #123
 - Fixes #456
 
-## Type of Change
+### Type of Change
 
 Please delete options that are not relevant:
 
@@ -32,7 +32,7 @@ Please delete options that are not relevant:
 - [ ] Reverts commit
 - [ ] Other (please describe):
 
-## How Has This Been Tested?
+### How Has This Been Tested?
 
 Please describe the tests that you ran to verify your changes.  
 Include any details about the environment or specific configurations used during testing.
@@ -41,7 +41,7 @@ Include any details about the environment or specific configurations used during
 - [ ] I have tested the changes manually
 - [ ] I have tested in a staging environment
 
-## Checklist
+### Checklist
 
 Please check the following before submitting the PR:
 
@@ -54,7 +54,7 @@ Please check the following before submitting the PR:
 - [ ] Add labels to this PR
 - [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
 
-## Additional Notes
+### Additional Notes
 
 Any additional information.
 

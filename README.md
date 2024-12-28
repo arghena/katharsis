@@ -19,11 +19,11 @@
 
 ## How to use
 
-Go to [USE.md](https://github.com/kurosakishigure/katharsis/blob/canary/USE.md) to read about how to use Katharsis.
+Go to [USE.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/USE.md) to read about how to use Katharsis.
 
 ## Installing from Source
 
-If you need to build this project from scratch, please refer to the [INSTALL.md](https://github.com/kurosakishigure/katharsis/blob/canary/INSTALL.md).
+If you need to build this project from scratch, please refer to the [INSTALL.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/INSTALL.md).
 
 ## Documentation
 
@@ -31,21 +31,21 @@ You can run the `cargo doc --open` command in the root directory of the project 
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md).
 
 ## Security
 
 We firmly believe that no software is completely secure, and we welcome contributions from security researchers.
 
-See [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/SECURITY.md).
+See [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/SECURITY.md).
 
 ## FAQ
 
-See [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/FAQ.md).
+See [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/FAQ.md).
 
 ## Notice
 
-See [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/NOTICE).
+See [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/licenses/NOTICE).
 
 ## License
 

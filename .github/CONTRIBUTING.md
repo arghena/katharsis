@@ -4,7 +4,7 @@ Thank you for contributing to [Katharsis](https://github.com/kurosakishigure/kat
 
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
 > - You need to confirm whether the PR corresponds to an issue. If there isn’t a corresponding issue, please open one before submitting the PR.
-> - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [licenses](https://github.com/kurosakishigure/katharsis/tree/canary/licenses) folder. Additionally, make sure to update the project's [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
+> - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [licenses](https://github.com/kurosakishigure/katharsis/tree/canary/licenses) folder. Additionally, make sure to update the project's [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/licenses/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
 
 ## Guidelines
 
@@ -31,7 +31,7 @@ While these guidelines are not exhaustive, they should help you get started. If 
 
 ### Code
 
-When you first build the project, [rustup](https://github.com/rust-lang/rustup) will automatically configure the toolchain for you based on the information in the [rust-toolchain.toml](rust-toolchain.toml) file. For more information about the toolchain, please refer to the relevant official documentation:
+When you first build the project, [rustup](https://github.com/rust-lang/rustup) will automatically configure the toolchain for you based on the information in the [rust-toolchain.toml](../rust-toolchain.toml) file. For more information about the toolchain, please refer to the relevant official documentation:
 
 - [The toolchain file](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file)
 - [rustfmt](https://rust-lang.github.io/rustfmt)
@@ -42,7 +42,7 @@ When writing code, you need to ensure that you have the corresponding documentat
 
 ## Code of Conduct
 
-Do note that our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Katharsis community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
+Do note that our [Code of Conduct](CODE-OF-CONDUCT.md) applies to all Katharsis community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
 
 ## Developing
 

@@ -4,7 +4,7 @@ Thank you for contributing to [Katharsis](https://github.com/kurosakishigure/kat
 
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
 > - You need to confirm whether the PR corresponds to an issue. If there isn’t a corresponding issue, please open one before submitting the PR.
-> - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [licenses](https://github.com/kurosakishigure/katharsis/tree/canary/licenses) folder. Additionally, make sure to update the project's [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/licenses/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
+> - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [LICENSES](../LICENSES) folder. Additionally, make sure to update the project's [NOTICE](../LICENSES/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
 
 ## Guidelines
 
@@ -79,7 +79,7 @@ Format: `<branch prefix>: <message content>`
 
 Example: `fix: dependabot.yml contained invalid details`
 
-> For more information about naming, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
+> For more information about naming, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
 
 ### PR Naming
 

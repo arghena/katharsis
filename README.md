@@ -45,7 +45,7 @@ See [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/FAQ.m
 
 ## Notice
 
-See [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/licenses/NOTICE).
+See [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSES/NOTICE).
 
 ## License
 

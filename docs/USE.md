@@ -57,7 +57,7 @@ source .bashrc
 
 ## Example
 
-> You can refer to our [Examples](https://github.com/kurosakishigure/katharsis/tree/canary/examples).
+> You can refer to our [Examples](../examples).
 
 Run the following command to generate a `katharsis.config.toml` file in the current directory:
 

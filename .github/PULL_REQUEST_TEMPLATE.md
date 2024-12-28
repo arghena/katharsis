@@ -45,13 +45,11 @@ Include any details about the environment or specific configurations used during
 
 Please check the following before submitting the PR:
 
-- [ ] My code follows the coding style guidelines of this project
+- [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
 - [ ] I have already updated the related templates accordingly (if applicable)
 - [ ] I have written or updated relevant documentation (if applicable)
 - [ ] I have added or updated tests to cover my changes (if applicable)
-- [ ] All new and existing tests pass
 - [ ] I have reviewed my code for any potential issues
-- [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
 
 ### Additional Notes
 

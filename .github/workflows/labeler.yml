@@ -1,0 +1,48 @@
+name: Pull Request Labeler
+
+on:
+  pull_request:
+    types: [ opened ]
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    name: Add Labels
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Add bug label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'fix:') }}
+        with:
+          labels: bug
+      - name: Add chore label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'chore:') }}
+        with:
+          labels: chore
+      - name: Add documentation label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'doc:') }}
+        with:
+          labels: documentation
+      - name: Add enhancement label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'feat:') }}
+        with:
+          labels: enhancement
+      - name: Add example label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'ex:') }}
+        with:
+          labels: example
+      - name: Add revert label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'revert:') }}
+        with:
+          labels: revert
+      - name: Add test label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'test:') }}
+        with:
+          labels: test

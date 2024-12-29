@@ -10,52 +10,24 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     name: Add labels
+    strategy:
+      matrix:
+        label:
+          - { prefix: "fix:", name: "bug" }
+          - { prefix: "chore:", name: "chore" }
+          - { prefix: "doc:", name: "documentation" }
+          - { prefix: "feat:", name: "enhancement" }
+          - { prefix: "ex:", name: "example" }
+          - { prefix: "revert:", name: "revert" }
+          - { prefix: "test:", name: "test" }
+          - { prefix: "dep:", name: "dependency" }
+          - { prefix: "act:", name: "action" }
     steps:
-      - name: Add bug label
+      - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'fix:') }}
+        if: ${{ startsWith(github.event.pull_request.title, matrix.label.prefix) }}
         with:
-          labels: bug
-      - name: Add chore label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'chore:') }}
-        with:
-          labels: chore
-      - name: Add documentation label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'doc:') }}
-        with:
-          labels: documentation
-      - name: Add enhancement label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'feat:') }}
-        with:
-          labels: enhancement
-      - name: Add example label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'ex:') }}
-        with:
-          labels: example
-      - name: Add revert label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'revert:') }}
-        with:
-          labels: revert
-      - name: Add test label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'test:') }}
-        with:
-          labels: test
-      - name: Add dependency label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'dep:') }}
-        with:
-          labels: dependency
-      - name: Add action label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, 'act:') }}
-        with:
-          labels: action
+          labels: ${{ matrix.label.name }}
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Check if no label was added

@@ -56,6 +56,8 @@ jobs:
         if: ${{ startsWith(github.event.pull_request.title, 'act:') }}
         with:
           labels: action
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Check if no label was added
         run: |
           labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')

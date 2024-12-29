@@ -133,6 +133,6 @@ jobs:
         run: cargo tarpaulin --ignore-tests --out Lcov --output-dir target/tarpaulin
       - name: Upload to Coveralls
         if: ${{ github.event_name == 'push' }}
-        uses: coverallsapp/github-action@v2
+        uses: coverallsapp/github-action@master
         with:
-          file: './target/tarpaulin/lcov.info'
+          path-to-lcov: './target/tarpaulin/lcov.info'

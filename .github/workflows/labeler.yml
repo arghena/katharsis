@@ -28,6 +28,12 @@ jobs:
         if: ${{ startsWith(github.event.pull_request.title, matrix.label.prefix) }}
         with:
           labels: ${{ matrix.label.name }}
+
+  validator:
+    needs: labeler
+    runs-on: ubuntu-latest
+    name: Close PR if no label was added
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Check if no label was added

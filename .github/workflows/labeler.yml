@@ -46,3 +46,20 @@ jobs:
         if: ${{ startsWith(github.event.pull_request.title, 'test:') }}
         with:
           labels: test
+      - name: Add dependency label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'dep:') }}
+        with:
+          labels: dependency
+      - name: Add action label
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ startsWith(github.event.pull_request.title, 'act:') }}
+        with:
+          labels: action
+      - name: Check if no label was added
+        run: |
+          labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')
+          if [ -z "$labels" ]; then
+            echo "No labels were added, closing the pull request."
+            gh pr close ${{ github.event.pull_request.number }} --comment "Closing PR: No valid prefix found in the title."
+          fi

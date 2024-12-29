@@ -5,13 +5,13 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 10
-    labels: [ 'dependency' ]
+    labels: [ ]
     commit-message:
       prefix: 'dep'
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
       interval: daily
-    labels: [ 'action' ]
+    labels: [ ]
     commit-message:
       prefix: 'act'

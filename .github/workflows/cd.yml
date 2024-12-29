@@ -90,5 +90,3 @@ jobs:
           files: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

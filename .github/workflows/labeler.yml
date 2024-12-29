@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Add Labels
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Add bug label
         uses: actions-ecosystem/action-add-labels@v1
         if: ${{ startsWith(github.event.pull_request.title, 'fix:') }}

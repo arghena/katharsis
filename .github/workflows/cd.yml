@@ -85,26 +85,8 @@ jobs:
       - name: Releasing assets
         uses: softprops/action-gh-release@v2
         with:
+          prerelease: ${{ contains(github.ref_name, 'canary') }}
+          generate_release_notes: true
           files: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
-
-  create-release-note:
-    permissions:
-      contents: write
-    needs: publish
-    runs-on: ubuntu-latest
-    name: Create release note
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Create release note
-        run: |
-          if [[ "${TAG_NAME}" == *canary* ]]; then
-            gh release create "${TAG_NAME}" -p --generate-notes
-          else
-            gh release create "${TAG_NAME}" --generate-notes
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG_NAME: ${{ github.ref_name }}

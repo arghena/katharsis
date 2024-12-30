@@ -5,9 +5,22 @@ on:
     tags: [ 'v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+' ]
 
 jobs:
+  create-release-note:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    name: Create release note
+    steps:
+      - name: Publishing release note
+        uses: softprops/action-gh-release@v2
+        with:
+          prerelease: ${{ contains(github.ref_name, 'canary') }}
+          generate_release_notes: true
+
   publish:
     permissions:
       contents: write
+    needs: create-release-note
     name: Publishing for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:
@@ -85,8 +98,6 @@ jobs:
       - name: Releasing assets
         uses: softprops/action-gh-release@v2
         with:
-          prerelease: ${{ contains(github.ref_name, 'canary') }}
-          generate_release_notes: true
           files: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb

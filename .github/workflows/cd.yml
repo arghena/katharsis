@@ -39,12 +39,12 @@ jobs:
             use-cross: true
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Installing Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.job.target }}
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Install cross
         if: matrix.job.use-cross
         uses: taiki-e/install-action@v2

@@ -40,7 +40,6 @@ jobs:
         run: |
           labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')
           if [ -z "$labels" ]; then
-            echo "No labels were added, closing the pull request."
             gh pr close ${{ github.event.pull_request.number }} --comment "Closing PR: No valid prefix found in the title."
           fi
         env:

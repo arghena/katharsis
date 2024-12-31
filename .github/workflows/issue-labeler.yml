@@ -1,46 +1,44 @@
-name: Pull Request Labeler
+name: Issue Labeler
 
 on:
-  pull_request:
+  issues:
     types: [ opened ]
 
 jobs:
   labeler:
     permissions:
-      pull-requests: write
+      issues: write
     runs-on: ubuntu-latest
     name: Add labels
     strategy:
       matrix:
         label:
-          - { prefix: "fix:", name: "bug" }
-          - { prefix: "chore:", name: "chore" }
+          - { prefix: "bug:", name: "bug" }
           - { prefix: "doc:", name: "documentation" }
           - { prefix: "feat:", name: "enhancement" }
           - { prefix: "ex:", name: "example" }
-          - { prefix: "revert:", name: "revert" }
           - { prefix: "test:", name: "test" }
-          - { prefix: "dep:", name: "dependency" }
-          - { prefix: "act:", name: "action" }
     steps:
       - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.pull_request.title, matrix.label.prefix) }}
+        if: ${{ startsWith(github.event.issue.title, matrix.label.prefix) }}
         with:
           labels: ${{ matrix.label.name }}
 
   validator:
+    permissions:
+      issues: write
     needs: labeler
     runs-on: ubuntu-latest
-    name: Close PR if no label was added
+    name: Close issue if no label was added
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Check if no label was added
         run: |
-          labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')
+          labels=$(gh issue view ${{ github.event.issue.number }} --json labels --jq '.labels[].name')
           if [ -z "$labels" ]; then
-            gh pr close ${{ github.event.pull_request.number }} --comment "Closing PR: No valid prefix found in the title."
+            gh issue close ${{ github.event.issue.number }} --comment "Closing issue: No valid prefix found in the title."
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

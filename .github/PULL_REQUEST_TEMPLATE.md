@@ -37,6 +37,7 @@ Please delete options that are not relevant:
 Please describe the tests that you ran to verify your changes.
 Include any details about the environment or specific configurations used during testing.
 
+Example:
 - [ ] I have run unit tests
 - [ ] I have tested the changes manually
 - [ ] I have tested in a staging environment

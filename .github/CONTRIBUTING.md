@@ -133,5 +133,5 @@ Example: `fix: dependabot.yml contained invalid details`
 
 As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/kurosakishigure/katharsis/issues) if our project violates any applicable licenses.
 
-> - To request additional License information, please [Report an issue with the documentation](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=documentation&projects=&template=doc.yml).
-> - To request the removal of specific code, please [Report an issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=bug&projects=&template=fix.yml).
+> - To request additional License information, please [Report an issue with the documentation](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=doc.yml&title=doc%3A+).
+> - To request the removal of specific code, please [Report an issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=fix.yml&title=fix%3A+).

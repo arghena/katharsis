@@ -16,7 +16,23 @@ jobs:
         with:
           label-comments: |
             {
-              "good first issue": ".github/comments/good-first-issue.md"
+              "good first issue": ".github/comments/good-first-issue.md",
+              "cannot recreate": ".github/comments/cannot-recreate.md",
+              "resolved": ".github/comments/resolved.md",
+              "unclear": ".github/comments/unclear.md"
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  close-issue:
+    needs: triage
+    runs-on: ubuntu-latest
+    name: Close issue
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Close issue if resolved
+        if: ${{ github.event.label.name == 'resolved' }}
+        run: gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

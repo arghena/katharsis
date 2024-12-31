@@ -1,6 +1,6 @@
 name: Report a test issue
 description: Add or improve test.
-labels: [ 'test' ]
+title: 'test: '
 body:
   - type: markdown
     attributes:

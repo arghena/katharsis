@@ -1,0 +1,17 @@
+# Config
+.github/* @kurosakishigure
+.config/* @kurosakishigure
+etc/* @kurosakishigure
+.gitignore @kurosakishigure
+deny.toml @kurosakishigure
+sgconfig.yml @kurosakishigure
+
+# Dependencies
+rust-toolchain.toml @kurosakishigure
+Cargo.toml @kurosakishigure
+Cargo.lock @kurosakishigure
+
+# Documentation
+LICENSES/* @kurosakishigure
+LICENSE @kurosakishigure
+README.md @kurosakishigure

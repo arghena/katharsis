@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         consultation:
-          - { file: ".github/workflows/comments/pr-duplicate.md", label: "PR duplicate" }
-          - { file: ".github/workflows/comments/need-improvement.md", label: "need improvement" }
+          - { file: ".github/comments/pr-duplicate.md", label: "PR duplicate" }
+          - { file: ".github/comments/need-improvement.md", label: "need improvement" }
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

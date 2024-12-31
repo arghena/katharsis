@@ -25,6 +25,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   close-issue:
+    permissions:
+      issues: write
     needs: triage
     runs-on: ubuntu-latest
     name: Close issue

@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         label:
-          - { prefix: "bug:", name: "bug" }
+          - { prefix: "fix:", name: "bug" }
           - { prefix: "doc:", name: "documentation" }
           - { prefix: "feat:", name: "enhancement" }
           - { prefix: "ex:", name: "example" }

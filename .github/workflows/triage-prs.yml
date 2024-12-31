@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Salle de consultation en ${{ matrix.consultation.label }}
         if: ${{ github.event.label.name == matrix.consultation.label }}
-        run: gh comment ${{ github.event.pull_request.number }} -F ${{ matrix.consultation.file }}
+        run: gh pr comment ${{ github.event.pull_request.number }} -F ${{ matrix.consultation.file }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

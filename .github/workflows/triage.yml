@@ -1,0 +1,20 @@
+name: Triage issues
+
+on:
+  issues:
+    types: [ labeled ]
+
+jobs:
+  triage:
+    permissions:
+      issues: write
+    runs-on: ubuntu-latest
+    name: Triage via nissuer
+    steps:
+      - name: Nissuer
+        uses: balazsorban44/nissuer@1.10.0
+        with:
+          label-comments: |
+            {
+              "good first issue": ".github/comments/good-first-issue.md",
+            }

@@ -1,1 +1,1 @@
-Same issue already exists. Please visit the issues page to search for related [issues](https://github.com/kurosakishigure/katharsis/issues), including both open and closed ones.
+Same issue already exists. Please visit the [Issues](https://github.com/kurosakishigure/katharsis/issues) page to search for related issues, including both open and closed ones.

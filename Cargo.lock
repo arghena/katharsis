@@ -783,7 +783,7 @@ dependencies = [
 
 [[package]]
 name = "katharsis"
-version = "1.0.0-canary.19"
+version = "1.0.0-canary.20"
 dependencies = [
  "anyhow",
  "chrono",

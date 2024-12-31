@@ -16,7 +16,7 @@ jobs:
         with:
           label-comments: |
             {
-              "good first issue": ".github/comments/good-first-issue.md",
+              "good first issue": ".github/comments/good-first-issue.md"
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

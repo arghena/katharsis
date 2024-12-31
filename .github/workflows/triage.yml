@@ -18,7 +18,7 @@ jobs:
             {
               "good first issue": ".github/comments/good-first-issue.md",
               "cannot recreate": ".github/comments/cannot-recreate.md",
-              "resolved": ".github/comments/resolved.md",
+              "issue duplicate": ".github/comments/issue-duplicate.md",
               "unclear": ".github/comments/unclear.md"
             }
         env:

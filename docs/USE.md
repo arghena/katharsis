@@ -18,9 +18,12 @@ If you're using Cargo, please run:
 
 ```bash
 cargo install katharsis
+# or
+cargo binstall katharsis
 ```
 
-> You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
+> - You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
+> - If you choose to use `cargo binstall katharsis`, you might need to run `brew install cargo-binstall` first.
 
 Otherwise, you'll need to follow the step-by-step instructions below to install Katharsis.
 

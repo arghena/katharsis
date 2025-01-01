@@ -8,7 +8,7 @@ categories = ["command-line-utilities"]
 homepage = "https://github.com/kurosakishigure/katharsis"
 repository = "https://github.com/kurosakishigure/katharsis"
 description = "CLI tool for generating RSS feeds."
-include = ["/src", "README.md", "LICENSE", "Cargo.toml", "Cargo.lock"]
+include = ["/src/", "/LICENSE"]
 
 [lints.clippy]
 pedantic = "warn"

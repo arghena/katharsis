@@ -1,7 +1,7 @@
 [package]
 name = "katharsis"
 authors = ["Shigure Kurosaki <shigure@hqsy.net>"]
-version = "1.0.0-canary.20"
+version = "1.0.0-canary.21"
 edition = "2021"
 license = "MIT"
 categories = ["command-line-utilities"]

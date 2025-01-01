@@ -5,7 +5,6 @@ version = "1.0.0-canary.21"
 edition = "2021"
 license = "MIT"
 categories = ["command-line-utilities"]
-homepage = "https://github.com/kurosakishigure/katharsis"
 repository = "https://github.com/kurosakishigure/katharsis"
 description = "CLI tool for generating RSS feeds."
 include = ["/src/", "/LICENSE"]

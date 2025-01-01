@@ -3,6 +3,7 @@ name = "katharsis"
 authors = ["Shigure Kurosaki <shigure@hqsy.net>"]
 version = "1.0.0-canary.21"
 edition = "2021"
+rust-version = "1.78.0"
 license = "MIT"
 categories = ["command-line-utilities"]
 repository = "https://github.com/kurosakishigure/katharsis"

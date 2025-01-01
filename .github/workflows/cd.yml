@@ -101,3 +101,14 @@ jobs:
           files: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
+
+  publish-to-cargo:
+    name: Publishing to Cargo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Installing Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Cargo publish
+        run: cargo publish --token ${{ secrets.CARGO_API_KEY }}

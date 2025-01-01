@@ -1,11 +1,20 @@
 [package]
 name = "katharsis"
+authors = ["Shigure Kurosaki <shigure@hqsy.net>"]
 version = "1.0.0-canary.20"
 edition = "2021"
+license = "MIT"
+categories = ["command-line-utilities"]
+homepage = "https://github.com/kurosakishigure/katharsis"
+repository = "https://github.com/kurosakishigure/katharsis"
 description = "CLI tool for generating RSS feeds."
+include = ["/src", "README.md", "LICENSE", "Cargo.toml", "Cargo.lock"]
 
 [lints.clippy]
 pedantic = "warn"
+
+[[bin]]
+name = "katharsis"
 
 [dependencies]
 anyhow = "1.0.95"

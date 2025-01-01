@@ -6,6 +6,7 @@ edition = "2021"
 rust-version = "1.78.0"
 license = "MIT"
 categories = ["command-line-utilities"]
+keywords = ["rss", "feed", "generator", "cli", "tool"]
 repository = "https://github.com/kurosakishigure/katharsis"
 description = "CLI tool for generating RSS feeds."
 include = ["/src/", "/LICENSE"]

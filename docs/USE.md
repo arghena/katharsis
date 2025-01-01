@@ -20,6 +20,8 @@ If you're using Cargo, please run:
 cargo install katharsis
 ```
 
+> You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
+
 Otherwise, you'll need to follow the step-by-step instructions below to install Katharsis.
 
 Run the following command to extract the downloaded file:

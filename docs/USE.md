@@ -14,7 +14,7 @@ If you're using a Debian-based system, you can directly install the .deb file fr
 sudo apt install katharsis.deb
 ```
 
-If you are using Cargo, please run:
+If you're using Cargo, please run:
 
 ```bash
 cargo install katharsis

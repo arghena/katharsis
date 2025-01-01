@@ -8,6 +8,7 @@ license = "MIT"
 categories = ["command-line-utilities"]
 keywords = ["rss", "feed", "generator", "cli", "tool"]
 repository = "https://github.com/kurosakishigure/katharsis"
+documentation = "https://docs.rs/katharsis"
 description = "CLI tool for generating RSS feeds."
 include = ["/src/", "/LICENSE"]
 

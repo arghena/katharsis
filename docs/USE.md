@@ -1,14 +1,5 @@
 # Use the Katharsis
 
-> [!NOTE]
-> Cargo does not support directly installing canary versions. If you need to install a canary version, please run the following commands:
-> 
-> ```bash
-> cargo install katharsis@1.0.0-canary.21
-> # or
-> cargo binstall katharsis@1.0.0-canary.21
-> ```
-
 ## Prerequisites
 
 ### Linux and macOS
@@ -30,6 +21,15 @@ cargo install katharsis
 # or
 cargo binstall katharsis
 ```
+
+> [!NOTE]
+> Use the following command to install the `canary` version:
+> 
+> ```bash
+> cargo install katharsis@1.0.0-canary.21
+> # or
+> cargo binstall katharsis@1.0.0-canary.21
+> ```
 
 > - You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
 > - If you choose to use `cargo binstall katharsis`, you might need to run `brew install cargo-binstall` first.

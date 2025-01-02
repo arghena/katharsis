@@ -5,13 +5,13 @@
   <h1>Katharsis</h1>
 
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/ci.yml">
-    <img src="https://github.com/kurosakishigure/katharsis/workflows/CI/badge.svg?branch=refs/tags/v1.0.0-canary.21" alt="CI">
+    <img src="https://github.com/kurosakishigure/katharsis/workflows/CI/badge.svg?branch=refs/tags/v1.0.0-canary.22" alt="CI">
   </a>
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/cd.yml">
-    <img src="https://github.com/kurosakishigure/katharsis/workflows/CD/badge.svg?branch=refs/tags/v1.0.0-canary.21" alt="CD">
+    <img src="https://github.com/kurosakishigure/katharsis/workflows/CD/badge.svg?branch=refs/tags/v1.0.0-canary.22" alt="CD">
   </a>
   <a href="https://coveralls.io/github/kurosakishigure/katharsis">
-    <img src="https://coveralls.io/repos/github/kurosakishigure/katharsis/badge.svg?branch=refs/tags/v1.0.0-canary.21" alt="Coverage Status">
+    <img src="https://coveralls.io/repos/github/kurosakishigure/katharsis/badge.svg?branch=refs/tags/v1.0.0-canary.22" alt="Coverage Status">
   </a>
   <a href="https://crates.io/crates/katharsis">
     <img src="https://img.shields.io/crates/v/katharsis.svg" alt="Crates.io">

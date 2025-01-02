@@ -4,17 +4,7 @@
 
 ### Linux and macOS
 
-First, download the appropriate binary from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
-
-> You can find the platform comparison table in the [Platform Support](https://doc.rust-lang.org/rustc/platform-support.html) section.
-
-If you're using a Debian-based system, you can directly install the .deb file from the download directory using apt:
-
-```bash
-sudo apt install katharsis.deb
-```
-
-If you're using Cargo, please run:
+If you're using **Cargo**, please run:
 
 ```bash
 cargo install katharsis
@@ -34,7 +24,16 @@ cargo binstall katharsis
 > - You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
 > - If you choose to use `cargo binstall katharsis`, you might need to run `brew install cargo-binstall` first.
 
-Otherwise, you'll need to follow the step-by-step instructions below to install Katharsis.
+If you're using a **Debian-based system**, you can directly install the `.deb` file from the download directory using `apt`:
+
+```bash
+sudo apt install katharsis.deb
+```
+
+> - Download the appropriate binary from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
+> - You can find the platform comparison table in the [Platform Support](https://doc.rust-lang.org/rustc/platform-support.html) section.
+
+Otherwise, you'll need to follow the **step-by-step** instructions below to install Katharsis.
 
 Run the following command to extract the downloaded file:
 
@@ -48,20 +47,20 @@ Next, execute the following command in your home directory to create the necessa
 mkdir -p Formulae/bin
 ```
 
-Move the downloaded binary to ~/Formulae/bin:
+Move the downloaded binary to `~/Formulae/bin`:
 
 ```bash
 mv ~/your/extract/path/katharsis ~/Formulae/bin/katharsis
 ```
 
-Modify your .zshrc or .bashrc file by adding the following configuration:
+Modify your `.zshrc` or `.bashrc` file by adding the following configuration:
 
 ```bash
 # Formulae
 export PATH=$HOME/Formulae/bin:$PATH
 ```
 
-> Typing `katharsis` might be cumbersome, so you can use a shorter alias like `rss` in your .zshrc or .bashrc file instead:
+> Typing `katharsis` might be cumbersome, so you can use a shorter alias like `rss` in your `.zshrc` or `.bashrc` file instead:
 >
 > ```bash
 > alias rss=katharsis
@@ -95,22 +94,22 @@ For a detailed explanation of the fields in the `katharsis.config.toml` file, re
 
 ## Command Overview
 
-| Command | Description                                                      |
-|---------|------------------------------------------------------------------|
-| init    | Generates a katharsis.config.toml file in the current directory. |
-| help    | Displays help information.                                       |
+| Command | Description                                                        |
+|---------|--------------------------------------------------------------------|
+| init    | Generates a `katharsis.config.toml` file in the current directory. |
+| help    | Displays help information.                                         |
 
 ## Parameter Overview
 
-| Parameter | Description                                                  |
-|-----------|--------------------------------------------------------------|
-| -c        | Specifies a katharsis.config.toml file as the configuration. |
-| -h        | Displays help information.                                   |
-| -V        | Displays the current version of Katharsis.                   |
+| Parameter | Description                                                    |
+|-----------|----------------------------------------------------------------|
+| -c        | Specifies a `katharsis.config.toml` file as the configuration. |
+| -h        | Displays help information.                                     |
+| -V        | Displays the current version of Katharsis.                     |
 
 > If you do not specify the `-c` parameter, the `katharsis.config.toml` file in the current directory will be used by default.
 
-## Explanation of katharsis.config.toml Fields
+## Explanation of `katharsis.config.toml` Fields
 
 You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html) for more detailed documentation.
 
@@ -127,10 +126,9 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 | output      | Path to the local output RSS file. |
 
 > [!NOTE]
-> - The site_url field should not include a trailing slash (e.g., https://example.com rather than https://example.com/).
-> - The image field is relative to the site_url, for example, favicon.png corresponds
-    to https://example.com/favicon.png.
-> - The output field specifies the path relative to the working directory (e.g., rss.xml corresponds to ./rss.xml).
+> - The `site_url` field should not include a trailing slash (e.g., `https://example.com` rather than `https://example.com/`).
+> - The `image` field is relative to the `site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
+> - The `output` field specifies the path relative to the working directory (e.g., `rss.xml` corresponds to `./rss.xml`).
 
 ### article
 
@@ -147,6 +145,6 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 | sort        | Whether to sort articles by their publication date.        |
 
 > [!NOTE]
-> - The input field corresponds to the file body, which is the same as the article's URL slug.
-> - The date field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
-> - The image field’s folder name must match the article's URL slug.
+> - The `input` field corresponds to the file stem(`*`), which is the same as the article's URL slug.
+> - The `date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
+> - The `image` field’s folder name(`**`) must match the article's URL slug.

@@ -3,12 +3,15 @@ name = "katharsis"
 authors = ["Shigure Kurosaki <shigure@hqsy.net>"]
 version = "1.0.0-canary.21"
 edition = "2021"
+rust-version = "1.78.0"
 license = "MIT"
 categories = ["command-line-utilities"]
-homepage = "https://github.com/kurosakishigure/katharsis"
+keywords = ["rss", "feed", "generator", "cli", "tool"]
 repository = "https://github.com/kurosakishigure/katharsis"
+homepage = "https://github.com/kurosakishigure/katharsis"
+documentation = "https://docs.rs/katharsis"
 description = "CLI tool for generating RSS feeds."
-include = ["/src", "README.md", "LICENSE", "Cargo.toml", "Cargo.lock"]
+include = ["/src/", "/LICENSE"]
 
 [lints.clippy]
 pedantic = "warn"

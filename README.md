@@ -13,6 +13,9 @@
   <a href="https://coveralls.io/github/kurosakishigure/katharsis">
     <img src="https://coveralls.io/repos/github/kurosakishigure/katharsis/badge.svg?branch=refs/tags/v1.0.0-canary.21" alt="Coverage Status">
   </a>
+  <a href="https://crates.io/crates/katharsis">
+    <img src="https://img.shields.io/crates/v/katharsis.svg" alt="Crates.io">
+  </a>
 </div>
 
 ![demo](https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/demo.gif)

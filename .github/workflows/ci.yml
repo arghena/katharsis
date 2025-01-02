@@ -130,7 +130,7 @@ jobs:
         with:
           tool: cargo-binstall
       - name: Run cargo-binstall
-        run: cargo binstall --version 0.17.1 --no-confirm cargo-msrv
+        run: cargo binstall --version 0.17.1 --no-confirm cargo-msrv --force
       - name: Run cargo-msrv
         run: cargo msrv verify --release-source rust-dist
 

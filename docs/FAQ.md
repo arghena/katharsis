@@ -2,13 +2,15 @@
 
 ## Encountering System Security Policy on First Run of Katharsis on macOS
 
-### Plan 1
-
 When you first run Katharsis on macOS, you might see a system security warning that looks like this:
 
 ![Not Opened](../assets/faq/not_opened.png)
 
-This happens because the Katharsis binary was not signed with an Apple Developer Certificate during its build process in the [Actions](https://github.com/kurosakishigure/katharsis/actions/workflows/cd.yml). To resolve this issue, you can use the following operations:
+This happens because the Katharsis binary was not signed with an Apple Developer Certificate during its build process in the [Actions](https://github.com/kurosakishigure/katharsis/actions/workflows/cd.yml).
+
+### Plan 1
+
+You can use the following operations:
 
 ![Allow Anyway](../assets/faq/allow_anyway.png)
 

@@ -115,6 +115,25 @@ jobs:
       - name: Clippy Check
         run: cargo clippy -- -D warnings
 
+  msrv:
+    runs-on: ubuntu-latest
+    name: Minimum Supported Rust Version
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Installing Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+      - name: Install cargo-binstall
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-binstall
+      - name: Run cargo-binstall
+        run: cargo binstall --version 0.17.1 --no-confirm cargo-msrv
+      - name: Run cargo-msrv
+        run: cargo msrv verify --release-source rust-dist
+
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

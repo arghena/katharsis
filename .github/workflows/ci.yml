@@ -134,6 +134,28 @@ jobs:
       - name: Run cargo-msrv
         run: cargo msrv verify --release-source rust-dist
 
+  dco:
+    permissions:
+      pull-requests: write
+    runs-on: ubuntu-latest
+    name: Developer's Certificate of Origin
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check commit message
+        run: |
+          commit_message_last_line=$(git log -1 --format=%B "${{ github.event.pull_request.head.sha }}" | tail -n 1)
+          regex="^Signed-off-by: .+ <[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}>$"
+
+          if ! echo "$commit_message_last_line" | grep -Eq "$regex"; then
+            gh pr comment ${{ github.event.pull_request.number }} -b "Please sign off your commits by running \`git commit -s\`."
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

@@ -4,7 +4,7 @@
 
 <!-- Please include a summary of the changes -->
 
-1. Commit message content
+1. Commit message(if applicable)
 
 ### Description
 

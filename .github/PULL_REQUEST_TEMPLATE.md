@@ -14,7 +14,7 @@ Co-authored-by: Your Name <Your Email>
 Please include a summary of the changes.
 -->
 
-1. Summary of changes
+1. Commit message content
 
 ### Description
 
@@ -35,7 +35,7 @@ Explain the reason for the changes.
 If this PR addresses an existing issue, please provide a reference to it.
 -->
 
-- Closes #Number(if applicable)
+- Closes #number(if applicable)
 
 ### Checklist
 

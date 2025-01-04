@@ -145,10 +145,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Check commit message
         run: |
-          commit_message_last_line=$(git log -1 --format=%B "${{ github.event.pull_request.head.sha }}" | tail -n 2)
+          signed_off_by=$(git log -1 --format=%B "${{ github.event.pull_request.head.sha }}" | tail -n 2 | head -n 1)
           regex="^Signed-off-by: .+ <[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}>$"
+          
+          # Test
+          echo "$signed_off_by"
+          echo $(git log -1 --format=%B "${{ github.event.pull_request.head.sha }}")
 
-          if ! echo "$commit_message_last_line" | grep -Eq "$regex"; then
+          if ! echo "$signed_off_by" | grep -Eq "$regex"; then
             gh pr comment ${{ github.event.pull_request.number }} -b "Please sign off your commits by running \`git commit -s\`."
             exit 1
           fi

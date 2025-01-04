@@ -44,6 +44,10 @@ When writing code, you need to ensure that you have the corresponding documentat
 
 Do note that our [Code of Conduct](CODE-OF-CONDUCT.md) applies to all Katharsis community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
 
+## Signing Commits
+
+All contributions must use [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+
 ## Developer's Certificate of Origin
 
 All contributions to this project must adhere to the [DCO](DCO).

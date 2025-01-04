@@ -72,6 +72,9 @@ All contributions to this project must adhere to the [DCO](DCO).
 | example       | ex     |
 | test          | test   |
 | chore         | chore  |
+| revert        | revert |
+| workflow      | wf     |
+| dev           | dev    |
 
 Format: `<branch prefix>/<branch content>`
 

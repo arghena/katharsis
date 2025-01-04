@@ -18,6 +18,8 @@ jobs:
           - { prefix: "feat:", name: "enhancement" }
           - { prefix: "ex:", name: "example" }
           - { prefix: "test:", name: "test" }
+          - { prefix: "wf:", name: "workflow" }
+          - { prefix: "dev:", name: "dev" }
     steps:
       - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1

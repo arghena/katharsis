@@ -8,14 +8,19 @@ To make sure your PR is handled as smoothly as possible we request that you foll
 Signed-off-by: Your Name <Your Email>
 Co-authored-by: Your Name <Your Email>
 
-### Description
+### Summary of Changes
 
 <!--
 Please include a summary of the changes.
-Explain the reason for the changes and any context that might be helpful for the reviewer.
 -->
 
 1. Summary of changes
+
+### Description
+
+<!--
+Explain the reason for the changes.
+-->
 
 - **What is the purpose of this PR?**
   - (if applicable)
@@ -31,29 +36,6 @@ If this PR addresses an existing issue, please provide a reference to it.
 -->
 
 - Closes #Number(if applicable)
-
-### Type of Change
-
-<!--
-Please delete options that are not relevant.
--->
-
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation update
-- [ ] Add or improve tests
-- [ ] Add or improve examples
-- [ ] Miscellaneous tasks
-- [ ] Reverts commit
-
-### How Has This Been Tested?
-
-<!--
-Please describe the tests that you ran to verify your changes.
-Include any details about the environment or specific configurations used during testing.
--->
-
-- [ ] I have run unit tests(if applicable)
 
 ### Checklist
 

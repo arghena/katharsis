@@ -126,7 +126,7 @@ Example: `fix: dependabot.yml contained invalid details`
 8. When your changes are finished, commit them to the branch:
    ```bash
    git add .
-   git commit -m "DESCRIBE_YOUR_CHANGES_HERE"
+   git commit -S -s -m "DESCRIBE_YOUR_CHANGES_HERE"
    ```
 9. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
    ```bash

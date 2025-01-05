@@ -22,3 +22,7 @@ This project includes third-party code under the following licenses:
   License: tokio/LICENSE
   Repository: https://github.com/tokio-rs/tokio
   Copyright (c) Tokio Contributors
+- MIT License:
+  License: changelogen/LICENSE
+  Repository: https://github.com/unjs/changelogen
+  Copyright (c) Pooya Parsa <pooya@pi0.io>

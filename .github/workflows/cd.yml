@@ -11,13 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     name: Create release note
     steps:
-      - name: Publishing release note
-        uses: softprops/action-gh-release@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          prerelease: ${{ contains(github.ref_name, 'canary') }}
-          generate_release_notes: true
+          fetch-depth: 0
+      - name: Set nodejs
+        uses: actions/setup-node@v4
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Generate release note
+        run: |
+          if ${{ contains(github.ref_name, 'canary') }}; then
+            npx changelogithub --prerelease
+          else
+            npx changelogithub
+          fi
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-  publish:
+  publish-assets:
     permissions:
       contents: write
     needs: create-release-note

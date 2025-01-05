@@ -26,21 +26,3 @@ jobs:
         if: ${{ startsWith(github.event.issue.title, matrix.label.prefix) }}
         with:
           labels: ${{ matrix.label.name }}
-
-  validator:
-    permissions:
-      issues: write
-    needs: labeler
-    runs-on: ubuntu-latest
-    name: Close issue if no label was added
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Check if no label was added
-        run: |
-          labels=$(gh issue view ${{ github.event.issue.number }} --json labels --jq '.labels[].name')
-          if [ -z "$labels" ]; then
-            gh issue close ${{ github.event.issue.number }} --comment "Closing issue: No valid prefix found in the title."
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

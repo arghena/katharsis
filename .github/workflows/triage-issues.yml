@@ -23,18 +23,3 @@ jobs:
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  close-issue:
-    permissions:
-      issues: write
-    needs: triage
-    runs-on: ubuntu-latest
-    name: Close issue
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Close issue if issue duplicate
-        if: ${{ github.event.label.name == 'issue duplicate' }}
-        run: gh issue close ${{ github.event.issue.number }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

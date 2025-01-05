@@ -24,6 +24,14 @@ cargo binstall katharsis
 > - You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
 > - If you choose to use `cargo binstall katharsis`, you might need to run `brew install cargo-binstall` first.
 
+For **Arch Linux**, [katharsis](https://aur.archlinux.org/packages/katharsis) is available as a package in the AUR.
+
+You can install it using an AUR helper (e.g. paru):
+
+```bash
+paru -S katharsis
+```
+
 If you're using a **Debian-based system**, you can directly install the `.deb` file from the download directory using `apt`:
 
 ```bash

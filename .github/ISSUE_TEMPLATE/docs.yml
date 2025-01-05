@@ -1,6 +1,6 @@
 name: Report a documentation issue
 description: Improvements or additions to documentation.
-title: 'doc: '
+title: 'docs: '
 body:
   - type: markdown
     attributes:

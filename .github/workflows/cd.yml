@@ -5,22 +5,22 @@ on:
     tags: [ 'v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+' ]
 
 jobs:
-  publish-release-note:
+  create-release-note:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    name: Publishing release note
+    name: Create release note
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set node
+      - name: Set nodejs
         uses: actions/setup-node@v4
         with:
           registry-url: https://registry.npmjs.org/
           node-version: lts/*
-      - name: Generate change log
+      - name: Generate release note
         run: |
           if ${{ contains(github.ref_name, 'canary') }}; then
             npx changelogithub --prerelease
@@ -33,7 +33,7 @@ jobs:
   publish-assets:
     permissions:
       contents: write
-    needs: publish-release-note
+    needs: create-release-note
     name: Publishing for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:

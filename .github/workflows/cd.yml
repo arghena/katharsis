@@ -9,7 +9,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    name: Generate change log
+    name: Publishing release note
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

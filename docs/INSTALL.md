@@ -1,43 +1,46 @@
-# Installing from Source
+# Installation
 
-## Ensure Rust Toolchain is Installed
+## Package Managers
 
-First, make sure that you have the Rust toolchain installed.
-
-> If you haven’t installed it yet, visit the [official Rust website](https://www.rust-lang.org) and follow the instructions to install Rust and Cargo.
-
-You can check if Rust and Cargo are installed by running:
+### Cargo
 
 ```bash
-rustc --version
-cargo --version
+cargo binstall katharsis
+# or
+cargo binstall katharsis@1.0.0-canary.24
 ```
 
-> You should see version information if they are properly installed.
-
-## Navigate to the Project Directory
-
-Open a terminal and navigate to the root directory of the Katharsis project you [cloned](https://github.com/git-guides/git-clone) from GitHub.
+### Paru
 
 ```bash
-cd /path/to/your/katharsis/project
+paru -S katharsis
 ```
 
-## Install and Build the Project
-
-To install the dependencies specified in the `Cargo.toml` file, run the following command:
+### Apt
 
 ```bash
-cargo build --release
+sudo apt install ~/your/download/path/katharsis.deb
 ```
 
-> - This command not only installs the dependencies but also builds the project.
-> - You can run the `cd target/release` command in the root directory of the project to find the katharsis executable file in the release folder.
-
-## Run Unit Tests (optional)
-
-Run the unit tests to ensure that everything in the project is functioning correctly:
+## Manual
 
 ```bash
-cargo test
+# Extract the tarball
+tar -xzf ~/your/download/path/katharsis.tar.gz
+
+# Move the binary to the appropriate directory
+mv ~/your/extract/path/katharsis /usr/local/bin
+```
+
+## Source
+
+```bash
+# Clone the repository
+git clone --filter=blob:none --branch canary --single-branch https://github.com/kurosakishigure/katharsis.git
+
+# Install the project
+cd katharsis && cargo build --release
+
+# Move the binary to the appropriate directory
+mv target/release/katharsis /usr/local/bin
 ```

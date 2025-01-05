@@ -1,90 +1,8 @@
 # Use the Katharsis
 
-## Prerequisites
-
-### Linux and macOS
-
-If you're using **Cargo**, please run:
-
-```bash
-cargo install katharsis
-# or
-cargo binstall katharsis
-```
-
-> [!NOTE]
-> Use the following command to install the `canary` version:
-> 
-> ```bash
-> cargo install katharsis@1.0.0-canary.21
-> # or
-> cargo binstall katharsis@1.0.0-canary.21
-> ```
-
-> - You might also need to add the environment variable `export PATH=$HOME/.cargo/bin:$PATH` to your `.zshrc` or `.bashrc` file.
-> - If you choose to use `cargo binstall katharsis`, you might need to run `brew install cargo-binstall` first.
-
-For **Arch Linux**, [katharsis](https://aur.archlinux.org/packages/katharsis) is available as a package in the AUR.
-
-You can install it using an AUR helper (e.g. paru):
-
-```bash
-paru -S katharsis
-```
-
-If you're using a **Debian-based system**, you can directly install the `.deb` file from the download directory using `apt`:
-
-```bash
-sudo apt install katharsis.deb
-```
-
-> - Download the appropriate binary from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
-> - You can find the platform comparison table in the [Platform Support](https://doc.rust-lang.org/rustc/platform-support.html) section.
-
-Otherwise, you'll need to follow the **step-by-step** instructions below to install Katharsis.
-
-Run the following command to extract the downloaded file:
-
-```bash
-tar -xzf ~/your/download/path/katharsis.tar.gz
-```
-
-Next, execute the following command in your home directory to create the necessary folders:
-
-```bash
-mkdir -p Formulae/bin
-```
-
-Move the downloaded binary to `~/Formulae/bin`:
-
-```bash
-mv ~/your/extract/path/katharsis ~/Formulae/bin/katharsis
-```
-
-Modify your `.zshrc` or `.bashrc` file by adding the following configuration:
-
-```bash
-# Formulae
-export PATH=$HOME/Formulae/bin:$PATH
-```
-
-> Typing `katharsis` might be cumbersome, so you can use a shorter alias like `rss` in your `.zshrc` or `.bashrc` file instead:
->
-> ```bash
-> alias rss=katharsis
-> ```
-
-Run the following command to apply the changes:
-
-```bash
-source .zshrc
-# or
-source .bashrc
-```
-
 ## Example
 
-> You can refer to our [Examples](../examples).
+> You can refer to our [examples](../examples).
 
 Run the following command to generate a `katharsis.config.toml` file in the current directory:
 
@@ -97,8 +15,6 @@ Run the following command to create a default `rss.xml`:
 ```bash
 katharsis
 ```
-
-For a detailed explanation of the fields in the `katharsis.config.toml` file, refer to the Overview section below.
 
 ## Command Overview
 

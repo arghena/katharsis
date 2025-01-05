@@ -66,7 +66,7 @@ All contributions to this project must adhere to the [DCO](DCO).
 
 | Type          | Prefix |
 |---------------|--------|
-| documentation | doc    |
+| documentation | docs   |
 | enhancement   | feat   |
 | bug           | fix    |
 | example       | ex     |

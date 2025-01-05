@@ -15,7 +15,7 @@ jobs:
         label:
           - { prefix: "fix:", name: "bug" }
           - { prefix: "chore:", name: "chore" }
-          - { prefix: "doc:", name: "documentation" }
+          - { prefix: "docs:", name: "documentation" }
           - { prefix: "feat:", name: "enhancement" }
           - { prefix: "ex:", name: "example" }
           - { prefix: "revert:", name: "revert" }

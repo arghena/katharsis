@@ -30,21 +30,3 @@ jobs:
         if: ${{ startsWith(github.event.pull_request.title, matrix.label.prefix) }}
         with:
           labels: ${{ matrix.label.name }}
-
-  validator:
-    permissions:
-      pull-requests: write
-    needs: labeler
-    runs-on: ubuntu-latest
-    name: Close PR if no label was added
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Check if no label was added
-        run: |
-          labels=$(gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name')
-          if [ -z "$labels" ]; then
-            gh pr close ${{ github.event.pull_request.number }} --comment "Closing PR: No valid prefix found in the title."
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

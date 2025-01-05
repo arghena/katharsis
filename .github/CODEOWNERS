@@ -5,6 +5,7 @@ etc/* @kurosakishigure
 .gitignore @kurosakishigure
 deny.toml @kurosakishigure
 sgconfig.yml @kurosakishigure
+changelogithub.config.json @kurosakishigure
 
 # Dependencies
 rust-toolchain.toml @kurosakishigure

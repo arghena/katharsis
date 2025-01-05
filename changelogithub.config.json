@@ -1,0 +1,37 @@
+{
+  "types": {
+    "fix": {
+      "title": "\uD83E\uDE79 Fixes"
+    },
+    "chore": {
+      "title": "\uD83C\uDFE1 Chore"
+    },
+    "doc": {
+      "title": "\uD83D\uDCD6 Docs"
+    },
+    "feat": {
+      "title": "\uD83D\uDE80 Enhancements"
+    },
+    "ex": {
+      "title": "\uD83C\uDFC0 Examples"
+    },
+    "revert": {
+      "title": "\uD83D\uDD04 Reverts"
+    },
+    "test": {
+      "title": "✅ Tests"
+    },
+    "dep": {
+      "title": "\uD83D\uDCE6 Dependencies"
+    },
+    "act": {
+      "title": "\uD83D\uDEE0 Actions"
+    },
+    "wf": {
+      "title": "\uD83E\uDD16 Workflows"
+    },
+    "dev": {
+      "title": "\uD83D\uDCBB Dev Kits"
+    }
+  }
+}

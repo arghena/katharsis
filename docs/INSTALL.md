@@ -2,12 +2,12 @@
 
 ## Package Managers
 
-### Cargo
+### Cargo B(inary)Install
 
 ```bash
 cargo binstall katharsis
 # or
-cargo binstall katharsis@1.0.0-canary.24
+cargo binstall katharsis@CANARY_VERSION
 ```
 
 ### Paru

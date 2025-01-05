@@ -20,36 +20,12 @@
 
 ![demo](https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/demo.gif)
 
-## How to use
+## Contents
 
-Go to [USE.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/USE.md) to read about how to use Katharsis.
-
-## Installing from Source
-
-If you need to build this project from scratch, please refer to the [INSTALL.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/INSTALL.md).
-
-## Documentation
-
-You can run the `cargo doc --open` command in the root directory of the project to open the web documentation in your browser.
-
-## Contributing
-
-See [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md).
-
-## Security
-
-We firmly believe that no software is completely secure, and we welcome contributions from security researchers.
-
-See [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/SECURITY.md).
-
-## FAQ
-
-See [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/FAQ.md).
-
-## Notice
-
-See [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSES/NOTICE).
-
-## License
-
-Katharsis is primarily distributed under the terms of the MIT License. For more details, please refer to the [LICENSE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSE).
+- [INSTALL.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/INSTALL.md)
+- [USE.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/USE.md)
+- [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md)
+- [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/SECURITY.md)
+- [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/FAQ.md)
+- [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSES/NOTICE)
+- [LICENSE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSE)

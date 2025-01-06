@@ -5,10 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this fix report!
-        
-        > [!NOTE]
-        > Before submitting, please carefully read the [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md).
+        Thanks for taking the time to fill out this bug report!
   - type: input
     id: katharsis_version
     attributes:

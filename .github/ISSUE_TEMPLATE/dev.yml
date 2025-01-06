@@ -6,9 +6,6 @@ body:
     attributes:
       value: |
         Thank you for helping us update our dev kit!
-        
-        > [!NOTE]
-        > Before submitting, please carefully read the [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md).
   - type: textarea
     id: dev_kit_description
     attributes:

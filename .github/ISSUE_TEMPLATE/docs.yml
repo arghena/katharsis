@@ -1,5 +1,5 @@
-name: Report a documentation issue
-description: Improvements or additions to documentation.
+name: Report a docs issue
+description: Add or improve docs.
 title: 'docs: '
 body:
   - type: markdown

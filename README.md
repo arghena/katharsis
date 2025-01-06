@@ -25,6 +25,7 @@
 - [INSTALL.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/INSTALL.md)
 - [USE.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/USE.md)
 - [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/FAQ.md)
+- [API Docs](https://docs.rs/katharsis)
 - [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md)
 - [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/SECURITY.md)
 - [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSES/NOTICE)

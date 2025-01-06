@@ -3,7 +3,6 @@
 Thank you for contributing to [Katharsis](https://github.com/kurosakishigure/katharsis). The primary way to contribute is through the [GitHub](https://github.com) platform, and we greatly appreciate every contribution you make.
 
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
-> - You need to confirm whether the PR corresponds to an issue. If there isn’t a corresponding issue, please open one before submitting the PR.
 > - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [LICENSES](../LICENSES) folder. Additionally, make sure to update the project's [NOTICE](../LICENSES/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
 
 ## Guidelines

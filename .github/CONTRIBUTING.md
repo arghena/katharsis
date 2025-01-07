@@ -1,17 +1,15 @@
 # Contributing to Katharsis
 
-Thank you for contributing to [Katharsis](https://github.com/kurosakishigure/katharsis). The primary way to contribute is through the [GitHub](https://github.com) platform, and we greatly appreciate every contribution you make.
+Thank you so much for contributing to [Katharsis](https://github.com/kurosakishigure/katharsis)! We truly appreciate every single contribution you make.
 
+> [!NOTE]
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
-> - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [LICENSES](../LICENSES) folder. Additionally, make sure to update the project's [NOTICE](../LICENSES/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
+> - Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
+> - If you use code from other open-source projects, place the corresponding LICENSE file in the [LICENSES](../LICENSES) folder and add the relevant information to the [NOTICE](../LICENSES/NOTICE) file.
 
 ## Guidelines
 
-We believe that following the guidelines when contributing to the project helps maintain a consistent style, preventing any confusion during the development process.
-
 ### Documentation
-
-Here are some guidelines to maintain a consistent style and voice across the docs:
 
 - Write clear, concise sentences. Avoid tangents.
     - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.
@@ -26,7 +24,7 @@ Here are some guidelines to maintain a consistent style and voice across the doc
 - Use gender-neutral language. Use developers, users, or readers, when referring to the audience.
 - If adding code examples, ensure they are properly formatted and working.
 
-While these guidelines are not exhaustive, they should help you get started. If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).
+> If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).
 
 ### Code
 
@@ -37,19 +35,17 @@ When you first build the project, [rustup](https://github.com/rust-lang/rustup) 
 - [Clippy](https://doc.rust-lang.org/clippy)
 - [rust-analyzer](https://rust-analyzer.github.io)
 
-When writing code, you need to ensure that you have the corresponding documentation and test cases, and maintain a consistent code style. Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
-
 ## Code of Conduct
 
 Do note that our [Code of Conduct](CODE-OF-CONDUCT.md) applies to all Katharsis community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
 
 ## Signing Commits
 
-All contributions must use [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+All pull requests must include [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 
 ## Developer's Certificate of Origin
 
-All contributions to this project must adhere to the [DCO](DCO).
+All pull request submissions to this project must comply with the [DCO](DCO).
 
 ## Developing
 
@@ -61,9 +57,9 @@ All contributions to this project must adhere to the [DCO](DCO).
 - Install Rust and Cargo via [rustup](https://rustup.rs).
 - Install the [GitHub CLI](https://github.com/cli/cli#installation).
 
-### Branch Naming
+### Naming
 
-| Type          | Prefix |
+| Label         | Prefix |
 |---------------|--------|
 | documentation | docs   |
 | enhancement   | feat   |
@@ -75,31 +71,13 @@ All contributions to this project must adhere to the [DCO](DCO).
 | workflow      | wf     |
 | dev           | dev    |
 
-Format: `<branch prefix>/<branch content>`
+| Type   | Format             | Example                            |
+|--------|--------------------|------------------------------------|
+| Branch | `PREFIX/NAME`      | `wf/remove_close_jobs`             |
+| Commit | `PREFIX: DESCRIBE` | `wf: remove jobs related to close` |
+| PR     | `PREFIX: TITLE`    | `wf: remove jobs related to close` |
 
-> The `<branch content>` should be as short as possible and closely aligned with the issue topic.
-
-Example: `fix/dependabot`
-
-### Commit Message Naming
-
-Format: `<branch prefix>: <message content>`
-
-> The `<message content>` should be as short as possible and closely related to the content of the commit.
-
-Example: `fix: dependabot.yml contained invalid details`
-
-> For more information about naming, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
-
-### PR Naming
-
-Format: `<branch prefix>: <title content>`
-
-> The `<title content>` should be as short as possible and closely aligned with the issue topic.
-
-Example: `fix: dependabot.yml contained invalid details`
-
-> If your PR contains only one commit, you can keep the `<title content>` and `<message content>` the same.
+> If you want to learn more about this, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
 
 ### Local Development
 
@@ -143,5 +121,6 @@ Example: `fix: dependabot.yml contained invalid details`
 
 As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/kurosakishigure/katharsis/issues) if our project violates any applicable licenses.
 
-> - To request additional License information, please [Report an issue with the documentation](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=doc.yml&title=doc%3A+).
+> [!NOTE]
+> - To request additional License information, please [Report a docs issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=docs.yml&title=docs%3A+).
 > - To request the removal of specific code, please [Report an issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=fix.yml&title=fix%3A+).

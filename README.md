@@ -16,6 +16,9 @@
   <a href="https://crates.io/crates/katharsis">
     <img src="https://img.shields.io/crates/v/katharsis.svg" alt="Crates.io">
   </a>
+  <a href="https://aur.archlinux.org/packages/katharsis">
+    <img src="https://img.shields.io/aur/version/katharsis" alt="AUR">
+  </a>
 </div>
 
 ![demo](https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/demo.gif)

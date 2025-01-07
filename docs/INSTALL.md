@@ -2,6 +2,12 @@
 
 ## Package Managers
 
+### WinGet
+
+```bash
+winget install kurosakishigure.katharsis
+```
+
 ### Cargo B(inary)Install
 
 ```bash

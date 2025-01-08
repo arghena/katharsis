@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The latest release of [Katharsis](https://github.com/kurosakishigure/katharsis/releases/latest), as published on GitHub under the latest release tag, is supported with security updates.
+The [latest release](https://github.com/kurosakishigure/katharsis/releases/latest) of Katharsis, as published on GitHub under the latest release tag, is supported with security updates.
 
 ## Reporting a Vulnerability
 

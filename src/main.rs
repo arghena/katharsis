@@ -20,6 +20,7 @@ struct Cli {
     command: Option<Commands>,
 }
 
+#[cfg(not(tarpaulin_include))]
 #[tokio::main]
 async fn main() -> Result<()> {
     let cli = Cli::parse();

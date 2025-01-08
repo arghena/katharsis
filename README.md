@@ -19,6 +19,9 @@
   <a href="https://aur.archlinux.org/packages/katharsis">
     <img src="https://img.shields.io/aur/version/katharsis?style=for-the-badge&color=blue" alt="AUR">
   </a>
+  <a href="https://winget.run/pkg/kurosakishigure/katharsis">
+    <img src="https://img.shields.io/winget/v/kurosakishigure.katharsis?style=for-the-badge&color=teal" alt="WinGet">
+  </a>
 </div>
 
 ![demo](https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/demo.gif)

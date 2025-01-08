@@ -11,6 +11,8 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 
 ### Documentation
 
+Here are some guidelines to maintain a consistent style and voice across the docs:
+
 - Write clear, concise sentences. Avoid tangents.
     - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.
     - Swap out complex words for simpler ones. For example, use instead of utilize.
@@ -98,7 +100,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
    cargo test
    ```
 5. Start making changes to your code.
-6. Run rustfmt and Clippy.
+6. Run rustfmt and Clippy:
    ```bash
    cargo fmt --all --check
    cargo clippy -- -D warnings

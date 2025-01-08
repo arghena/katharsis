@@ -1,6 +1,6 @@
 # Contributing to Katharsis
 
-Thank you so much for contributing to [Katharsis](https://github.com/kurosakishigure/katharsis)! We truly appreciate every single contribution you make.
+Thank you so much for contributing to Katharsis! We truly appreciate every single contribution you make.
 
 > [!NOTE]
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.

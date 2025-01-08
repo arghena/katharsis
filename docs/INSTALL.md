@@ -2,8 +2,7 @@
 
 ## Package Managers
 
-> [!NOTE]
-> [![Packaging status](https://repology.org/badge/vertical-allrepos/katharsis.svg)](https://repology.org/project/katharsis/versions)
+[![Packaging status](https://repology.org/badge/vertical-allrepos/katharsis.svg)](https://repology.org/project/katharsis/versions)
 
 ### WinGet
 

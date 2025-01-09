@@ -1,0 +1,62 @@
+name: Markdown Lint
+on:
+  pull_request:
+    paths:
+      - '.github/**/*.md'
+      - 'docs/**/*.md'
+      - 'examples/**/*.md'
+      - 'README.md'
+jobs:
+  alex:
+    name: alex
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run alex
+        uses: reviewdog/action-alex@v1
+        with:
+          fail_level: any
+          alex_flags: '.github/**/*.md docs/**/*.md examples/**/*.md README.md'
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run prettier
+        uses: EPMatt/reviewdog-action-prettier@v1
+        with:
+          reviewdog_flags: '-fail-level=any'
+          prettier_flags: '.github/**/*.md docs/**/*.md examples/**/*.md README.md -c'
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run markdownlint
+        uses: reviewdog/action-markdownlint@v0
+        with:
+          reviewdog_flags: '-fail-level=any'
+          markdownlint_flags: '.github/**/*.md docs/**/*.md examples/**/*.md README.md'
+  vale:
+    name: vale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run vale
+        uses: errata-ai/vale-action@v2.1.1
+        with:
+          files: '.github/**/*.md,docs/**/*.md,examples/**/*.md,README.md'
+  languagetool:
+    name: languagetool
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run languagetool
+        uses: reviewdog/action-languagetool@v1
+        with:
+          patterns: '.github/**/*.md docs/**/*.md examples/**/*.md README.md'

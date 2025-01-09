@@ -26,3 +26,11 @@ This project includes third-party code under the following licenses:
   License: changelogen/LICENSE
   Repository: https://github.com/unjs/changelogen
   Copyright (c) Pooya Parsa <pooya@pi0.io>
+- MIT License:
+  License: linutil/LICENSE
+  Repository: https://github.com/ChrisTitusTech/linutil
+  Copyright (c) 2024 Chris Titus
+- MIT License:
+  License: google/LICENSE
+  Repository: https://github.com/errata-ai/Google
+  Copyright (c) 2018 - 2019 Joseph Kato

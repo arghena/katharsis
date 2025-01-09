@@ -1,3 +1,5 @@
+<!--markdownlint-disable MD041-->
+
 The issue was marked with the `good first issue` label by a maintainer.
 
 This means that it is a good candidate for someone interested in contributing to the project, but does not know where to start.

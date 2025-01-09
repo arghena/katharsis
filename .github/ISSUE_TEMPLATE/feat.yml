@@ -4,8 +4,7 @@ title: 'feat: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for contributing to Katharsis, please go ahead and describe your proposal!
+      value: Thanks for contributing to Katharsis, please go ahead and describe your proposal!
   - type: textarea
     id: feature_description
     attributes:

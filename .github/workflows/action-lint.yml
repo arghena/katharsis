@@ -1,0 +1,17 @@
+name: Action Lint
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/*.yml'
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    name: actionlint
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run actionlint
+        uses: reviewdog/action-actionlint@v1
+        with:
+          fail_level: any
+          actionlint_flags: '.github/workflows/*.yml'

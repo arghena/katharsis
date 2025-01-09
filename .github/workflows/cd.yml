@@ -1,9 +1,7 @@
 name: CD
-
 on:
   push:
-    tags: [ 'v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+' ]
-
+    tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
 jobs:
   create-release-note:
     permissions:
@@ -29,7 +27,6 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
   publish-assets:
     permissions:
       contents: write
@@ -63,7 +60,6 @@ jobs:
           - os: ubuntu-20.04
             target: aarch64-unknown-linux-gnu
             use-cross: true
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -86,7 +82,6 @@ jobs:
           else
             cargo build --release --target ${{ matrix.job.target }}
           fi
-
       - name: Install required dependencies
         shell: bash
         run: |
@@ -98,7 +93,6 @@ jobs:
               sudo apt update
               sudo apt-get install -y binutils-aarch64-linux-gnu
           fi
-
       - name: Packaging final binary
         shell: bash
         env:
@@ -107,14 +101,12 @@ jobs:
           PACKAGE_NAME: katharsis
           OS_NAME: ${{ matrix.job.os }}
         run: ./etc/ci/before_deploy.sh
-
       - name: Releasing assets
         uses: softprops/action-gh-release@v2
         with:
           files: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
-
   publish-to-cargo:
     name: Publishing to Cargo
     runs-on: ubuntu-latest
@@ -125,7 +117,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Cargo publish
         run: cargo publish --token ${{ secrets.CARGO_API_KEY }}
-
   publish-to-winget:
     name: Publish to WinGet
     runs-on: ubuntu-latest

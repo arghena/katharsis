@@ -4,14 +4,13 @@ title: 'docs: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thank you for helping us update our docs!
+      value: Thank you for helping us update our docs!
   - type: input
     id: page_link
     attributes:
       label: Page Link
       description: The URL of the page where the document is located.
-      placeholder: ex. https://example.com/docs/USE.md
+      placeholder: for example, https://example.com/docs/USE.md
   - type: textarea
     id: documentation_issue
     attributes:

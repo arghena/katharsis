@@ -1,8 +1,13 @@
 # Contributing to Katharsis
 
+<!--vale Google.Exclamation = off-->
+
 Thank you so much for contributing to Katharsis! We truly appreciate every single contribution you make.
 
+<!--vale Google.Exclamation = on-->
+
 > [!NOTE]
+>
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
 > - Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
 > - If you use code from other open-source projects, place the corresponding LICENSE file in the [LICENSES](../LICENSES) folder and add the relevant information to the [NOTICE](../LICENSES/NOTICE) file.
@@ -13,20 +18,22 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 
 Here are some guidelines to maintain a consistent style and voice across the docs:
 
+<!--alex disable easy-->
+
 - Write clear, concise sentences. Avoid tangents.
-    - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.
-    - Swap out complex words for simpler ones. For example, use instead of utilize.
+  - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.
+  - Swap out complex words for simpler ones. For example, use instead of utilize.
 - Be mindful with the word this. It can be ambiguous and confusing, don't be afraid to repeat the subject of the sentence if unclear.
-    - For example, Katharsis uses Rust instead of Katharsis uses this.
+  - For example, Katharsis uses Rust instead of Katharsis uses this.
 - Use an active voice instead of passive. An active sentence is easier to read.
-    - For example, Katharsis uses Rust instead of Rust is used by Katharsis. If you find yourself using words like was and by you may be using a passive voice.
+  - For example, Katharsis uses Rust instead of Rust is used by Katharsis. If you find yourself using words like was and by you may be using a passive voice.
 - Avoid using words like easy, quick, simple, just, etc. This is subjective and can be discouraging to users.
 - Avoid negative words like don't, can't, won't, etc. This can be discouraging to readers.
 - Write in second person (you/your). This is more personal and engaging.
 - Use gender-neutral language. Use developers, users, or readers, when referring to the audience.
 - If adding code examples, ensure they are properly formatted and working.
 
-> If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).
+> If you'd like to explore further into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).
 
 ### Code
 
@@ -62,7 +69,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 ### Naming
 
 | Label         | Prefix |
-|---------------|--------|
+| ------------- | ------ |
 | documentation | docs   |
 | enhancement   | feat   |
 | bug           | fix    |
@@ -74,7 +81,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 | dev           | dev    |
 
 | Type   | Format             | Example                            |
-|--------|--------------------|------------------------------------|
+| ------ | ------------------ | ---------------------------------- |
 | Branch | `PREFIX/NAME`      | `wf/remove_close_jobs`             |
 | Commit | `PREFIX: DESCRIBE` | `wf: remove jobs related to close` |
 | PR     | `PREFIX: TITLE`    | `wf: remove jobs related to close` |
@@ -82,6 +89,8 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 > If you want to learn more about this, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
 
 ### Local Development
+
+<!--markdownlint-disable MD031-->
 
 1. Clone the Katharsis repository (download only recent commits for faster clone):
    ```bash
@@ -124,5 +133,6 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/kurosakishigure/katharsis/issues) if our project violates any applicable licenses.
 
 > [!NOTE]
+>
 > - To request additional License information, please [Report a docs issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=docs.yml&title=docs%3A+).
 > - To request the removal of specific code, please [Report an issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=fix.yml&title=fix%3A+).

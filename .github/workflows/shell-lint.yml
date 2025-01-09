@@ -1,0 +1,28 @@
+name: Shell Lint
+on:
+  pull_request:
+    paths:
+      - 'etc/**/*.sh'
+jobs:
+  shfmt:
+    name: shfmt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run shfmt
+        uses: reviewdog/action-shfmt@v1
+        with:
+          shfmt_flags: '-i 4 -ci -d etc/**/*.sh'
+          reviewdog_flags: '-fail-level=any'
+  shellcheck:
+    name: shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run shellcheck
+        uses: reviewdog/action-shellcheck@v1
+        with:
+          shellcheck_flags: 'etc/**/*.sh'
+          fail_level: any

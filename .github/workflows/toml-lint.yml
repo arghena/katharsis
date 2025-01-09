@@ -1,0 +1,28 @@
+name: TOML Lint
+
+on:
+  pull_request:
+    paths:
+      - 'examples/**/*.toml'
+      - 'src/**/*.toml'
+      - 'tests/**/*.toml'
+      - '.prettierrc.toml'
+      - 'Cargo.toml'
+      - 'deny.toml'
+      - 'rust-toolchain.toml'
+
+jobs:
+  taplo:
+    name: taplo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install taplo
+        run: |
+          curl -fsSL https://github.com/tamasfe/taplo/releases/latest/download/taplo-full-linux-x86_64.gz \
+            | gzip -d - | install -m 755 /dev/stdin /usr/local/bin/taplo
+      - name: Run taplo fmt
+        run: taplo fmt examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml --check
+      - name: Run taplo check
+        run: taplo check examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml

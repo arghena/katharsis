@@ -1,0 +1,19 @@
+name: JSON Lint
+
+on:
+  pull_request:
+    paths:
+      - 'changelogithub.config.json'
+
+jobs:
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run prettier
+        uses: EPMatt/reviewdog-action-prettier@v1
+        with:
+          reviewdog_flags: '-fail-level=any'
+          prettier_flags: 'changelogithub.config.json -c'

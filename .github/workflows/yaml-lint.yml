@@ -1,0 +1,32 @@
+name: YAML Lint
+on:
+  pull_request:
+    paths:
+      - '.github/**/*.yml'
+      - '.config/**/*.yml'
+      - 'sgconfig.yml'
+      - '.yamllint.yml'
+      - '.markdownlint.yml'
+jobs:
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run yamllint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          fail_level: any
+          yamllint_flags: '.github .config sgconfig.yml .yamllint.yml .markdownlint.yml'
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run prettier
+        uses: EPMatt/reviewdog-action-prettier@v1
+        with:
+          reviewdog_flags: '-fail-level=any'
+          prettier_flags: '.github/**/*.yml .config/**/*.yml sgconfig.yml .yamllint.yml .markdownlint.yml -c --no-error-on-unmatched-pattern'

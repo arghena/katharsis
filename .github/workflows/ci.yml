@@ -1,11 +1,13 @@
 name: CI
-
 on:
   push:
-    tags: [ 'v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+' ]
+    tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
   pull_request:
-    branches: [ 'canary' ]
-
+    paths:
+      - 'src/**/*.{rs,toml}'
+      - 'tests/**/*.{rs,toml}'
+      - 'examples/**/*.html'
+      - 'Cargo.toml'
 jobs:
   unit_tests:
     name: Unit tests
@@ -59,13 +61,12 @@ jobs:
           else
             cargo test --target ${{ matrix.job.target }} --verbose -- --nocapture
           fi
-
   integration_tests:
     name: Integration tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest ]
+        os: [macos-latest, ubuntu-latest]
         include:
           - os: macos-latest
             target: aarch64-apple-darwin
@@ -84,7 +85,6 @@ jobs:
         run: |
           cargo run --release --target ${{ matrix.target }} init -- < /dev/null
           cargo run --release --target ${{ matrix.target }} -- < /dev/null
-
   rustfmt:
     name: Rustfmt
     runs-on: ubuntu-latest
@@ -99,7 +99,6 @@ jobs:
         uses: Swatinem/rust-cache@v2
       - name: Check formatting
         run: cargo fmt --all --check
-
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
@@ -114,7 +113,6 @@ jobs:
         uses: Swatinem/rust-cache@v2
       - name: Clippy Check
         run: cargo clippy -- -D warnings
-
   msrv:
     runs-on: ubuntu-latest
     name: Minimum Supported Rust Version
@@ -133,7 +131,26 @@ jobs:
         run: cargo binstall --version 0.17.1 --no-confirm cargo-msrv --force
       - name: Run cargo-msrv
         run: cargo msrv verify --release-source rust-dist
-
+  sg-lint:
+    runs-on: ubuntu-latest
+    name: Run ast-grep lint
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: ast-grep lint
+        uses: ast-grep/action@v1.5.0
+  typos:
+    runs-on: ubuntu-latest
+    name: typos
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run typos
+        uses: reviewdog/action-typos@v1
+        with:
+          reporter: github-pr-check
+          fail_level: any
+          typos_flags: 'src/**/*.rs tests/**/*.rs'
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

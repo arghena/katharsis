@@ -1,9 +1,7 @@
-name: 'Lock Threads'
-
+name: Lock Threads
 on:
   schedule:
     - cron: '0 0 * * *'
-
 jobs:
   lock-threads:
     permissions:
@@ -20,9 +18,9 @@ jobs:
           add-pr-labels: 'locked'
           add-discussion-labels: 'locked'
           issue-inactive-days: 14
-          issue-comment: 'This closed issue has been automatically locked because it had no new activity for 2 weeks.'
+          issue-comment: This closed issue has been automatically locked because it had no new activity for 2 weeks.
           pr-inactive-days: 14
-          pr-comment: 'This closed pull request has been automatically locked because it had no new activity for 2 weeks.'
+          pr-comment: This closed pull request has been automatically locked because it had no new activity for 2 weeks.
           discussion-inactive-days: 14
-          discussion-comment: 'This closed discussion has been automatically locked because it had no new activity for 2 weeks.'
+          discussion-comment: This closed discussion has been automatically locked because it had no new activity for 2 weeks.
           log-output: true

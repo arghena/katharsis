@@ -4,14 +4,13 @@ title: 'fix: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
+      value: Thanks for taking the time to fill out this bug report!
   - type: input
     id: katharsis_version
     attributes:
       label: Katharsis Version
       description: What is the version number of your Katharsis?
-      placeholder: ex. 1.0.0
+      placeholder: for example, 1.0.0
     validations:
       required: true
   - type: input
@@ -19,14 +18,14 @@ body:
     attributes:
       label: System Version
       description: What is your system version?
-      placeholder: ex. macOS 15.1.1
+      placeholder: for example, macOS 15.1.1
     validations:
       required: true
   - type: textarea
     id: to_reproduce
     attributes:
       label: To Reproduce
-      description: A step-by-step description of how to reproduce the issue. Contributors are encouraged to include a link-based reproduction if possible.
+      description: A step-by-step description of how to reproduce the issue. If possible, we prefer reproduction via links.
     validations:
       required: true
   - type: textarea

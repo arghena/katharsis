@@ -1,0 +1,48 @@
+name: Triage
+on:
+  issues:
+    types: [labeled]
+  pull_request:
+    types: [labeled]
+jobs:
+  triage-issues:
+    permissions:
+      issues: write
+    if: ${{ github.event_name == 'issues' }}
+    runs-on: ubuntu-latest
+    name: Triage via nissuer
+    steps:
+      - name: Nissuer
+        uses: balazsorban44/nissuer@1.10.0
+        with:
+          label-comments: |
+            {
+              "good first issue": ".github/comments/good-first-issue.md",
+              "cannot recreate": ".github/comments/cannot-recreate.md",
+              "issue duplicate": ".github/comments/issue-duplicate.md",
+              "unclear": ".github/comments/unclear.md"
+            }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  triage-prs:
+    permissions:
+      pull-requests: write
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    name: Faire le triage
+    strategy:
+      matrix:
+        consultation:
+          - { file: '.github/comments/pr-duplicate.md', label: 'PR duplicate' }
+          - {
+              file: '.github/comments/need-improvement.md',
+              label: 'need improvement',
+            }
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Salle de consultation en ${{ matrix.consultation.label }}
+        if: ${{ github.event.label.name == matrix.consultation.label }}
+        run: gh pr comment ${{ github.event.pull_request.number }} -F ${{ matrix.consultation.file}}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -21,6 +21,7 @@ Session.vim
 
 ## Tool
 .cargo
+.config/vale/styles/**
 
 ## Build
 /target

@@ -23,6 +23,10 @@ jobs:
           curl -fsSL https://github.com/tamasfe/taplo/releases/latest/download/taplo-full-linux-x86_64.gz \
             | gzip -d - | install -m 755 /dev/stdin /usr/local/bin/taplo
       - name: Run taplo fmt
-        run: taplo fmt examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml --check
+        run: |
+          shopt -s globstar
+          taplo fmt examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml --check
       - name: Run taplo check
-        run: taplo check examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml
+        run: |
+          shopt -s globstar
+          taplo check examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml

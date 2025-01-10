@@ -145,12 +145,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Run typos
-        uses: reviewdog/action-typos@v1
+      - name: Install typos
+        uses: taiki-e/install-action@v2
         with:
-          reporter: github-pr-check
-          fail_level: any
-          typos_flags: 'src/**/*.rs tests/**/*.rs'
+          tool: typos
+      - name: Run typos
+        run: |
+          shopt -s globstar
+          typos src/**/*.rs tests/*.rs
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

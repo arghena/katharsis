@@ -10,8 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Install actionlint
+        run: brew install actionlint
       - name: Run actionlint
-        uses: reviewdog/action-actionlint@v1
-        with:
-          fail_level: any
-          actionlint_flags: '.github/workflows/*.yml'
+        run: actionlint .github/workflows/*.yml

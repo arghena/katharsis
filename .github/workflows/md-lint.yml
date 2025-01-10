@@ -13,43 +13,59 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Run alex
-        uses: reviewdog/action-alex@v1
+      - name: Set nodejs
+        uses: actions/setup-node@v4
         with:
-          fail_level: any
-          alex_flags: '.github/**/*.md docs/**/*.md examples/**/*.md README.md'
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run alex
+        run: |
+          shopt -s globstar
+          npx alex .github/**/*.md docs/**/*.md examples/**/*.md README.md
   prettier:
     name: prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Run prettier
-        uses: EPMatt/reviewdog-action-prettier@v1
+      - name: Set nodejs
+        uses: actions/setup-node@v4
         with:
-          reviewdog_flags: '-fail-level=any'
-          prettier_flags: '.github/**/*.md docs/**/*.md examples/**/*.md README.md -c'
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run prettier
+        run: |
+          shopt -s globstar
+          npx prettier .github/**/*.md docs/**/*.md examples/**/*.md README.md -c
   markdownlint:
     name: markdownlint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Run markdownlint
-        uses: reviewdog/action-markdownlint@v0
+      - name: Set nodejs
+        uses: actions/setup-node@v4
         with:
-          reviewdog_flags: '-fail-level=any'
-          markdownlint_flags: '.github/**/*.md docs/**/*.md examples/**/*.md README.md'
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run markdownlint
+        run: |
+          shopt -s globstar
+          npx markdownlint-cli2 .github/**/*.md docs/**/*.md examples/**/*.md README.md
   vale:
     name: vale
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Install vale
+        run: brew install vale
       - name: Run vale
-        uses: errata-ai/vale-action@v2.1.1
-        with:
-          files: '.github/**/*.md,docs/**/*.md,examples/**/*.md,README.md'
+        run: |
+          shopt -s globstar
+          vale .github/**/*.md docs/**/*.md examples/**/*.md README.md
   languagetool:
     name: languagetool
     runs-on: ubuntu-latest

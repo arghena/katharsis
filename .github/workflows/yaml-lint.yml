@@ -14,19 +14,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Install yamllint
+        run: brew install yamllint
       - name: Run yamllint
-        uses: reviewdog/action-yamllint@v1
-        with:
-          fail_level: any
-          yamllint_flags: '.github .config sgconfig.yml .yamllint.yml .markdownlint.yml'
+        run: yamllint .github .config sgconfig.yml .yamllint.yml .markdownlint.yml
   prettier:
     name: prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Run prettier
-        uses: EPMatt/reviewdog-action-prettier@v1
+      - name: Set nodejs
+        uses: actions/setup-node@v4
         with:
-          reviewdog_flags: '-fail-level=any'
-          prettier_flags: '.github/**/*.yml .config/**/*.yml sgconfig.yml .yamllint.yml .markdownlint.yml -c --no-error-on-unmatched-pattern'
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run prettier
+        run: |
+          shopt -s globstar
+          npx prettier .github/**/*.yml .config/**/*.yml sgconfig.yml .yamllint.yml .markdownlint.yml -c --no-error-on-unmatched-pattern

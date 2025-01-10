@@ -21,9 +21,9 @@ jobs:
       - name: Generate release note
         run: |
           if ${{ contains(github.ref_name, 'canary') }}; then
-            npx changelogithub --prerelease
+            npx changelogithub@latest --prerelease
           else
-            npx changelogithub
+            npx changelogithub@latest
           fi
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

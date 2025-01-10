@@ -18,4 +18,4 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: lts/*
       - name: Run prettier
-        run: npx prettier changelogithub.config.json -c
+        run: npx prettier@latest changelogithub.config.json -c

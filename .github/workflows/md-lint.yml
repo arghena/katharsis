@@ -67,13 +67,3 @@ jobs:
           shopt -s globstar
           vale sync
           vale .github/**/*.md docs/**/*.md examples/**/*.md README.md
-  languagetool:
-    name: languagetool
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Run languagetool
-        uses: reviewdog/action-languagetool@v1
-        with:
-          patterns: '.github/**/*.md docs/**/*.md examples/**/*.md README.md'

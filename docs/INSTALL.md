@@ -40,8 +40,6 @@ mv ~/your/extract/path/katharsis /usr/local/bin
 
 ## Source
 
-<!--@IGNORE:ENGLISH_WORD_REPEAT_RULE@-->
-
 ```bash
 # Clone the repository
 git clone --filter=blob:none --branch BRANCH_NAME --single-branch https://github.com/kurosakishigure/katharsis.git

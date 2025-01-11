@@ -8,6 +8,9 @@ on:
       - 'tests/**'
       - 'examples/**/*.html'
       - 'Cargo.toml'
+      - '.rustfmt.toml'
+      - '.config/ast-grep/**/*.yml'
+      - 'sgconfig.yml'
 jobs:
   unit_tests:
     name: Unit tests

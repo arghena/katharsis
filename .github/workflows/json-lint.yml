@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'changelogithub.config.json'
+      - '.prettierrc.toml'
 
 jobs:
   prettier:

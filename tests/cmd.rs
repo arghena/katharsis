@@ -1,5 +1,6 @@
 use katharsis::cmd;
 use serde::Deserialize;
+use std::path::PathBuf;
 use tokio::fs;
 use tokio_test::assert_ok;
 
@@ -41,12 +42,11 @@ struct Config {
 
 #[tokio::test]
 async fn init() {
-    let temp_dir = tempfile::tempdir().expect("failed to create temporary folder");
-    let path = temp_dir.path().join("katharsis.config.toml");
+    let path = PathBuf::from("tmp/katharsis.config.toml");
 
     assert_ok!(cmd::handle::init(&path).await);
 
-    let content = assert_ok!(fs::read_to_string(path).await);
+    let content = assert_ok!(fs::read_to_string(&path).await);
     let config: Config = assert_ok!(toml::from_str(&content));
     let Config { rss, article } = config;
 
@@ -67,4 +67,6 @@ async fn init() {
     assert_eq!(article.date, "time");
     assert_eq!(article.image, "articles/**/image.png");
     assert!(article.sort);
+
+    assert_ok!(fs::remove_file(path).await);
 }

@@ -33,5 +33,7 @@ Session.vim
 \#*
 \#*\#
 .#*
+tmp/**
+!tmp/.gitkeep
 
 # Before adding new lines, see the comment at the top.

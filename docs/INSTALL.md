@@ -1,5 +1,8 @@
 # Installation
 
+> [!NOTE]
+> You can download the prebuilt binary artifacts from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
+
 ## Package Managers
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/katharsis.svg)](https://repology.org/project/katharsis/versions)

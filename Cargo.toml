@@ -22,6 +22,12 @@ name = "katharsis"
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(tarpaulin_include)'] }
 
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
+
 [dependencies]
 anyhow = "1.0.95"
 chrono = "0.4.39"

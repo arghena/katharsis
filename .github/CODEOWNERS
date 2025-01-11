@@ -1,7 +1,7 @@
 # Config
-.github/* @kurosakishigure
-.config/* @kurosakishigure
-etc/* @kurosakishigure
+.github/ @kurosakishigure
+.config/ @kurosakishigure
+etc/ @kurosakishigure
 .gitignore @kurosakishigure
 deny.toml @kurosakishigure
 sgconfig.yml @kurosakishigure
@@ -19,6 +19,6 @@ Cargo.toml @kurosakishigure
 Cargo.lock @kurosakishigure
 
 # Documentation
-LICENSES/* @kurosakishigure
+LICENSES/ @kurosakishigure
 LICENSE @kurosakishigure
 README.md @kurosakishigure

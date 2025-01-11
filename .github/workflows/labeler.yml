@@ -14,13 +14,13 @@ jobs:
     strategy:
       matrix:
         label:
-          - { prefix: 'fix:', name: 'bug' }
-          - { prefix: 'docs:', name: 'documentation' }
-          - { prefix: 'feat:', name: 'enhancement' }
-          - { prefix: 'ex:', name: 'example' }
-          - { prefix: 'test:', name: 'test' }
-          - { prefix: 'wf:', name: 'workflow' }
-          - { prefix: 'dev:', name: 'dev' }
+          - { prefix: 'fix', name: 'bug' }
+          - { prefix: 'docs', name: 'documentation' }
+          - { prefix: 'feat', name: 'enhancement' }
+          - { prefix: 'ex', name: 'example' }
+          - { prefix: 'test', name: 'test' }
+          - { prefix: 'wf', name: 'workflow' }
+          - { prefix: 'dev', name: 'dev' }
     steps:
       - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1
@@ -36,17 +36,17 @@ jobs:
     strategy:
       matrix:
         label:
-          - { prefix: 'fix:', name: 'bug' }
-          - { prefix: 'chore:', name: 'chore' }
-          - { prefix: 'docs:', name: 'documentation' }
-          - { prefix: 'feat:', name: 'enhancement' }
-          - { prefix: 'ex:', name: 'example' }
-          - { prefix: 'revert:', name: 'revert' }
-          - { prefix: 'test:', name: 'test' }
-          - { prefix: 'dep:', name: 'dependency' }
-          - { prefix: 'act:', name: 'action' }
-          - { prefix: 'wf:', name: 'workflow' }
-          - { prefix: 'dev:', name: 'dev' }
+          - { prefix: 'fix', name: 'bug' }
+          - { prefix: 'chore', name: 'chore' }
+          - { prefix: 'docs', name: 'documentation' }
+          - { prefix: 'feat', name: 'enhancement' }
+          - { prefix: 'ex', name: 'example' }
+          - { prefix: 'revert', name: 'revert' }
+          - { prefix: 'test', name: 'test' }
+          - { prefix: 'dep', name: 'dependency' }
+          - { prefix: 'act', name: 'action' }
+          - { prefix: 'wf', name: 'workflow' }
+          - { prefix: 'dev', name: 'dev' }
     steps:
       - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1

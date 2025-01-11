@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'Cargo.toml'
+      - 'deny.toml'
 jobs:
   cargo-deny:
     runs-on: ubuntu-latest

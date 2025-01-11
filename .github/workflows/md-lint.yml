@@ -6,6 +6,10 @@ on:
       - 'docs/**/*.md'
       - 'examples/**/*.md'
       - 'README.md'
+      - '.prettierrc.toml'
+      - '.markdownlint.yml'
+      - '.vale.ini'
+      - '.config/vale/styles/**/*.yml'
 jobs:
   alex:
     name: alex

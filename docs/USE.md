@@ -61,12 +61,12 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 | ----------- | ---------------------------------------------------------- |
 | title       | The tag containing the article's title.                    |
 | description | The tag or attribute containing the article's description. |
-| input       | The files to be used as input, matching specified rules.   |
+| input       | The HTML files that needs to be parsed.                    |
 | author      | Information about the article's author.                    |
 | link        | The prefix for the article's URL.                          |
 | content     | The tag or attribute containing the article's content.     |
 | date        | The tag containing the article's publication date.         |
-| image       | Files to be used as the article's cover image.             |
+| image       | The image files to be used as the article cover.           |
 | sort        | Whether to sort articles by their publication date.        |
 
 > [!NOTE]

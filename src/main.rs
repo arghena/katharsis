@@ -13,7 +13,7 @@ enum Commands {
 #[command(version, about, long_about = None)]
 struct Cli {
     /// Use a katharsis.config.toml file as the config
-    #[arg(env, short, long, value_name = "FILE")]
+    #[arg(env = "KATHARSIS_CONFIG", short, long, value_name = "CONFIG_FILE")]
     config: Option<PathBuf>,
 
     #[command(subcommand)]

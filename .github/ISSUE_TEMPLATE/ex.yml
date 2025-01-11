@@ -4,8 +4,7 @@ title: 'ex: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thank you for helping us update our example!
+      value: Thank you for helping us update our example!
   - type: textarea
     id: example_description
     attributes:

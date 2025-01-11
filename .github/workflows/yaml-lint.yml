@@ -1,0 +1,37 @@
+name: YAML Lint
+on:
+  pull_request:
+    paths:
+      - '.github/**/*.yml'
+      - '.config/**/*.yml'
+      - 'sgconfig.yml'
+      - '.yamllint.yml'
+      - '.markdownlint.yml'
+jobs:
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Install yamllint
+        run: brew install yamllint
+      - name: Run yamllint
+        run: yamllint .github .config sgconfig.yml .yamllint.yml .markdownlint.yml
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set nodejs
+        uses: actions/setup-node@v4
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run prettier
+        run: |
+          shopt -s globstar
+          npx prettier@latest .github/**/*.yml .config/**/*.yml sgconfig.yml .yamllint.yml .markdownlint.yml -c --no-error-on-unmatched-pattern

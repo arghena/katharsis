@@ -4,8 +4,7 @@ title: 'dev: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thank you for helping us update our dev kit!
+      value: Thank you for helping us update our dev kit!
   - type: textarea
     id: dev_kit_description
     attributes:

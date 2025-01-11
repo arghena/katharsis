@@ -4,8 +4,7 @@ title: 'wf: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thank you for helping us update our workflow!
+      value: Thank you for helping us update our workflow!
   - type: textarea
     id: workflow_description
     attributes:

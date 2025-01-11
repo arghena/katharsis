@@ -17,3 +17,11 @@ You can use the following operations:
 ### Plan 2
 
 Do not use the [Manual](https://github.com/kurosakishigure/katharsis/blob/canary/docs/INSTALL.md#manual) installation method.
+
+## Encountering the `no version matching requirement '*'` Error with `Cargo B(inary)Install`
+
+This issue occurs because Katharsis has not released any stable versions yet. To install Katharsis, use the following command:
+
+```bash
+cargo-binstall katharsis@CANARY_VERSION
+```

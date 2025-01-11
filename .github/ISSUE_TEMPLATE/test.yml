@@ -4,8 +4,7 @@ title: 'test: '
 body:
   - type: markdown
     attributes:
-      value: |
-        Thank you for helping us update our test!
+      value: Thank you for helping us update our test!
   - type: textarea
     id: test_description
     attributes:

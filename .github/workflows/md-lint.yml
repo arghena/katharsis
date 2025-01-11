@@ -1,0 +1,69 @@
+name: Markdown Lint
+on:
+  pull_request:
+    paths:
+      - '.github/**/*.md'
+      - 'docs/**/*.md'
+      - 'examples/**/*.md'
+      - 'README.md'
+jobs:
+  alex:
+    name: alex
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set nodejs
+        uses: actions/setup-node@v4
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run alex
+        run: |
+          shopt -s globstar
+          npx alex@latest .github/**/*.md docs/**/*.md examples/**/*.md README.md
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set nodejs
+        uses: actions/setup-node@v4
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run prettier
+        run: |
+          shopt -s globstar
+          npx prettier@latest .github/**/*.md docs/**/*.md examples/**/*.md README.md -c
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set nodejs
+        uses: actions/setup-node@v4
+        with:
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+      - name: Run markdownlint
+        run: |
+          shopt -s globstar
+          npx markdownlint-cli2@latest .github/**/*.md docs/**/*.md examples/**/*.md README.md
+  vale:
+    name: vale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Install vale
+        run: brew install vale
+      - name: Run vale
+        run: |
+          shopt -s globstar
+          vale sync
+          vale .github/**/*.md docs/**/*.md examples/**/*.md README.md

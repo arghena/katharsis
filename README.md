@@ -1,3 +1,5 @@
+<!--markdownlint-disable MD033 MD041-->
+
 <div align="center">
   <a href="https://github.com/kurosakishigure/katharsis">
     <img height="128" src="https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/logo.svg" alt="logo" />
@@ -5,22 +7,22 @@
   <h1>Katharsis</h1>
 
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/kurosakishigure/katharsis/ci.yml?branch=v1.0.0-canary.27&style=for-the-badge&label=CI&color=black" alt="CI">
+    <img src="https://img.shields.io/github/actions/workflow/status/kurosakishigure/katharsis/ci.yml?branch=v1.0.0-canary.27&style=for-the-badge&label=CI&color=black" alt="CI" />
   </a>
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/cd.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/kurosakishigure/katharsis/cd.yml?branch=v1.0.0-canary.27&style=for-the-badge&label=CD&color=black" alt="CD">
+    <img src="https://img.shields.io/github/actions/workflow/status/kurosakishigure/katharsis/cd.yml?branch=v1.0.0-canary.27&style=for-the-badge&label=CD&color=black" alt="CD" />
   </a>
   <a href="https://coveralls.io/github/kurosakishigure/katharsis">
-    <img src="https://img.shields.io/coverallsCoverage/github/kurosakishigure/katharsis?branch=v1.0.0-canary.27&style=for-the-badge&color=ivory" alt="Coverage Status">
+    <img src="https://img.shields.io/coverallsCoverage/github/kurosakishigure/katharsis?branch=v1.0.0-canary.27&style=for-the-badge&color=ivory" alt="Coverage Status" />
   </a>
   <a href="https://crates.io/crates/katharsis">
-    <img src="https://img.shields.io/crates/v/katharsis?style=for-the-badge&color=yellow" alt="Crates.io">
+    <img src="https://img.shields.io/crates/v/katharsis?style=for-the-badge&color=yellow" alt="Crates.io" />
   </a>
   <a href="https://aur.archlinux.org/packages/katharsis">
-    <img src="https://img.shields.io/aur/version/katharsis?style=for-the-badge&color=blue" alt="AUR">
+    <img src="https://img.shields.io/aur/version/katharsis?style=for-the-badge&color=blue" alt="AUR" />
   </a>
   <a href="https://winget.run/pkg/kurosakishigure/katharsis">
-    <img src="https://img.shields.io/winget/v/kurosakishigure.katharsis?style=for-the-badge&color=teal" alt="WinGet">
+    <img src="https://img.shields.io/winget/v/kurosakishigure.katharsis?style=for-the-badge&color=teal" alt="WinGet" />
   </a>
 </div>
 

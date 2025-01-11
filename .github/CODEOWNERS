@@ -6,6 +6,11 @@ etc/* @kurosakishigure
 deny.toml @kurosakishigure
 sgconfig.yml @kurosakishigure
 changelogithub.config.json @kurosakishigure
+.prettierrc.toml @kurosakishigure
+.yamllint.yml @kurosakishigure
+.markdownlint.yml @kurosakishigure
+.prettierignore @kurosakishigure
+.vale.ini @kurosakishigure
 
 # Dependencies
 rust-toolchain.toml @kurosakishigure

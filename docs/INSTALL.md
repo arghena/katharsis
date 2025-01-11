@@ -1,30 +1,31 @@
 # Installation
 
+> [!NOTE]
+> You can download the prebuilt binary artifacts from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
+
 ## Package Managers
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/katharsis.svg)](https://repology.org/project/katharsis/versions)
 
-### WinGet
+### [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget)
 
 ```bash
 winget install kurosakishigure.katharsis
 ```
 
-### Cargo B(inary)Install
+### [Cargo B(inary)Install](https://github.com/cargo-bins/cargo-binstall)
 
 ```bash
-cargo binstall katharsis
-# or
-cargo binstall katharsis@CANARY_VERSION
+cargo-binstall katharsis
 ```
 
-### Paru
+### [Paru](https://github.com/Morganamilo/paru)
 
 ```bash
 paru -S katharsis
 ```
 
-### Apt
+### [Apt](https://wiki.debian.org/AptCLI)
 
 ```bash
 sudo apt install ~/your/download/path/katharsis.deb
@@ -44,7 +45,7 @@ mv ~/your/extract/path/katharsis /usr/local/bin
 
 ```bash
 # Clone the repository
-git clone --filter=blob:none --branch canary --single-branch https://github.com/kurosakishigure/katharsis.git
+git clone --filter=blob:none --branch BRANCH_NAME --single-branch https://github.com/kurosakishigure/katharsis.git
 
 # Install the project
 cd katharsis && cargo build --release

@@ -83,11 +83,12 @@ make_deb() {
     version=${GITHUB_REF/refs\/tags\/v/}
 
     if [[ $TARGET = *musl* ]]; then
-      dpkgname=$PACKAGE_NAME-musl
-      conflictname=$PROJECT_NAME
+        # shellcheck disable=SC2153
+        dpkgname=$PACKAGE_NAME-musl
+        conflictname=$PROJECT_NAME
     else
-      dpkgname=$PACKAGE_NAME
-      conflictname=$PROJECT_NAME-musl
+        dpkgname=$PACKAGE_NAME
+        conflictname=$PROJECT_NAME-musl
     fi
 
     tempdir=$(mktemp -d 2>/dev/null || mktemp -d -t tmp)
@@ -97,11 +98,11 @@ make_deb() {
 
     mkdir "./debian"
     touch "./debian/control"
-    depends="$(dpkg-shlibdeps $library_dir -O "$tempdir/usr/bin/$PROJECT_NAME" 2> /dev/null | sed 's/^shlibs:Depends=//')"
+    depends="$(dpkg-shlibdeps $library_dir -O "$tempdir/usr/bin/$PROJECT_NAME" 2>/dev/null | sed 's/^shlibs:Depends=//')"
     rm -rf "./debian"
 
     install -Dm644 README.md "$tempdir/usr/share/doc/$dpkgname/README.md"
-    cat > "$tempdir/usr/share/doc/$dpkgname/copyright" <<EOF
+    cat >"$tempdir/usr/share/doc/$dpkgname/copyright" <<EOF
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: $PROJECT_NAME
 Source: $homepage
@@ -138,7 +139,7 @@ EOF
     chmod 644 "$tempdir/usr/share/doc/$dpkgname/copyright"
 
     mkdir "$tempdir/DEBIAN"
-    cat > "$tempdir/DEBIAN/control" <<EOF
+    cat >"$tempdir/DEBIAN/control" <<EOF
 Package: $dpkgname
 Version: $version
 Section: utils
@@ -153,11 +154,10 @@ EOF
     fakeroot dpkg-deb -Zxz --build "$tempdir" "${dpkgname}_${version}_${architecture}.deb"
 }
 
-
 main() {
     pack
     if [[ $TARGET = *linux* ]]; then
-      make_deb
+        make_deb
     fi
 }
 

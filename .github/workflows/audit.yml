@@ -1,12 +1,10 @@
 name: Security Audit
-
 on:
   schedule:
     - cron: '0 0 * * *'
   pull_request:
     paths:
       - 'Cargo.toml'
-
 jobs:
   cargo-deny:
     runs-on: ubuntu-latest

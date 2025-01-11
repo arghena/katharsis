@@ -1,3 +1,5 @@
+<!--markdownlint-disable MD041-->
+
 This PR needs improvement.
 
 If the PR template was not followed, please update your description based on [PULL_REQUEST_TEMPLATE.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/PULL_REQUEST_TEMPLATE.md?plain=1).

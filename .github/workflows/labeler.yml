@@ -10,7 +10,7 @@ jobs:
       issues: write
     if: ${{ github.event_name == 'issues' }}
     runs-on: ubuntu-latest
-    name: Add labels
+    name: Add issue labels
     strategy:
       matrix:
         label:

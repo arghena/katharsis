@@ -82,8 +82,8 @@ make_deb() {
     esac
     version=${GITHUB_REF/refs\/tags\/v/}
 
+    # shellcheck disable=SC2153
     if [[ $TARGET = *musl* ]]; then
-        # shellcheck disable=SC2153
         dpkgname=$PACKAGE_NAME-musl
         conflictname=$PROJECT_NAME
     else

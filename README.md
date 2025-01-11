@@ -26,6 +26,8 @@
   </a>
 </div>
 
+<!--markdownlint-enable MD033-->
+
 ![demo](https://raw.githubusercontent.com/kurosakishigure/katharsis/refs/heads/canary/assets/demo.gif)
 
 ## Contents

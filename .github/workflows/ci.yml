@@ -4,8 +4,8 @@ on:
     tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
   pull_request:
     paths:
-      - 'src/**/*.{rs,toml}'
-      - 'tests/**/*.{rs,toml}'
+      - 'src/**'
+      - 'tests/**'
       - 'examples/**/*.html'
       - 'Cargo.toml'
 jobs:

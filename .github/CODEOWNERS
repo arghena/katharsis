@@ -11,6 +11,7 @@ changelogithub.config.json @kurosakishigure
 .markdownlint.yml @kurosakishigure
 .prettierignore @kurosakishigure
 .vale.ini @kurosakishigure
+.rustfmt.toml @kurosakishigure
 
 # Dependencies
 rust-toolchain.toml @kurosakishigure

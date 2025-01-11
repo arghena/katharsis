@@ -10,6 +10,7 @@ on:
       - 'Cargo.toml'
       - 'deny.toml'
       - 'rust-toolchain.toml'
+      - '.rustfmt.toml'
 
 jobs:
   taplo:
@@ -25,8 +26,8 @@ jobs:
       - name: Run taplo fmt
         run: |
           shopt -s globstar
-          taplo fmt examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml --check
+          taplo fmt examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml .rustfmt.toml --check
       - name: Run taplo check
         run: |
           shopt -s globstar
-          taplo check examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml
+          taplo check examples/**/*.toml src/**/*.toml tests/**/*.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml .rustfmt.toml

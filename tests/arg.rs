@@ -2,6 +2,7 @@ use chrono::DateTime;
 use katharsis::arg;
 use rss::{Enclosure, Guid, Image};
 use std::path::PathBuf;
+use tokio::fs;
 use tokio_test::assert_ok;
 
 #[tokio::test]
@@ -67,4 +68,6 @@ async fn builder() {
     } else {
         panic!("lastBuildDate not found")
     }
+
+    assert_ok!(fs::remove_file(PathBuf::from("tmp/rss.xml")).await);
 }

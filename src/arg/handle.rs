@@ -216,20 +216,16 @@ pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
             });
         }
 
-        if rss.output.as_os_str().is_empty() {
-            Ok(channel_builder(rss, items))
-        } else {
-            println!("- create: {}", rss.output.to_string_lossy());
+        println!("- create: {}", rss.output.to_string_lossy());
 
-            let mut rss_file = File::create(&rss.output).await?;
-            let channel = channel_builder(rss, items);
+        let mut rss_file = File::create(&rss.output).await?;
+        let channel = channel_builder(rss, items);
 
-            rss_file.write_all(channel.to_string().as_ref()).await?;
+        rss_file.write_all(channel.to_string().as_ref()).await?;
 
-            Ok(channel)
-        }
+        Ok(channel)
     } else {
-        eprintln!("- {}", config_path.to_string_lossy());
+        eprintln!("- config: {}", config_path.to_string_lossy());
 
         Err(Errors::FileNotExistError)
     }

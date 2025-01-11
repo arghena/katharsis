@@ -2,18 +2,7 @@ use crate::error::app::Errors;
 use anyhow::Result;
 use inquire::Select;
 use std::path::PathBuf;
-use tokio::fs::File;
-use tokio::io::AsyncWriteExt;
-
-async fn create_config_file(path: &PathBuf) -> Result<(), Errors> {
-    let mut config_file = File::create(path).await?;
-
-    config_file
-        .write_all(include_bytes!("katharsis.config.toml"))
-        .await?;
-
-    Ok(())
-}
+use tokio::fs;
 
 /// Generate a config file.
 ///
@@ -41,15 +30,17 @@ async fn create_config_file(path: &PathBuf) -> Result<(), Errors> {
 /// - When the options cannot be displayed.
 /// - When the file cannot be written to.
 pub async fn init(path: &PathBuf) -> Result<(), Errors> {
+    let config_bytes = include_bytes!("katharsis.config.toml");
+
     if path.try_exists()? {
         let options: Vec<&str> = vec!["Yes", "No"];
         let ans: &str = Select::new("A katharsis.config.toml already exists in the current directory. Do you want to overwrite it?", options).prompt()?;
 
         if ans == "yes" {
-            create_config_file(path).await?;
+            fs::write(path, config_bytes).await?;
         }
     } else {
-        create_config_file(path).await?;
+        fs::write(path, config_bytes).await?;
     }
 
     Ok(())

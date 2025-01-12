@@ -22,7 +22,7 @@
     <img src="https://img.shields.io/aur/version/katharsis?style=for-the-badge&color=blue" alt="AUR" />
   </a>
   <a href="https://winstall.app/apps/kurosakishigure.katharsis">
-    <img src="https://img.shields.io/winget/v/kurosakishigure.katharsis?style=for-the-badge&color=teal" alt="WinGet" />
+    <img src="https://img.shields.io/winget/v/kurosakishigure.katharsis?style=for-the-badge&color=purple" alt="WinGet" />
   </a>
 </div>
 

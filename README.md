@@ -15,11 +15,11 @@
   <a href="https://coveralls.io/github/kurosakishigure/katharsis">
     <img src="https://img.shields.io/coverallsCoverage/github/kurosakishigure/katharsis?branch=v1.0.0-canary.27&style=for-the-badge&color=ivory&logo=coveralls" alt="Coverage Status" />
   </a>
-  <a href="https://crates.io/crates/katharsis">
-    <img src="https://img.shields.io/crates/v/katharsis?style=for-the-badge&color=yellow" alt="Crates.io" />
-  </a>
   <a href="https://aur.archlinux.org/packages/katharsis">
     <img src="https://img.shields.io/aur/version/katharsis?style=for-the-badge&color=blue&logo=archlinux" alt="AUR" />
+  </a>
+  <a href="https://crates.io/crates/katharsis">
+    <img src="https://img.shields.io/crates/v/katharsis?style=for-the-badge&color=yellow" alt="Crates.io" />
   </a>
   <a href="https://winstall.app/apps/kurosakishigure.katharsis">
     <img src="https://img.shields.io/winget/v/kurosakishigure.katharsis?style=for-the-badge&color=purple" alt="WinGet" />

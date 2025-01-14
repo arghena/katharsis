@@ -36,4 +36,4 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
-          npx prettier@latest .github/**/*.yml .config/**/*.yml sgconfig.yml .yamllint.yml .markdownlint.yml .markdownlint-cli2.yaml -c
+          npx prettier@latest .github/**/*.yml .config/**/*.yml sgconfig.yml .yamllint.yml .markdownlint.yml .markdownlint-cli2.yaml -c --no-error-on-unmatched-pattern

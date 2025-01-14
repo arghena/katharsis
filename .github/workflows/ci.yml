@@ -115,7 +115,7 @@ jobs:
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
       - name: Clippy Check
-        run: cargo clippy -- -D warnings
+        run: cargo clippy --all-targets -- -D warnings
   msrv:
     runs-on: ubuntu-latest
     name: Minimum Supported Rust Version
@@ -142,6 +142,8 @@ jobs:
         uses: actions/checkout@v4
       - name: ast-grep lint
         uses: ast-grep/action@v1.5.0
+        with:
+          paths: src tests
   typos:
     runs-on: ubuntu-latest
     name: typos
@@ -155,7 +157,7 @@ jobs:
       - name: Run typos
         run: |
           shopt -s globstar
-          typos src/**/*.rs tests/*.rs
+          typos src/**/*.rs tests/**/*.rs
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

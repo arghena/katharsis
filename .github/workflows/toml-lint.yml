@@ -1,5 +1,4 @@
 name: TOML Lint
-
 on:
   pull_request:
     paths:
@@ -11,7 +10,6 @@ on:
       - 'deny.toml'
       - 'rust-toolchain.toml'
       - '.rustfmt.toml'
-
 jobs:
   taplo:
     name: taplo

@@ -20,7 +20,6 @@ jobs:
           issue-inactive-days: 14
           issue-comment: This closed issue has been automatically locked because it had no new activity for 2 weeks.
           pr-inactive-days: 14
-          pr-comment: This closed pull request has been automatically locked because it had no new activity for 2 weeks.
           discussion-inactive-days: 14
           discussion-comment: This closed discussion has been automatically locked because it had no new activity for 2 weeks.
           log-output: true

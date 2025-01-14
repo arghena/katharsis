@@ -92,7 +92,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 <!--markdownlint-disable MD031-->
 
-1. Clone the Katharsis repository (download only recent commits for faster clone):
+1. Clone the Katharsis repository(download only recent commits for faster clone):
    ```bash
    gh repo clone kurosakishigure/katharsis -- --filter=blob:none --branch canary --single-branch
    ```
@@ -112,7 +112,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 6. Run rustfmt and Clippy:
    ```bash
    cargo fmt --all --check
-   cargo clippy -- -D warnings
+   cargo clippy --all-targets -- -D warnings
    ```
 7. Run unit tests:
    ```bash

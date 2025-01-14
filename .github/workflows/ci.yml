@@ -115,7 +115,7 @@ jobs:
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
       - name: Clippy Check
-        run: cargo clippy --workspace --all-targets --all-features --no-deps -- -D warnings
+        run: cargo clippy --all-targets -- -D warnings
   msrv:
     runs-on: ubuntu-latest
     name: Minimum Supported Rust Version

@@ -2,7 +2,12 @@
 
 ## Supported Versions
 
-The [latest](https://github.com/kurosakishigure/katharsis/releases/latest) version of Katharsis on GitHub supports immediate security updates.
+| Version         | Supported | Description               |
+| --------------- | --------- | ------------------------- |
+| ^1.0.0          | ✅ Yes    | Latest stable release     |
+| ^1.0.0 (LTS)    | ✅ Yes    | Long-term support         |
+| ^1.0.0 (Canary) | ❌ No     | Development purposes only |
+| Older versions  | ❌ No     | Upgrade recommended       |
 
 ## Reporting a Vulnerability
 

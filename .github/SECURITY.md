@@ -2,12 +2,12 @@
 
 ## Supported Versions
 
-| Version         | Supported | Description               |
-| --------------- | --------- | ------------------------- |
-| ^1.0.0          | ✅ Yes    | Latest stable release     |
-| ^1.0.0 (LTS)    | ✅ Yes    | Long-term support         |
-| ^1.0.0 (Canary) | ❌ No     | Development purposes only |
-| Older versions  | ❌ No     | Upgrade recommended       |
+| Version | Supported | Description               |
+| ------- | --------- | ------------------------- |
+| Stable  | ✅ Yes    | Latest stable release     |
+| LTS     | ✅ Yes    | Long-term support         |
+| Canary  | ❌ No     | Development purposes only |
+| Older   | ❌ No     | Upgrade recommended       |
 
 ## Reporting a Vulnerability
 

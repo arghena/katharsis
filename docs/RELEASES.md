@@ -5,7 +5,10 @@
 
 ## LTS
 
-The [LTS](https://en.wikipedia.org/wiki/Long-term_support) version of Katharsis offers security updates and bug fixes for a period of six months.
+> [!NOTE]
+> When Katharsis releases a new MAJOR version, the previous MAJOR version will be designated as an LTS version.
+
+The [LTS](https://en.wikipedia.org/wiki/Long-term_support) version of Katharsis provides security updates and bug fixes for six months.
 
 ## Release
 

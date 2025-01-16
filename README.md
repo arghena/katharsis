@@ -38,5 +38,6 @@
 - [API Docs](https://docs.rs/katharsis)
 - [CONTRIBUTING.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/CONTRIBUTING.md)
 - [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/.github/SECURITY.md)
+- [RELEASES.md](https://github.com/kurosakishigure/katharsis/blob/canary/docs/RELEASES.md)
 - [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSES/NOTICE)
 - [LICENSE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSE)

@@ -155,7 +155,7 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
         .language(rss.language)
         .items(items)
         .docs(String::from("https://validator.w3.org/feed/docs/rss2.html"))
-        .generator(String::from("https://github.com/kurosakishigure/katharsis"))
+        .generator(String::from("https://github.com/arghena/katharsis"))
         .last_build_date(Local::now().format("%a, %d %b %Y %H:%M:%S GMT").to_string())
         .build()
 }

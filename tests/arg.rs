@@ -61,7 +61,7 @@ async fn builder() {
     );
     assert_eq!(
         channel.generator(),
-        Some("https://github.com/kurosakishigure/katharsis")
+        Some("https://github.com/arghena/katharsis")
     );
     if let Some(last_build_date) = channel.last_build_date() {
         assert!(DateTime::parse_from_rfc2822(last_build_date).is_ok());

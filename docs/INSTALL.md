@@ -1,7 +1,7 @@
 # Installation
 
 > [!NOTE]
-> You can download the prebuilt binary artifacts from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
+> You can download the prebuilt binary artifacts from the [Releases](https://github.com/arghena/katharsis/releases/latest) page.
 
 ## Package Managers
 
@@ -10,7 +10,7 @@
 ### [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget)
 
 ```bash
-winget install kurosakishigure.katharsis
+winget install arghena.katharsis
 ```
 
 ### [Cargo B(inary)Install](https://github.com/cargo-bins/cargo-binstall)
@@ -45,7 +45,7 @@ mv ~/your/extract/path/katharsis /usr/local/bin
 
 ```bash
 # Clone the repository
-git clone --filter=blob:none --branch BRANCH_NAME --single-branch https://github.com/kurosakishigure/katharsis.git
+git clone --filter=blob:none --branch BRANCH_NAME --single-branch https://github.com/arghena/katharsis.git
 
 # Install the project
 cd katharsis && cargo build --release

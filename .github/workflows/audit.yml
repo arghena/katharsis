@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'Cargo.toml'
+      - 'Cargo.lock'
       - 'deny.toml'
 jobs:
   cargo-deny:

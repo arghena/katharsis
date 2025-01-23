@@ -7,13 +7,13 @@
   <h1>Katharsis</h1>
 
   <a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.27&style=for-the-badge&label=CI&color=black&logo=github" alt="CI" />
+    <img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.28&style=for-the-badge&label=CI&color=black&logo=github" alt="CI" />
   </a>
   <a href="https://github.com/arghena/katharsis/actions/workflows/cd.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/cd.yml?branch=v1.0.0-canary.27&style=for-the-badge&label=CD&color=black&logo=github" alt="CD" />
+    <img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/cd.yml?branch=v1.0.0-canary.28&style=for-the-badge&label=CD&color=black&logo=github" alt="CD" />
   </a>
   <a href="https://coveralls.io/github/arghena/katharsis">
-    <img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.27&style=for-the-badge&color=ivory&logo=coveralls" alt="Coverage Status" />
+    <img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.28&style=for-the-badge&color=ivory&logo=coveralls" alt="Coverage Status" />
   </a>
   <a href="https://aur.archlinux.org/packages/katharsis">
     <img src="https://img.shields.io/aur/version/katharsis?style=for-the-badge&color=blue&logo=archlinux" alt="AUR" />

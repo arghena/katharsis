@@ -8,6 +8,7 @@ on:
       - 'tests/**'
       - 'examples/**/*.html'
       - 'Cargo.toml'
+      - 'Cargo.lock'
       - '.rustfmt.toml'
       - '.config/ast-grep/**/*.yml'
       - 'sgconfig.yml'

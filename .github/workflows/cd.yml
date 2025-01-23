@@ -124,6 +124,6 @@ jobs:
     steps:
       - uses: vedantmgoyal2009/winget-releaser@v2
         with:
-          identifier: kurosakishigure.katharsis
+          identifier: arghena.katharsis
           installers-regex: '-pc-windows-msvc\.zip$'
           token: ${{ secrets.WINGET_TOKEN }}

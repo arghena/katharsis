@@ -50,7 +50,7 @@ make_deb() {
     local homepage
     local maintainer
 
-    homepage="https://github.com/kurosakishigure/katharsis"
+    homepage="https://github.com/arghena/katharsis"
     maintainer="Shigure Kurosaki <shigure@hqsy.net>"
     copyright_years="2024 - "$(date "+%Y")
 

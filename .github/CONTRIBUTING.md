@@ -8,7 +8,7 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 
 > [!NOTE]
 >
-> - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
+> - Before jumping into a PR be sure to search [existing PRs](https://github.com/arghena/katharsis/pulls) or [issues](https://github.com/arghena/katharsis/issues) for an open or closed item that relates to your submission.
 > - Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
 > - If you use code from other open-source projects, place the corresponding LICENSE file in the [LICENSES](../LICENSES) folder and add the relevant information to the [NOTICE](../LICENSES/NOTICE) file.
 
@@ -94,7 +94,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 1. Clone the Katharsis repository(download only recent commits for faster clone):
    ```bash
-   gh repo clone kurosakishigure/katharsis -- --filter=blob:none --branch canary --single-branch
+   gh repo clone arghena/katharsis -- --filter=blob:none --branch canary --single-branch
    ```
 2. Create a new branch:
    ```bash
@@ -132,9 +132,9 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ## Reporting License Issues
 
-As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/kurosakishigure/katharsis/issues) if our project violates any applicable licenses.
+As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/arghena/katharsis/issues) if our project violates any applicable licenses.
 
 > [!NOTE]
 >
-> - To request additional License information, please [Report a docs issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=docs.yml&title=docs%3A+).
-> - To request the removal of specific code, please [Report an issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=&projects=&template=fix.yml&title=fix%3A+).
+> - To request additional License information, please [Report a docs issue](https://github.com/arghena/katharsis/issues/new?assignees=&labels=&projects=&template=docs.yml&title=docs%3A+).
+> - To request the removal of specific code, please [Report an issue](https://github.com/arghena/katharsis/issues/new?assignees=&labels=&projects=&template=fix.yml&title=fix%3A+).

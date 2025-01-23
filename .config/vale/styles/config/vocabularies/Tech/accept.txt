@@ -1,10 +1,10 @@
+RSS|rss
 rustup
 toolchain
-rustfmt
 Clippy
 wf
 dev
+datetime
+rustfmt
 Paru
 site_url
-datetime
-[rssRSS]

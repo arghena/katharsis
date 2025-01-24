@@ -1,6 +1,6 @@
 name: Report an issue
 description: Report a Katharsis issue.
-type: bug
+labels: ['bug']
 body:
   - type: markdown
     attributes:

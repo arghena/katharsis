@@ -1,6 +1,6 @@
 name: Propose an improvement
 description: Propose an improvement for Katharsis.
-type: proposal
+labels: ['proposal']
 body:
   - type: markdown
     attributes:

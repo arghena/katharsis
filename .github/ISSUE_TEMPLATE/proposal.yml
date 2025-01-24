@@ -19,6 +19,7 @@ body:
         - CI
         - Build
         - Performance
+        - Example
     validations:
       required: true
   - type: textarea

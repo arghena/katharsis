@@ -1,6 +1,7 @@
 name: Propose an improvement
 description: Propose an improvement for Katharsis.
 labels: ['proposal']
+type: Task
 body:
   - type: markdown
     attributes:

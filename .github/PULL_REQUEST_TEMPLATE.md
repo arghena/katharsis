@@ -30,9 +30,9 @@
 - [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
 - [ ] I have already updated the related examples accordingly(if applicable)
 - [ ] I have written or updated relevant docs(if applicable)
-- [ ] I have already updated the related workflows accordingly(if applicable)
+- [ ] I have already updated the related CI accordingly(if applicable)
 - [ ] I have added or updated tests to cover my changes(if applicable)
-- [ ] I have already updated the related dev kits accordingly(if applicable)
+- [ ] I have already updated the related build system accordingly(if applicable)
 - [ ] I have reviewed my code for any potential issues
 
 ### Additional Notes

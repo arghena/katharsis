@@ -32,6 +32,9 @@
     },
     "ci": {
       "title": "\uD83E\uDD16 CI"
+    },
+    "examples": {
+      "title": "\uD83C\uDFC0 Examples"
     }
   }
 }

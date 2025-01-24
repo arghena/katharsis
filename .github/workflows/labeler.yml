@@ -22,6 +22,7 @@ jobs:
           - { prefix: 'pref', name: 'perf' }
           - { prefix: 'refactor', name: 'refactor' }
           - { prefix: 'style', name: 'style' }
+          - { prefix: 'examples', name: 'examples' }
     steps:
       - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1

@@ -12,12 +12,12 @@ body:
       label: Proposal Type
       description: Please select the type of proposal.
       options:
-        - Feature
+        - Enhancement
         - Documentation
-        - Example
         - Test
-        - Workflow
-        - Development Kit
+        - Refactor
+        - CI
+        - Build
         - Performance
     validations:
       required: true

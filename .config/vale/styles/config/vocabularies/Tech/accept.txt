@@ -1,4 +1,5 @@
 RSS|rss
+CI|ci
 rustup
 toolchain
 Clippy

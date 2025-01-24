@@ -7,13 +7,10 @@
       "title": "\uD83C\uDFE1 Chore"
     },
     "docs": {
-      "title": "\uD83D\uDCD6 Docs"
+      "title": "\uD83D\uDCD6 Documentation"
     },
     "feat": {
       "title": "\uD83D\uDE80 Enhancements"
-    },
-    "ex": {
-      "title": "\uD83C\uDFC0 Examples"
     },
     "revert": {
       "title": "\uD83D\uDD04 Reverts"
@@ -21,17 +18,20 @@
     "test": {
       "title": "✅ Tests"
     },
-    "dep": {
-      "title": "\uD83D\uDCE6 Dependencies"
+    "pref": {
+      "title": "\uD83D\uDD25 Performance"
     },
-    "act": {
-      "title": "\uD83D\uDEE0 Actions"
+    "refactor": {
+      "title": "\uD83D\uDC85 Refactors"
     },
-    "wf": {
-      "title": "\uD83E\uDD16 Workflows"
+    "style": {
+      "title": "\uD83C\uDFA8 Styles"
     },
-    "dev": {
-      "title": "\uD83D\uDCBB Dev Kits"
+    "build": {
+      "title": "\uD83D\uDCE6 Build"
+    },
+    "ci": {
+      "title": "\uD83E\uDD16 CI"
     }
   }
 }

@@ -68,20 +68,19 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ### Naming
 
-| Label         | Description             | Prefix   |
-| ------------- | ----------------------- | -------- |
-| documentation | Add or improve docs     | docs     |
-| enhancement   | New feature             | feat     |
-| bug           | Fix issue               | fix      |
-| example       | Add or improve example  | ex       |
-| test          | Add or improve test     | test     |
-| chore         | Miscellaneous tasks     | chore    |
-| revert        | Reverts commit          | revert   |
-| workflow      | Add or improve workflow | wf       |
-| dev           | Add or improve dev kit  | dev      |
-| pref          | Improve performance     | pref     |
-| refactor      | Refactor code           | refactor |
-| style         | Formatting code         | style    |
+| Label         | Description                                        | Prefix   |
+| ------------- | -------------------------------------------------- | -------- |
+| documentation | Add or improve docs                                | docs     |
+| enhancement   | New feature                                        | feat     |
+| bug           | Fix issue                                          | fix      |
+| test          | Add or improve test                                | test     |
+| chore         | Miscellaneous tasks                                | chore    |
+| revert        | Reverts commit                                     | revert   |
+| pref          | Improve performance                                | pref     |
+| refactor      | Refactor code                                      | refactor |
+| style         | Formatting code                                    | style    |
+| build         | Changes affecting the build system or dependencies | build    |
+| ci            | Changes to CI configuration                        | ci       |
 
 | Type   | Format             | Example               |
 | ------ | ------------------ | --------------------- |

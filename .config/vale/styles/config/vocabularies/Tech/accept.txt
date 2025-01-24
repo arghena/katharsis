@@ -8,3 +8,4 @@ datetime
 rustfmt
 Paru
 site_url
+ci

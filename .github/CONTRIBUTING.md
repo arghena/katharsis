@@ -95,7 +95,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 <!--markdownlint-disable MD031-->
 
-1. Clone the Katharsis repository(download only recent commits for faster clone):
+1. Clone the Katharsis repository (download only recent commits for faster clone):
    ```bash
    gh repo clone arghena/katharsis -- --filter=blob:none --branch canary --single-branch
    ```

@@ -73,6 +73,6 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 
 > [!NOTE]
 >
-> - The `input` field corresponds to the file stem(`*`), which is the same as the article's URL slug.
+> - The `input` field corresponds to the file stem (`*`), which is the same as the article's URL slug.
 > - The `date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
-> - The `image` field’s folder name(`**`) must match the article's URL slug.
+> - The `image` field’s folder name (`**`) must match the article's URL slug.

@@ -1,38 +1,13 @@
 name: Labeler
 on:
-  issues:
-    types: [opened]
   pull_request:
-    types: [opened]
+    types: [ opened ]
 jobs:
-  issue-labeler:
-    permissions:
-      issues: write
-    if: ${{ github.event_name == 'issues' }}
-    runs-on: ubuntu-latest
-    name: Add issue labels
-    strategy:
-      matrix:
-        label:
-          - { prefix: 'fix', name: 'bug' }
-          - { prefix: 'docs', name: 'documentation' }
-          - { prefix: 'feat', name: 'enhancement' }
-          - { prefix: 'ex', name: 'example' }
-          - { prefix: 'test', name: 'test' }
-          - { prefix: 'wf', name: 'workflow' }
-          - { prefix: 'dev', name: 'dev' }
-    steps:
-      - name: Add ${{ matrix.label.name }} label
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.issue.title, matrix.label.prefix) }}
-        with:
-          labels: ${{ matrix.label.name }}
-  pr-labeler:
+  labeler:
     permissions:
       pull-requests: write
-    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
-    name: Add PR labels
+    name: Add PR label
     strategy:
       matrix:
         label:
@@ -47,6 +22,9 @@ jobs:
           - { prefix: 'act', name: 'action' }
           - { prefix: 'wf', name: 'workflow' }
           - { prefix: 'dev', name: 'dev' }
+          - { prefix: 'pref', name: 'perf' }
+          - { prefix: 'refactor', name: 'refactor' }
+          - { prefix: 'style', name: 'style' }
     steps:
       - name: Add ${{ matrix.label.name }} label
         uses: actions-ecosystem/action-add-labels@v1

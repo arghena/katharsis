@@ -1,0 +1,43 @@
+name: Propose an improvement
+description: Propose an improvement for Katharsis.
+type: proposal
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for contributing to Katharsis, please go ahead and describe your proposal!
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: Proposal Type
+      description: Please select the type of proposal.
+      options:
+        - Feature
+        - Documentation
+        - Example
+        - Test
+        - Workflow
+        - Development Kit
+        - Performance
+    validations:
+      required: true
+  - type: textarea
+    id: proposal_description
+    attributes:
+      label: Proposal Description
+      description: The specific details of the proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: What problem does this proposal solve?
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: How do we implement it?
+    validations:
+      required: false

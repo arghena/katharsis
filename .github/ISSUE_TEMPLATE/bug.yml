@@ -1,6 +1,6 @@
 name: Report an issue
 description: Report a Katharsis issue.
-title: 'fix: '
+type: bug
 body:
   - type: markdown
     attributes:
@@ -10,7 +10,7 @@ body:
     attributes:
       label: Katharsis Version
       description: What is the version number of your Katharsis?
-      placeholder: for example, 1.0.0
+      placeholder: for example, v1.0.0
     validations:
       required: true
   - type: input
@@ -18,7 +18,7 @@ body:
     attributes:
       label: System Version
       description: What is your system version?
-      placeholder: for example, macOS 15.1.1
+      placeholder: for example, macOS v15.1.1
     validations:
       required: true
   - type: textarea

@@ -68,23 +68,26 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ### Naming
 
-| Label         | Prefix |
-| ------------- | ------ |
-| documentation | docs   |
-| enhancement   | feat   |
-| bug           | fix    |
-| example       | ex     |
-| test          | test   |
-| chore         | chore  |
-| revert        | revert |
-| workflow      | wf     |
-| dev           | dev    |
+| Label         | Description             | Prefix   |
+| ------------- | ----------------------- | -------- |
+| documentation | Add or improve docs     | docs     |
+| enhancement   | New feature             | feat     |
+| bug           | Fix issue               | fix      |
+| example       | Add or improve example  | ex       |
+| test          | Add or improve test     | test     |
+| chore         | Miscellaneous tasks     | chore    |
+| revert        | Reverts commit          | revert   |
+| workflow      | Add or improve workflow | wf       |
+| dev           | Add or improve dev kit  | dev      |
+| pref          | Improve performance     | pref     |
+| refactor      | Refactor code           | refactor |
+| style         | Formatting code         | style    |
 
-| Type   | Format             | Example                            |
-| ------ | ------------------ | ---------------------------------- |
-| Branch | `PREFIX/NAME`      | `wf/remove_close_jobs`             |
-| Commit | `PREFIX: DESCRIBE` | `wf: remove jobs related to close` |
-| PR     | `PREFIX: TITLE`    | `wf: remove jobs related to close` |
+| Type   | Format             | Example               |
+| ------ | ------------------ | --------------------- |
+| Branch | `PREFIX/NAME`      | `chore/bump_version`  |
+| Commit | `PREFIX: DESCRIBE` | `chore: bump version` |
+| PR     | `PREFIX: TITLE`    | `chore: bump version` |
 
 > If you want to learn more about this, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
 
@@ -136,5 +139,5 @@ As we cannot verify the origin of contributors' code, please submit an [issue](h
 
 > [!NOTE]
 >
-> - To request additional License information, please [Report a docs issue](https://github.com/arghena/katharsis/issues/new?assignees=&labels=&projects=&template=docs.yml&title=docs%3A+).
-> - To request the removal of specific code, please [Report an issue](https://github.com/arghena/katharsis/issues/new?assignees=&labels=&projects=&template=fix.yml&title=fix%3A+).
+> - To request additional License information, please [Propose an improvement](https://github.com/arghena/katharsis/issues/new?template=proposal.yml).
+> - To request the removal of specific code, please [Report an issue](https://github.com/arghena/katharsis/issues/new?template=bug.yml).

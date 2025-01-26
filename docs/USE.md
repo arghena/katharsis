@@ -26,11 +26,11 @@ katharsis
 
 ## Parameter Overview
 
-| Parameter | Description                                                    |
-| --------- | -------------------------------------------------------------- |
-| -c        | Specifies a `katharsis.config.toml` file as the configuration. |
-| -h        | Displays help information.                                     |
-| -V        | Displays the current version of Katharsis.                     |
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| -c        | Specifies a `katharsis.config.toml` file as the config. |
+| -h        | Displays help information.                              |
+| -V        | Displays the current version of Katharsis.              |
 
 > [!NOTE]
 > If you do not specify the `-c` parameter, the `katharsis.config.toml` file in the current directory will be used by default.

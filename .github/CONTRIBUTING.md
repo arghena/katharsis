@@ -80,7 +80,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 | refactor      | Refactor code                                      | refactor |
 | style         | Formatting code                                    | style    |
 | build         | Changes affecting the build system or dependencies | build    |
-| ci            | Changes to CI configuration                        | ci       |
+| ci            | Changes to CI config                               | ci       |
 | examples      | Add or improve examples                            | examples |
 
 | Type   | Format             | Example               |

@@ -10,6 +10,7 @@ on:
       - '.markdownlint.yml'
       - '.vale.ini'
       - '.config/vale/styles/**/*.yml'
+      - '.config/vale/styles/config/vocabularies/**/*.txt'
 jobs:
   alex:
     name: alex

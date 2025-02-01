@@ -1,4 +1,4 @@
-name: Shell Lint
+name: Shell Analyzer
 on:
   pull_request:
     paths:

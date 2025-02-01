@@ -1,4 +1,4 @@
-name: YAML Lint
+name: YAML Analyzer
 on:
   pull_request:
     paths:

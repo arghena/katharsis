@@ -1,4 +1,4 @@
-name: Action Lint
+name: Action Analyzer
 on:
   pull_request:
     paths:

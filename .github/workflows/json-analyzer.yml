@@ -1,4 +1,4 @@
-name: JSON Lint
+name: JSON Analyzer
 on:
   pull_request:
     paths:

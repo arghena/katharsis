@@ -13,9 +13,9 @@ changelogithub.config.json @kurosakishigure
 .vale.ini @kurosakishigure
 .rustfmt.toml @kurosakishigure
 .git-blame-ignore-revs @kurosakishigure
+rust-toolchain.toml @kurosakishigure
 
 # Dependencies
-rust-toolchain.toml @kurosakishigure
 Cargo.toml @kurosakishigure
 Cargo.lock @kurosakishigure
 

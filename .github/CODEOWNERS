@@ -12,6 +12,7 @@ changelogithub.config.json @kurosakishigure
 .prettierignore @kurosakishigure
 .vale.ini @kurosakishigure
 .rustfmt.toml @kurosakishigure
+.git-blame-ignore-revs @kurosakishigure
 
 # Dependencies
 rust-toolchain.toml @kurosakishigure

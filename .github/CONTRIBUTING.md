@@ -70,10 +70,10 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 | Label         | Description                                        | Prefix   |
 | ------------- | -------------------------------------------------- | -------- |
-| documentation | Add or improve docs                                | docs     |
+| documentation | Improve docs                                       | docs     |
 | enhancement   | New feature                                        | feat     |
 | bug           | Fix issue                                          | fix      |
-| test          | Add or improve test                                | test     |
+| test          | Improve test                                       | test     |
 | chore         | Miscellaneous tasks                                | chore    |
 | revert        | Reverts commit                                     | revert   |
 | pref          | Improve performance                                | pref     |
@@ -81,7 +81,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 | style         | Formatting code                                    | style    |
 | build         | Changes affecting the build system or dependencies | build    |
 | ci            | Changes to CI config                               | ci       |
-| examples      | Add or improve examples                            | examples |
+| examples      | Improve examples                                   | examples |
 
 | Type   | Format             | Example               |
 | ------ | ------------------ | --------------------- |

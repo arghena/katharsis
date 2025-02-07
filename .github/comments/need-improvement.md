@@ -1,6 +1,6 @@
 This PR needs improvement.
 
-If the PR template was not followed, please update your description based on [PULL_REQUEST_TEMPLATE.md](https://github.com/arghena/katharsis/blob/canary/.github/PULL_REQUEST_TEMPLATE.md?plain=1).
+If the PR template was not followed, please update your PR body based on [PULL_REQUEST_TEMPLATE.md](https://github.com/arghena/katharsis/blob/canary/.github/PULL_REQUEST_TEMPLATE.md?plain=1).
 
 If there are areas of the code that require changes, check the `Files changed` or `Conversation` tab for the corresponding comments.
 

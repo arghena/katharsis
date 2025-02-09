@@ -4,6 +4,7 @@ on:
     paths:
       - 'changelogithub.config.json'
       - '.prettierrc.toml'
+      - '.editorconfig'
 jobs:
   prettier:
     name: prettier
@@ -18,3 +19,17 @@ jobs:
           node-version: lts/*
       - name: Run prettier
         run: npx prettier@latest changelogithub.config.json -c
+  jsonlint:
+    name: jsonlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Install jsonlint
+        run: brew install jsonlint
+      - name: Run jsonlint
+        run: |
+          shopt -s globstar
+          jsonlint changelogithub.config.json

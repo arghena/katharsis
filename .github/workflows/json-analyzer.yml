@@ -32,4 +32,4 @@ jobs:
       - name: Run jsonlint
         run: |
           shopt -s globstar
-          jsonlint changelogithub.config.json
+          jsonlint changelogithub.config.json -q

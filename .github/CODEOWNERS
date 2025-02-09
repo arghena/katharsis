@@ -14,6 +14,7 @@ changelogithub.config.json @kurosakishigure
 .rustfmt.toml @kurosakishigure
 .git-blame-ignore-revs @kurosakishigure
 rust-toolchain.toml @kurosakishigure
+.editorconfig @kurosakishigure
 
 # Dependencies
 Cargo.toml @kurosakishigure

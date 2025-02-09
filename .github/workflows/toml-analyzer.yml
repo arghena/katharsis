@@ -10,6 +10,7 @@ on:
       - 'deny.toml'
       - 'rust-toolchain.toml'
       - '.rustfmt.toml'
+      - '.editorconfig'
 jobs:
   taplo:
     name: taplo

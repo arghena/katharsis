@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'etc/**/*.sh'
+      - '.editorconfig'
 jobs:
   shfmt:
     name: shfmt

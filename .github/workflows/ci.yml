@@ -12,6 +12,7 @@ on:
       - '.rustfmt.toml'
       - '.config/ast-grep/**/*.yml'
       - 'sgconfig.yml'
+      - '.editorconfig'
 jobs:
   unit_tests:
     name: Unit tests

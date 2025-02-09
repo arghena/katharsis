@@ -11,6 +11,7 @@ on:
       - '.vale.ini'
       - '.config/vale/styles/**/*.yml'
       - '.config/vale/styles/config/vocabularies/**/*.txt'
+      - '.editorconfig'
 jobs:
   alex:
     name: alex

@@ -9,6 +9,7 @@ on:
       - '.markdownlint.yml'
       - '.prettierrc.toml'
       - '.markdownlint-cli2.yaml'
+      - '.editorconfig'
 jobs:
   yamllint:
     name: yamllint

@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'etc/**/*.sh'
+      - '.editorconfig'
 jobs:
   shfmt:
     name: shfmt
@@ -17,7 +18,7 @@ jobs:
       - name: Run shfmt
         run: |
           shopt -s globstar
-          shfmt -i 4 -ci -d etc/**/*.sh
+          shfmt -d etc/**/*.sh
   shellcheck:
     name: shellcheck
     runs-on: ubuntu-latest

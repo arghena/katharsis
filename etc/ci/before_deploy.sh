@@ -55,30 +55,30 @@ make_deb() {
     copyright_years="2024 - "$(date "+%Y")
 
     case $TARGET in
-        x86_64*)
-            architecture=amd64
-            gcc_prefix=""
-            library_dir=""
-            ;;
-        i686*)
-            architecture=i386
-            gcc_prefix=""
-            library_dir=""
-            ;;
-        aarch64*)
-            architecture=arm64
-            gcc_prefix="aarch64-linux-gnu-"
-            library_dir="-l/usr/aarch64-linux-gnu/lib"
-            ;;
-        arm*hf)
-            architecture=armhf
-            gcc_prefix="arm-linux-gnueabihf-"
-            library_dir="-l/usr/arm-linux-gnueabihf/lib"
-            ;;
-        *)
-            echo "make_deb: skipping target '${TARGET}'" >&2
-            return 0
-            ;;
+    x86_64*)
+        architecture=amd64
+        gcc_prefix=""
+        library_dir=""
+        ;;
+    i686*)
+        architecture=i386
+        gcc_prefix=""
+        library_dir=""
+        ;;
+    aarch64*)
+        architecture=arm64
+        gcc_prefix="aarch64-linux-gnu-"
+        library_dir="-l/usr/aarch64-linux-gnu/lib"
+        ;;
+    arm*hf)
+        architecture=armhf
+        gcc_prefix="arm-linux-gnueabihf-"
+        library_dir="-l/usr/arm-linux-gnueabihf/lib"
+        ;;
+    *)
+        echo "make_deb: skipping target '${TARGET}'" >&2
+        return 0
+        ;;
     esac
     version=${GITHUB_REF/refs\/tags\/v/}
 

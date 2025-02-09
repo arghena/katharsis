@@ -1,40 +1,40 @@
 {
-  "types": {
-    "fix": {
-      "title": "\uD83E\uDE79 Fixes"
-    },
-    "chore": {
-      "title": "\uD83C\uDFE1 Chore"
-    },
-    "docs": {
-      "title": "\uD83D\uDCD6 Documentation"
-    },
-    "feat": {
-      "title": "\uD83D\uDE80 Enhancements"
-    },
-    "revert": {
-      "title": "\uD83D\uDD04 Reverts"
-    },
-    "test": {
-      "title": "✅ Tests"
-    },
-    "pref": {
-      "title": "\uD83D\uDD25 Performance"
-    },
-    "refactor": {
-      "title": "\uD83D\uDC85 Refactors"
-    },
-    "style": {
-      "title": "\uD83C\uDFA8 Styles"
-    },
-    "build": {
-      "title": "\uD83D\uDCE6 Build"
-    },
-    "ci": {
-      "title": "\uD83E\uDD16 CI"
-    },
-    "examples": {
-      "title": "\uD83C\uDFC0 Examples"
+    "types": {
+        "fix": {
+            "title": "\uD83E\uDE79 Fixes"
+        },
+        "chore": {
+            "title": "\uD83C\uDFE1 Chore"
+        },
+        "docs": {
+            "title": "\uD83D\uDCD6 Documentation"
+        },
+        "feat": {
+            "title": "\uD83D\uDE80 Enhancements"
+        },
+        "revert": {
+            "title": "\uD83D\uDD04 Reverts"
+        },
+        "test": {
+            "title": "✅ Tests"
+        },
+        "pref": {
+            "title": "\uD83D\uDD25 Performance"
+        },
+        "refactor": {
+            "title": "\uD83D\uDC85 Refactors"
+        },
+        "style": {
+            "title": "\uD83C\uDFA8 Styles"
+        },
+        "build": {
+            "title": "\uD83D\uDCE6 Build"
+        },
+        "ci": {
+            "title": "\uD83E\uDD16 CI"
+        },
+        "examples": {
+            "title": "\uD83C\uDFC0 Examples"
+        }
     }
-  }
 }

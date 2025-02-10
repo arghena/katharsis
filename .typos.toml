@@ -1,0 +1,15 @@
+[files]
+extend-exclude = [
+  "LICENSES",
+  "assets",
+  "docs",
+  "examples",
+  'Cargo.lock',
+  'Cargo.toml',
+  "LICENSE",
+  "README.md",
+  "changelogithub.config.json",
+  'deny.toml',
+  'rust-toolchain.toml',
+  'sgconfig.yml',
+]

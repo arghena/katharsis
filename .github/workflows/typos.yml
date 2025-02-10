@@ -1,0 +1,21 @@
+name: Typos
+on:
+  pull_request:
+    paths:
+      - '.typos.toml'
+      - 'etc/**'
+      - 'src/**'
+      - 'tests/**'
+jobs:
+  typos:
+    runs-on: ubuntu-latest
+    name: typos
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install typos
+        uses: taiki-e/install-action@v2
+        with:
+          tool: typos
+      - name: Run typos
+        run: typos

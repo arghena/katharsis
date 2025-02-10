@@ -1,0 +1,28 @@
+name: Typos
+on:
+  pull_request:
+    paths:
+      - '.typos.toml'
+      - 'etc/**/*.sh'
+      - 'examples/**/katharsis.config.toml'
+      - 'src/**'
+      - 'tests/**'
+      - 'Cargo.toml'
+      - 'changelogithub.config.json'
+      - 'deny.toml'
+      - 'rust-toolchain.toml'
+      - 'sgconfig.yml'
+
+jobs:
+  typos:
+    runs-on: ubuntu-latest
+    name: typos
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install typos
+        uses: taiki-e/install-action@v2
+        with:
+          tool: typos
+      - name: Run typos
+        run: typos

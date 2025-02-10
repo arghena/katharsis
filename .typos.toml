@@ -1,0 +1,10 @@
+[files]
+extend-exclude = [
+  "LICENSES",
+  "assets",
+  "docs",
+  "examples/**/README.md",
+  "examples/nextjs/app/articles/**/opengraph-image.png",
+  "LICENSE",
+  "README.md",
+]

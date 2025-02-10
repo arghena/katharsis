@@ -136,20 +136,6 @@ jobs:
         uses: ast-grep/action@v1.5.0
         with:
           paths: src tests
-  typos:
-    runs-on: ubuntu-latest
-    name: typos
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Install typos
-        uses: taiki-e/install-action@v2
-        with:
-          tool: typos
-      - name: Run typos
-        run: |
-          shopt -s globstar
-          typos src/**/*.rs tests/**/*.rs
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

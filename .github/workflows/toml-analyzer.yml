@@ -11,6 +11,7 @@ on:
       - 'rust-toolchain.toml'
       - '.rustfmt.toml'
       - '.editorconfig'
+      - '.typos.toml'
 jobs:
   taplo:
     name: taplo

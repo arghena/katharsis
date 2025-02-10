@@ -1,9 +1,11 @@
 [files]
 extend-exclude = [
-  "LICENSES",
-  "assets",
-  "docs",
-  "examples",
+  ".*/**",
+  ".*",
+  "LICENSES/**",
+  "assets/**",
+  "docs/**",
+  "examples/**",
   'Cargo.lock',
   'Cargo.toml',
   "LICENSE",

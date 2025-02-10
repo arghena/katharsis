@@ -20,7 +20,7 @@ pedantic = "warn"
 name = "katharsis"
 
 [lints.rust]
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(tarpaulin_include)'] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(tarpaulin_include)"] }
 
 [profile.release]
 strip = true

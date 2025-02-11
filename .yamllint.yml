@@ -2,6 +2,7 @@ yaml-files:
   - '*.yml'
 ignore:
   - '.config/vale/styles/Google/'
+  - 'target/'
 rules:
   anchors: enable
   braces: disable

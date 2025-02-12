@@ -4,26 +4,43 @@ ignore:
   - '.config/vale/styles/Google/'
   - 'target/'
 rules:
-  anchors: enable
-  braces: disable
+  anchors:
+    forbid-duplicated-anchors: true
+    forbid-unused-anchors: true
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 0
   brackets: enable
   colons: enable
   commas: enable
-  comments: enable
+  comments:
+    min-spaces-from-content: 1
   comments-indentation: enable
   document-end: disable
   document-start: disable
-  empty-lines: enable
-  empty-values: disable
-  float-values: disable
+  empty-lines:
+    max: 0
+  empty-values: enable
+  float-values:
+    forbid-inf: true
+    forbid-nan: true
+    forbid-scientific-notation: true
+    require-numeral-before-decimal: true
   hyphens: enable
   indentation: disable
-  key-duplicates: enable
+  key-duplicates:
+    forbid-duplicated-merge-keys: true
   key-ordering: disable
   line-length: disable
   new-line-at-end-of-file: enable
   new-lines: enable
-  octal-values: disable
-  quoted-strings: disable
+  octal-values: enable
+  quoted-strings:
+    quote-type: single
+    required: false
   trailing-spaces: enable
-  truthy: disable
+  truthy:
+    allowed-values: ['true', 'false', 'on']
+    check-keys: false

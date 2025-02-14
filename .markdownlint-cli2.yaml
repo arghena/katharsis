@@ -1,3 +1,2 @@
 ignores:
   - '.github/comments/*.md'
-  - '.github/PULL_REQUEST_TEMPLATE.md'

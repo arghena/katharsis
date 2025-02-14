@@ -1,4 +1,4 @@
-<!--markdownlint-disable MD033 MD041-->
+<!-- markdownlint-disable MD033 MD041 -->
 
 <div align="center">
   <a href="https://github.com/arghena/katharsis">
@@ -12,7 +12,7 @@
 
 </div>
 
-<!--markdownlint-enable MD033-->
+<!-- markdownlint-enable MD033 -->
 
 ![demo](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/demo.gif)
 

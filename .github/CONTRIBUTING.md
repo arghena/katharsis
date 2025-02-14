@@ -1,10 +1,10 @@
 # Contributing to Katharsis
 
-<!--vale Google.Exclamation = NO-->
+<!-- vale Google.Exclamation = NO -->
 
 Thank you so much for contributing to Katharsis! We truly appreciate every single contribution you make.
 
-<!--vale Google.Exclamation = YES-->
+<!-- vale Google.Exclamation = YES -->
 
 > [!NOTE]
 >
@@ -19,7 +19,7 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 
 Here are some guidelines to maintain a consistent style and voice across the docs:
 
-<!--alex ignore easy-->
+<!-- alex ignore easy -->
 
 - Write clear, concise sentences. Avoid tangents.
   - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.
@@ -94,7 +94,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ### Local Development
 
-<!--markdownlint-disable MD031-->
+<!-- markdownlint-disable MD031 -->
 
 1. Clone the Katharsis repository (download only recent commits for faster clone):
    ```bash

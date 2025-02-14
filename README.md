@@ -189,8 +189,7 @@ Please refer to our [SECURITY.md](https://github.com/arghena/katharsis/blob/cana
 
 ## Releases
 
-> [!NOTE]
-> The version naming of Katharsis follows [Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200).
+The version naming of Katharsis follows [Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200).
 
 ### Long-term Support
 

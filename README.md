@@ -128,45 +128,39 @@ katharsis
 
 You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html) for more detailed documentation.
 
-<details>
-  <summary>rss</summary>
+| Field           | Description                        |
+| --------------- | ---------------------------------- |
+| rss.title       | The title of the website.          |
+| rss.description | A description of the website.      |
+| rss.site_url    | The main URL of the website.       |
+| rss.image       | Path to the channel's logo.        |
+| rss.copyright   | Copyright information.             |
+| rss.language    | Preferred language.                |
+| rss.output      | Path to the local output RSS file. |
 
-| Field       | Description                        |
-| ----------- | ---------------------------------- |
-| title       | The title of the website.          |
-| description | A description of the website.      |
-| site_url    | The main URL of the website.       |
-| image       | Path to the channel's logo.        |
-| copyright   | Copyright information.             |
-| language    | Preferred language.                |
-| output      | Path to the local output RSS file. |
+> [!NOTE]
+>
+> - The `rss.site_url` field should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
+> - The `rss.image` field is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
+> - The `rss.output` field specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
 
-- The `site_url` field should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
-- The `image` field is relative to the `site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
-- The `output` field specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
+| Field               | Description                                                |
+| ------------------- | ---------------------------------------------------------- |
+| article.title       | The tag containing the article's title.                    |
+| article.description | The tag or attribute containing the article's description. |
+| article.input       | The HTML files that needs to be parsed.                    |
+| article.author      | Information about the article's author.                    |
+| article.link        | The prefix for the article's URL.                          |
+| article.content     | The tag or attribute containing the article's content.     |
+| article.date        | The tag containing the article's publication date.         |
+| article.image       | The image files to be used as the article cover.           |
+| article.sort        | Whether to sort articles by their publication date.        |
 
-</details>
-
-<details>
- <summary>article</summary>
-
-| Field       | Description                                                |
-| ----------- | ---------------------------------------------------------- |
-| title       | The tag containing the article's title.                    |
-| description | The tag or attribute containing the article's description. |
-| input       | The HTML files that needs to be parsed.                    |
-| author      | Information about the article's author.                    |
-| link        | The prefix for the article's URL.                          |
-| content     | The tag or attribute containing the article's content.     |
-| date        | The tag containing the article's publication date.         |
-| image       | The image files to be used as the article cover.           |
-| sort        | Whether to sort articles by their publication date.        |
-
-- The `input` field corresponds to the file stem (`*`), which is the same as the article's URL slug.
-- The `date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
-- The `image` field’s folder name (`**`) must match the article's URL slug.
-
-</details>
+> [!NOTE]
+>
+> - The `article.input` field corresponds to the file stem (`*`), which is the same as the article's URL slug.
+> - The `article.date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
+> - The `article.image` field’s folder name (`**`) must match the article's URL slug.
 
 ## FAQ
 

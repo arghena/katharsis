@@ -170,30 +170,6 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 
 ## FAQ
 
-### Encountering System Security Policy on First Run of Katharsis on macOS
-
-When you first run Katharsis on macOS, you might see a system security warning that looks like this:
-
-![Not Opened](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/faq/not_opened.png)
-
-This happens because the Katharsis binary was not signed with an [Apple Developer Certificate](https://developer.apple.com/support/certificates) during its build process in the [Continuous Delivery](https://github.com/arghena/katharsis/actions/workflows/cd.yml).
-
-<details>
-  <summary>Plan 1</summary>
-
-You can use the following operations:
-
-![Allow Anyway](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/faq/allow_anyway.png)
-
-</details>
-
-<details>
-  <summary>Plan 2</summary>
-
-Do not use the [Manual](https://github.com/arghena/katharsis/blob/canary/README.md#manual) installation method.
-
-</details>
-
 ### Encountering the `no version matching requirement '*'` Error with `Cargo B(inary)Install`
 
 This issue occurs because Katharsis has not released any stable versions yet. To install Katharsis, use the following command:

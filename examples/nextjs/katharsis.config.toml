@@ -1,4 +1,4 @@
-# For more usage instructions, please refer to https://github.com/arghena/katharsis/blob/canary/docs/USE.md#explanation-of-katharsisconfigtoml-fields
+# For more usage instructions, please refer to https://github.com/arghena/katharsis/blob/canary/README.md#fields
 
 [rss]
 title = "The React Framework for the Web"

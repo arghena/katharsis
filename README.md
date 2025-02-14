@@ -1,4 +1,9 @@
 <!-- markdownlint-disable MD033 MD041 -->
+<!--
+
+NOTE: This file will be bundled into the final product (`*.tar.gz`) when it is released, so URLs (for example, `https://example.com/foo.bar`) should be used consistently within the file to point to project files, rather than local paths (for example, `./foo.bar`). This is because users won't have access to those files locally when browsing the file.
+
+-->
 
 <div align="center">
   <a href="https://github.com/arghena/katharsis">
@@ -12,18 +17,228 @@
 
 </div>
 
-<!-- markdownlint-enable MD033 -->
-
 ![demo](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/demo.gif)
 
-## Contents
+## Installation
 
-- [INSTALL.md](https://github.com/arghena/katharsis/blob/canary/docs/INSTALL.md)
-- [USE.md](https://github.com/arghena/katharsis/blob/canary/docs/USE.md)
-- [FAQ.md](https://github.com/arghena/katharsis/blob/canary/docs/FAQ.md)
-- [API Docs](https://docs.rs/katharsis)
-- [CONTRIBUTING.md](https://github.com/arghena/katharsis/blob/canary/.github/CONTRIBUTING.md)
-- [SECURITY.md](https://github.com/arghena/katharsis/blob/canary/.github/SECURITY.md)
-- [RELEASES.md](https://github.com/arghena/katharsis/blob/canary/docs/RELEASES.md)
-- [NOTICE](https://github.com/arghena/katharsis/blob/canary/LICENSES/NOTICE)
-- [LICENSE](https://github.com/arghena/katharsis/blob/canary/LICENSE)
+> [!NOTE]
+> You can download the prebuilt binary artifacts from the [Releases](https://github.com/arghena/katharsis/releases/latest) page.
+
+### Package Managers
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/katharsis.svg)](https://repology.org/project/katharsis/versions)
+
+<details>
+  <summary>WinGet</summary>
+
+```bash
+winget install arghena.katharsis
+```
+
+</details>
+
+<details>
+  <summary>Cargo B(inary)Install</summary>
+
+```bash
+cargo-binstall katharsis
+```
+
+</details>
+
+<details>
+  <summary>Paru</summary>
+
+```bash
+paru -S katharsis
+```
+
+</details>
+
+<details>
+  <summary>Apt</summary>
+
+```bash
+sudo apt install ~/your/download/path/katharsis.deb
+```
+
+</details>
+
+### Manual
+
+```bash
+# Extract the tarball
+tar -xzf ~/your/download/path/katharsis.tar.gz
+
+# Move the binary to the appropriate directory
+mv ~/your/extract/path/katharsis /usr/local/bin
+```
+
+### Source
+
+```bash
+# Clone the repository
+git clone --filter=blob:none --branch BRANCH_NAME --single-branch https://github.com/arghena/katharsis.git
+
+# Install the project
+cd katharsis && cargo build --release
+
+# Move the binary to the appropriate directory
+mv target/release/katharsis /usr/local/bin
+```
+
+## Get Started
+
+> [!NOTE]
+> You can refer to our [examples](https://github.com/arghena/katharsis/tree/canary/examples).
+
+Run the following command to generate a `katharsis.config.toml` file in the current directory:
+
+```bash
+katharsis init
+```
+
+Run the following command to create a default `rss.xml`:
+
+```bash
+katharsis
+```
+
+## Overview
+
+### Commands
+
+| Command | Description                                                        |
+| ------- | ------------------------------------------------------------------ |
+| init    | Generates a `katharsis.config.toml` file in the current directory. |
+| help    | Displays help information.                                         |
+
+### Parameters
+
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| -c        | Specifies a `katharsis.config.toml` file as the config. |
+| -h        | Displays help information.                              |
+| -V        | Displays the current version of Katharsis.              |
+
+> [!NOTE]
+> If you do not specify the `-c` parameter, the `katharsis.config.toml` file in the current directory will be used by default.
+
+### Fields
+
+You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html) for more detailed documentation.
+
+<details>
+  <summary>rss</summary>
+
+| Field       | Description                        |
+| ----------- | ---------------------------------- |
+| title       | The title of the website.          |
+| description | A description of the website.      |
+| site_url    | The main URL of the website.       |
+| image       | Path to the channel's logo.        |
+| copyright   | Copyright information.             |
+| language    | Preferred language.                |
+| output      | Path to the local output RSS file. |
+
+> [!NOTE]
+>
+> - The `site_url` field should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
+> - The `image` field is relative to the `site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
+> - The `output` field specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
+
+</details>
+
+<details>
+ <summary>article</summary>
+
+| Field       | Description                                                |
+| ----------- | ---------------------------------------------------------- |
+| title       | The tag containing the article's title.                    |
+| description | The tag or attribute containing the article's description. |
+| input       | The HTML files that needs to be parsed.                    |
+| author      | Information about the article's author.                    |
+| link        | The prefix for the article's URL.                          |
+| content     | The tag or attribute containing the article's content.     |
+| date        | The tag containing the article's publication date.         |
+| image       | The image files to be used as the article cover.           |
+| sort        | Whether to sort articles by their publication date.        |
+
+> [!NOTE]
+>
+> - The `input` field corresponds to the file stem (`*`), which is the same as the article's URL slug.
+> - The `date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
+> - The `image` field’s folder name (`**`) must match the article's URL slug.
+
+</details>
+
+## FAQ
+
+### Encountering System Security Policy on First Run of Katharsis on macOS
+
+When you first run Katharsis on macOS, you might see a system security warning that looks like this:
+
+![Not Opened](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/faq/not_opened.png)
+
+This happens because the Katharsis binary was not signed with an [Apple Developer Certificate](https://developer.apple.com/support/certificates) during its build process in the [Continuous Delivery](https://github.com/arghena/katharsis/actions/workflows/cd.yml).
+
+<details>
+  <summary>Plan 1</summary>
+
+You can use the following operations:
+
+![Allow Anyway](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/faq/allow_anyway.png)
+
+</details>
+
+<details>
+  <summary>Plan 2</summary>
+
+Do not use the [Manual](https://github.com/arghena/katharsis/blob/canary/README.md#manual) installation method.
+
+</details>
+
+### Encountering the `no version matching requirement '*'` Error with `Cargo B(inary)Install`
+
+This issue occurs because Katharsis has not released any stable versions yet. To install Katharsis, use the following command:
+
+```bash
+cargo-binstall katharsis@CANARY_VERSION
+```
+
+## API Docs
+
+Please refer to our [API Docs](https://docs.rs/katharsis).
+
+## Contributing
+
+Please refer to our [CONTRIBUTING.md](https://github.com/arghena/katharsis/blob/canary/.github/CONTRIBUTING.md).
+
+## Security
+
+> [!NOTE]
+> If you believe you have found a security vulnerability in Katharsis, we encourage you to **responsibly disclose this and NOT open a public issue**.
+
+Please refer to our [SECURITY.md](https://github.com/arghena/katharsis/blob/canary/.github/SECURITY.md).
+
+## Releases
+
+> [!NOTE]
+> The version naming of Katharsis follows [Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200).
+
+### Long-term Support
+
+> [!NOTE]
+> When Katharsis releases a new major version, the previous stable version will be designated as an LTS version.
+
+The LTS version of Katharsis provides security updates and bug fixes for six months.
+
+### Release Table
+
+| Version | Codename | Released at | LTS EOL |
+| ------- | -------- | ----------- | ------- |
+| 1.0.0   | -        | -           | -       |
+
+## License
+
+Katharsis is distributed under the [MIT](https://github.com/arghena/katharsis/blob/canary/LICENSE) license, and the [NOTICE](https://github.com/arghena/katharsis/blob/canary/LICENSES/NOTICE) file includes information about the referenced code in the project.

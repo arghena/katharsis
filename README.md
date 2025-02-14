@@ -17,6 +17,8 @@ NOTE: This file will be bundled into the final product (`*.tar.gz`) when it is r
 
 </div>
 
+<!-- markdownlint-enable MD033 -->
+
 ![demo](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/demo.gif)
 
 ## Installation
@@ -27,6 +29,8 @@ NOTE: This file will be bundled into the final product (`*.tar.gz`) when it is r
 ### Package Managers
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/katharsis.svg)](https://repology.org/project/katharsis/versions)
+
+<!-- markdownlint-disable MD033 -->
 
 <details>
   <summary>WinGet</summary>
@@ -63,6 +67,8 @@ sudo apt install ~/your/download/path/katharsis.deb
 ```
 
 </details>
+
+<!-- markdownlint-enable MD033 -->
 
 ### Manual
 

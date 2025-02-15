@@ -4,7 +4,6 @@ extend-exclude = [
   ".*",
   "LICENSES/**",
   "assets/**",
-  "docs/**",
   "examples/**",
   "Cargo.lock",
   "Cargo.toml",

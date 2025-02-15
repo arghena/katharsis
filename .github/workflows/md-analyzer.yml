@@ -3,7 +3,6 @@ on:
   pull_request:
     paths:
       - '.github/**/*.md'
-      - 'docs/**/*.md'
       - 'examples/**/*.md'
       - 'README.md'
       - '.prettierrc.toml'
@@ -28,7 +27,7 @@ jobs:
       - name: Run alex
         run: |
           shopt -s globstar
-          npx alex@latest .github/**/*.md docs/**/*.md examples/**/*.md README.md
+          npx alex@latest .github/**/*.md examples/**/*.md README.md
   prettier:
     name: prettier
     runs-on: ubuntu-latest
@@ -43,7 +42,7 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
-          npx prettier@latest .github/**/*.md docs/**/*.md examples/**/*.md README.md -c
+          npx prettier@latest .github/**/*.md examples/**/*.md README.md -c
   markdownlint:
     name: markdownlint
     runs-on: ubuntu-latest
@@ -58,7 +57,7 @@ jobs:
       - name: Run markdownlint
         run: |
           shopt -s globstar
-          npx markdownlint-cli2@latest .github/**/*.md docs/**/*.md examples/**/*.md README.md
+          npx markdownlint-cli2@latest .github/**/*.md examples/**/*.md README.md
   vale:
     name: vale
     runs-on: ubuntu-latest
@@ -73,4 +72,4 @@ jobs:
         run: |
           shopt -s globstar
           vale sync
-          vale .github/**/*.md docs/**/*.md examples/**/*.md README.md
+          vale .github/**/*.md examples/**/*.md README.md

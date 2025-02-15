@@ -45,7 +45,7 @@ winget install arghena.katharsis
   <summary>Cargo B(inary)Install</summary>
 
 ```bash
-cargo-binstall katharsis
+cargo binstall katharsis@1.0.0-canary.29
 ```
 
 </details>
@@ -63,7 +63,8 @@ paru -S katharsis
   <summary>Apt</summary>
 
 ```bash
-sudo apt install ~/your/download/path/katharsis.deb
+curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.29/katharsis_1.0.0-canary.29_amd64.deb
+sudo apt install katharsis_1.0.0-canary.29_amd64.deb
 ```
 
 </details>
@@ -73,24 +74,15 @@ sudo apt install ~/your/download/path/katharsis.deb
 ### Manual
 
 ```bash
-# Extract the tarball
-tar -xzf ~/your/download/path/katharsis.tar.gz
-
-# Move the binary to the appropriate directory
-mv ~/your/extract/path/katharsis /usr/local/bin
+curl -fsSL https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.29/katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+mv katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
 ```
 
 ### Source
 
 ```bash
-# Clone the repository
-git clone --filter=blob:none --branch BRANCH_NAME --single-branch https://github.com/arghena/katharsis.git
-
-# Install the project
-cd katharsis && cargo build --release
-
-# Move the binary to the appropriate directory
-mv target/release/katharsis /usr/local/bin
+git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
+cd katharsis && cargo install --path .
 ```
 
 ## Get Started
@@ -167,16 +159,6 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 > - The `article.input` field corresponds to the file stem (`*`), which is the same as the article's URL slug.
 > - The `article.date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
 > - The `article.image` field’s folder name (`**`) must match the article's URL slug.
-
-## FAQ
-
-### Encountering the `no version matching requirement '*'` Error with `Cargo B(inary)Install`
-
-This issue occurs because Katharsis has not released any stable versions yet. To install Katharsis, use the following command:
-
-```bash
-cargo-binstall katharsis@CANARY_VERSION
-```
 
 ## API Docs
 

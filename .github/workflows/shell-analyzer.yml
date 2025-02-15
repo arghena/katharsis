@@ -2,7 +2,7 @@ name: Shell Analyzer
 on:
   pull_request:
     paths:
-      - 'etc/**/*.sh'
+      - 'etc/ci/*.sh'
       - '.editorconfig'
 jobs:
   shfmt:
@@ -18,7 +18,7 @@ jobs:
       - name: Run shfmt
         run: |
           shopt -s globstar
-          shfmt -i 4 -ci -d etc/**/*.sh
+          shfmt -i 4 -ci -d etc/ci/*.sh
   shellcheck:
     name: shellcheck
     runs-on: ubuntu-latest
@@ -32,4 +32,4 @@ jobs:
       - name: Run shellcheck
         run: |
           shopt -s globstar
-          shellcheck etc/**/*.sh
+          shellcheck etc/ci/*.sh

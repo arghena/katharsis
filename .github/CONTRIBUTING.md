@@ -136,9 +136,9 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ## Reporting License Issues
 
-As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/arghena/katharsis/issues) if our project violates any applicable licenses.
+Please submit an [issue](https://github.com/arghena/katharsis/issues) if our project violates any applicable licenses.
 
 > [!NOTE]
 >
-> - To request additional License information, please [Propose an improvement](https://github.com/arghena/katharsis/issues/new?template=proposal.yml).
-> - To request the removal of specific code, please [Report an issue](https://github.com/arghena/katharsis/issues/new?template=bug.yml).
+> - To update the [NOTICE](../LICENSES/NOTICE) file, please [Propose an improvement](https://github.com/arghena/katharsis/issues/new?template=proposal.yml).
+> - To remove the related code, please [Report an issue](https://github.com/arghena/katharsis/issues/new?template=bug.yml).

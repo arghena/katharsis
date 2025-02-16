@@ -104,30 +104,26 @@ All pull request submissions to this project must comply with the [DCO](DCO).
    ```bash
    git checkout -b MY_BRANCH_NAME origin/canary
    ```
-3. Install dependencies and build the project:
+3. Install dependencies and run unit tests:
    ```bash
-   cargo build
+   cargo test --frozen
    ```
-4. Run unit tests:
-   ```bash
-   cargo test
-   ```
-5. Start making changes to your code.
-6. Run rustfmt and Clippy:
+4. Start making changes to your code.
+5. Run rustfmt and Clippy:
    ```bash
    cargo fmt --all --check
    cargo clippy --all-targets -- -D warnings
    ```
-7. Run unit tests:
+6. Run unit tests:
    ```bash
-   cargo test
+   cargo test --frozen
    ```
-8. When your changes are finished, commit them to the branch:
+7. When your changes are finished, commit them to the branch:
    ```bash
    git add .
    git commit -S -s -m "DESCRIBE_YOUR_CHANGES_HERE"
    ```
-9. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
+8. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
    ```bash
    gh pr create
    ```

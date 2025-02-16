@@ -23,7 +23,7 @@ jobs:
           - os: macos-latest
             target: aarch64-apple-darwin
             use-cross: false
-          - os: macos-13
+          - os: macos-latest
             target: x86_64-apple-darwin
             use-cross: false
           - os: windows-latest
@@ -60,9 +60,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --target ${{ matrix.job.target }} --verbose -- --nocapture
+            cross test --release --frozen --target ${{ matrix.job.target }} --verbose -- --nocapture
           else
-            cargo test --target ${{ matrix.job.target }} --verbose -- --nocapture
+            cargo test --release --frozen --target ${{ matrix.job.target }} --verbose -- --nocapture
           fi
   integration_tests:
     name: Integration tests
@@ -81,8 +81,8 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
       - name: Build for release
-        run: cargo build --target ${{ matrix.target }} --release
-      - name: Run executable
+        run: cargo build --release --frozen --target ${{ matrix.target }}
+      - name: End to end tests
         run: |
           cargo run --release --target ${{ matrix.target }} init -- < /dev/null
           cargo run --release --target ${{ matrix.target }} -- < /dev/null

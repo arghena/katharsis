@@ -82,7 +82,7 @@ mv katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
 
 ```bash
 git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
-cd katharsis && cargo install --path .
+cd katharsis && cargo install --frozen --path .
 ```
 
 ## Get Started

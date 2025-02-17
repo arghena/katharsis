@@ -60,9 +60,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --release --frozen --target ${{ matrix.job.target }} --verbose -- --nocapture
+            cross test --release --locked --target ${{ matrix.job.target }} --verbose -- --nocapture
           else
-            cargo test --release --frozen --target ${{ matrix.job.target }} --verbose -- --nocapture
+            cargo test --release --locked --target ${{ matrix.job.target }} --verbose -- --nocapture
           fi
   integration_tests:
     name: Integration tests
@@ -81,7 +81,7 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
       - name: Build for release
-        run: cargo build --release --frozen --target ${{ matrix.target }}
+        run: cargo build --release --locked --target ${{ matrix.target }}
       - name: End to end tests
         run: |
           cargo run --release --target ${{ matrix.target }} init -- < /dev/null

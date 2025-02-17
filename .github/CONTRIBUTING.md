@@ -110,7 +110,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
    ```
 3. Install dependencies and run unit tests:
    ```bash
-   cargo test --frozen
+   cargo test --locked
    ```
 4. Start making changes to your code.
 5. Run rustfmt and Clippy:
@@ -120,7 +120,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
    ```
 6. Run unit tests:
    ```bash
-   cargo test --frozen
+   cargo test --locked
    ```
 7. When your changes are finished, commit them to the branch:
    ```bash

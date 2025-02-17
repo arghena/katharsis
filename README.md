@@ -48,11 +48,11 @@ winget install arghena.katharsis
 
 - **B(inary)Install:**
   ```bash
-  cargo binstall katharsis@1.0.0-canary.29
+  cargo binstall --locked katharsis@1.0.0-canary.29
   ```
 - **Crates.io:**
   ```bash
-  cargo install katharsis@1.0.0-canary.29
+  cargo install --locked katharsis@1.0.0-canary.29
   ```
 - **Git:**
   ```bash

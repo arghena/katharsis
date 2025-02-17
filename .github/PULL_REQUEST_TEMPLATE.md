@@ -6,7 +6,7 @@
 
 <!-- Please include a summary of the changes -->
 
-1. Commit message (if applicable)
+1. (if applicable)
 
 ### Description
 
@@ -23,7 +23,7 @@
 
 <!-- If this PR addresses an existing issue, please provide a reference to it -->
 
-- Closes #number (if applicable)
+- #number (if applicable)
 
 ### Checklist
 

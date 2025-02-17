@@ -57,7 +57,7 @@ winget install arghena.katharsis
 - **Git:**
   ```bash
   git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
-  cd katharsis && cargo install --path .
+  cd katharsis && cargo install --frozen --path .
   ```
 
 <!-- markdownlint-enable MD031 -->

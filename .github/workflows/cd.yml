@@ -73,14 +73,12 @@ jobs:
         with:
           tool: cross
       - name: Cargo build
-        env:
-          MACOSX_DEPLOYMENT_TARGET: 10.7
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross build --release --target ${{ matrix.job.target }}
+            cross build --release --frozen --target ${{ matrix.job.target }}
           else
-            cargo build --release --target ${{ matrix.job.target }}
+            cargo build --release --frozen --target ${{ matrix.job.target }}
           fi
       - name: Install required dependencies
         shell: bash

@@ -84,11 +84,15 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 | ci            | Changes to CI config                               | ci       |
 | examples      | Improve examples                                   | examples |
 
-| Type   | Format             | Example               |
-| ------ | ------------------ | --------------------- |
-| Branch | `PREFIX/NAME`      | `chore/bump_version`  |
-| Commit | `PREFIX: DESCRIBE` | `chore: bump version` |
-| PR     | `PREFIX: TITLE`    | `chore: bump version` |
+| Type            | Format                      | Example                                  |
+| --------------- | --------------------------- | ---------------------------------------- |
+| Branch          | `PREFIX/NAME`               | `chore/bump_version`                     |
+| Commit          | `PREFIX: DESCRIPTION`       | `chore: bump version`                    |
+| PR              | `PREFIX: TITLE`             | `chore: bump version`                    |
+| Reverts PR      | `PREFIX: #NUMBER`           | `revert: #616`                           |
+| Reverts Commit  | `PREFIX: HASH`              | `revert: 1f1e33`                         |
+| Breaking Change | `PREFIX!: TITLE`            | `test!: fix cmd module assertion failed` |
+| Additional Type | `PREFIX(TYPE): DESCRIPTION` | `style(toml): formatted quotes`          |
 
 > If you want to learn more about this, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
 

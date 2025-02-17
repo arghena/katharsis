@@ -19,10 +19,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install taplo
-        run: |
-          curl -fsSL https://github.com/tamasfe/taplo/releases/latest/download/taplo-full-linux-x86_64.gz \
-            | gzip -d - | install -m 755 /dev/stdin /usr/local/bin/taplo
+      - name: Install cargo-binstall
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-binstall
+      - name: Run cargo-binstall
+        run: cargo-binstall --locked --no-confirm taplo-cli
       - name: Run taplo fmt
         run: |
           shopt -s globstar

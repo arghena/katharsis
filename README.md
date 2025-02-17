@@ -50,11 +50,11 @@ winget install arghena.katharsis
   ```bash
   cargo binstall katharsis@1.0.0-canary.29
   ```
-- **crates.io:**
+- **Crates.io:**
   ```bash
   cargo install katharsis@1.0.0-canary.29
   ```
-- **git:**
+- **Git:**
   ```bash
   git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
   cd katharsis && cargo install --path .

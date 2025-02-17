@@ -126,4 +126,4 @@ jobs:
         with:
           identifier: arghena.katharsis
           installers-regex: '-pc-windows-msvc\.zip$'
-          token: ${{ secrets.WINGET_TOKEN }}
+          token: ${{ secrets.BOT_TOKEN }}

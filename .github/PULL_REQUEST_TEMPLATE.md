@@ -1,6 +1,12 @@
-<!-- markdownlint-disable-file MD041 -->
+<!--
 
-<!-- Thanks for opening a PR! Your contribution is much appreciated -->
+Thanks for opening a PR! Your contribution is much appreciated.
+
+NOTE: Please fill in the `(if applicable)` sections of the template as needed based on your situation. We encourage you to provide as much detail as possible.
+
+-->
+
+<!-- markdownlint-disable-file MD041 -->
 
 ### Summary of Changes
 

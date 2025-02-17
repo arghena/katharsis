@@ -76,9 +76,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross build --release --frozen --target ${{ matrix.job.target }}
+            cross build --release --locked --target ${{ matrix.job.target }}
           else
-            cargo build --release --frozen --target ${{ matrix.job.target }}
+            cargo build --release --locked --target ${{ matrix.job.target }}
           fi
       - name: Install required dependencies
         shell: bash

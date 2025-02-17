@@ -1,15 +1,11 @@
-# Next.js Example
+# Next.js
 
-Here’s an example of building an `rss.xml` file with Katharsis in a Next.js project. Make sure your project meets the following requirements:
+This example demonstrates how to generate an RSS feed using Katharsis in Next.js.
 
-- The [App Router](https://nextjs.org/docs/app) is being used.
-- The corresponding [page.tsx](https://nextjs.org/docs/app/building-your-application/routing/pages) and [opengraph-image.png](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) files are present.
-- Run `next build` to generate the `.next` folder before running Katharsis.
-
-## USE
-
-Run the following command in the root directory of your project:
+## How to use
 
 ```bash
+git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
+cd katharsis/examples/nextjs
 katharsis && cat rss.xml
 ```

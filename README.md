@@ -42,11 +42,25 @@ winget install arghena.katharsis
 </details>
 
 <details>
-  <summary>Cargo B(inary)Install</summary>
+  <summary>Cargo</summary>
 
-```bash
-cargo binstall katharsis@1.0.0-canary.29
-```
+<!-- markdownlint-disable MD031 -->
+
+- **B(inary)Install:**
+  ```bash
+  cargo binstall katharsis@1.0.0-canary.29
+  ```
+- **Crates.io:**
+  ```bash
+  cargo install katharsis@1.0.0-canary.29
+  ```
+- **Git:**
+  ```bash
+  git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
+  cd katharsis && cargo install --frozen --path .
+  ```
+
+<!-- markdownlint-enable MD031 -->
 
 </details>
 
@@ -76,13 +90,6 @@ sudo apt install katharsis_1.0.0-canary.29_amd64.deb
 ```bash
 curl -fsSL https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.29/katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu.tar.gz | tar -xz
 mv katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
-```
-
-### Source
-
-```bash
-git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
-cd katharsis && cargo install --frozen --path .
 ```
 
 ## Get Started

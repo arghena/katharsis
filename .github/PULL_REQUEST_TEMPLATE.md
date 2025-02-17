@@ -23,7 +23,7 @@
 
 <!-- If this PR addresses an existing issue, please provide a reference to it -->
 
-- #number (if applicable)
+- #NUMBER (if applicable)
 
 ### Checklist
 

@@ -1,20 +1,10 @@
 # Config
-.github/ @kurosakishigure
-.config/ @kurosakishigure
+/.* @kurosakishigure
 etc/ @kurosakishigure
-.gitignore @kurosakishigure
 deny.toml @kurosakishigure
 sgconfig.yml @kurosakishigure
 changelogithub.config.json @kurosakishigure
-.prettierrc.toml @kurosakishigure
-.yamllint.yml @kurosakishigure
-.markdownlint.yml @kurosakishigure
-.vale.ini @kurosakishigure
-.rustfmt.toml @kurosakishigure
-.git-blame-ignore-revs @kurosakishigure
 rust-toolchain.toml @kurosakishigure
-.editorconfig @kurosakishigure
-.typos.toml @kurosakishigure
 
 # Dependencies
 Cargo.toml @kurosakishigure

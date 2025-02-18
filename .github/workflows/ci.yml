@@ -118,12 +118,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Installing Rust toolchain
         uses: dtolnay/rust-toolchain@stable
-      - name: Install cargo-binstall
+      - name: Install cargo-msrv
         uses: taiki-e/install-action@v2
         with:
-          tool: cargo-binstall
-      - name: Run cargo-binstall
-        run: cargo binstall --locked --no-confirm cargo-msrv
+          # Uses `cargo-binstall` as a fallback
+          # NOTE: https://github.com/taiki-e/install-action/blob/main/TOOLS.md
+          tool: cargo-msrv
       - name: Run cargo-msrv
         run: cargo msrv verify
   sg-lint:

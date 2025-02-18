@@ -19,12 +19,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install cargo-binstall
+      - name: Install taplo-cli
         uses: taiki-e/install-action@v2
         with:
-          tool: cargo-binstall
-      - name: Run cargo-binstall
-        run: cargo-binstall --locked --no-confirm taplo-cli
+          # Uses `cargo-binstall` as a fallback
+          # NOTE: https://github.com/taiki-e/install-action/blob/main/TOOLS.md
+          tool: taplo-cli
       - name: Run taplo fmt
         run: |
           shopt -s globstar

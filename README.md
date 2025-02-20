@@ -109,7 +109,7 @@ Run the following command to create a default `rss.xml`:
 katharsis
 ```
 
-## Overview
+## General
 
 ### Commands
 
@@ -118,22 +118,22 @@ katharsis
 | init    | Generates a `katharsis.config.toml` file in the current directory. |
 | help    | Displays help information.                                         |
 
-### Parameters
+### Arguments
 
-| Parameter | Description                                             |
-| --------- | ------------------------------------------------------- |
-| -c        | Specifies a `katharsis.config.toml` file as the config. |
-| -h        | Displays help information.                              |
-| -V        | Displays the current version of Katharsis.              |
+| Argument | Description                                             |
+| -------- | ------------------------------------------------------- |
+| -c       | Specifies a `katharsis.config.toml` file as the config. |
+| -h       | Displays help information.                              |
+| -V       | Displays the current version of Katharsis.              |
 
 > [!NOTE]
-> If you do not specify the `-c` parameter, the `katharsis.config.toml` file in the current directory will be used by default.
+> If you do not specify the `-c` argument, the `katharsis.config.toml` file in the current directory will be used by default.
 
-### Fields
+### Properties
 
 You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html) for more detailed documentation.
 
-| Field           | Description                        |
+| Property        | Description                        |
 | --------------- | ---------------------------------- |
 | rss.title       | The title of the website.          |
 | rss.description | A description of the website.      |
@@ -145,11 +145,11 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 
 > [!NOTE]
 >
-> - The `rss.site_url` field should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
-> - The `rss.image` field is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
-> - The `rss.output` field specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
+> - The `rss.site_url` property should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
+> - The `rss.image` property is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
+> - The `rss.output` property specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
 
-| Field               | Description                                                |
+| Property            | Description                                                |
 | ------------------- | ---------------------------------------------------------- |
 | article.title       | The tag containing the article's title.                    |
 | article.description | The tag or attribute containing the article's description. |
@@ -163,9 +163,9 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 
 > [!NOTE]
 >
-> - The `article.input` field corresponds to the file stem (`*`), which is the same as the article's URL slug.
-> - The `article.date` field's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
-> - The `article.image` field’s folder name (`**`) must match the article's URL slug.
+> - The `article.input` property corresponds to the file stem (`*`), which is the same as the article's URL slug.
+> - The `article.date` property's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
+> - The `article.image` property's folder name (`**`) must match the article's URL slug.
 
 ## API Docs
 

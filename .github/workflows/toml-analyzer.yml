@@ -2,16 +2,10 @@ name: TOML Analyzer
 on:
   pull_request:
     paths:
+      - '*.toml'
       - 'examples/**/katharsis.config.toml'
       - 'src/cmd/katharsis.config.toml'
       - 'tests/katharsis.config.toml'
-      - '.prettierrc.toml'
-      - 'Cargo.toml'
-      - 'deny.toml'
-      - 'rust-toolchain.toml'
-      - '.rustfmt.toml'
-      - '.editorconfig'
-      - '.typos.toml'
 jobs:
   taplo:
     name: taplo
@@ -28,8 +22,8 @@ jobs:
       - name: Run taplo fmt
         run: |
           shopt -s globstar
-          taplo fmt examples/**/katharsis.config.toml src/cmd/katharsis.config.toml tests/katharsis.config.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml .rustfmt.toml --check
+          taplo fmt --check
       - name: Run taplo check
         run: |
           shopt -s globstar
-          taplo check examples/**/katharsis.config.toml src/cmd/katharsis.config.toml tests/katharsis.config.toml .prettierrc.toml Cargo.toml deny.toml rust-toolchain.toml .rustfmt.toml
+          taplo check

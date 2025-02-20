@@ -2,11 +2,9 @@ name: YAML Analyzer
 on:
   pull_request:
     paths:
+      - '*.yml'
       - '.github/**/*.yml'
       - '.config/**/*.yml'
-      - 'sgconfig.yml'
-      - '.yamllint.yml'
-      - '.markdownlint.yml'
       - '.prettierrc.toml'
       - '.markdownlint-cli2.yaml'
       - '.editorconfig'

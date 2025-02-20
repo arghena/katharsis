@@ -5,12 +5,12 @@ on:
       - '.github/**/*.md'
       - 'examples/**/README.md'
       - 'README.md'
+      - '.config/vale/styles/**/*.yml'
+      - '.config/vale/styles/config/vocabularies/**/*.txt'
       - '.prettierrc.toml'
       - '.markdownlint.yml'
       - '.markdownlint-cli2.yaml'
       - '.vale.ini'
-      - '.config/vale/styles/**/*.yml'
-      - '.config/vale/styles/config/vocabularies/**/*.txt'
       - '.editorconfig'
 jobs:
   alex:

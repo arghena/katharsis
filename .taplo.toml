@@ -1,0 +1,10 @@
+include = [
+  "*.toml",
+  "examples/**/katharsis.config.toml",
+  "src/cmd/katharsis.config.toml",
+  "tests/katharsis.config.toml",
+]
+
+[formatting]
+align_comments = false
+allowed_blank_lines = 1

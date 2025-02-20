@@ -160,7 +160,7 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
         .build()
 }
 
-/// Build the RSS feed based on the fields in the config file, and return the parsed [`Channel`].
+/// Build the RSS feed based on the properties in the config file, and return the parsed [`Channel`].
 ///
 /// # Examples
 ///
@@ -181,7 +181,7 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
 ///
 /// # Errors
 ///
-/// - When the file’s existence cannot be verified.
+/// - When the file's existence cannot be verified.
 /// - When the file does not exist.
 /// - When the file cannot be read.
 /// - When the TOML file cannot be deserialized.

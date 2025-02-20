@@ -25,7 +25,7 @@ use tokio::fs;
 ///
 /// # Errors
 ///
-/// - When the file’s existence cannot be verified.
+/// - When the file's existence cannot be verified.
 /// - When the file cannot be created.
 /// - When the options cannot be displayed.
 /// - When the file cannot be written to.

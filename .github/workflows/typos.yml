@@ -2,10 +2,10 @@ name: Typos
 on:
   pull_request:
     paths:
-      - '.typos.toml'
       - 'etc/**'
       - 'src/**'
       - 'tests/**'
+      - '.typos.toml'
 jobs:
   typos:
     runs-on: ubuntu-latest

@@ -2,7 +2,7 @@ name: JSON Analyzer
 on:
   pull_request:
     paths:
-      - 'changelogithub.config.json'
+      - '*.json'
       - '.prettierrc.toml'
       - '.editorconfig'
 jobs:
@@ -18,4 +18,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: lts/*
       - name: Run prettier
-        run: npx prettier@latest changelogithub.config.json -c
+        run: |
+          shopt -s globstar
+          npx prettier@latest .*.json *.json -c

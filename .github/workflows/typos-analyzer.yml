@@ -1,4 +1,4 @@
-name: Typos
+name: Typos Analyzer
 on:
   pull_request:
     paths:

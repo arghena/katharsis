@@ -60,9 +60,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --release --locked --target ${{ matrix.job.target }} --verbose -- --nocapture
+            cross test --release --locked -v --target ${{ matrix.job.target }} -- --nocapture
           else
-            cargo test --release --locked --target ${{ matrix.job.target }} --verbose -- --nocapture
+            cargo test --release --locked -v --target ${{ matrix.job.target }} -- --nocapture
           fi
   integration_tests:
     name: Integration tests
@@ -81,11 +81,11 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
       - name: Build for release
-        run: cargo build --release --locked --target ${{ matrix.target }}
+        run: cargo build --release --locked -v --target ${{ matrix.target }}
       - name: End to end tests
         run: |
-          cargo run --release --target ${{ matrix.target }} init -- < /dev/null
-          cargo run --release --target ${{ matrix.target }} -- < /dev/null
+          cargo run --release --locked -v --target ${{ matrix.target }} init -- < /dev/null
+          cargo run --release --locked -v --target ${{ matrix.target }} -- < /dev/null
   rustfmt:
     name: Rustfmt
     runs-on: ubuntu-latest
@@ -97,7 +97,7 @@ jobs:
         with:
           components: rustfmt
       - name: Check formatting
-        run: cargo fmt --all --check
+        run: cargo fmt --all --check -v
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
@@ -109,7 +109,7 @@ jobs:
         with:
           components: clippy
       - name: Clippy Check
-        run: cargo clippy --all-targets -- -D warnings
+        run: cargo clippy --all-targets --locked -v -- -D warnings
   msrv:
     runs-on: ubuntu-latest
     name: Minimum Supported Rust Version
@@ -121,11 +121,9 @@ jobs:
       - name: Install cargo-msrv
         uses: taiki-e/install-action@v2
         with:
-          # Uses `cargo-binstall` as a fallback
-          # NOTE: https://github.com/taiki-e/install-action/blob/main/TOOLS.md
           tool: cargo-msrv
       - name: Run cargo-msrv
-        run: cargo msrv verify
+        run: cargo msrv verify --log-level debug
   sg-lint:
     runs-on: ubuntu-latest
     name: Run ast-grep lint
@@ -149,7 +147,7 @@ jobs:
         with:
           tool: cargo-tarpaulin
       - name: Run cargo-tarpaulin
-        run: cargo tarpaulin --ignore-tests --out Lcov --output-dir target/tarpaulin
+        run: cargo tarpaulin --release --locked -v --engine llvm --out Lcov --output-dir target/tarpaulin -- --nocapture
       - name: Upload to Coveralls
         if: ${{ github.event_name == 'push' }}
         uses: coverallsapp/github-action@v2

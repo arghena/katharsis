@@ -16,14 +16,12 @@ jobs:
       - name: Install taplo-cli
         uses: taiki-e/install-action@v2
         with:
-          # Uses `cargo-binstall` as a fallback
-          # NOTE: https://github.com/taiki-e/install-action/blob/main/TOOLS.md
           tool: taplo-cli
       - name: Run taplo fmt
         run: |
           shopt -s globstar
-          taplo fmt --check
+          taplo fmt --check --verbose
       - name: Run taplo check
         run: |
           shopt -s globstar
-          taplo check
+          taplo check --verbose

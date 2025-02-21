@@ -15,4 +15,4 @@ jobs:
       - name: Install actionlint
         run: brew install actionlint
       - name: Run actionlint
-        run: actionlint .github/workflows/*.yml
+        run: actionlint .github/workflows/*.yml -verbose

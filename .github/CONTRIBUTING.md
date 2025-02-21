@@ -115,7 +115,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 5. Run rustfmt and Clippy:
    ```bash
    cargo fmt --all --check
-   cargo clippy --all-targets -- -D warnings
+   cargo clippy --all-targets --locked -- -D warnings
    ```
 6. Run unit tests:
    ```bash

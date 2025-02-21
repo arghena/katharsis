@@ -20,4 +20,4 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
-          npx prettier@latest .*.json *.json -c
+          npx prettier@latest ./.*.json ./*.json -c

@@ -20,7 +20,7 @@ jobs:
       - name: Install yamllint
         run: brew install yamllint
       - name: Run yamllint
-        run: yamllint --list-files && yamllint . -s
+        run: yamllint . --list-files && yamllint . -s
   prettier:
     name: prettier
     runs-on: ubuntu-latest

@@ -18,7 +18,7 @@ jobs:
       - name: Run shfmt
         run: |
           shopt -s globstar
-          shfmt -i 4 -ci -d -f etc/ci/*.sh
+          shfmt -f && shfmt -i 4 -ci -d etc/ci/*.sh
   shellcheck:
     name: shellcheck
     runs-on: ubuntu-latest

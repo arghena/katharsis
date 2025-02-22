@@ -2,7 +2,6 @@ yaml-files:
   - '.github/**/*.yml'
   - '.config/**/*.yml'
   - '.*.yml'
-  - '.*.yaml'
   - '*.yml'
 ignore:
   - '.config/vale/styles/Google/'

@@ -1,4 +1,4 @@
-name: Typos
+name: Typos Analyzer
 on:
   pull_request:
     paths:
@@ -18,4 +18,4 @@ jobs:
         with:
           tool: typos
       - name: Run typos
-        run: typos
+        run: typos --files && typos -v

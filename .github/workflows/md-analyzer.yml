@@ -42,7 +42,7 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
-          npx prettier@latest .github/**/*.md examples/**/README.md README.md -c
+          npx prettier@latest .github/**/*.md examples/**/README.md README.md -c --log-level debug
   markdownlint:
     name: markdownlint
     runs-on: ubuntu-latest

@@ -69,30 +69,29 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ### Naming
 
-| Label         | Description                                        | Prefix   |
-| ------------- | -------------------------------------------------- | -------- |
-| documentation | Improve docs                                       | docs     |
-| enhancement   | New feature                                        | feat     |
-| bug           | Fix issue                                          | fix      |
-| test          | Improve test                                       | test     |
-| chore         | Miscellaneous tasks                                | chore    |
-| revert        | Reverts commit                                     | revert   |
-| pref          | Improve performance                                | pref     |
-| refactor      | Refactor code                                      | refactor |
-| style         | Formatting code                                    | style    |
-| build         | Changes affecting the build system or dependencies | build    |
-| ci            | Changes to CI config                               | ci       |
-| examples      | Improve examples                                   | examples |
+> [!NOTE]
+> The naming should follow the lowercase format.
 
-| Type            | Format                      | Example                                  |
-| --------------- | --------------------------- | ---------------------------------------- |
-| Branch          | `PREFIX/NAME`               | `chore/bump_version`                     |
-| Commit          | `PREFIX: DESCRIPTION`       | `chore: bump version`                    |
-| PR              | `PREFIX: TITLE`             | `chore: bump version`                    |
-| Reverts PR      | `PREFIX: #NUMBER`           | `revert: #616`                           |
-| Reverts Commit  | `PREFIX: HASH`              | `revert: 1f1e33`                         |
-| Breaking Change | `PREFIX!: TITLE`            | `test!: fix cmd module assertion failed` |
-| Additional Type | `PREFIX(TYPE): DESCRIPTION` | `style(toml): formatted quotes`          |
+| Type     | Description                                        |
+| -------- | -------------------------------------------------- |
+| docs     | Improve docs                                       |
+| feat     | New feature                                        |
+| fix      | Fix issue                                          |
+| test     | Improve test                                       |
+| chore    | Miscellaneous tasks                                |
+| revert   | Reverts commit                                     |
+| pref     | Improve performance                                |
+| refactor | Refactor code                                      |
+| style    | Formatting code                                    |
+| build    | Changes affecting the build system or dependencies |
+| ci       | Changes to CI config                               |
+| examples | Improve examples                                   |
+
+| Action | Format          |
+| ------ | --------------- |
+| Branch | `TYPE/NAME`     |
+| Commit | `TYPE: SUBJECT` |
+| PR     | `TYPE: TITLE`   |
 
 > If you want to learn more about this, please refer to [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0).
 
@@ -116,7 +115,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 5. Run rustfmt and Clippy:
    ```bash
    cargo fmt --all --check
-   cargo clippy --all-targets -- -D warnings
+   cargo clippy --all-targets --locked -- -D warnings
    ```
 6. Run unit tests:
    ```bash

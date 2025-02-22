@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <!--
 
-NOTE: This file will be bundled into the final product (`*.tar.gz`) when it is released, so URLs (for example, `https://example.com/foo.bar`) should be used consistently within the file to point to project files, rather than local paths (for example, `./foo.bar`). This is because users won't have access to those files locally when browsing the file.
+WARNING: This file will be bundled into the final product (`*.tar.gz`) when it is released, so URLs (for example, `https://example.com/foo.bar`) should be used consistently within the file to point to project files, rather than local paths (for example, `./foo.bar`). This is because users won't have access to those files locally when browsing the file.
 
 -->
 
@@ -113,18 +113,18 @@ katharsis
 
 ### Commands
 
-| Command | Description                                                        |
-| ------- | ------------------------------------------------------------------ |
-| init    | Generates a `katharsis.config.toml` file in the current directory. |
-| help    | Displays help information.                                         |
+| Command | Description                                                       |
+| ------- | ----------------------------------------------------------------- |
+| init    | Generates a `katharsis.config.toml` file in the current directory |
+| help    | Displays help information                                         |
 
 ### Arguments
 
-| Argument | Description                                             |
-| -------- | ------------------------------------------------------- |
-| -c       | Specifies a `katharsis.config.toml` file as the config. |
-| -h       | Displays help information.                              |
-| -V       | Displays the current version of Katharsis.              |
+| Argument | Description                                            |
+| -------- | ------------------------------------------------------ |
+| -c       | Specifies a `katharsis.config.toml` file as the config |
+| -h       | Displays help information                              |
+| -V       | Displays the current version of Katharsis              |
 
 > [!NOTE]
 > If you do not specify the `-c` argument, the `katharsis.config.toml` file in the current directory will be used by default.
@@ -133,15 +133,15 @@ katharsis
 
 You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html) for more detailed documentation.
 
-| Property        | Description                        |
-| --------------- | ---------------------------------- |
-| rss.title       | The title of the website.          |
-| rss.description | A description of the website.      |
-| rss.site_url    | The main URL of the website.       |
-| rss.image       | Path to the channel's logo.        |
-| rss.copyright   | Copyright information.             |
-| rss.language    | Preferred language.                |
-| rss.output      | Path to the local output RSS file. |
+| Property        | Description                       |
+| --------------- | --------------------------------- |
+| rss.title       | The title of the website          |
+| rss.description | A description of the website      |
+| rss.site_url    | The main URL of the website       |
+| rss.image       | Path to the channel's logo        |
+| rss.copyright   | Copyright information             |
+| rss.language    | Preferred language                |
+| rss.output      | Path to the local output RSS file |
 
 > [!NOTE]
 >
@@ -149,17 +149,17 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 > - The `rss.image` property is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
 > - The `rss.output` property specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
 
-| Property            | Description                                                |
-| ------------------- | ---------------------------------------------------------- |
-| article.title       | The tag containing the article's title.                    |
-| article.description | The tag or attribute containing the article's description. |
-| article.input       | The HTML files that needs to be parsed.                    |
-| article.author      | Information about the article's author.                    |
-| article.link        | The prefix for the article's URL.                          |
-| article.content     | The tag or attribute containing the article's content.     |
-| article.date        | The tag containing the article's publication date.         |
-| article.image       | The image files to be used as the article cover.           |
-| article.sort        | Whether to sort articles by their publication date.        |
+| Property            | Description                                               |
+| ------------------- | --------------------------------------------------------- |
+| article.title       | The tag containing the article's title                    |
+| article.description | The tag or attribute containing the article's description |
+| article.input       | The HTML files that needs to be parsed                    |
+| article.author      | Information about the article's author                    |
+| article.link        | The prefix for the article's URL                          |
+| article.content     | The tag or attribute containing the article's content     |
+| article.date        | The tag containing the article's publication date         |
+| article.image       | The image files to be used as the article cover           |
+| article.sort        | Whether to sort articles by their publication date        |
 
 > [!NOTE]
 >

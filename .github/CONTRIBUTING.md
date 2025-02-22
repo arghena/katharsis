@@ -11,7 +11,7 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/arghena/katharsis/pulls) or [issues](https://github.com/arghena/katharsis/issues) for an open or closed item that relates to your submission.
 > - Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
 > - If you use code from other open-source projects, place the corresponding LICENSE file in the [LICENSES](../LICENSES) folder and add the relevant information to the [NOTICE](../LICENSES/NOTICE) file.
-> - Commits that are used for code formatting should be ignored in the [.git-blame-ignore-revs](../.git-blame-ignore-revs) file.
+> - PRs that are used for code formatting should be ignored in the [.git-blame-ignore-revs](../.git-blame-ignore-revs) file.
 
 ## Guidelines
 

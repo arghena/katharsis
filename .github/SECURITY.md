@@ -3,11 +3,11 @@
 ## Supported Versions
 
 | Version | Supported | Description               |
-| ------- | --------- | ------------------------- |
-| Stable  | ✅        | Latest stable release     |
-| LTS     | ✅        | Long-term support         |
-| Canary  | ❌        | Development purposes only |
-| Older   | ❌        | Upgrade recommended       |
+| ------- | :-------: | ------------------------- |
+| Stable  |    ✅     | Latest stable release     |
+| LTS     |    ✅     | Long-term support         |
+| Canary  |    ❌     | Development purposes only |
+| Older   |    ❌     | Upgrade recommended       |
 
 ## Reporting a Vulnerability
 

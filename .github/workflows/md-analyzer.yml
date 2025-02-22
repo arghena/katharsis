@@ -9,7 +9,6 @@ on:
       - '.config/vale/styles/config/vocabularies/**/*.txt'
       - '.prettierrc.toml'
       - '.markdownlint.yml'
-      - '.markdownlint-cli2.yaml'
       - '.vale.ini'
       - '.editorconfig'
 jobs:

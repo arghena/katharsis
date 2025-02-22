@@ -6,7 +6,6 @@ on:
       - '.github/**/*.yml'
       - '.config/**/*.yml'
       - '.prettierrc.toml'
-      - '.markdownlint-cli2.yaml'
       - '.editorconfig'
 jobs:
   yamllint:
@@ -35,4 +34,4 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
-          npx prettier@latest .github/**/*.yml .config/**/*.yml ./.*.{yml,yaml} ./*.yml -c --no-error-on-unmatched-pattern --log-level debug
+          npx prettier@latest .github/**/*.yml .config/**/*.yml ./.*.yml ./*.yml -c --no-error-on-unmatched-pattern --log-level debug

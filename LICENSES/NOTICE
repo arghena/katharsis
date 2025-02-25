@@ -10,10 +10,6 @@ This project includes third-party code under the following licenses:
   License: nextjs/license.md
   Repository: https://github.com/vercel/next.js
   Copyright (c) 2024 Vercel, Inc.
-- Apache License:
-  License: material-design-icons/LICENSE
-  Repository: https://github.com/google/material-design-icons
-  Copyright (c) 2024 Google, Inc.
 - MIT License:
   License: tokio/LICENSE
   Repository: https://github.com/tokio-rs/tokio

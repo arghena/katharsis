@@ -9,7 +9,7 @@ WARNING: This file will be bundled into the final product (`*.tar.gz`) when it i
   <a href="https://github.com/arghena/katharsis">
     <img height="128" src="https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/logo.png" alt="logo" />
   </a>
-  <h1>CLI Tool for Generating RSS Feeds</h1>
+  <h1>Katharsis</h1>
 
 <a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.29&style=for-the-badge&label=CI&labelColor=363a4f&color=black&logo=github" alt="CI" /></a>
 <a href="https://coveralls.io/github/arghena/katharsis"><img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.29&style=for-the-badge&labelColor=363a4f&color=ivory&logo=coveralls" alt="Coverage Status" /></a>
@@ -195,9 +195,9 @@ The LTS version of Katharsis provides security updates and bug fixes for six mon
 
 ### Release Table
 
-| Version | Codename | Released at | LTS EOL |
-| ------- | -------- | ----------- | ------- |
-| 1.0.0   | -        | -           | -       |
+| Katharsis | MSRV   | Codename | Released at | LTS EOL |
+| --------- | ------ | -------- | ----------- | ------- |
+| v1.0.0    | 1.78.0 | Rabbit   | -           | -       |
 
 ## License
 

@@ -7,7 +7,7 @@ This project includes third-party code under the following licenses:
   Repository: https://github.com/dandavison/delta
   Copyright 2020 Dan Davison
 - MIT License:
-  License: nextjs/license.md
+  License: next.js/license.md
   Repository: https://github.com/vercel/next.js
   Copyright (c) 2024 Vercel, Inc.
 - MIT License:

@@ -12,10 +12,10 @@ output = "tmp/rss.xml"
 [article]
 title = "h1"
 description = "[data-mdx-description]"
-input = "examples/nextjs/.next/server/app/articles/*.html"
+input = "examples/next.js/.next/server/app/articles/*.html"
 author = { name = "Vercel Inc", email = "nextjs@vercel.com" }
 link = "articles"
 content = "[data-mdx-content]"
 date = "time"
-image = "examples/nextjs/app/articles/**/opengraph-image.png"
+image = "examples/next.js/app/articles/**/opengraph-image.png"
 sort = true

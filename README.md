@@ -7,7 +7,7 @@ WARNING: This file will be bundled into the final product (`*.tar.gz`) when it i
 
 <div align="center">
   <a href="https://github.com/arghena/katharsis">
-    <img height="256" src="https://github.com/arghena/katharsis/blob/chore/change_logo/assets/logo.png" alt="logo" />
+    <img height="128" src="https://github.com/arghena/katharsis/blob/chore/change_logo/assets/logo.png" alt="logo" />
   </a>
   <h1>CLI Tool for Generating RSS Feeds</h1>
 

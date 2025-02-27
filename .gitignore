@@ -1,6 +1,6 @@
 # You can use `.git/info/exclude` to configure your local ignore list.
 
-## File system
+## File System
 .DS_Store
 desktop.ini
 
@@ -28,7 +28,7 @@ Session.vim
 /katharsis.config.toml
 /rss.xml
 
-## Temporary files
+## Temporary Files
 *~
 \#*
 \#*\#

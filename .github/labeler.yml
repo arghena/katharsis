@@ -1,0 +1,47 @@
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/*.md'
+          - '.github/DISCUSSION_TEMPLATE/*.yml'
+          - '.github/ISSUE_TEMPLATE/*.yml'
+          - 'examples/**/README.md'
+          - 'LICENSES/**'
+          - '.github/DCO'
+          - 'LICENSE'
+          - 'README.md'
+chore:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.yml'
+          - '*.toml'
+          - '*.json'
+          - '*.ini'
+          - '.config/**'
+          - 'assets/**'
+          - '.gitignore'
+          - '.git-blame-ignore-revs'
+          - '.editorconfig'
+          - '.github/CODEOWNERS'
+          - '.github/config.yml'
+      - all-globs-to-all-files:
+          - '!Cargo.toml'
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Cargo.toml'
+          - 'Cargo.lock'
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/*.yml'
+          - 'etc/ci/*.sh'
+          - '.github/dco.yml'
+          - '.github/dependabot.yml'
+test:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**'
+examples:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'examples/**'

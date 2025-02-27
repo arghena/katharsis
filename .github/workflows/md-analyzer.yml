@@ -1,8 +1,11 @@
 name: Markdown Analyzer
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 on:
   pull_request:
     paths:
-      - '.github/**/*.md'
+      - '.github/*.md'
       - 'examples/**/README.md'
       - 'README.md'
       - '.config/vale/styles/**/*.yml'

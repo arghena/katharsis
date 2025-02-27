@@ -10,7 +10,7 @@ docs:
           - 'LICENSE'
           - 'README.md'
 chore:
-  - changed-files:
+  - changed-files: # test
       - any-glob-to-any-file:
           - './*.yml'
           - './*.toml'

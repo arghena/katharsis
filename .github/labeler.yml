@@ -37,6 +37,7 @@ ci:
           - 'etc/ci/*.sh'
           - '.github/dco.yml'
           - '.github/dependabot.yml'
+          - '.github/labeler.yml'
 test:
   - changed-files:
       - any-glob-to-any-file:

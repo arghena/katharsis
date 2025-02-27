@@ -9,7 +9,7 @@ docs:
           - '.github/DCO'
           - 'LICENSE'
           - 'README.md'
-chore:
+chore: # test
   - changed-files:
       - any-glob-to-any-file:
           - '/*.yml'

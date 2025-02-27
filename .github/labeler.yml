@@ -1,5 +1,5 @@
 # WARNING: This file needs to be committed blindly.
-# Documentation: https://github.com/actions/labeler?tab=readme-ov-file#initial-set-up-of-the-labeler-action
+# Documentation: https://github.com/actions/labeler/blob/main/README.md#initial-set-up-of-the-labeler-action
 docs:
   - changed-files:
       - any-glob-to-any-file:

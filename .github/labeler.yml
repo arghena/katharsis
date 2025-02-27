@@ -1,3 +1,5 @@
+# WARNING: This file needs to be committed blindly.
+# Documentation: https://github.com/actions/labeler?tab=readme-ov-file#initial-set-up-of-the-labeler-action
 docs:
   - changed-files:
       - any-glob-to-any-file:
@@ -12,19 +14,26 @@ docs:
 chore:
   - changed-files:
       - any-glob-to-any-file:
-          - './*.yml'
-          - './*.toml'
-          - './*.json'
-          - './*.ini'
           - '.config/**'
           - 'assets/**'
+          - '.github/CODEOWNERS'
+          - '.github/config.yml'
           - '.gitignore'
           - '.git-blame-ignore-revs'
           - '.editorconfig'
-          - '.github/CODEOWNERS'
-          - '.github/config.yml'
-      - all-globs-to-all-files:
-          - '!Cargo.toml'
+          # WARNING: `*.foo`, `/*.foo`, and `./*.foo` will trigger a recursive glob match. (#356-361)
+          - '.vale.ini'
+          - '.commitlintrc.json'
+          - '.prettierrc.toml'
+          - '.rustfmt.toml'
+          - '.taplo.toml'
+          - '.typos.toml'
+          - '.markdownlint.yml'
+          - '.yamllint.yml'
+          - 'changelogithub.config.json'
+          - 'rust-toolchain.toml'
+          - 'deny.toml'
+          - 'sgconfig.yml'
 build:
   - changed-files:
       - any-glob-to-any-file:

@@ -12,10 +12,10 @@ docs:
 chore:
   - changed-files:
       - any-glob-to-any-file:
-          - '/*.yml'
-          - '/*.toml'
-          - '/*.json'
-          - '/*.ini'
+          - './*.yml'
+          - './*.toml'
+          - './*.json'
+          - './*.ini'
           - '.config/**'
           - 'assets/**'
           - '.gitignore'

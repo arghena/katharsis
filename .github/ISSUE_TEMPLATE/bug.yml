@@ -11,7 +11,7 @@ body:
     attributes:
       label: Katharsis Version
       description: What is the version number of your Katharsis?
-      placeholder: for example, v1.0.0
+      placeholder: for example, 1.0.0
     validations:
       required: true
   - type: input
@@ -19,14 +19,23 @@ body:
     attributes:
       label: System Version
       description: What is your system version?
-      placeholder: for example, macOS v15.1.1
+      placeholder: for example, macOS 15.1.1
     validations:
       required: true
+  - type: input
+    id: minimal_reproduction_link
+    attributes:
+      label: Link to Minimal Reproduction Code for This Issue
+      description: If you decide to create your own minimal reproduction, please make sure test on canary.
+      placeholder: https://github.com/user/my-minimal-katharsis-issue-reproduction
+    validations:
+      required: false
   - type: textarea
     id: to_reproduce
     attributes:
       label: To Reproduce
-      description: A step-by-step description of how to reproduce the issue. If possible, we prefer reproduction via links.
+      description: A step-by-step description of how to reproduce the issue.
+      value: '1.'
     validations:
       required: true
   - type: textarea

@@ -22,11 +22,19 @@ body:
       placeholder: for example, macOS 15.1.1
     validations:
       required: true
+  - type: input
+    id: minimal_reproduction_link
+    attributes:
+      label: Link to Minimal Reproduction Code for This Issue
+      description: If you decide to create your own minimal reproduction, please make sure test on canary.
+      placeholder: https://github.com/user/my-minimal-katharsis-issue-reproduction
+    validations:
+      required: false
   - type: textarea
     id: to_reproduce
     attributes:
       label: To Reproduce
-      description: A step-by-step description of how to reproduce the issue. We encourage you to provide a link for minimal reproduction.
+      description: A step-by-step description of how to reproduce the issue.
       value: '1.'
     validations:
       required: true

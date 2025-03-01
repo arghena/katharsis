@@ -15,5 +15,3 @@ jobs:
     steps:
       - name: Run labeler
         uses: actions/labeler@v5
-        with:
-          sync-labels: true

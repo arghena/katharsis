@@ -26,10 +26,10 @@ body:
     id: minimal_reproduction_link
     attributes:
       label: Link to Minimal Reproduction Code for This Issue
-      description: If you decide to create your own minimal reproduction, please make sure test on canary.
+      description: Please make sure to test on the latest canary version.
       placeholder: https://github.com/user/my-minimal-katharsis-issue-reproduction
     validations:
-      required: false
+      required: true
   - type: textarea
     id: to_reproduce
     attributes:

@@ -3,12 +3,12 @@ on:
   issues:
     types: [opened, edited]
 jobs:
-  triage:
+  labeler:
     permissions:
       issues: write
       contents: read
     runs-on: ubuntu-latest
-    name: Triage
+    name: Add issue labels
     steps:
       - name: Run Labeler
         uses: github/issue-labeler@v3.4

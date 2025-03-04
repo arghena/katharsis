@@ -80,7 +80,7 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 | test     | Improve test                                       |
 | chore    | Miscellaneous tasks                                |
 | revert   | Reverts commit                                     |
-| pref     | Improve performance                                |
+| perf     | Improve performance                                |
 | refactor | Refactor code                                      |
 | style    | Formatting code                                    |
 | build    | Changes affecting the build system or dependencies |

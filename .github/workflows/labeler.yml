@@ -1,3 +1,5 @@
+# WARNING: This workflow needs to be committed blindly.
+# Documentation: https://github.com/actions/labeler/blob/main/README.md#initial-set-up-of-the-labeler-action
 name: PR Labeler
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}

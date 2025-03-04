@@ -19,5 +19,6 @@ jobs:
         uses: github/issue-labeler@v3.4
         with:
           configuration-path: .github/title-labeler.yml
+          enable-versioned-regex: 0
           include-title: 1
           include-body: 0

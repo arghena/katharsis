@@ -1,0 +1,16 @@
+name: Issue Labeler
+on:
+  issues:
+    types: [opened, edited]
+jobs:
+  triage:
+    name: Triage
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: github/issue-labeler@v3.4
+        with:
+          configuration-path: .github/issue-labeler.yml
+          enable-versioned-regex: 0

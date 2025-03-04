@@ -1,0 +1,16 @@
+feat:
+  - '(Enhancement)'
+docs:
+  - '(Documentation)'
+test:
+  - '(Test)'
+refactor:
+  - '(Refactor)'
+ci:
+  - '(CI)'
+build:
+  - '(Build)'
+pref:
+  - '(Performance)'
+examples:
+  - '(Example)'

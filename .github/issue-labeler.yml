@@ -10,7 +10,7 @@ ci:
   - '(CI)'
 build:
   - '(Build)'
-pref:
+perf:
   - '(Performance)'
 examples:
   - '(Example)'

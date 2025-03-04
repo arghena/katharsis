@@ -18,7 +18,7 @@
     "test": {
       "title": "✅ Tests"
     },
-    "pref": {
+    "perf": {
       "title": "\uD83D\uDD25 Performance"
     },
     "refactor": {

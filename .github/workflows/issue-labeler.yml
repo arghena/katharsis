@@ -4,13 +4,14 @@ on:
     types: [opened, edited]
 jobs:
   triage:
-    name: Triage
-    runs-on: ubuntu-latest
     permissions:
       issues: write
       contents: read
+    runs-on: ubuntu-latest
+    name: Triage
     steps:
-      - uses: github/issue-labeler@v3.4
+      - name: Run Labeler
+        uses: github/issue-labeler@v3.4
         with:
           configuration-path: .github/issue-labeler.yml
           enable-versioned-regex: 0

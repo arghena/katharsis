@@ -1,0 +1,12 @@
+fix:
+  - '(fix)'
+feat:
+  - '(feat)'
+revert:
+  - '(revert)'
+perf:
+  - '(perf)'
+refactor:
+  - '(refactor)'
+style:
+  - '(style)'

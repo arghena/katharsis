@@ -15,3 +15,9 @@ jobs:
     steps:
       - name: Run labeler
         uses: actions/labeler@v5
+      - name: Run title labeler
+        uses: github/issue-labeler@v3.4
+        with:
+          configuration-path: .github/title-labeler.yml
+          include-title: 1
+          include-body: 0

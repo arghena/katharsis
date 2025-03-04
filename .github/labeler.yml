@@ -48,6 +48,7 @@ ci:
           - '.github/dependabot.yml'
           - '.github/labeler.yml'
           - '.github/issue-labeler.yml'
+          - '.github/title-labeler.yml'
 test:
   - changed-files:
       - any-glob-to-any-file:

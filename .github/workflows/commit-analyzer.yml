@@ -1,4 +1,3 @@
-# FIX: This workflow is temporarily not applicable to breaking changes. (https://github.com/conventional-changelog/commitlint/pull/4069)
 name: Commit Analyzer
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}

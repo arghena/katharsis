@@ -109,7 +109,7 @@ Run the following command to create a default `rss.xml`:
 katharsis
 ```
 
-## General
+## Usage
 
 ### Commands
 

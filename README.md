@@ -155,7 +155,7 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 | article.description | The tag or attribute containing the article's description |
 | article.input       | The HTML files that needs to be parsed                    |
 | article.author      | Information about the article's author                    |
-| article.link        | The relative prefix for the article's URL                 |
+| article.prefix      | The relative prefix for the article's URL                 |
 | article.content     | The tag or attribute containing the article's content     |
 | article.date        | The tag containing the article's publication date         |
 | article.image       | The image files to be used as the article cover           |

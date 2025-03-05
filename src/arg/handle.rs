@@ -33,7 +33,7 @@ struct Article {
     description: String,
     input: String,
     author: Author,
-    link: String,
+    prefix: String,
     content: String,
     date: String,
     image: String,
@@ -64,7 +64,7 @@ async fn item_builder(entry: GlobResult, rss: &Rss, article: &Article) -> Result
         .expect("failed to extract the file stem")
         .to_string_lossy();
     let image_path = PathBuf::from(article.image.replace("**", &file_stem));
-    let article_url = format!("{}{}/{}", rss.site_url, article.link, file_stem);
+    let article_url = format!("{}{}/{}", rss.site_url, article.prefix, file_stem);
 
     guid.set_value(&article_url);
     if image_path.try_exists()? {

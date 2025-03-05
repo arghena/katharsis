@@ -27,7 +27,7 @@ struct Article {
     description: String,
     input: String,
     author: Author,
-    link: String,
+    prefix: String,
     content: String,
     date: String,
     image: String,
@@ -62,7 +62,7 @@ async fn init() {
     assert_eq!(article.input, "articles/*.html");
     assert_eq!(article.author.name, "Your Name");
     assert_eq!(article.author.email, "Your Email");
-    assert_eq!(article.link, "articles");
+    assert_eq!(article.prefix, "articles");
     assert_eq!(article.content, "[data-content]");
     assert_eq!(article.date, "time");
     assert_eq!(article.image, "articles/**/image.png");

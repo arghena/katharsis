@@ -1,4 +1,4 @@
-fix:
+bug:
   - '(fix)'
 feat:
   - '(feat)'
@@ -10,3 +10,5 @@ refactor:
   - '(refactor)'
 style:
   - '(style)'
+breaking:
+  - '(!:)'

@@ -11,7 +11,10 @@ async fn builder() {
         assert_ok!(arg::handle::builder(&PathBuf::from("tests/katharsis.config.toml")).await);
 
     assert_eq!(channel.title(), "The React Framework for the Web");
-    assert_eq!(channel.description(), "Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.");
+    assert_eq!(
+        channel.description(),
+        "Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components."
+    );
     assert_eq!(channel.link(), "https://nextjs.org/");
 
     let mut image = Image::default();
@@ -49,7 +52,12 @@ async fn builder() {
         beta_item.description,
         Some(String::from("Beta article description."))
     );
-    assert_eq!(beta_item.content, Some(String::from("\n            <p data-mdx-description=\"true\">Beta article description.</p>\n            <h2>Beta Article Subheading</h2>\n            <p>Beta article subheading content.</p>\n        ")));
+    assert_eq!(
+        beta_item.content,
+        Some(String::from(
+            "\n            <p data-mdx-description=\"true\">Beta article description.</p>\n            <h2>Beta Article Subheading</h2>\n            <p>Beta article subheading content.</p>\n        "
+        ))
+    );
     assert_eq!(
         beta_item.pub_date,
         Some(String::from("Thu, 24 Oct 2024 00:00:00 GMT"))

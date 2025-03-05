@@ -1,7 +1,7 @@
 use crate::error::app::Errors;
 use anyhow::Result;
 use chrono::{DateTime, Local, NaiveDate};
-use glob::{glob, GlobResult};
+use glob::{GlobResult, glob};
 use rss::{Channel, ChannelBuilder, Enclosure, Guid, Image, Item};
 use scraper::{Html, Selector};
 use serde::Deserialize;

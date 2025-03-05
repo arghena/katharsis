@@ -1,16 +1,16 @@
 feat:
-  - '(Enhancement)'
+  - '(\nEnhancement\n)'
 docs:
-  - '(Documentation)'
+  - '(\nDocumentation\n)'
 test:
-  - '(Test)'
+  - '(\nTest\n)'
 refactor:
-  - '(Refactor)'
+  - '(\nRefactor\n)'
 ci:
-  - '(CI)'
+  - '(\nCI\n)'
 build:
-  - '(Build)'
+  - '(\nBuild\n)'
 perf:
-  - '(Performance)'
+  - '(\nPerformance\n)'
 examples:
-  - '(Example)'
+  - '(\nExample\n)'

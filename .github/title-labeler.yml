@@ -1,26 +1,26 @@
 bug:
-  - '(fix)'
+  - '(fix.*:)'
 feat:
-  - '(feat)'
+  - '(feat.*:)'
 revert:
-  - '(revert)'
+  - '(revert.*:)'
 perf:
-  - '(perf)'
+  - '(perf.*:)'
 refactor:
-  - '(refactor)'
+  - '(refactor.*:)'
 style:
-  - '(style)'
+  - '(style.*:)'
 breaking:
   - '(!:)'
 docs:
-  - '(docs)'
+  - '(docs.*:)'
 chore:
-  - '(chore)'
+  - '(chore.*:)'
 build:
-  - '(build)'
+  - '(build.*:)'
 ci:
-  - '(ci)'
+  - '(ci.*:)'
 test:
-  - '(test)'
+  - '(test.*:)'
 examples:
-  - '(examples)'
+  - '(examples.*:)'

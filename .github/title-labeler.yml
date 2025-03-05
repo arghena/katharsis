@@ -12,3 +12,15 @@ style:
   - '(style)'
 breaking:
   - '(!:)'
+docs:
+  - '(docs)'
+chore:
+  - '(chore)'
+build:
+  - '(build)'
+ci:
+  - '(ci)'
+test:
+  - '(test)'
+examples:
+  - '(examples)'

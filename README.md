@@ -197,7 +197,7 @@ The LTS version of Katharsis provides security updates and bug fixes for six mon
 
 | Katharsis | MSRV   | Codename | Released at | LTS EOL |
 | --------- | ------ | -------- | ----------- | ------- |
-| v1.0.0    | 1.78.0 | Rabbit   | -           | -       |
+| v1.0.0    | 1.85.0 | Rabbit   | -           | -       |
 
 ## License
 

@@ -74,18 +74,18 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 | Type     | Description                                        |
 | -------- | -------------------------------------------------- |
-| docs     | Improve docs                                       |
+| docs     | Changes affecting the docs                         |
 | feat     | New feature                                        |
 | fix      | Fix issue                                          |
-| test     | Improve test                                       |
+| test     | Changes affecting the test                         |
 | chore    | Miscellaneous tasks                                |
 | revert   | Reverts commit                                     |
 | perf     | Improve performance                                |
 | refactor | Refactor code                                      |
 | style    | Formatting code                                    |
 | build    | Changes affecting the build system or dependencies |
-| ci       | Changes to CI config                               |
-| examples | Improve examples                                   |
+| ci       | Changes affecting the CI                           |
+| examples | Changes affecting the examples                     |
 
 | Action | Format          |
 | ------ | --------------- |

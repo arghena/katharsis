@@ -1,21 +1,43 @@
-# Documentation: https://github.com/arghena/katharsis/blob/canary/README.md#properties
+# NOTE: You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html) for more detailed documentation.
 
 [rss]
+# The title of the website
 title = "The React Framework for the Web"
+# A description of the website
 description = "Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components."
+# The main URL of the website
+# NOTE: The `rss.site_url` property should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
 site_url = "https://nextjs.org"
+# Path to the channel's logo
+# NOTE: The `rss.image` property is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
 image = "favicon.png"
+# Copyright information
 copyright = "© 2024 Vercel Inc"
+# Preferred language
 language = "en"
+# Path to the local output RSS file
+# NOTE: The `rss.output` property specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
 output = "tmp/rss.xml"
 
 [article]
+# The tag containing the article's title
 title = "h1"
+# The tag or attribute containing the article's description
 description = "[data-mdx-description]"
+# The HTML files that needs to be parsed
+# NOTE: The `article.input` property corresponds to the file stem (`*`), which is the same as the article's URL slug.
 input = "examples/next.js/.next/server/app/articles/*.html"
+# Information about the article's author
 author = { name = "Vercel Inc", email = "nextjs@vercel.com" }
+# The relative prefix for the article's URL
 prefix = "articles"
+# The tag or attribute containing the article's content
 content = "[data-mdx-content]"
+# The tag containing the article's publication date
+# NOTE: The `article.date` property's tag must include a [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) attribute, and the attribute value must follow the `%Y-%m-%d` format.
 date = "time"
+# The image files to be used as the article cover
+# NOTE: The `article.image` property's folder name (`**`) must match the article's URL slug.
 image = "examples/next.js/app/articles/**/opengraph-image.png"
+# Whether to sort articles by their publication date
 sort = true

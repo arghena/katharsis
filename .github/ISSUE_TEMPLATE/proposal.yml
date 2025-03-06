@@ -19,6 +19,7 @@ body:
         - Build
         - Performance
         - Example
+        - Chore
     validations:
       required: true
   - type: textarea

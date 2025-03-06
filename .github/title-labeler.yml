@@ -11,7 +11,7 @@ refactor:
 style:
   - '/^style(?:\(([^)]+)\))?:\s.+/'
 breaking:
-  - '/^(fix|feat|revert|perf|refactor|style|docs|chore|build|ci|test|examples)(?:\(([^)]+)\))?!:\s.+/'
+  - '/^(fix|feat|revert|perf|refactor|build)(?:\(([^)]+)\))?!:\s.+/'
 docs:
   - '/^docs(?:\(([^)]+)\))?:\s.+/'
 chore:

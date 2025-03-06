@@ -14,3 +14,5 @@ perf:
   - '/### Proposal Type\s{2}Performance/'
 examples:
   - '/### Proposal Type\s{2}Example/'
+chore:
+  - '/### Proposal Type\s{2}Chore/'

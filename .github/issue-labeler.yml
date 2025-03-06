@@ -5,7 +5,7 @@ docs:
 test:
   - '/### Proposal Type\s{2}Test/'
 refactor:
-  - '/### Proposal Type\s{2}Refactor'
+  - '/### Proposal Type\s{2}Refactor/'
 ci:
   - '/### Proposal Type\s{2}CI/'
 build:

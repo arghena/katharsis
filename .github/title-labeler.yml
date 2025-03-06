@@ -1,26 +1,26 @@
 bug:
-  - '(fix.*:)'
+  - '/^fix(?:\(([^)]+)\))?:\s.+/'
 feat:
-  - '(feat.*:)'
+  - '/^feat(?:\(([^)]+)\))?:\s.+/'
 revert:
-  - '(revert.*:)'
+  - '/^revert(?:\(([^)]+)\))?:\s.+/'
 perf:
-  - '(perf.*:)'
+  - '/^perf(?:\(([^)]+)\))?:\s.+/'
 refactor:
-  - '(refactor.*:)'
+  - '/^refactor(?:\(([^)]+)\))?:\s.+/'
 style:
-  - '(style.*:)'
+  - '/^style(?:\(([^)]+)\))?:\s.+/'
 breaking:
-  - '(!:)'
+  - '/^(fix|feat|revert|perf|refactor|style|docs|chore|build|ci|test|examples)(?:\(([^)]+)\))?!:\s.+/'
 docs:
-  - '(docs.*:)'
+  - '/^docs(?:\(([^)]+)\))?:\s.+/'
 chore:
-  - '(chore.*:)'
+  - '/^chore(?:\(([^)]+)\))?:\s.+/'
 build:
-  - '(build.*:)'
+  - '/^build(?:\(([^)]+)\))?:\s.+/'
 ci:
-  - '(ci.*:)'
+  - '/^ci(?:\(([^)]+)\))?:\s.+/'
 test:
-  - '(test.*:)'
+  - '/^test(?:\(([^)]+)\))?:\s.+/'
 examples:
-  - '(examples.*:)'
+  - '/^examples(?:\(([^)]+)\))?:\s.+/'

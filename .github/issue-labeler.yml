@@ -1,16 +1,16 @@
 feat:
-  - '(\nEnhancement\n)'
+  - '\### Proposal Type\s{2}Enhancement\'
 docs:
-  - '(\nDocumentation\n)'
+  - '\### Proposal Type\s{2}Documentation\'
 test:
-  - '(\nTest\n)'
+  - '\### Proposal Type\s{2}Test\'
 refactor:
-  - '(\nRefactor\n)'
+  - '\### Proposal Type\s{2}Refactor\'
 ci:
-  - '(\nCI\n)'
+  - '\### Proposal Type\s{2}CI\'
 build:
-  - '(\nBuild\n)'
+  - '\### Proposal Type\s{2}Build\'
 perf:
-  - '(\nPerformance\n)'
+  - '\### Proposal Type\s{2}Performance\'
 examples:
-  - '(\nExample\n)'
+  - '\### Proposal Type\s{2}Example\'

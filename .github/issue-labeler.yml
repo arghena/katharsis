@@ -1,16 +1,16 @@
 feat:
-  - '\### Proposal Type\s{2}Enhancement\'
+  - '/### Proposal Type\s{2}Enhancement/'
 docs:
-  - '\### Proposal Type\s{2}Documentation\'
+  - '/### Proposal Type\s{2}Documentation/'
 test:
-  - '\### Proposal Type\s{2}Test\'
+  - '/### Proposal Type\s{2}Test/'
 refactor:
-  - '\### Proposal Type\s{2}Refactor\'
+  - '/### Proposal Type\s{2}Refactor'
 ci:
-  - '\### Proposal Type\s{2}CI\'
+  - '/### Proposal Type\s{2}CI/'
 build:
-  - '\### Proposal Type\s{2}Build\'
+  - '/### Proposal Type\s{2}Build/'
 perf:
-  - '\### Proposal Type\s{2}Performance\'
+  - '/### Proposal Type\s{2}Performance/'
 examples:
-  - '\### Proposal Type\s{2}Example\'
+  - '/### Proposal Type\s{2}Example/'

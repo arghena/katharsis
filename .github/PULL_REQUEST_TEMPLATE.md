@@ -2,7 +2,7 @@
 
 Thanks for opening a PR! Your contribution is much appreciated.
 
-NOTE: Please fill in the `(if applicable)` sections of the template as needed based on your situation. We encourage you to provide as much detail as possible.
+NOTE: We encourage you to provide as much detail as possible.
 
 -->
 
@@ -12,39 +12,34 @@ NOTE: Please fill in the `(if applicable)` sections of the template as needed ba
 
 <!-- Please include a summary of the changes -->
 
-1. (if applicable)
+1. CHANGE_SUMMARY
 
 ### Description
 
 <!-- Explain the reason for the changes -->
 
 - **What is the purpose of this PR?**
-  - (if applicable)
 - **What problem does it solve?**
-  - (if applicable)
-- **Are there any breaking changes or backwards compatibility issues?**
-  - (if applicable)
+- **Are there any breaking changes?**
 
 ### Related Issue
 
 <!-- If this PR addresses an existing issue, please provide a reference to it -->
 
-- #NUMBER (if applicable)
+- #NUMBER
 
 ### Checklist
 
 <!-- Please check the following before submitting the PR -->
 
-- [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
-- [ ] I have already updated the related examples accordingly (if applicable)
-- [ ] I have written or updated relevant docs (if applicable)
-- [ ] I have already updated the related CI config accordingly (if applicable)
-- [ ] I have added or updated tests to cover my changes (if applicable)
-- [ ] I have already updated the related build system accordingly (if applicable)
-- [ ] I have reviewed my code for any potential issues
+- [ ] I have followed the contribution guidelines.
+- [ ] I have updated the relevant build system.
+- [ ] I have updated the relevant examples.
+- [ ] I have updated the relevant tests.
+- [ ] I have updated the relevant docs.
+- [ ] I have updated the relevant CI.
+- [ ] I have reviewed my code.
 
 ### Additional Notes
 
 <!-- Any additional information -->
-
-(if applicable)

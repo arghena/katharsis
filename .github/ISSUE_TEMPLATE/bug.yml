@@ -35,7 +35,7 @@ body:
     attributes:
       label: To Reproduce
       description: A step-by-step description of how to reproduce the issue.
-      value: '1.'
+      value: 1. REPRODUCTION_STEP
     validations:
       required: true
   - type: textarea

@@ -11,14 +11,14 @@ body:
       label: Proposal Type
       description: Please select the type of proposal.
       options:
-        - Enhancement
+        - Enhancements
         - Documentation
-        - Test
-        - Refactor
+        - Tests
+        - Refactors
         - CI
         - Build
         - Performance
-        - Example
+        - Examples
         - Chore
     validations:
       required: true

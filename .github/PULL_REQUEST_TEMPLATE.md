@@ -18,27 +18,24 @@ NOTE: We encourage you to provide as much detail as possible.
 
 <!-- Explain the reason for the changes -->
 
-- **What is the purpose of this PR?**
-- **What problem does it solve?**
-- **Are there any breaking changes?**
-
-### Related Issue
-
-<!-- If this PR addresses an existing issue, please provide a reference to it -->
-
-- #NUMBER
+- **What does this PR do?**
+  - EXPLAIN_HERE
+- **Which issue does it resolve?**
+  - Closes #ISSUE_NUMBER
+- **Does this introduce breaking changes?**
+  - EXPLAIN_HERE
 
 ### Checklist
 
 <!-- Please check the following before submitting the PR -->
 
 - [ ] I have followed the contribution guidelines.
-- [ ] I have updated the relevant build system.
-- [ ] I have updated the relevant examples.
-- [ ] I have updated the relevant tests.
-- [ ] I have updated the relevant docs.
-- [ ] I have updated the relevant CI.
-- [ ] I have reviewed my code.
+- [ ] I have updated the build system.
+- [ ] I have updated the examples.
+- [ ] I have updated the tests.
+- [ ] I have updated the documentation.
+- [ ] I have updated the CI pipeline.
+- [ ] I have reviewed my changes.
 
 ### Additional Notes
 

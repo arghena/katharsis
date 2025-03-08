@@ -3,7 +3,7 @@ body:
     attributes:
       label: Goals
       description: Short list of what the feature request aims to address?
-      value: 1. FEATURE_GOAL
+      value: '1. FEATURE_GOAL'
     validations:
       required: true
   - type: textarea

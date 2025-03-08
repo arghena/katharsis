@@ -96,7 +96,6 @@ jobs:
         env:
           TARGET: ${{ matrix.job.target }}
           PROJECT_NAME: katharsis
-          PACKAGE_NAME: katharsis
           OS_NAME: ${{ matrix.job.os }}
         run: ./etc/ci/before_deploy.sh
       - name: Releasing assets

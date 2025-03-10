@@ -15,7 +15,6 @@ on:
       - 'Cargo.lock'
       - '.rustfmt.toml'
       - 'sgconfig.yml'
-      - '.editorconfig'
 jobs:
   unit_tests:
     name: Unit tests

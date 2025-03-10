@@ -38,7 +38,7 @@ rss = "2.0.12"
 scraper = "0.23.1"
 serde = { version = "1.0.218", features = ["derive"] }
 thiserror = "2.0.12"
-tokio = { version = "1.43.0", features = [
+tokio = { version = "1.44.0", features = [
   "fs",
   "io-util",
   "macros",

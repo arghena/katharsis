@@ -1,40 +1,40 @@
 {
   "types": {
     "fix": {
-      "title": "\uD83E\uDE79 Fixes"
+      "title": "🩹 Fixes"
     },
     "chore": {
-      "title": "\uD83C\uDFE1 Chore"
+      "title": "🏡 Chore"
     },
     "docs": {
-      "title": "\uD83D\uDCD6 Documentation"
+      "title": "📖 Documentation"
     },
     "feat": {
-      "title": "\uD83D\uDE80 Enhancements"
+      "title": "🚀 Enhancements"
     },
     "revert": {
-      "title": "\uD83D\uDD04 Reverts"
+      "title": "🔄 Reverts"
     },
     "test": {
       "title": "✅ Tests"
     },
     "perf": {
-      "title": "\uD83D\uDD25 Performance"
+      "title": "🔥 Performance"
     },
     "refactor": {
-      "title": "\uD83D\uDC85 Refactors"
+      "title": "💅 Refactors"
     },
     "style": {
-      "title": "\uD83C\uDFA8 Styles"
+      "title": "🎨 Styles"
     },
     "build": {
-      "title": "\uD83D\uDCE6 Build"
+      "title": "📦 Build"
     },
     "ci": {
-      "title": "\uD83E\uDD16 CI"
+      "title": "🤖 CI"
     },
     "examples": {
-      "title": "\uD83C\uDFC0 Examples"
+      "title": "🏀 Examples"
     }
   }
 }

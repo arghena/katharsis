@@ -56,7 +56,7 @@ winget install arghena.katharsis
   ```
 - **Git:**
   ```bash
-  git clone --depth 1 --branch v1.0.0-canary.29 https://github.com/arghena/katharsis.git
+  git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.29 --depth 1
   cd katharsis && cargo install --locked --path .
   ```
 

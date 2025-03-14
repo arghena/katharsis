@@ -5,7 +5,7 @@ This example demonstrates how to generate an RSS feed using Katharsis in Next.js
 ## How to use
 
 ```bash
-git clone --filter=blob:none --branch canary --single-branch https://github.com/arghena/katharsis.git
+git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.29 --depth 1
 cd katharsis/examples/next.js
 katharsis && cat rss.xml
 ```

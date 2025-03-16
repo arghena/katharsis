@@ -16,7 +16,6 @@ jobs:
         with:
           add-issue-labels: 'locked'
           add-pr-labels: 'locked'
-          add-discussion-labels: 'locked'
           issue-inactive-days: 14
           issue-comment: This closed issue has been automatically locked because it had no new activity for 2 weeks.
           pr-inactive-days: 14

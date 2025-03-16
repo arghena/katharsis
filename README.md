@@ -199,10 +199,10 @@ The LTS version of Katharsis provides security updates and bug fixes for six mon
 | --------- | -------- | -------- | ----------- | ----------- |
 | v1.0.0    | 1.85.0   | Rabbit   | -           | -           |
 
-[^1]: Minimum Supported Rust Version
-
-[^2]: Long-term Support End of Life
-
 ## License
 
 Katharsis is distributed under the [MIT](https://github.com/arghena/katharsis/blob/canary/LICENSE) license and provides information about the code of other open-source projects used in the project in the [NOTICE](https://github.com/arghena/katharsis/blob/canary/LICENSES/NOTICE) file.
+
+[^1]: Minimum Supported Rust Version
+
+[^2]: Long-term Support End of Life

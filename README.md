@@ -195,9 +195,13 @@ The LTS version of Katharsis provides security updates and bug fixes for six mon
 
 ### Release Table
 
-| Katharsis | MSRV   | Codename | Released at | LTS EOL |
-| --------- | ------ | -------- | ----------- | ------- |
-| v1.0.0    | 1.85.0 | Rabbit   | -           | -       |
+| Katharsis | MSRV[^1] | Codename | Released at | LTS EOL[^2] |
+| --------- | -------- | -------- | ----------- | ----------- |
+| v1.0.0    | 1.85.0   | Rabbit   | -           | -           |
+
+[^1]: Minimum Supported Rust Version
+
+[^2]: Long-term Support End of Life
 
 ## License
 

@@ -9,7 +9,7 @@ description = "Used by some of the world's largest companies, Next.js enables yo
 # NOTE: The `rss.site_url` property should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
 site_url = "https://nextjs.org"
 # Path to the channel's logo
-# NOTE: The `rss.image` property is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
+# NOTE: The `rss.image` property is relative to the `rss.site_url` (for example, `favicon.png` corresponds to `https://example.com/favicon.png`).
 image = "favicon.png"
 # Copyright information
 copyright = "© 2024 Vercel Inc"

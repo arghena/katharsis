@@ -146,7 +146,7 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 > [!NOTE]
 >
 > - The `rss.site_url` property should not include a trailing slash (for example, `https://example.com` rather than `https://example.com/`).
-> - The `rss.image` property is relative to the `rss.site_url`, for example, `favicon.png` corresponds to `https://example.com/favicon.png`.
+> - The `rss.image` property is relative to the `rss.site_url` (for example, `favicon.png` corresponds to `https://example.com/favicon.png`).
 > - The `rss.output` property specifies the path relative to the working directory (for example, `rss.xml` corresponds to `./rss.xml`).
 
 | Property              | Description                                               |

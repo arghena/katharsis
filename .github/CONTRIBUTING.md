@@ -97,8 +97,6 @@ All pull request submissions to this project must comply with the [DCO](DCO).
 
 ### Local Development
 
-<!-- markdownlint-disable MD031 -->
-
 1. Clone the Katharsis repository (download only recent commits for faster clone):
    ```bash
    gh repo clone arghena/katharsis -- --filter=blob:none --branch canary --single-branch
@@ -130,8 +128,6 @@ All pull request submissions to this project must comply with the [DCO](DCO).
    ```bash
    gh pr create
    ```
-
-<!-- markdownlint-enable MD031 -->
 
 ## Reporting License Issues
 

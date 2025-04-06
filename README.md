@@ -44,8 +44,6 @@ winget install arghena.katharsis
 <details>
   <summary>Cargo</summary>
 
-<!-- markdownlint-disable MD031 -->
-
 - **B(inary)Install:**
   ```bash
   cargo binstall katharsis@1.0.0-canary.29
@@ -59,8 +57,6 @@ winget install arghena.katharsis
   git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.29 --depth 1
   cd katharsis && cargo install --locked --path .
   ```
-
-<!-- markdownlint-enable MD031 -->
 
 </details>
 

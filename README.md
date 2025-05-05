@@ -7,7 +7,7 @@ WARNING: This file will be bundled into the final product (`*.tar.gz`) when it i
 
 <div align="center">
   <a href="https://github.com/arghena/katharsis">
-    <img height="128" src="https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/logo.png" alt="logo" />
+    <img height="128" src="https://media.githubusercontent.com/media/arghena/assets/refs/heads/canary/katharsis/logo.png" alt="logo" />
   </a>
   <h1>Katharsis</h1>
 
@@ -19,7 +19,7 @@ WARNING: This file will be bundled into the final product (`*.tar.gz`) when it i
 
 <!-- markdownlint-enable MD033 -->
 
-![demo](https://raw.githubusercontent.com/arghena/katharsis/refs/heads/canary/assets/demo.gif)
+![demo](https://media.githubusercontent.com/media/arghena/assets/refs/heads/canary/katharsis/demo.gif)
 
 ## Installation
 

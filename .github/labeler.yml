@@ -12,7 +12,6 @@ chore:
   - changed-files:
       - any-glob-to-any-file:
           - '.config/**'
-          - 'assets/**'
           - '.github/CODEOWNERS'
           - '.github/config.yml'
           - '.gitignore'

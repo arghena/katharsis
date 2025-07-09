@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     name: commitlint
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Set nodejs
         uses: actions/setup-node@v4
         with:

@@ -13,7 +13,6 @@ chore:
       - any-glob-to-any-file:
           - '.config/**'
           - '.github/CODEOWNERS'
-          - '.github/config.yml'
           - '.gitignore'
           - '.git-blame-ignore-revs'
           - '.editorconfig'

@@ -1,10 +1,10 @@
-name: Commit Analyzer
+name: Validate PR Title
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, edited]
 jobs:
   commitlint:
     runs-on: ubuntu-latest
@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Set nodejs
         uses: actions/setup-node@v4
         with:
@@ -25,6 +23,3 @@ jobs:
         env:
           TITLE: ${{ github.event.pull_request.title }}
         run: echo "$TITLE" | npx commitlint@latest -V
-      - name: Validate PR commits with commitlint
-        if: ${{ !github.event.pull_request.merged }}
-        run: npx commitlint@latest -f ${{ github.event.pull_request.base.sha }} -t ${{ github.event.pull_request.head.sha }} -V

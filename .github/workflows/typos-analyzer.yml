@@ -4,11 +4,7 @@ concurrency:
   cancel-in-progress: true
 on:
   pull_request:
-    paths:
-      - 'etc/**'
-      - 'src/**'
-      - 'tests/**'
-      - '.typos.toml'
+    types: [opened, synchronize]
 jobs:
   typos:
     runs-on: ubuntu-latest

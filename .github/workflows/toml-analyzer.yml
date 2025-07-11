@@ -1,7 +1,9 @@
 name: TOML Analyzer
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
+
 on:
   pull_request:
     paths:
@@ -9,6 +11,7 @@ on:
       - 'examples/**/katharsis.config.toml'
       - 'src/cmd/katharsis.config.toml'
       - 'tests/katharsis.config.toml'
+
 jobs:
   taplo:
     name: taplo
@@ -23,8 +26,10 @@ jobs:
       - name: Run taplo fmt
         run: |
           shopt -s globstar
+
           taplo fmt --check --verbose
       - name: Run taplo check
         run: |
           shopt -s globstar
+
           taplo check --verbose

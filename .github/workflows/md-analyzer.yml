@@ -1,7 +1,9 @@
 name: Markdown Analyzer
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
+
 on:
   pull_request:
     paths:
@@ -14,6 +16,7 @@ on:
       - '.markdownlint.yml'
       - '.vale.ini'
       - '.editorconfig'
+
 jobs:
   alex:
     name: alex
@@ -29,7 +32,9 @@ jobs:
       - name: Run alex
         run: |
           shopt -s globstar
+
           npx alex@latest .github/**/*.md examples/**/README.md README.md
+
   prettier:
     name: prettier
     runs-on: ubuntu-latest
@@ -44,7 +49,9 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
+
           npx prettier@latest .github/**/*.md examples/**/README.md README.md -c --log-level debug
+
   markdownlint:
     name: markdownlint
     runs-on: ubuntu-latest
@@ -59,7 +66,9 @@ jobs:
       - name: Run markdownlint
         run: |
           shopt -s globstar
+
           npx markdownlint-cli2@latest .github/**/*.md examples/**/README.md README.md
+
   vale:
     name: vale
     runs-on: ubuntu-latest
@@ -73,5 +82,6 @@ jobs:
       - name: Run vale
         run: |
           shopt -s globstar
+
           vale sync
           vale .github/**/*.md examples/**/README.md README.md

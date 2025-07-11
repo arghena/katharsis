@@ -1,7 +1,9 @@
 name: YAML Analyzer
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
+
 on:
   pull_request:
     paths:
@@ -10,6 +12,7 @@ on:
       - '.config/**/*.yml'
       - '.prettierrc.toml'
       - '.editorconfig'
+
 jobs:
   yamllint:
     name: yamllint
@@ -23,6 +26,7 @@ jobs:
         run: brew install yamllint
       - name: Run yamllint
         run: yamllint . --list-files && yamllint . -s
+
   prettier:
     name: prettier
     runs-on: ubuntu-latest
@@ -37,4 +41,5 @@ jobs:
       - name: Run prettier
         run: |
           shopt -s globstar
+
           npx prettier@latest .github/**/*.yml .config/**/*.yml ./.*.yml ./*.yml -c --no-error-on-unmatched-pattern --log-level debug

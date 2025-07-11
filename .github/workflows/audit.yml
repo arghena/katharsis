@@ -1,7 +1,9 @@
 name: Security Audit
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
+
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -10,6 +12,7 @@ on:
       - 'Cargo.toml'
       - 'Cargo.lock'
       - 'deny.toml'
+
 jobs:
   cargo-deny:
     runs-on: ubuntu-latest

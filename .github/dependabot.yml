@@ -1,5 +1,9 @@
-# WARNING: If `labels: ['foo']` is not explicitly configured, Dependabot will not follow `labels: []`. (#395-396)
+# WARNING:
+# If `labels: ['foo']` is not explicitly configured,
+# Dependabot will not follow `labels: []`.
+
 version: 2
+
 updates:
   - package-ecosystem: cargo
     directory: '/'

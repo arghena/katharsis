@@ -1,12 +1,15 @@
 name: Shell Analyzer
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
+
 on:
   pull_request:
     paths:
       - 'etc/ci/*.sh'
       - '.editorconfig'
+
 jobs:
   shfmt:
     name: shfmt
@@ -21,7 +24,9 @@ jobs:
       - name: Run shfmt
         run: |
           shopt -s globstar
+
           shfmt -f etc/ci/*.sh && shfmt -i 4 -ci -d etc/ci/*.sh
+
   shellcheck:
     name: shellcheck
     runs-on: ubuntu-latest
@@ -35,4 +40,5 @@ jobs:
       - name: Run shellcheck
         run: |
           shopt -s globstar
+
           shellcheck etc/ci/*.sh

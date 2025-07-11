@@ -1,7 +1,9 @@
 name: CI
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: true
+
 on:
   push:
     tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
@@ -15,6 +17,7 @@ on:
       - 'Cargo.lock'
       - '.rustfmt.toml'
       - 'sgconfig.yml'
+
 jobs:
   unit_tests:
     name: Unit tests
@@ -66,6 +69,7 @@ jobs:
           else
             cargo test --release --locked -v --target ${{ matrix.job.target }} -- --nocapture
           fi
+
   integration_tests:
     name: Integration tests
     runs-on: ${{ matrix.os }}
@@ -88,6 +92,7 @@ jobs:
         run: |
           cargo run --release --locked -v --target ${{ matrix.target }} init -- < /dev/null
           cargo run --release --locked -v --target ${{ matrix.target }} -- < /dev/null
+
   rustfmt:
     name: Rustfmt
     runs-on: ubuntu-latest
@@ -100,6 +105,7 @@ jobs:
           components: rustfmt
       - name: Check formatting
         run: cargo fmt --all --check -v
+
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
@@ -112,6 +118,7 @@ jobs:
           components: clippy
       - name: Clippy Check
         run: cargo clippy --all-targets --locked -v -- -D warnings
+
   msrv:
     runs-on: ubuntu-latest
     name: Minimum Supported Rust Version
@@ -126,6 +133,7 @@ jobs:
           tool: cargo-msrv
       - name: Run cargo-msrv
         run: cargo msrv verify --log-level debug
+
   sg-lint:
     runs-on: ubuntu-latest
     name: Run ast-grep lint
@@ -136,6 +144,7 @@ jobs:
         uses: ast-grep/action@v1.5.0
         with:
           paths: src tests
+
   coverage:
     name: Code coverage
     runs-on: ubuntu-latest

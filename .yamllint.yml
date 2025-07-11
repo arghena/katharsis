@@ -3,7 +3,9 @@ yaml-files:
   - '.config/**/*.yml'
   - '.*.yml'
   - '*.yml'
+
 ignore-from-file: .gitignore
+
 rules:
   anchors:
     forbid-duplicated-anchors: true

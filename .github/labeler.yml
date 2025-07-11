@@ -8,6 +8,7 @@ docs:
           - '.github/DCO'
           - 'LICENSE'
           - 'README.md'
+
 chore:
   - changed-files:
       - any-glob-to-any-file:
@@ -16,7 +17,7 @@ chore:
           - '.gitignore'
           - '.git-blame-ignore-revs'
           - '.editorconfig'
-          # WARNING: `*.foo`, `/*.foo`, and `./*.foo` will trigger a recursive glob match. (#357-361)
+          # WARNING: `*.foo`, `/*.foo`, and `./*.foo` will trigger a recursive glob match.
           - '.vale.ini'
           - '.commitlintrc.json'
           - '.prettierrc.toml'
@@ -29,11 +30,13 @@ chore:
           - 'rust-toolchain.toml'
           - 'deny.toml'
           - 'sgconfig.yml'
+
 build:
   - changed-files:
       - any-glob-to-any-file:
           - 'Cargo.toml'
           - 'Cargo.lock'
+
 ci:
   - changed-files:
       - any-glob-to-any-file:
@@ -44,10 +47,12 @@ ci:
           - '.github/labeler.yml'
           - '.github/issue-labeler.yml'
           - '.github/title-labeler.yml'
+
 test:
   - changed-files:
       - any-glob-to-any-file:
           - 'tests/**'
+
 examples:
   - changed-files:
       - any-glob-to-any-file:

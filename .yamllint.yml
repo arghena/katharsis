@@ -22,7 +22,7 @@ rules:
   document-end: disable
   document-start: disable
   empty-lines:
-    max: 0
+    max: 1
   empty-values: enable
   float-values:
     forbid-inf: true

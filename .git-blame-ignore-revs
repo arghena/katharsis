@@ -11,3 +11,6 @@
 
 # style(rust_fmt): format the `src` and `tests` directories (#383)
 ac769af7b923aded7fec626cb217901cbc5bb73e
+
+# style: improve readability (#447)
+83069d4fdda947bf25543119cc4918cc12bb373d

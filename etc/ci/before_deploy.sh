@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# NOTE:
 # Copyright 2020 Dan Davison
 # Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
 

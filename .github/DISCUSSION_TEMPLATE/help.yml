@@ -1,6 +1,6 @@
 # NOTE:
 # Copyright (c) 2025 Vercel, Inc.
-# Distributed under [MIT](https://opensource.org/license/MIT) license.
+# Distributed under [MIT](https://github.com/vercel/next.js/blob/canary/license.md) license.
 
 body:
   - type: textarea

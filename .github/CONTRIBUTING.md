@@ -10,7 +10,6 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 >
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/arghena/katharsis/pulls) or [issues](https://github.com/arghena/katharsis/issues) for an open or closed item that relates to your submission.
 > - Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
-> - If you use code from other open-source projects, place the corresponding LICENSE file in the [LICENSES](../LICENSES) folder and add the relevant information to the [NOTICE](../LICENSES/NOTICE) file.
 > - PRs that are used for code formatting should be ignored in the [.git-blame-ignore-revs](../.git-blame-ignore-revs) file.
 > - The static assets for the documentation should be stored in the [assets](https://github.com/arghena/assets) repository.
 
@@ -129,12 +128,3 @@ All pull request submissions to this project must comply with the [DCO](DCO).
    ```bash
    gh pr create
    ```
-
-## Reporting License Issues
-
-Please submit an [issue](https://github.com/arghena/katharsis/issues) if our project violates any applicable licenses.
-
-> [!NOTE]
->
-> - To update the [NOTICE](../LICENSES/NOTICE) file, please [Propose an improvement](https://github.com/arghena/katharsis/issues/new?template=proposal.yml).
-> - To remove the related code, please [Report an issue](https://github.com/arghena/katharsis/issues/new?template=bug.yml).

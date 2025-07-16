@@ -1,3 +1,7 @@
+# NOTE:
+# Copyright (c) 2025 Vercel, Inc.
+# Distributed under [MIT](https://opensource.org/license/MIT) license.
+
 body:
   - type: textarea
     attributes:

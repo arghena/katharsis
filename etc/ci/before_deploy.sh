@@ -2,7 +2,7 @@
 
 # NOTE:
 # Copyright 2020 Dan Davison
-# Distributed under [MIT](https://github.com/dandavison/delta/blob/main/LICENSE) license.
+# Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
 
 set -ex
 

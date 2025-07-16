@@ -200,6 +200,6 @@ The LTS version of Katharsis provides security updates and bug fixes for six mon
 
 ## License
 
-Katharsis is distributed under the [MIT](https://github.com/arghena/katharsis/blob/canary/LICENSE) license.
+Katharsis is distributed under the [MIT License](https://github.com/arghena/katharsis/blob/canary/LICENSE).
 
 [^1]: Minimum Supported Rust Version

@@ -1,6 +1,6 @@
 # NOTE:
 # Copyright (c) Tokio Contributors
-# Distributed under [MIT](https://github.com/tokio-rs/tokio/blob/master/LICENSE) license.
+# Distributed under the [MIT License](https://github.com/tokio-rs/tokio/blob/master/LICENSE).
 
 [graph]
 all-features = true

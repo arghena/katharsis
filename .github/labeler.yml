@@ -4,7 +4,6 @@ docs:
           - '.github/*.md'
           - '.github/DISCUSSION_TEMPLATE/*.yml'
           - '.github/ISSUE_TEMPLATE/*.yml'
-          - 'LICENSES/**'
           - '.github/DCO'
           - 'LICENSE'
           - 'README.md'

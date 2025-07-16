@@ -11,6 +11,5 @@ Cargo.toml @kurosakishigure
 Cargo.lock @kurosakishigure
 
 # Documentation
-LICENSES/ @kurosakishigure
 LICENSE @kurosakishigure
 README.md @kurosakishigure

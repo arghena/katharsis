@@ -1,5 +1,6 @@
 {
   "extends": ["@commitlint/config-conventional"],
+  "defaultIgnores": false,
   "rules": {
     "scope-case": [2, "always", "lower-case"],
     "type-enum": [

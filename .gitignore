@@ -25,7 +25,7 @@ Session.vim
 
 ## Build
 /target
-/katharsis.config.toml
+/katharsis.toml
 /rss.xml
 
 ## Temporary Files

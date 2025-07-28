@@ -8,9 +8,9 @@ on:
   pull_request:
     paths:
       - '*.toml'
-      - 'examples/**/katharsis.config.toml'
-      - 'src/cmd/katharsis.config.toml'
-      - 'tests/katharsis.config.toml'
+      - 'examples/**/katharsis.toml'
+      - 'src/cmd/katharsis.toml'
+      - 'tests/katharsis.toml'
 
 jobs:
   taplo:

@@ -7,8 +7,7 @@ use tokio_test::assert_ok;
 
 #[tokio::test]
 async fn builder() {
-    let channel =
-        assert_ok!(arg::handle::builder(&PathBuf::from("tests/katharsis.config.toml")).await);
+    let channel = assert_ok!(arg::handle::builder(&PathBuf::from("tests/katharsis.toml")).await);
 
     assert_eq!(channel.title(), "The React Framework for the Web");
     assert_eq!(

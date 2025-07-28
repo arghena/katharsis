@@ -42,7 +42,7 @@ struct Config {
 
 #[tokio::test]
 async fn init() {
-    let path = PathBuf::from("tmp/katharsis.config.toml");
+    let path = PathBuf::from("tmp/katharsis.toml");
 
     assert_ok!(cmd::handle::init(&path).await);
 

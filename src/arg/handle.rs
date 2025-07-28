@@ -171,7 +171,7 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
 ///
 /// #[tokio::main]
 /// async fn main() -> Result<()> {
-///     let path = PathBuf::from("katharsis.config.toml");
+///     let path = PathBuf::from("katharsis.toml");
 ///
 ///     arg::handle::builder(&path).await?;
 ///

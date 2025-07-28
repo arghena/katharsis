@@ -96,7 +96,7 @@ mv katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
 > [!NOTE]
 > You can refer to our [examples](https://github.com/arghena/katharsis/tree/canary/examples).
 
-Run the following command to generate a `katharsis.config.toml` file in the current directory:
+Run the following command to generate a `katharsis.toml` file in the current directory:
 
 ```bash
 katharsis init
@@ -112,21 +112,21 @@ katharsis
 
 ### Commands
 
-| Command | Description                                                       |
-| ------- | ----------------------------------------------------------------- |
-| `init`  | Generates a `katharsis.config.toml` file in the current directory |
-| `help`  | Displays help information                                         |
+| Command | Description                                                |
+| ------- | ---------------------------------------------------------- |
+| `init`  | Generates a `katharsis.toml` file in the current directory |
+| `help`  | Displays help information                                  |
 
 ### Options
 
-| Option | Description                                            |
-| ------ | ------------------------------------------------------ |
-| `-c`   | Specifies a `katharsis.config.toml` file as the config |
-| `-h`   | Displays help information                              |
-| `-V`   | Displays the current version of Katharsis              |
+| Option | Description                                     |
+| ------ | ----------------------------------------------- |
+| `-c`   | Specifies a `katharsis.toml` file as the config |
+| `-h`   | Displays help information                       |
+| `-V`   | Displays the current version of Katharsis       |
 
 > [!NOTE]
-> If you do not specify the `-c` option, the `katharsis.config.toml` file in the current directory will be used by default.
+> If you do not specify the `-c` option, the `katharsis.toml` file in the current directory will be used by default.
 
 ### Properties
 

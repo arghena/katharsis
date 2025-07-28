@@ -5,14 +5,14 @@ use std::path::PathBuf;
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Generate a katharsis.config.toml file in the current directory
+    /// Generate a katharsis.toml file in the current directory
     Init,
 }
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {
-    /// Use a katharsis.config.toml file as the config
+    /// Use a katharsis.toml file as the config
     #[arg(env = "KATHARSIS_CONFIG", short, long, value_name = "CONFIG_FILE")]
     config: Option<PathBuf>,
 
@@ -24,7 +24,7 @@ struct Cli {
 #[tokio::main]
 async fn main() -> Result<()> {
     let cli = Cli::parse();
-    let mut path = PathBuf::from("katharsis.config.toml");
+    let mut path = PathBuf::from("katharsis.toml");
 
     if let Some(Commands::Init) = cli.command {
         cmd::handle::init(&path).await?;

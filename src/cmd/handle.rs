@@ -15,7 +15,7 @@ use tokio::fs;
 ///
 /// #[tokio::main]
 /// async fn main() -> Result<()> {
-///     let path = PathBuf::from("katharsis.config.toml");
+///     let path = PathBuf::from("katharsis.toml");
 ///
 ///     cmd::handle::init(&path).await?;
 ///
@@ -30,11 +30,11 @@ use tokio::fs;
 /// - When the options cannot be displayed.
 /// - When the file cannot be written to.
 pub async fn init(path: &PathBuf) -> Result<(), Errors> {
-    let config_bytes = include_bytes!("katharsis.config.toml");
+    let config_bytes = include_bytes!("katharsis.toml");
 
     if path.try_exists()? {
         let options: Vec<&str> = vec!["Yes", "No"];
-        let ans: &str = Select::new("A katharsis.config.toml already exists in the current directory. Do you want to overwrite it?", options).prompt()?;
+        let ans: &str = Select::new("A katharsis.toml already exists in the current directory. Do you want to overwrite it?", options).prompt()?;
 
         if ans == "yes" {
             fs::write(path, config_bytes).await?;

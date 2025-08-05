@@ -1,4 +1,4 @@
-# WARNING:
+# NOTE:
 # If `labels: ['foo']` is not explicitly configured,
 # Dependabot will not follow `labels: []`.
 

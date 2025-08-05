@@ -161,7 +161,7 @@ jobs:
         with:
           tool: cargo-tarpaulin
       - name: Run cargo-tarpaulin
-        # WARNING: `--engine llvm` causes the test coverage to be inaccurate.
+        # NOTE: `--engine llvm` causes the test coverage to be inaccurate.
         run: cargo tarpaulin --release --locked -v --engine ptrace --out lcov --output-dir target/tarpaulin -- --nocapture
       - name: Upload to Coveralls
         if: ${{ github.event_name == 'push' }}

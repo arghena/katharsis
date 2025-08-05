@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <!--
 
-WARNING:
+NOTE:
 This file will be bundled into the final product (`*.tar.gz`) when it is released,
 so URLs should be used consistently within the file to point to project files, rather than local paths.
 This is because users won't have access to those files locally when browsing the file.

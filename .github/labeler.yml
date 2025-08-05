@@ -16,7 +16,7 @@ chore:
           - '.gitignore'
           - '.git-blame-ignore-revs'
           - '.editorconfig'
-          # WARNING: `*.foo`, `/*.foo`, and `./*.foo` will trigger a recursive glob match.
+          # NOTE: `*.foo`, `/*.foo`, and `./*.foo` will trigger a recursive glob match.
           - '.vale.ini'
           - '.commitlintrc.json'
           - '.prettierrc.toml'

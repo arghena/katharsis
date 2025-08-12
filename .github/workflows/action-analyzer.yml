@@ -15,7 +15,7 @@ jobs:
     name: actionlint
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set Homebrew
         uses: Homebrew/actions/setup-homebrew@master
       - name: Install actionlint

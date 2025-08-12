@@ -19,6 +19,6 @@ jobs:
     name: Run cargo deny
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Cargo deny
         uses: EmbarkStudios/cargo-deny-action@v2

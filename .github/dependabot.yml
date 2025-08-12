@@ -1,22 +1,25 @@
 # NOTE:
 # If `labels: ['foo']` is not explicitly configured,
 # Dependabot will not follow `labels: []`.
+# https://github.com/dependabot/dependabot-core/issues/11783
 
 version: 2
 
 updates:
-  - package-ecosystem: cargo
+  - package-ecosystem: 'cargo'
     directory: '/'
     schedule:
-      interval: daily
+      interval: 'daily'
     open-pull-requests-limit: 10
     labels: ['build']
     commit-message:
-      prefix: 'build(deps)'
-  - package-ecosystem: github-actions
+      prefix: 'build'
+      include: 'scope'
+  - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: daily
+      interval: 'daily'
     labels: ['ci']
     commit-message:
-      prefix: 'ci(deps)'
+      prefix: 'ci'
+      include: 'scope'

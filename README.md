@@ -14,9 +14,9 @@ This is because users won't have access to those files locally when browsing the
   </a>
   <h1>Katharsis</h1>
 
-<a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.29&style=for-the-badge&label=CI&labelColor=363a4f&color=black&logo=github" alt="CI" /></a>
-<a href="https://coveralls.io/github/arghena/katharsis"><img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.29&style=for-the-badge&labelColor=363a4f&color=ivory&logo=coveralls" alt="Coverage Status" /></a>
-<a href="https://github.com/arghena/katharsis/actions/workflows/cd.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/cd.yml?branch=v1.0.0-canary.29&style=for-the-badge&label=CD&labelColor=363a4f&color=black&logo=github" alt="CD" /></a>
+<a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.30&style=for-the-badge&label=CI&labelColor=363a4f&color=black&logo=github" alt="CI" /></a>
+<a href="https://coveralls.io/github/arghena/katharsis"><img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.30&style=for-the-badge&labelColor=363a4f&color=ivory&logo=coveralls" alt="Coverage Status" /></a>
+<a href="https://github.com/arghena/katharsis/actions/workflows/cd.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/cd.yml?branch=v1.0.0-canary.30&style=for-the-badge&label=CD&labelColor=363a4f&color=black&logo=github" alt="CD" /></a>
 
 </div>
 
@@ -49,15 +49,15 @@ winget install arghena.katharsis
 
 - **B(inary)Install:**
   ```bash
-  cargo binstall katharsis@1.0.0-canary.29
+  cargo binstall katharsis@1.0.0-canary.30
   ```
 - **Crates.io:**
   ```bash
-  cargo install --locked katharsis@1.0.0-canary.29
+  cargo install --locked katharsis@1.0.0-canary.30
   ```
 - **Git:**
   ```bash
-  git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.29 --depth 1
+  git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.30 --depth 1
   cd katharsis && cargo install --locked --path .
   ```
 
@@ -76,8 +76,8 @@ paru -S katharsis
   <summary>Apt</summary>
 
 ```bash
-curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.29/katharsis_1.0.0-canary.29_amd64.deb
-sudo apt install katharsis_1.0.0-canary.29_amd64.deb
+curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.30/katharsis_1.0.0-canary.30_amd64.deb
+sudo apt install katharsis_1.0.0-canary.30_amd64.deb
 ```
 
 </details>
@@ -87,8 +87,8 @@ sudo apt install katharsis_1.0.0-canary.29_amd64.deb
 ### Manual
 
 ```bash
-curl -fsSL https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.29/katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu.tar.gz | tar -xz
-mv katharsis-v1.0.0-canary.29-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
+curl -fsSL https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.30/katharsis-v1.0.0-canary.30-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+mv katharsis-v1.0.0-canary.30-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
 ```
 
 ## Get Started

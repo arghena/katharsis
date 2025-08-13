@@ -1,7 +1,7 @@
 [package]
 name = "katharsis"
 authors = ["Shigure Kurosaki <shigure@hqsy.net>"]
-version = "1.0.0-canary.29"
+version = "1.0.0-canary.30"
 edition = "2024"
 rust-version = "1.85.0"
 license = "MIT"

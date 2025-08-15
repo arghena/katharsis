@@ -1,10 +1,9 @@
-RSS|rss
-CI|ci
-rustup
-toolchain
-Clippy
-datetime
-rustfmt
+ci|CI
 Paru
+Clippy
+toolchain
+rustup
+rustfmt
 config
 perf
+datetime

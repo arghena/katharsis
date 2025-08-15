@@ -6,8 +6,8 @@
 | ------- | :-------: | ------------------------- |
 | Stable  |    ✅     | Latest stable release     |
 | LTS     |    ✅     | Long-term support         |
-| Canary  |    ❌     | Development purposes only |
-| Older   |    ❌     | Upgrade recommended       |
+| Canary  |           | Development purposes only |
+| Older   |           | Upgrade recommended       |
 
 ## Reporting a Vulnerability
 

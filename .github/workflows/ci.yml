@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: Run Insight
-        uses: arghena/insight@v0.1.0-canary.11
+        uses: arghena/insight@v0.1.0-canary.12
       - name: Upload to Coveralls
         if: ${{ github.ref_type == 'tag' }}
         uses: coverallsapp/github-action@v2

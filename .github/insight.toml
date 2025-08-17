@@ -18,9 +18,8 @@ shfmt = ["-i", "4", "-ci"]
 
 [options.linters]
 cargo_clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
-# NOTE: `--engine llvm` causes the test coverage to be inaccurate.
+# NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
 cargo_tarpaulin = [
-  "--release",
   "--locked",
   "--engine",
   "ptrace",

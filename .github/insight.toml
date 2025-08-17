@@ -3,6 +3,7 @@ dot = true
 
 [pull_request]
 check_title = true
+detect_changes = ["**/*.rs", "Cargo.toml", "Cargo.lock"]
 
 [schedule]
 tasks = ["cargo_deny"]

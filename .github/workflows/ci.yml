@@ -16,11 +16,14 @@ jobs:
   insight:
     name: Insight
     runs-on: ubuntu-latest
+    outputs:
+      any-changed: ${{ steps.insight.outputs.any-changed }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: Run Insight
-        uses: arghena/insight@v0.1.0-canary.12
+        id: insight
+        uses: arghena/insight@v0.1.0-canary.13
       - name: Upload to Coveralls
         if: ${{ github.ref_type == 'tag' }}
         uses: coverallsapp/github-action@v2
@@ -29,10 +32,8 @@ jobs:
 
   unit_tests:
     name: Unit tests
-    if: |
-      github.ref_type == 'tag' ||
-      contains(github.event.pull_request.changed_files, '**/*.rs') ||
-      contains(github.event.pull_request.changed_files, 'Cargo.*')
+    needs: insight
+    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.any-changed == 'true' }}
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -84,10 +85,8 @@ jobs:
 
   integration_tests:
     name: Integration tests
-    if: |
-      github.ref_type == 'tag' ||
-      contains(github.event.pull_request.changed_files, '**/*.rs') ||
-      contains(github.event.pull_request.changed_files, 'Cargo.*')
+    needs: insight
+    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.any-changed == 'true' }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

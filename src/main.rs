@@ -2,7 +2,7 @@ use anyhow::Result;
 use clap::{Parser, Subcommand};
 use katharsis::{arg, cmd};
 use std::path::PathBuf;
-
+// Test
 #[derive(Subcommand)]
 enum Commands {
     /// Generate a katharsis.toml file in the current directory

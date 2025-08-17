@@ -1,29 +1,38 @@
-# Copyright 2020 Dan Davison
-# Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
-
 name: CI
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha || github.run_id }}
   cancel-in-progress: true
 
 on:
+  schedule:
+    - cron: '0 0 * * *'
   push:
     tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
   pull_request:
-    paths:
-      - 'src/**'
-      - 'tests/**'
-      - 'examples/next.js/.next/server/app/articles/*.html'
-      - '.config/ast-grep/**/*.yml'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - '.rustfmt.toml'
-      - 'sgconfig.yml'
+    types: [opened, synchronize, edited]
 
 jobs:
+  insight:
+    name: Insight
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Run Insight
+        uses: arghena/insight@v0.1.0-canary.11
+      - name: Upload to Coveralls
+        if: ${{ github.ref_type == 'tag' }}
+        uses: coverallsapp/github-action@v2
+        with:
+          file: './target/tarpaulin/lcov.info'
+
   unit_tests:
     name: Unit tests
+    if: |
+      github.ref_type == 'tag' ||
+      contains(github.event.pull_request.changed_files, '**/*.rs') ||
+      contains(github.event.pull_request.changed_files, 'Cargo.*')
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -68,13 +77,17 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --release --locked -v --target ${{ matrix.job.target }} -- --nocapture
+            cross test --release --locked --target ${{ matrix.job.target }} -- --nocapture
           else
-            cargo test --release --locked -v --target ${{ matrix.job.target }} -- --nocapture
+            cargo test --release --locked --target ${{ matrix.job.target }} -- --nocapture
           fi
 
   integration_tests:
     name: Integration tests
+    if: |
+      github.ref_type == 'tag' ||
+      contains(github.event.pull_request.changed_files, '**/*.rs') ||
+      contains(github.event.pull_request.changed_files, 'Cargo.*')
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -90,81 +103,8 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
       - name: Build for release
-        run: cargo build --release --locked -v --target ${{ matrix.target }}
+        run: cargo build --release --locked --target ${{ matrix.target }}
       - name: End to end tests
         run: |
-          cargo run --release --locked -v --target ${{ matrix.target }} init -- < /dev/null
-          cargo run --release --locked -v --target ${{ matrix.target }} -- < /dev/null
-
-  rustfmt:
-    name: Rustfmt
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          components: rustfmt
-      - name: Check formatting
-        run: cargo fmt --all --check -v
-
-  clippy:
-    name: Clippy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          components: clippy
-      - name: Clippy Check
-        run: cargo clippy --all-targets --locked -v -- -D warnings
-
-  msrv:
-    runs-on: ubuntu-latest
-    name: Minimum Supported Rust Version
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Installing Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
-      - name: Install cargo-msrv
-        uses: taiki-e/install-action@v2
-        with:
-          tool: cargo-msrv
-      - name: Run cargo-msrv
-        run: cargo msrv verify --log-level debug
-
-  sg-lint:
-    runs-on: ubuntu-latest
-    name: Run ast-grep lint
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: ast-grep lint
-        uses: ast-grep/action@v1.5.0
-        with:
-          paths: src tests
-
-  coverage:
-    name: Code coverage
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Install stable toolchain
-        uses: dtolnay/rust-toolchain@stable
-      - name: Install cargo-tarpaulin
-        uses: taiki-e/install-action@v2
-        with:
-          tool: cargo-tarpaulin
-      - name: Run cargo-tarpaulin
-        # NOTE: `--engine llvm` causes the test coverage to be inaccurate.
-        run: cargo tarpaulin --release --locked -v --engine ptrace --out lcov --output-dir target/tarpaulin -- --nocapture
-      - name: Upload to Coveralls
-        if: ${{ github.event_name == 'push' }}
-        uses: coverallsapp/github-action@v2
-        with:
-          file: './target/tarpaulin/lcov.info'
+          cargo run --release --locked --target ${{ matrix.target }} init -- < /dev/null
+          cargo run --release --locked --target ${{ matrix.target }} -- < /dev/null

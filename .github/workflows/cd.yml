@@ -82,9 +82,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross build --release --locked -v --target ${{ matrix.job.target }}
+            cross build --release --locked --target ${{ matrix.job.target }}
           else
-            cargo build --release --locked -v --target ${{ matrix.job.target }}
+            cargo build --release --locked --target ${{ matrix.job.target }}
           fi
       - name: Install required dependencies
         shell: bash
@@ -120,7 +120,7 @@ jobs:
       - name: Installing Rust toolchain
         uses: dtolnay/rust-toolchain@stable
       - name: Cargo publish
-        run: cargo publish --locked -v --token ${{ secrets.CARGO_API_KEY }}
+        run: cargo publish --locked --token ${{ secrets.CARGO_API_KEY }}
 
   publish-to-winget:
     name: Publish to WinGet

@@ -1,8 +1,5 @@
 yaml-files:
-  - '.github/**/*.yml'
-  - '.config/**/*.yml'
-  - '.*.yml'
-  - '*.yml'
+  - '**/*.yml'
 
 ignore-from-file: .gitignore
 

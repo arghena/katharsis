@@ -1,0 +1,52 @@
+[match]
+dot = true
+
+[pull_request]
+check_title = true
+detect_changes = ["**/*.rs", "Cargo.toml", "Cargo.lock"]
+
+[schedule]
+tasks = ["cargo_deny"]
+
+[push_tag]
+formatters = ["cargo_fmt"]
+linters = ["cargo_msrv", "cargo_clippy", "cargo_tarpaulin", "ast_grep"]
+
+[options.formatters]
+cargo_fmt = ["--all"]
+shfmt = ["-i", "4", "-ci"]
+
+[options.linters]
+cargo_clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
+# NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
+cargo_tarpaulin = [
+  "--locked",
+  "--engine",
+  "ptrace",
+  "--out",
+  "lcov",
+  "--output-dir",
+  "target/tarpaulin",
+]
+yamllint = ["--strict"]
+
+[formatters]
+cargo_fmt = ["**/*.rs", "Cargo.toml"]
+prettier = ["**/*.yml", "**/*.md", "**/*.json"]
+taplo = ["**/*.toml"]
+shfmt = ["etc/ci/*.sh"]
+
+[linters]
+cargo_deny = ["Cargo.toml", "Cargo.lock"]
+typos = ["**/*", "!examples/**/*.png"]
+cargo_msrv = ["**/*.rs", "cargo.toml"]
+cargo_clippy = ["**/*.rs", "Cargo.toml"]
+cargo_tarpaulin = ["**/*.rs", "Cargo.toml"]
+yamllint = ["**/*.yml"]
+actionlint = [".github/workflows/*.yml"]
+ast_grep = ["**/*.rs"]
+alex = ["**/*.md"]
+markdownlint_cli2 = ["**/*.md"]
+vale = ["**/*.md"]
+taplo = ["**/*.toml"]
+shellcheck = ["etc/ci/*.sh"]

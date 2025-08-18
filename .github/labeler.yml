@@ -46,6 +46,7 @@ ci:
           - '.github/labeler.yml'
           - '.github/issue-labeler.yml'
           - '.github/title-labeler.yml'
+          - '.github/insight.toml'
 
 test:
   - changed-files:

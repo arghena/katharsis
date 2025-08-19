@@ -78,9 +78,9 @@ jobs:
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --locked --target ${{ matrix.job.target }} -- --nocapture
+            cross test --locked --target ${{ matrix.job.target }}
           else
-            cargo test --locked --target ${{ matrix.job.target }} -- --nocapture
+            cargo test --locked --target ${{ matrix.job.target }}
           fi
 
   integration_tests:
@@ -105,7 +105,7 @@ jobs:
         run: cargo build --release --locked --target ${{ matrix.target }}
       - name: End to end tests
         run: |
-          cargo_run="cargo run --release --locked --target ${{ matrix.target }}"
+          cli="cargo run --release --locked --target ${{ matrix.target }}"
 
-          $cargo_run init
-          $cargo_run
+          $cli init
+          $cli

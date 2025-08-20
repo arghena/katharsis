@@ -37,7 +37,7 @@ inquire = "0.7.5"
 rss = "2.0.12"
 scraper = "0.24.0"
 serde = { version = "1.0.219", features = ["derive"] }
-thiserror = "2.0.15"
+thiserror = "2.0.16"
 tokio = { version = "1.47.1", features = [
   "fs",
   "io-util",

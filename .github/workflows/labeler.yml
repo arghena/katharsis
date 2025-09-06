@@ -29,4 +29,4 @@ jobs:
           include-title: 1
           include-body: 0
       - name: Run labeler
-        uses: actions/labeler@v5
+        uses: actions/labeler@v6

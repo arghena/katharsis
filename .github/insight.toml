@@ -12,11 +12,11 @@ tasks = ["cargo_deny"]
 formatters = ["cargo_fmt"]
 linters = ["cargo_msrv", "cargo_clippy", "cargo_tarpaulin", "ast_grep"]
 
-[options.formatters]
+[args.formatters]
 cargo_fmt = ["--all"]
 shfmt = ["-i", "4", "-ci"]
 
-[options.linters]
+[args.linters]
 cargo_clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
 # NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
 cargo_tarpaulin = [

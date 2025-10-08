@@ -1,6 +1,3 @@
-# Copyright 2020 Dan Davison
-# Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
-
 name: CD
 
 on:
@@ -8,31 +5,8 @@ on:
     tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
 
 jobs:
-  create-release-note:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    name: Create release note
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-      - name: Generate release note
-        run: |
-          if ${{ contains(github.ref_name, 'canary') }}; then
-            npx changelogithub@latest --prerelease
-          else
-            npx changelogithub@latest
-          fi
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-  publish-assets:
-    permissions:
-      contents: write
-    needs: create-release-note
-    name: Publishing for ${{ matrix.job.os }}
+  build-dist:
+    name: Building for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -99,12 +73,40 @@ jobs:
           PROJECT_NAME: katharsis
           OS_NAME: ${{ matrix.job.os }}
         run: ./etc/ci/before_deploy.sh
-      - name: Releasing assets
-        uses: softprops/action-gh-release@v2
+      - name: Uploading distribution
+        uses: actions/upload-artifact@v4
         with:
-          files: |
+          name: dist
+          path: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
+
+  create-release-note:
+    permissions:
+      contents: write
+    # NOTE: https://github.blog/changelog/2025-08-26-releases-now-support-immutability-in-public-preview
+    needs: build-dist
+    runs-on: ubuntu-latest
+    name: Create release note
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Downloading distribution
+        uses: actions/download-artifact@v5
+        with:
+          name: dist
+          path: dist
+      - name: Generate release note
+        run: |
+          if ${{ contains(github.ref_name, 'canary') }}; then
+            npx changelogithub@latest --prerelease --assets 'dist/katharsis*'
+          else
+            npx changelogithub@latest --assets 'dist/katharsis*'
+          fi
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   publish-to-cargo:
     name: Publishing to Cargo
@@ -120,7 +122,11 @@ jobs:
   publish-to-winget:
     name: Publish to WinGet
     runs-on: ubuntu-latest
-    needs: publish-assets
+    # NOTE:
+    # The action will only work when the release is published (not a draft),
+    # because the release assets (binaries) aren't available publicly until the release is published.
+    # https://github.com/vedantmgoyal9/winget-releaser?tab=readme-ov-file#getting-started-
+    needs: create-release-note
     steps:
       - uses: vedantmgoyal2009/winget-releaser@v2
         with:

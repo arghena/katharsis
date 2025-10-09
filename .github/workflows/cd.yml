@@ -81,6 +81,24 @@ jobs:
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
 
+  create-attestation:
+    permissions:
+      id-token: write
+      attestations: write
+    needs: build-dist
+    runs-on: ubuntu-latest
+    name: Create attestation
+    steps:
+      - name: Downloading distribution
+        uses: actions/download-artifact@v5
+        with:
+          name: dist
+          path: dist
+      - name: Generate attestation
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: dist/katharsis*
+
   create-release-note:
     permissions:
       contents: write

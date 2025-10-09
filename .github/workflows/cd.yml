@@ -123,7 +123,7 @@ jobs:
             npx changelogithub@latest --assets 'dist/katharsis*'
           fi
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-to-cargo:
     name: Publishing to Cargo

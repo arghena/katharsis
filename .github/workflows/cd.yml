@@ -102,7 +102,6 @@ jobs:
   create-release-note:
     permissions:
       contents: write
-    # NOTE: https://github.blog/changelog/2025-08-26-releases-now-support-immutability-in-public-preview
     needs: build-dist
     runs-on: ubuntu-latest
     name: Create release note

@@ -116,12 +116,20 @@ jobs:
           name: dist
           path: dist
       - name: Generate release note
+        # NOTE:
+        # The recommended workflow for publishing an immutable release
+        # will be to initially create the release as a draft,
+        # attach any associated assets, and then publish the draft.
+        # https://github.com/orgs/community/discussions/171210#discussioncomment-14237940
         run: |
           if ${{ contains(github.ref_name, 'canary') }}; then
-            npx changelogithub@latest --prerelease --assets 'dist/katharsis*'
+            npx changelogithub@latest --prerelease --draft
           else
-            npx changelogithub@latest --assets 'dist/katharsis*'
+            npx changelogithub@latest --draft
           fi
+
+          gh release upload "${{ github.ref_name }}" -- dist/katharsis*
+          gh release edit "${{ github.ref_name }}" --draft=false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

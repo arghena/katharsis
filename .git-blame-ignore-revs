@@ -14,3 +14,6 @@ ac769af7b923aded7fec626cb217901cbc5bb73e
 
 # style: improve readability (#447)
 83069d4fdda947bf25543119cc4918cc12bb373d
+
+# style(toml): format `Cargo.toml` using `tombi` (#513)
+ad2174dc8a82ecac97ca97d0a817c3b02198ecce

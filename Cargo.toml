@@ -6,27 +6,15 @@ edition = "2024"
 rust-version = "1.85.0"
 license = "MIT"
 categories = ["command-line-utilities"]
-keywords = ["rss", "feed", "generator", "cli", "tool"]
+keywords = ["cli", "feed", "generator", "rss", "tool"]
 repository = "https://github.com/arghena/katharsis"
 homepage = "https://github.com/arghena/katharsis"
 documentation = "https://docs.rs/katharsis"
 description = "CLI tool for generating RSS feeds."
-include = ["/src/", "/LICENSE"]
-
-[lints.clippy]
-pedantic = "warn"
+include = ["/LICENSE", "/src/"]
 
 [[bin]]
 name = "katharsis"
-
-[lints.rust]
-unexpected_cfgs = { level = "warn", check-cfg = ["cfg(tarpaulin_include)"] }
-
-[profile.release]
-strip = true
-lto = true
-codegen-units = 1
-panic = "abort"
 
 [dependencies]
 anyhow = "1.0.99"
@@ -49,3 +37,15 @@ url = { version = "2.5.7", features = ["serde"] }
 
 [dev-dependencies]
 tokio-test = "0.4.4"
+
+[lints.clippy]
+pedantic = "warn"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(tarpaulin_include)"] }
+
+[profile.release]
+strip = true
+lto = true
+panic = "abort"
+codegen-units = 1

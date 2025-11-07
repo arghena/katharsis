@@ -14,3 +14,9 @@ wildcards = "deny"
 [sources]
 unknown-registry = "deny"
 unknown-git = "deny"
+
+[advisories]
+# TODO:
+# Wait for `scraper` v0.24.0 update.
+# https://github.com/rust-scraper/scraper/commit/6f076d1391cdb785f1d3128d3cbc21a649692184
+ignore = ["RUSTSEC-2025-0057"]

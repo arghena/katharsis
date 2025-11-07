@@ -21,7 +21,6 @@ chore:
           - '.commitlintrc.json'
           - '.prettierrc.toml'
           - '.rustfmt.toml'
-          - '.taplo.toml'
           - '.typos.toml'
           - '.markdownlint.yml'
           - '.yamllint.yml'

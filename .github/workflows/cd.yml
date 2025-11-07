@@ -74,7 +74,7 @@ jobs:
           OS_NAME: ${{ matrix.job.os }}
         run: ./etc/ci/before_deploy.sh
       - name: Uploading distribution
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dist
           path: |
@@ -90,7 +90,7 @@ jobs:
     name: Create attestation
     steps:
       - name: Downloading distribution
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: dist
           path: dist
@@ -111,7 +111,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Downloading distribution
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: dist
           path: dist

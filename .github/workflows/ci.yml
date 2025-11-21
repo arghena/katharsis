@@ -20,7 +20,7 @@ jobs:
       any-changed: ${{ steps.insight.outputs.any-changed }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Run Insight
         id: insight
         uses: arghena/insight@v0.1.0-canary.17
@@ -64,7 +64,7 @@ jobs:
             use-cross: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -98,7 +98,7 @@ jobs:
             target: x86_64-unknown-linux-gnu
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
       - name: Build for release

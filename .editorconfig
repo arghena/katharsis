@@ -13,6 +13,9 @@ insert_final_newline = true
 indent_style = space
 indent_size = 4
 
+[*.{md,json,toml,yml}]
+indent_size = 2
+
 [*.rs]
 max_line_length = 100
 
@@ -20,13 +23,3 @@ max_line_length = 100
 # Double whitespace at end of line
 # denotes a line break in Markdown.
 trim_trailing_whitespace = false
-indent_size = 2
-
-[*.yml]
-indent_size = 2
-
-[*.json]
-indent_size = 2
-
-[*.toml]
-indent_size = 2

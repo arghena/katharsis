@@ -29,6 +29,7 @@ cargo_tarpaulin = [
   "target/tarpaulin",
 ]
 yamllint = ["--strict"]
+tombi = ["--error-on-warnings"]
 
 [formatters]
 cargo_fmt = ["**/*.rs", "Cargo.toml"]

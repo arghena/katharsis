@@ -10,8 +10,3 @@ MD013: false
 #    ```
 # https://github.com/DavidAnson/markdownlint/blob/main/doc/md031.md
 MD031: false
-# NOTE:
-# When Prettier formats the code, it follows this rule.
-# Some special characters, like `✅`, can cause false positives.
-# https://github.com/DavidAnson/markdownlint/blob/main/doc/md060.md
-MD060: false

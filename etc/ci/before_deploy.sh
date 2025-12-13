@@ -83,7 +83,7 @@ make_deb() {
             return 0
             ;;
     esac
-    version=${GITHUB_REF/refs\/tags\/v/}
+    version=$(echo "$GITHUB_REF_NAME" | sed -e 's/^v//' -e 's/-canary/~canary/')
 
     if [[ $TARGET = *musl* ]]; then
         dpkgname=$PROJECT_NAME-musl

@@ -20,6 +20,9 @@ jobs:
           - os: windows-latest
             target: x86_64-pc-windows-msvc
             use-cross: false
+          - os: windows-11-arm
+            target: aarch64-pc-windows-msvc
+            use-cross: false
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             use-cross: false
@@ -69,9 +72,8 @@ jobs:
       - name: Packaging final binary
         shell: bash
         env:
-          TARGET: ${{ matrix.job.target }}
           PROJECT_NAME: katharsis
-          OS_NAME: ${{ matrix.job.os }}
+          TARGET: ${{ matrix.job.target }}
         run: ./etc/ci/before_deploy.sh
       - name: Uploading distribution
         uses: actions/upload-artifact@v5
@@ -122,14 +124,14 @@ jobs:
         # attach any associated assets, and then publish the draft.
         # https://github.com/orgs/community/discussions/171210#discussioncomment-14237940
         run: |
-          if ${{ contains(github.ref_name, 'canary') }}; then
+          if [[ $GITHUB_REF_NAME = *canary* ]]; then
             npx changelogithub@latest --prerelease --draft
           else
             npx changelogithub@latest --draft
           fi
 
-          gh release upload "${{ github.ref_name }}" -- dist/katharsis*
-          gh release edit "${{ github.ref_name }}" --draft=false
+          gh release upload "$GITHUB_REF_NAME" -- dist/katharsis*
+          gh release edit "$GITHUB_REF_NAME" --draft=false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

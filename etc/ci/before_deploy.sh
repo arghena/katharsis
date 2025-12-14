@@ -13,7 +13,7 @@ pack() {
 
     tempdir=$(mktemp -d 2>/dev/null || mktemp -d -t tmp)
     out_dir=$(pwd)
-    package_name="$PROJECT_NAME-${GITHUB_REF/refs\/tags\//}-$TARGET"
+    package_name="$PROJECT_NAME-$GITHUB_REF_NAME-$TARGET"
 
     if [[ $TARGET == "arm-unknown-linux-gnueabihf" ]]; then
         gcc_prefix="arm-linux-gnueabihf-"
@@ -26,7 +26,7 @@ pack() {
     mkdir "$tempdir/$package_name"
 
     cp "target/$TARGET/release/$PROJECT_NAME" "$tempdir/$package_name/"
-    if [ "$OS_NAME" != windows-latest ]; then
+    if [[ $TARGET != *windows* ]]; then
         "${gcc_prefix}"strip "$tempdir/$package_name/$PROJECT_NAME"
     fi
 
@@ -34,7 +34,7 @@ pack() {
     cp LICENSE "$tempdir/$package_name"
 
     pushd "$tempdir"
-    if [ "$OS_NAME" = windows-latest ]; then
+    if [[ $TARGET = *windows* ]]; then
         7z a "$out_dir/$package_name.zip" "$package_name"/*
     else
         tar czf "$out_dir/$package_name.tar.gz" "$package_name"/*

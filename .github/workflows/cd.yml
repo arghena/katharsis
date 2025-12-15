@@ -76,7 +76,7 @@ jobs:
           TARGET: ${{ matrix.job.target }}
         run: ./etc/ci/before_deploy.sh
       - name: Uploading distribution
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: dist
           path: |

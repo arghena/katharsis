@@ -3,7 +3,7 @@
 # Copyright 2020 Dan Davison
 # Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
 
-set -eux
+set -euxo pipefail
 
 pack() {
     local tempdir

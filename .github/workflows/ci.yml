@@ -30,6 +30,21 @@ jobs:
         with:
           file: './target/tarpaulin/lcov.info'
 
+  docs:
+    name: Docs
+    needs: insight
+    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.any-changed == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Check documentation
+        run: cargo doc --no-deps --document-private-items --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+
   unit_tests:
     name: Unit tests
     needs: insight

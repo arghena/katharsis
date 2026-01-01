@@ -42,9 +42,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Installing Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: actions-rust-lang/setup-rust-toolchain@1780873c7b576612439a134613cc4cc74ce5538c # v1.15.2
         with:
-          targets: ${{ matrix.job.target }}
+          target: ${{ matrix.job.target }}
+          rustflags: ''
+          cache: false
+          matcher: false
       - name: Install cross
         if: matrix.job.use-cross
         uses: taiki-e/install-action@e0db384ad69f5ba2c6dd0129d8934e0d0ba465c1 # v2.65.10
@@ -142,7 +145,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Installing Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: actions-rust-lang/setup-rust-toolchain@1780873c7b576612439a134613cc4cc74ce5538c # v1.15.2
+        with:
+          rustflags: ''
+          cache: false
+          matcher: false
       - name: Cargo publish
         run: cargo publish --locked --token ${{ secrets.CARGO_API_KEY }}
 

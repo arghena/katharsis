@@ -12,47 +12,32 @@ on:
   pull_request:
     types: [opened, synchronize, edited]
 
+permissions:
+  contents: read
+
 jobs:
   insight:
     name: Insight
     runs-on: ubuntu-latest
     outputs:
       any-changed: ${{ steps.insight.outputs.any-changed }}
+      rust-any-changed: ${{ steps.insight.outputs.rust-any-changed }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Run Insight
         id: insight
-        uses: arghena/insight@7213fb22674afb60fb0a0be8d41a180eafe8789a # v0.1.0-canary.18
+        uses: arghena/insight@bfb34f49d2553fcad661cf2dcefc540876459d66 # v0.1.0-canary.19
       - name: Upload to Coveralls
         if: ${{ github.ref_type == 'tag' }}
         uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e # v2.3.7
         with:
           file: './target/tarpaulin/lcov.info'
 
-  docs:
-    name: Docs
-    needs: insight
-    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.any-changed == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      - name: Install Rust
-        uses: actions-rust-lang/setup-rust-toolchain@1780873c7b576612439a134613cc4cc74ce5538c # v1.15.2
-        with:
-          rustflags: ''
-          cache: false
-          matcher: false
-      - name: Check documentation
-        run: cargo doc --no-deps --document-private-items --locked
-        env:
-          RUSTDOCFLAGS: -D warnings
-
   unit_tests:
     name: Unit tests
     needs: insight
-    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.any-changed == 'true' }}
+    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.rust-any-changed == 'true' }}
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -96,7 +81,7 @@ jobs:
           matcher: false
       - name: Install cross
         if: matrix.job.use-cross
-        uses: taiki-e/install-action@e0db384ad69f5ba2c6dd0129d8934e0d0ba465c1 # v2.65.10
+        uses: taiki-e/install-action@a983ca795126a4be4e8a44879ac5c4c3ef66cae1 # v2.65.11
         with:
           tool: cross
       - name: Unit tests
@@ -111,7 +96,7 @@ jobs:
   integration_tests:
     name: Integration tests
     needs: insight
-    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.any-changed == 'true' }}
+    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.rust-any-changed == 'true' }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -142,3 +127,60 @@ jobs:
 
           $cli init
           $cli
+
+  docs:
+    name: Docs
+    needs: insight
+    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.rust-any-changed == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Install Rust
+        uses: actions-rust-lang/setup-rust-toolchain@1780873c7b576612439a134613cc4cc74ce5538c # v1.15.2
+        with:
+          rustflags: ''
+          cache: false
+          matcher: false
+      - name: Check documentation
+        run: cargo doc --no-deps --document-private-items --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+
+  codeql:
+    permissions:
+      contents: read
+      security-events: write
+    name: CodeQL
+    needs: insight
+    if: |
+      !cancelled() &&
+      (
+        github.event_name == 'schedule' ||
+        needs.insight.outputs.any-changed == 'true'
+      )
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/customizing-your-advanced-setup-for-code-scanning#changing-the-languages-that-are-analyzed
+        language: ['rust', 'actions']
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v4.31.9
+        with:
+          # NOTE:
+          # Rust is only supported with `build-mode: none`.
+          # https://github.com/orgs/community/discussions/161754#discussioncomment-14025580
+          build-mode: none
+          queries: security-extended,security-and-quality
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v4.31.9
+        with:
+          # NOTE:
+          # Delete all the old dynamic analysis to get it back to work.
+          # https://github.com/github/codeql-action/issues/1179#issuecomment-2050937338
+          category: '/language:${{ matrix.language }}'

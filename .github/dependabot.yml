@@ -19,6 +19,7 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    open-pull-requests-limit: 10
     labels: ['ci']
     commit-message:
       prefix: 'ci'

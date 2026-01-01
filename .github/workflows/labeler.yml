@@ -22,11 +22,11 @@ jobs:
     if: github.repository_owner == 'arghena'
     steps:
       - name: Run title labeler
-        uses: github/issue-labeler@v3.4
+        uses: github/issue-labeler@c1b0f9f52a63158c4adc09425e858e87b32e9685 # v3.4
         with:
           configuration-path: .github/title-labeler.yml
           enable-versioned-regex: 0
           include-title: 1
           include-body: 0
       - name: Run labeler
-        uses: actions/labeler@v6
+        uses: actions/labeler@634933edcd8ababfe52f92936142cc22ac488b1b # v6.0.1

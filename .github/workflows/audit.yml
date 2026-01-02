@@ -1,0 +1,18 @@
+name: Audit
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  insight:
+    name: Insight
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Run Insight
+        uses: arghena/insight@632f721ddf36ecfc9c5d137e70e200b17209e5ad # v0.1.0-canary.20

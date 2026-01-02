@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Run Insight
         id: insight
-        uses: arghena/insight@632f721ddf36ecfc9c5d137e70e200b17209e5ad # v0.1.0-canary.20
+        uses: arghena/insight@4a7cebf274acb796f3cdfe8366ff88c13e4a6856 # v0.1.0-canary.21
       - name: Upload to Coveralls
         if: ${{ github.ref_type == 'tag' }}
         uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e # v2.3.7

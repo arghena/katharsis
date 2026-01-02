@@ -2,12 +2,7 @@
 dot = true
 
 [pr]
-check-title = true
-# https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/#languages-and-compilers
-detect-changes = [
-  { rust = ["**/*.rs", "Cargo.toml", "Cargo.lock"] },
-  { actions = [".github/workflows/*.yml"] }
-]
+detect-changes = [{ rust = ["**/*.rs", "Cargo.toml", "Cargo.lock"] }]
 
 [schedule]
 tasks = ["cargo-deny"]

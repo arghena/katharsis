@@ -1,0 +1,49 @@
+name: CodeQL
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  pull_request:
+    # https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/#languages-and-compilers
+    paths:
+      - '**/*.rs'
+      - '.github/workflows/*.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  codeql:
+    permissions:
+      contents: read
+      security-events: write
+    name: Run CodeQL
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/customizing-your-advanced-setup-for-code-scanning#changing-the-languages-that-are-analyzed
+        language: ['rust', 'actions']
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v4.31.9
+        with:
+          # NOTE:
+          # Rust is only supported with `build-mode: none`.
+          # https://github.com/orgs/community/discussions/161754#discussioncomment-14025580
+          build-mode: none
+          queries: security-extended,security-and-quality
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v4.31.9
+        with:
+          # NOTE:
+          # Delete all the old dynamic analysis to get it back to work.
+          # https://github.com/github/codeql-action/issues/1179#issuecomment-2050937338
+          category: '/language:${{ matrix.language }}'

@@ -10,7 +10,7 @@ on:
   push:
     tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
   pull_request:
-    types: [opened, synchronize, edited]
+    types: [opened, synchronize]
 
 permissions:
   contents: read
@@ -20,14 +20,13 @@ jobs:
     name: Insight
     runs-on: ubuntu-latest
     outputs:
-      any-changed: ${{ steps.insight.outputs.any-changed }}
       rust-any-changed: ${{ steps.insight.outputs.rust-any-changed }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Run Insight
         id: insight
-        uses: arghena/insight@bfb34f49d2553fcad661cf2dcefc540876459d66 # v0.1.0-canary.19
+        uses: arghena/insight@632f721ddf36ecfc9c5d137e70e200b17209e5ad # v0.1.0-canary.20
       - name: Upload to Coveralls
         if: ${{ github.ref_type == 'tag' }}
         uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e # v2.3.7
@@ -146,41 +145,3 @@ jobs:
         run: cargo doc --no-deps --document-private-items --locked
         env:
           RUSTDOCFLAGS: -D warnings
-
-  codeql:
-    permissions:
-      contents: read
-      security-events: write
-    name: CodeQL
-    needs: insight
-    if: |
-      !cancelled() &&
-      (
-        github.event_name == 'schedule' ||
-        needs.insight.outputs.any-changed == 'true'
-      )
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        # https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/customizing-your-advanced-setup-for-code-scanning#changing-the-languages-that-are-analyzed
-        language: ['rust', 'actions']
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v4.31.9
-        with:
-          # NOTE:
-          # Rust is only supported with `build-mode: none`.
-          # https://github.com/orgs/community/discussions/161754#discussioncomment-14025580
-          build-mode: none
-          queries: security-extended,security-and-quality
-          languages: ${{ matrix.language }}
-      - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v4.31.9
-        with:
-          # NOTE:
-          # Delete all the old dynamic analysis to get it back to work.
-          # https://github.com/github/codeql-action/issues/1179#issuecomment-2050937338
-          category: '/language:${{ matrix.language }}'

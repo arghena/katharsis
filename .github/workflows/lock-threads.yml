@@ -15,7 +15,7 @@ jobs:
       discussions: write
     runs-on: ubuntu-latest
     name: Run lock threads
-    if: github.repository_owner == 'arghena'
+    if: ${{ github.repository_owner == 'arghena' }}
     steps:
       - name: Lock threads
         uses: dessant/lock-threads@7266a7ce5c1df01b1c6db85bf8cd86c737dadbe7 # v6.0.0

@@ -22,6 +22,7 @@ jobs:
       contents: read
       security-events: write
     name: Run CodeQL
+    if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

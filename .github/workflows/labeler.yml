@@ -22,7 +22,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     name: Add PR labels
-    if: github.repository_owner == 'arghena'
+    if: ${{ github.repository_owner == 'arghena' && github.actor != 'dependabot[bot]' }}
     steps:
       - name: Run title labeler
         uses: github/issue-labeler@c1b0f9f52a63158c4adc09425e858e87b32e9685 # v3.4

@@ -14,9 +14,9 @@ This is because users won't have access to those files locally when browsing the
   </a>
   <h1>Katharsis</h1>
 
-<a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.30&style=for-the-badge&label=CI&labelColor=363a4f&color=black&logo=github" alt="CI" /></a>
-<a href="https://coveralls.io/github/arghena/katharsis"><img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.30&style=for-the-badge&labelColor=363a4f&color=ivory&logo=coveralls" alt="Coverage Status" /></a>
-<a href="https://github.com/arghena/katharsis/actions/workflows/cd.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/cd.yml?branch=v1.0.0-canary.30&style=for-the-badge&label=CD&labelColor=363a4f&color=black&logo=github" alt="CD" /></a>
+<a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=v1.0.0-canary.30&style=for-the-badge&label=CI&labelColor=1a1b26&color=black&logo=github" alt="CI" /></a>
+<a href="https://coveralls.io/github/arghena/katharsis"><img src="https://img.shields.io/coverallsCoverage/github/arghena/katharsis?branch=v1.0.0-canary.30&style=for-the-badge&labelColor=1a1b26&color=ivory&logo=coveralls" alt="Coverage Status" /></a>
+<a href="https://github.com/arghena/katharsis/actions/workflows/cd.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/cd.yml?branch=v1.0.0-canary.30&style=for-the-badge&label=CD&labelColor=1a1b26&color=black&logo=github" alt="CD" /></a>
 
 </div>
 

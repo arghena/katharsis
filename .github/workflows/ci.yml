@@ -8,33 +8,17 @@ on:
   push:
     tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
   pull_request:
-    types: [opened, synchronize]
+    paths:
+      - '**/*.rs'
+      - '**/Cargo.toml'
+      - '**/Cargo.lock'
 
 permissions:
   contents: read
 
 jobs:
-  insight:
-    name: Insight
-    runs-on: ubuntu-latest
-    outputs:
-      rust-any-changed: ${{ steps.insight.outputs.rust-any-changed }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      - name: Run Insight
-        id: insight
-        uses: arghena/insight@4a7cebf274acb796f3cdfe8366ff88c13e4a6856 # v0.1.0-canary.21
-      - name: Upload to Coveralls
-        if: ${{ github.ref_type == 'tag' }}
-        uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e # v2.3.7
-        with:
-          file: './target/tarpaulin/lcov.info'
-
   unit_tests:
     name: Unit tests
-    needs: insight
-    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.rust-any-changed == 'true' }}
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -92,8 +76,6 @@ jobs:
 
   integration_tests:
     name: Integration tests
-    needs: insight
-    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.rust-any-changed == 'true' }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -127,8 +109,6 @@ jobs:
 
   docs:
     name: Docs
-    needs: insight
-    if: ${{ github.ref_type == 'tag' || needs.insight.outputs.rust-any-changed == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

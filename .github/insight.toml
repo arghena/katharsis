@@ -1,9 +1,6 @@
 [match]
 dot = true
 
-[pr.detect-changes]
-rust = ["**/*.rs", "Cargo.toml", "Cargo.lock"]
-
 [schedule]
 tasks = ["cargo-deny"]
 

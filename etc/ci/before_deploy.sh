@@ -9,26 +9,14 @@ pack() {
     local tempdir
     local out_dir
     local package_name
-    local gcc_prefix
 
     tempdir=$(mktemp -d 2>/dev/null || mktemp -d -t tmp)
     out_dir=$(pwd)
     package_name="$PROJECT_NAME-$GITHUB_REF_NAME-$TARGET"
 
-    if [[ $TARGET == "arm-unknown-linux-gnueabihf" ]]; then
-        gcc_prefix="arm-linux-gnueabihf-"
-    elif [[ $TARGET == "aarch64-unknown-linux-gnu" ]]; then
-        gcc_prefix="aarch64-linux-gnu-"
-    else
-        gcc_prefix=""
-    fi
-
     mkdir "$tempdir/$package_name"
 
     cp "target/$TARGET/release/$PROJECT_NAME" "$tempdir/$package_name/"
-    if [[ $TARGET != *windows* ]]; then
-        "${gcc_prefix}"strip "$tempdir/$package_name/$PROJECT_NAME"
-    fi
 
     cp README.md "$tempdir/$package_name"
     cp LICENSE "$tempdir/$package_name"
@@ -49,7 +37,6 @@ make_deb() {
     local version
     local dpkgname
     local conflictname
-    local gcc_prefix
     local homepage
     local maintainer
 
@@ -60,22 +47,18 @@ make_deb() {
     case $TARGET in
         x86_64*)
             architecture=amd64
-            gcc_prefix=""
             library_dir=""
             ;;
         i686*)
             architecture=i386
-            gcc_prefix=""
             library_dir=""
             ;;
         aarch64*)
             architecture=arm64
-            gcc_prefix="aarch64-linux-gnu-"
             library_dir="-l/usr/aarch64-linux-gnu/lib"
             ;;
         arm*hf)
             architecture=armhf
-            gcc_prefix="arm-linux-gnueabihf-"
             library_dir="-l/usr/arm-linux-gnueabihf/lib"
             ;;
         *)
@@ -96,7 +79,6 @@ make_deb() {
     tempdir=$(mktemp -d 2>/dev/null || mktemp -d -t tmp)
 
     install -Dm755 "target/$TARGET/release/$PROJECT_NAME" "$tempdir/usr/bin/$PROJECT_NAME"
-    "${gcc_prefix}"strip "$tempdir/usr/bin/$PROJECT_NAME"
 
     mkdir "./debian"
     touch "./debian/control"

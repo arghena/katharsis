@@ -1,12 +1,14 @@
 name: CodeQL
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha || github.run_id }}
   cancel-in-progress: true
 
 on:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    branches: [canary, 'v[0-9]+']
   pull_request:
     # https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/#languages-and-compilers
     paths:

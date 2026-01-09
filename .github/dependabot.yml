@@ -1,6 +1,5 @@
 # NOTE:
-# If `labels: ['foo']` is not explicitly configured,
-# Dependabot will not follow `labels: []`.
+# Dependabot won't follow `labels: []`.
 # https://github.com/dependabot/dependabot-core/issues/11783
 
 version: 2

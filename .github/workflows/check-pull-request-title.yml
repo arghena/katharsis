@@ -14,6 +14,7 @@ permissions:
 jobs:
   insight:
     name: Insight
+    if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

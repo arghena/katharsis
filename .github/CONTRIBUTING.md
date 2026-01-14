@@ -1,3 +1,11 @@
+<!--
+
+NOTE:
+Please keep the links absolute (starting with `/`).
+Relative links don't work properly when accessing this guide via the GitHub UI tabs.
+
+-->
+
 # Contributing to Katharsis
 
 <!-- vale Google.Exclamation = NO -->
@@ -10,7 +18,7 @@ Thank you so much for contributing to Katharsis! We truly appreciate every singl
 >
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/arghena/katharsis/pulls) or [issues](https://github.com/arghena/katharsis/issues) for an open or closed item that relates to your submission.
 > - Before performing any actions, such as submitting a PR or opening an issue, follow the relevant templates and process guidelines.
-> - PRs that are used for code formatting should be ignored in the [.git-blame-ignore-revs](../.git-blame-ignore-revs) file.
+> - PRs that are used for code formatting should be ignored in the [.git-blame-ignore-revs](/.git-blame-ignore-revs) file.
 > - The static assets for the documentation should be stored in the [assets](https://github.com/arghena/assets) repository.
 
 ## Guidelines
@@ -38,7 +46,7 @@ Here are some guidelines to maintain a consistent style and voice across the doc
 
 ### Code
 
-When you first build the project, [rustup](https://github.com/rust-lang/rustup) will automatically configure the toolchain for you based on the information in the [rust-toolchain.toml](../rust-toolchain.toml) file. For more information about the toolchain, please refer to the relevant official documentation:
+When you first build the project, [rustup](https://github.com/rust-lang/rustup) will automatically configure the toolchain for you based on the information in the [rust-toolchain.toml](/rust-toolchain.toml) file. For more information about the toolchain, please refer to the relevant official documentation:
 
 - [The toolchain file](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file)
 - [rustfmt](https://rust-lang.github.io/rustfmt)
@@ -47,7 +55,7 @@ When you first build the project, [rustup](https://github.com/rust-lang/rustup) 
 
 ## Code of Conduct
 
-Do note that our [Code of Conduct](CODE-OF-CONDUCT.md) applies to all Katharsis community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
+Do note that our [Code of Conduct](/.github/CODE-OF-CONDUCT.md) applies to all Katharsis community channels. Users are **highly encouraged** to read and adhere to them to avoid repercussions.
 
 ## Signing Commits
 
@@ -55,7 +63,7 @@ All pull requests must include [signed commits](https://docs.github.com/en/authe
 
 ## Developer's Certificate of Origin
 
-All pull request submissions to this project must comply with the [DCO](DCO).
+All pull request submissions to this project must comply with the [DCO](/.github/DCO).
 
 ## Developing
 

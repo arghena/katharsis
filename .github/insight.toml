@@ -2,7 +2,7 @@
 dot = true
 
 [schedule]
-tasks = ["cargo-deny"]
+linters = ["cargo-deny"]
 
 [push]
 formatters = ["cargo-fmt"]

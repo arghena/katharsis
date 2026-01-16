@@ -53,9 +53,11 @@ jobs:
           matcher: false
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@30eab0fabba9ea3f522099957e668b21876aa39e # v2.66.6
-        with:
-          tool: cross
+        shell: bash
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
+          cargo binstall --no-confirm cross
       - name: Cargo build
         shell: bash
         run: |

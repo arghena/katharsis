@@ -47,7 +47,7 @@ jobs:
       - name: Install Rust stable
         shell: bash
         run: |
-          rustup toolchain install stable --profile minimal
+          rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
@@ -153,7 +153,7 @@ jobs:
         uses: rust-lang/crates-io-auth-action@b7e9a28eded4986ec6b1fa40eeee8f8f165559ec # v1.0.3
       - name: Install Rust stable
         run: |
-          rustup toolchain install stable --profile minimal
+          rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cargo publish
         run: cargo publish --locked

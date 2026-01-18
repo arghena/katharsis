@@ -140,17 +140,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-to-cargo:
+    permissions:
+      id-token: write
+      contents: read
     name: Publishing to Cargo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Authenticate with crates.io
+        id: auth
+        uses: rust-lang/crates-io-auth-action@b7e9a28eded4986ec6b1fa40eeee8f8f165559ec # v1.0.3
       - name: Install Rust stable
         run: |
           rustup toolchain install stable --profile minimal
           rustup override set stable
       - name: Cargo publish
-        run: cargo publish --locked --token ${{ secrets.CARGO_API_KEY }}
+        run: cargo publish --locked --token ${{ steps.auth.outputs.token }}
 
   publish-to-winget:
     name: Publish to WinGet

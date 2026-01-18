@@ -122,8 +122,7 @@ jobs:
           name: dist
           path: dist
       - name: Generate release note
-        # NOTE:
-        # The recommended workflow for publishing an immutable release
+        # NOTE: The recommended workflow for publishing an immutable release
         # will be to initially create the release as a draft,
         # attach any associated assets, and then publish the draft.
         # https://github.com/orgs/community/discussions/171210#discussioncomment-14237940
@@ -163,8 +162,7 @@ jobs:
   publish-to-winget:
     name: Publish to WinGet
     runs-on: ubuntu-latest
-    # NOTE:
-    # The action will only work when the release is published (not a draft),
+    # NOTE: The action will only work when the release is published (not a draft),
     # because the release assets (binaries) aren't available publicly until the release is published.
     # https://github.com/vedantmgoyal9/winget-releaser?tab=readme-ov-file#getting-started-
     needs: create-release-note

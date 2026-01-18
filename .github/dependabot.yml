@@ -1,5 +1,4 @@
-# NOTE:
-# Dependabot won't follow `labels: []`.
+# NOTE: Dependabot won't follow `labels: []`.
 # https://github.com/dependabot/dependabot-core/issues/11783
 
 version: 2

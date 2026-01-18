@@ -1,5 +1,4 @@
-# NOTE:
-# You can refer to the
+# NOTE: You can refer to the
 # [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.html)
 # for more detailed documentation.
 
@@ -9,13 +8,11 @@ title = "Your Website Title"
 # A description of the website
 description = "Your Website Description"
 # The main URL of the website
-# NOTE:
-# The `rss.site_url` property should not include a trailing slash
+# NOTE: The `rss.site_url` property should not include a trailing slash
 # (for example, `https://example.com` rather than `https://example.com/`).
 site_url = "https://example.com"
 # Path to the channel's logo
-# NOTE:
-# The `rss.image` property is relative to the `rss.site_url`
+# NOTE: The `rss.image` property is relative to the `rss.site_url`
 # (for example, `favicon.png` corresponds to `https://example.com/favicon.png`).
 image = "favicon.png"
 # Copyright information
@@ -23,8 +20,7 @@ copyright = "© Year Your Name"
 # Preferred language
 language = "en"
 # Path to the local output RSS file
-# NOTE:
-# The `rss.output` property specifies the path relative to the working directory
+# NOTE: The `rss.output` property specifies the path relative to the working directory
 # (for example, `rss.xml` corresponds to `./rss.xml`).
 output = "rss.xml"
 
@@ -34,8 +30,7 @@ title = "h1"
 # The tag or attribute containing the article's description
 description = "[data-description]"
 # The HTML files that needs to be parsed
-# NOTE:
-# The `article.input` property corresponds to the file stem (`*`),
+# NOTE: The `article.input` property corresponds to the file stem (`*`),
 # which is the same as the article's URL slug.
 input = "articles/*.html"
 # Information about the article's author
@@ -45,8 +40,7 @@ prefix = "articles"
 # The tag or attribute containing the article's content
 content = "[data-content]"
 # The tag containing the article's publication date
-# NOTE:
-# The `article.date` property's tag must include a
+# NOTE: The `article.date` property's tag must include a
 # [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
 # attribute, and the attribute value must follow the `%Y-%m-%d` format.
 date = "time"

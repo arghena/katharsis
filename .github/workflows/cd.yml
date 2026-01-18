@@ -67,11 +67,11 @@ jobs:
         run: |
           if [[ ${{ matrix.job.target }} == arm-unknown-linux-gnueabihf ]]; then
               sudo apt update
-              sudo apt-get install -y binutils-arm-linux-gnueabihf
+              sudo apt install -y binutils-arm-linux-gnueabihf
           fi
           if [[ ${{ matrix.job.target }} == aarch64-unknown-linux-gnu ]]; then
               sudo apt update
-              sudo apt-get install -y binutils-aarch64-linux-gnu
+              sudo apt install -y binutils-aarch64-linux-gnu
           fi
       - name: Packaging final binary
         shell: bash

@@ -1,7 +1,6 @@
 # https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md
 MD013: false
-# NOTE:
-# When Prettier formats the code, it follows this rule.
+# NOTE: When Prettier formats the code, it follows this rule.
 # If you turn it on, it can cause some problems.
 # For example:
 # 2. Create a new branch:

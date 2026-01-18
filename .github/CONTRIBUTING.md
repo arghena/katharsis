@@ -1,7 +1,6 @@
 <!--
 
-NOTE:
-Please keep the links absolute (starting with `/`).
+NOTE: Please keep the links absolute (starting with `/`).
 Relative links don't work properly when accessing this guide via the GitHub UI tabs.
 
 -->

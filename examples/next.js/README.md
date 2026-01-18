@@ -2,7 +2,7 @@
 
 This example demonstrates how to generate an RSS feed using Katharsis in Next.js.
 
-## How to use
+## How to Use
 
 ```bash
 git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.30 --depth 1

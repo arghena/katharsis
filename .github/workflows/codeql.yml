@@ -40,8 +40,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@cdefb33c0f6224e58673d9004f47f7cb3e328b89 # v4.31.10
         with:
-          # NOTE:
-          # Rust is only supported with `build-mode: none`.
+          # NOTE: Rust is only supported with `build-mode: none`.
           # https://github.com/orgs/community/discussions/161754#discussioncomment-14025580
           build-mode: none
           queries: security-extended,security-and-quality
@@ -49,7 +48,6 @@ jobs:
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@cdefb33c0f6224e58673d9004f47f7cb3e328b89 # v4.31.10
         with:
-          # NOTE:
-          # Delete all the old dynamic analysis to get it back to work.
+          # NOTE: Delete all the old dynamic analysis to get it back to work.
           # https://github.com/github/codeql-action/issues/1179#issuecomment-2050937338
           category: '/language:${{ matrix.language }}'

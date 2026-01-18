@@ -20,6 +20,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Run Insight
-        uses: arghena/insight@25649ff130c8733ba05cbb43328d42258072d26a # v0.1.0-canary.26
+        uses: arghena/insight@6642f76496937519c45c122f6218fa0a2dc07fd2 # v0.1.0-canary.27
         with:
           check-pull-request-title: true

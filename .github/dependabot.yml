@@ -3,6 +3,8 @@
 
 version: 2
 
+# TODO: Allow lower case commit message.
+# https://github.com/dependabot/dependabot-core/issues/10586
 updates:
   - package-ecosystem: 'cargo'
     directory: '/'

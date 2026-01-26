@@ -1,5 +1,4 @@
 ci|CI
-Paru
 Clippy
 toolchain
 rustup

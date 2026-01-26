@@ -63,15 +63,6 @@ winget install arghena.katharsis
 </details>
 
 <details>
-  <summary>Paru</summary>
-
-```bash
-paru -S katharsis
-```
-
-</details>
-
-<details>
   <summary>Apt</summary>
 
 ```bash

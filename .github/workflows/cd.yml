@@ -51,7 +51,7 @@ jobs:
           rustup override set stable
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@3ae7038495f79cd771208b38319ff728a8b24538 # v2.67.3
+        uses: taiki-e/install-action@710817a1645ef40daad5bcde7431ceccf6cc3528 # v2.67.13
         with:
           tool: cross
       - name: Cargo build

@@ -65,7 +65,7 @@ jobs:
           key: ${{ matrix.job.target }}
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@3ae7038495f79cd771208b38319ff728a8b24538 # v2.67.3
+        uses: taiki-e/install-action@88d897fbe3f79ed72a43e0dcbca36156ff03344e # v2.67.14
         with:
           tool: cross
       - name: Unit tests

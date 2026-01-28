@@ -12,6 +12,14 @@ keywords = ["cli", "feed", "generator", "rss", "tool"]
 categories = ["command-line-utilities"]
 include = ["/LICENSE", "/src/"]
 
+[package.metadata.binstall]
+pkg-url = "{ repo }/releases/download/v{ version }/{ name }-v{ version }-{ target }{ archive-suffix }"
+bin-dir = "{ name }-v{ version }-{ target }/{ bin }{ binary-ext }"
+pkg-fmt = "tgz"
+
+[package.metadata.binstall.overrides.'cfg(windows)']
+pkg-fmt = "zip"
+
 [[bin]]
 name = "katharsis"
 

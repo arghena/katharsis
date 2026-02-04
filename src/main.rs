@@ -20,8 +20,8 @@ struct Cli {
     command: Option<Commands>,
 }
 
-#[cfg(not(tarpaulin_include))]
 #[tokio::main]
+#[cfg(not(tarpaulin_include))]
 async fn main() -> Result<()> {
     let cli = Cli::parse();
     let mut path = PathBuf::from("katharsis.toml");

@@ -60,9 +60,9 @@ Do note that our [Code of Conduct](/.github/CODE-OF-CONDUCT.md) applies to all K
 
 All pull requests must include [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 
-## Developer's Certificate of Origin
+## Developer Certificate of Origin
 
-All pull request submissions to this project must comply with the [DCO](/.github/DCO).
+All pull request submissions to this project must comply with the [DCO](https://developercertificate.org).
 
 ## Developing
 

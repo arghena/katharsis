@@ -79,6 +79,8 @@ jobs:
       - name: Install nextest
         uses: taiki-e/install-action@cd06cfcb315894ee98ffbc4582bcafbcbc260bdb # v2.67.23
         with:
+          # NOTE: Nextest runs tests in parallel by spawning multiple processes,
+          # so its idea is sound and compatible with qemu.
           # https://github.com/cross-rs/cross/issues/716#issuecomment-1547137816
           tool: cargo-nextest
       - name: Run tests
@@ -91,7 +93,8 @@ jobs:
           fi
       - name: Run doctests
         shell: bash
-        # https://github.com/nextest-rs/nextest/blob/main/AGENTS.md#running-tests
+        # TODO: Waiting for nextest to support doctests.
+        # https://github.com/nextest-rs/nextest/issues/16
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
             cross test --doc --locked --target ${{ matrix.job.target }}

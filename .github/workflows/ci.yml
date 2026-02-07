@@ -83,7 +83,6 @@ jobs:
           tool: cargo-nextest
       - name: Run tests
         shell: bash
-        # https://github.com/nextest-rs/nextest/blob/main/AGENTS.md#running-tests
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
             cross nextest run --locked --target ${{ matrix.job.target }}
@@ -92,6 +91,7 @@ jobs:
           fi
       - name: Run doctests
         shell: bash
+        # https://github.com/nextest-rs/nextest/blob/main/AGENTS.md#running-tests
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
             cross test --doc --locked --target ${{ matrix.job.target }}

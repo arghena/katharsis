@@ -6,7 +6,7 @@ concurrency:
 
 on:
   push:
-    # NOTE: Caches from base branches are available to PRs, but not across unrelated branches.
+    # NOTE: Caches from base branches are available to PRs and tags, but not across unrelated branches.
     # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-limits-and-control
     branches: [canary]
     paths:
@@ -67,10 +67,10 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cache Rust artifacts
-        if: ${{ github.ref_type != 'tag' }}
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
         with:
           key: ${{ matrix.job.target }}
+          save-if: ${{ github.ref_name == 'canary' }}
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
         uses: taiki-e/install-action@cd06cfcb315894ee98ffbc4582bcafbcbc260bdb # v2.67.23
@@ -107,8 +107,9 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cache Rust artifacts
-        if: ${{ github.ref_type != 'tag' }}
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+        with:
+          save-if: ${{ github.ref_name == 'canary' }}
       - name: Build for release
         shell: bash
         run: cargo build --release --locked --target ${{ matrix.target }}
@@ -131,8 +132,9 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cache Rust artifacts
-        if: ${{ github.ref_type != 'tag' }}
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+        with:
+          save-if: ${{ github.ref_name == 'canary' }}
       - name: Check documentation
         run: cargo doc --no-deps --document-private-items --locked
         env:

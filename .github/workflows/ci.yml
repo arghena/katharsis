@@ -67,6 +67,7 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cache Rust artifacts
+        if: ${{ github.ref_type != 'tag' }}
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
         with:
           key: ${{ matrix.job.target }}
@@ -106,6 +107,7 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cache Rust artifacts
+        if: ${{ github.ref_type != 'tag' }}
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - name: Build for release
         shell: bash
@@ -129,6 +131,7 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update
           rustup override set stable
       - name: Cache Rust artifacts
+        if: ${{ github.ref_type != 'tag' }}
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - name: Check documentation
         run: cargo doc --no-deps --document-private-items --locked

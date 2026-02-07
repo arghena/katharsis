@@ -6,7 +6,7 @@ concurrency:
 
 on:
   push:
-    # NOTE: Caches from base branches are available to PRs, but not across unrelated branches.
+    # NOTE: Caches from base branches are available to PRs and tags, but not across unrelated branches.
     # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-limits-and-control
     branches: [canary]
     paths:

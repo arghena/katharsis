@@ -72,7 +72,8 @@ All pull request submissions to this project must comply with the [DCO](https://
 ### Dependencies
 
 - Install Rust and Cargo via [rustup](https://rustup.rs).
-- Install the [GitHub CLI](https://github.com/cli/cli#installation).
+- Install [nextest](https://nexte.st/docs/installation/pre-built-binaries).
+- Install [GitHub CLI](https://github.com/cli/cli#installation).
 
 ### Naming
 
@@ -112,9 +113,10 @@ All pull request submissions to this project must comply with the [DCO](https://
    ```bash
    git checkout -b MY_BRANCH_NAME origin/canary
    ```
-3. Install dependencies and run unit tests:
+3. Install dependencies and run tests:
    ```bash
-   cargo test --locked
+   cargo nextest run --locked
+   cargo test --doc --locked
    ```
 4. Start making changes to your code.
 5. Run rustfmt and Clippy:
@@ -122,9 +124,10 @@ All pull request submissions to this project must comply with the [DCO](https://
    cargo fmt --all --check
    cargo clippy --all-targets --locked -- -D warnings
    ```
-6. Run unit tests:
+6. Run tests:
    ```bash
-   cargo test --locked
+   cargo nextest run --locked
+   cargo test --doc --locked
    ```
 7. When your changes are finished, commit them to the branch:
    ```bash

@@ -76,13 +76,27 @@ jobs:
         uses: taiki-e/install-action@cd06cfcb315894ee98ffbc4582bcafbcbc260bdb # v2.67.23
         with:
           tool: cross
-      - name: Unit tests
+      - name: Install nextest
+        uses: taiki-e/install-action@cd06cfcb315894ee98ffbc4582bcafbcbc260bdb # v2.67.23
+        with:
+          # https://github.com/cross-rs/cross/issues/716#issuecomment-1547137816
+          tool: cargo-nextest
+      - name: Run tests
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --locked --target ${{ matrix.job.target }}
+            cross nextest run --locked --target ${{ matrix.job.target }}
           else
-            cargo test --locked --target ${{ matrix.job.target }}
+            cargo nextest run --locked --target ${{ matrix.job.target }}
+          fi
+      - name: Run doctests
+        shell: bash
+        # https://github.com/nextest-rs/nextest/blob/main/AGENTS.md#running-tests
+        run: |
+          if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
+            cross test --doc --locked --target ${{ matrix.job.target }}
+          else
+            cargo test --doc --locked --target ${{ matrix.job.target }}
           fi
 
   integration_tests:

@@ -1,7 +1,7 @@
 name: CodeQL
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha || github.run_id }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: true
 
 # https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/#languages-and-compilers

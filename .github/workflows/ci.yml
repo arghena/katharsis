@@ -8,9 +8,8 @@ on:
   push:
     # NOTE: Caches from base branches are available to PRs, but not across unrelated branches.
     # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-limits-and-control
-    branches: [canary, 'v[0-9]+']
+    branches: [canary]
     paths:
-      - '**/*.rs'
       - '**/Cargo.toml'
       - '**/Cargo.lock'
     # NOTE: Path filters are not evaluated for pushes of tags.

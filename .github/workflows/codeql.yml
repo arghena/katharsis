@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: [canary, 'v[0-9]+']
+    branches: [canary]
     paths:
       - '**/*.rs'
       - '.github/workflows/*.yml'

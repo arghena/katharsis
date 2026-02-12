@@ -73,34 +73,30 @@ jobs:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@1e67dedb5e3c590e1c9d9272ace46ef689da250d # v2.67.27
+        uses: taiki-e/install-action@d4422f254e595ee762a758628fe4f16ce050fa2e # v2.67.28
         with:
           tool: cross
       - name: Install nextest
-        uses: taiki-e/install-action@1e67dedb5e3c590e1c9d9272ace46ef689da250d # v2.67.27
+        # TODO: Waiting for cross to support nextest.
+        # https://github.com/cross-rs/cross/issues/716
+        if: ${{ !matrix.job.use-cross }}
+        uses: taiki-e/install-action@d4422f254e595ee762a758628fe4f16ce050fa2e # v2.67.28
         with:
-          # NOTE: Nextest runs tests in parallel by spawning multiple processes,
-          # so its idea is sound and compatible with qemu.
-          # https://github.com/cross-rs/cross/issues/716#issuecomment-1547137816
           tool: cargo-nextest
       - name: Run tests
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross nextest run --locked --target ${{ matrix.job.target }}
+            cross test --locked --target ${{ matrix.job.target }}
           else
             cargo nextest run --locked --target ${{ matrix.job.target }}
           fi
       - name: Run doctests
-        shell: bash
         # TODO: Waiting for nextest to support doctests.
         # https://github.com/nextest-rs/nextest/issues/16
-        run: |
-          if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --doc --locked --target ${{ matrix.job.target }}
-          else
-            cargo test --doc --locked --target ${{ matrix.job.target }}
-          fi
+        shell: bash
+        if: ${{ !matrix.job.use-cross }}
+        run: cargo test --doc --locked --target ${{ matrix.job.target }}
 
   integration_tests:
     name: Integration tests

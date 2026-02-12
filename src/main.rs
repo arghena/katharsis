@@ -20,7 +20,7 @@ struct Cli {
     command: Option<Commands>,
 }
 
-#[tokio::main]
+#[tokio::main] // Order is important.
 #[cfg(not(tarpaulin_include))]
 async fn main() -> Result<()> {
     let cli = Cli::parse();

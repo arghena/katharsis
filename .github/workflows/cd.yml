@@ -62,17 +62,16 @@ jobs:
           else
             cargo build --release --locked --target ${{ matrix.job.target }}
           fi
-      - name: Install required dependencies
-        shell: bash
+      - name: Install binutils for ARM32
+        if: ${{ matrix.job.target == 'arm-unknown-linux-gnueabihf' }}
         run: |
-          if [[ ${{ matrix.job.target }} == arm-unknown-linux-gnueabihf ]]; then
-              sudo apt update
-              sudo apt install -y binutils-arm-linux-gnueabihf
-          fi
-          if [[ ${{ matrix.job.target }} == aarch64-unknown-linux-gnu ]]; then
-              sudo apt update
-              sudo apt install -y binutils-aarch64-linux-gnu
-          fi
+          sudo apt update
+          sudo apt install -y binutils-arm-linux-gnueabihf
+      - name: Install binutils for ARM64
+        if: ${{ matrix.job.target == 'aarch64-unknown-linux-gnu' }}
+        run: |
+          sudo apt update
+          sudo apt install -y binutils-aarch64-linux-gnu
       - name: Packaging final binary
         shell: bash
         env:

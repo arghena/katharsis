@@ -164,11 +164,13 @@ jobs:
     runs-on: ubuntu-latest
     # NOTE: The action will only work when the release is published (not a draft),
     # because the release assets (binaries) aren't available publicly until the release is published.
-    # https://github.com/vedantmgoyal9/winget-releaser?tab=readme-ov-file#getting-started-
+    # https://github.com/vedantmgoyal9/winget-releaser/blob/main/README.md#getting-started-
     needs: create-release-note
     steps:
       - uses: vedantmgoyal2009/winget-releaser@4ffc7888bffd451b357355dc214d43bb9f23917e # v2
         with:
           identifier: arghena.katharsis
           installers-regex: '-pc-windows-msvc\.zip$'
+          # NOTE: New fine-grained PATs aren't supported by the action.
+          # https://github.com/vedantmgoyal9/winget-releaser/issues/172
           token: ${{ secrets.BOT_TOKEN }}

@@ -51,7 +51,7 @@ jobs:
           rustup override set stable
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@1e67dedb5e3c590e1c9d9272ace46ef689da250d # v2.67.27
+        uses: taiki-e/install-action@d4422f254e595ee762a758628fe4f16ce050fa2e # v2.67.28
         with:
           tool: cross
       - name: Cargo build
@@ -164,11 +164,13 @@ jobs:
     runs-on: ubuntu-latest
     # NOTE: The action will only work when the release is published (not a draft),
     # because the release assets (binaries) aren't available publicly until the release is published.
-    # https://github.com/vedantmgoyal9/winget-releaser?tab=readme-ov-file#getting-started-
+    # https://github.com/vedantmgoyal9/winget-releaser/blob/main/README.md#getting-started-
     needs: create-release-note
     steps:
       - uses: vedantmgoyal2009/winget-releaser@4ffc7888bffd451b357355dc214d43bb9f23917e # v2
         with:
           identifier: arghena.katharsis
           installers-regex: '-pc-windows-msvc\.zip$'
+          # NOTE: New fine-grained PATs aren't supported by the action.
+          # https://github.com/vedantmgoyal9/winget-releaser/issues/172
           token: ${{ secrets.BOT_TOKEN }}

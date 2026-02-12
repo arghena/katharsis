@@ -155,6 +155,7 @@ jobs:
       - name: Cargo publish
         run: cargo publish --locked
         env:
+          CARGO_INCREMENTAL: 0
           CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
 
   publish-to-winget:

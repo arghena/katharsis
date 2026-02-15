@@ -5,6 +5,12 @@ use tokio::fs;
 use tokio_test::assert_ok;
 
 #[derive(Deserialize)]
+struct Config {
+    rss: Rss,
+    article: Article,
+}
+
+#[derive(Deserialize)]
 struct Rss {
     title: String,
     description: String,
@@ -13,12 +19,6 @@ struct Rss {
     copyright: String,
     language: String,
     output: String,
-}
-
-#[derive(Deserialize)]
-struct Author {
-    name: String,
-    email: String,
 }
 
 #[derive(Deserialize)]
@@ -35,9 +35,9 @@ struct Article {
 }
 
 #[derive(Deserialize)]
-struct Config {
-    rss: Rss,
-    article: Article,
+struct Author {
+    name: String,
+    email: String,
 }
 
 #[tokio::test]

@@ -11,6 +11,12 @@ use tokio::{fs, fs::File};
 use url::Url;
 
 #[derive(Deserialize)]
+struct Config {
+    rss: Rss,
+    article: Article,
+}
+
+#[derive(Deserialize)]
 struct Rss {
     title: String,
     description: String,
@@ -19,12 +25,6 @@ struct Rss {
     copyright: String,
     language: String,
     output: PathBuf,
-}
-
-#[derive(Deserialize)]
-struct Author {
-    name: String,
-    email: String,
 }
 
 #[derive(Deserialize)]
@@ -41,9 +41,80 @@ struct Article {
 }
 
 #[derive(Deserialize)]
-struct Config {
-    rss: Rss,
-    article: Article,
+struct Author {
+    name: String,
+    email: String,
+}
+
+/// Build the RSS feed based on the properties in the config file, and return the parsed [`Channel`].
+///
+/// # Examples
+///
+/// ```no_run
+/// use anyhow::Result;
+/// use katharsis::arg;
+/// use std::path::PathBuf;
+///
+/// #[tokio::main]
+/// async fn main() -> Result<()> {
+///     let path = PathBuf::from("katharsis.toml");
+///
+///     arg::handle::builder(&path).await?;
+///
+///     Ok(())
+/// }
+/// ```
+///
+/// # Errors
+///
+/// - When the file's existence cannot be verified.
+/// - When the file does not exist.
+/// - When the file cannot be read.
+/// - When the TOML file cannot be deserialized.
+/// - When the pattern cannot be parsed.
+/// - When the iteration path cannot be read.
+/// - When the file metadata cannot be read.
+/// - When the date cannot be parsed.
+/// - When the file cannot be created.
+/// - When the file cannot be written to.
+pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
+    if config_path.try_exists()? {
+        let config: Config = toml::from_str(&fs::read_to_string(config_path).await?)?;
+        let Config { rss, article } = config;
+        let mut items: Vec<Item> = vec![];
+
+        for entry in glob(&article.input)? {
+            items.push(item_builder(entry, &rss, &article).await?);
+        }
+
+        if article.sort {
+            items.sort_by(|a, b| {
+                let a_date = a
+                    .pub_date
+                    .as_ref()
+                    .and_then(|d| DateTime::parse_from_rfc2822(d).ok());
+                let b_date = b
+                    .pub_date
+                    .as_ref()
+                    .and_then(|d| DateTime::parse_from_rfc2822(d).ok());
+
+                b_date.cmp(&a_date)
+            });
+        }
+
+        println!("- create: {}", rss.output.to_string_lossy());
+
+        let mut rss_file = File::create(&rss.output).await?;
+        let channel = channel_builder(rss, items);
+
+        rss_file.write_all(channel.to_string().as_ref()).await?;
+
+        Ok(channel)
+    } else {
+        eprintln!("- config: {}", config_path.to_string_lossy());
+
+        Err(Errors::FileNotExistError)
+    }
 }
 
 async fn item_builder(entry: GlobResult, rss: &Rss, article: &Article) -> Result<Item, Errors> {
@@ -158,75 +229,4 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
         .generator(String::from("https://github.com/arghena/katharsis"))
         .last_build_date(Local::now().format("%a, %d %b %Y %H:%M:%S GMT").to_string())
         .build()
-}
-
-/// Build the RSS feed based on the properties in the config file, and return the parsed [`Channel`].
-///
-/// # Examples
-///
-/// ```no_run
-/// use anyhow::Result;
-/// use katharsis::arg;
-/// use std::path::PathBuf;
-///
-/// #[tokio::main]
-/// async fn main() -> Result<()> {
-///     let path = PathBuf::from("katharsis.toml");
-///
-///     arg::handle::builder(&path).await?;
-///
-///     Ok(())
-/// }
-/// ```
-///
-/// # Errors
-///
-/// - When the file's existence cannot be verified.
-/// - When the file does not exist.
-/// - When the file cannot be read.
-/// - When the TOML file cannot be deserialized.
-/// - When the pattern cannot be parsed.
-/// - When the iteration path cannot be read.
-/// - When the file metadata cannot be read.
-/// - When the date cannot be parsed.
-/// - When the file cannot be created.
-/// - When the file cannot be written to.
-pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
-    if config_path.try_exists()? {
-        let config: Config = toml::from_str(&fs::read_to_string(config_path).await?)?;
-        let Config { rss, article } = config;
-        let mut items: Vec<Item> = vec![];
-
-        for entry in glob(&article.input)? {
-            items.push(item_builder(entry, &rss, &article).await?);
-        }
-
-        if article.sort {
-            items.sort_by(|a, b| {
-                let a_date = a
-                    .pub_date
-                    .as_ref()
-                    .and_then(|d| DateTime::parse_from_rfc2822(d).ok());
-                let b_date = b
-                    .pub_date
-                    .as_ref()
-                    .and_then(|d| DateTime::parse_from_rfc2822(d).ok());
-
-                b_date.cmp(&a_date)
-            });
-        }
-
-        println!("- create: {}", rss.output.to_string_lossy());
-
-        let mut rss_file = File::create(&rss.output).await?;
-        let channel = channel_builder(rss, items);
-
-        rss_file.write_all(channel.to_string().as_ref()).await?;
-
-        Ok(channel)
-    } else {
-        eprintln!("- config: {}", config_path.to_string_lossy());
-
-        Err(Errors::FileNotExistError)
-    }
 }

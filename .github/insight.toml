@@ -8,25 +8,6 @@ linters = ["cargo-deny"]
 formatters = ["cargo-fmt"]
 linters = ["cargo-msrv", "cargo-clippy", "cargo-tarpaulin", "ast-grep"]
 
-[args.formatters]
-cargo-fmt = ["--all"]
-shfmt = ["-i", "4", "-ci"]
-
-[args.linters]
-cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
-# NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
-cargo-tarpaulin = [
-  "--locked",
-  "--engine",
-  "ptrace",
-  "--out",
-  "lcov",
-  "--output-dir",
-  "target/tarpaulin",
-]
-yamllint = ["--strict"]
-tombi = ["--error-on-warnings"]
-
 [formatters]
 cargo-fmt = ["**/*.rs", "Cargo.toml"]
 prettier = ["**/*.yml", "**/*.md", "**/*.json"]
@@ -47,3 +28,22 @@ markdownlint-cli2 = ["**/*.md"]
 vale = ["**/*.md"]
 tombi = ["**/*.toml"]
 shellcheck = ["etc/ci/*.sh"]
+
+[args.formatters]
+cargo-fmt = ["--all"]
+shfmt = ["-i", "4", "-ci"]
+
+[args.linters]
+cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
+# NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
+cargo-tarpaulin = [
+  "--locked",
+  "--engine",
+  "ptrace",
+  "--out",
+  "lcov",
+  "--output-dir",
+  "target/tarpaulin",
+]
+yamllint = ["--strict"]
+tombi = ["--error-on-warnings"]

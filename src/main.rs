@@ -3,12 +3,6 @@ use clap::{Parser, Subcommand};
 use katharsis::{arg, cmd};
 use std::path::PathBuf;
 
-#[derive(Subcommand)]
-enum Commands {
-    /// Generate a katharsis.toml file in the current directory
-    Init,
-}
-
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {
@@ -18,6 +12,12 @@ struct Cli {
 
     #[command(subcommand)]
     command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    /// Generate a katharsis.toml file in the current directory
+    Init,
 }
 
 #[tokio::main] // Order is important.

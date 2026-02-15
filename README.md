@@ -175,7 +175,7 @@ Please refer to our [SECURITY.md](https://github.com/arghena/katharsis/blob/cana
 
 The version naming of Katharsis follows [Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200).
 
-### Long-term Support
+### Long-Term Support
 
 > [!NOTE]
 > When Katharsis releases a new major version, the previous stable version will be designated as an LTS version.

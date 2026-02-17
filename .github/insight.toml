@@ -45,5 +45,6 @@ cargo-tarpaulin = [
   "--output-dir",
   "target/tarpaulin",
 ]
+commitlint = ["--strict"]
 yamllint = ["--strict"]
 tombi = ["--error-on-warnings"]

@@ -93,7 +93,6 @@ All pull request submissions to this project must comply with the [DCO](https://
 | style    | Code formatting                                    |
 | build    | Changes affecting the build system or dependencies |
 | ci       | Changes affecting the CI pipeline                  |
-| examples | Changes affecting the examples                     |
 
 | Action | Format          |
 | ------ | --------------- |

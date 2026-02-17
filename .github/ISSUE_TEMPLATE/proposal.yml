@@ -12,14 +12,7 @@ body:
       description: Please select the type of proposal.
       options:
         - Enhancements
-        - Documentation
-        - Tests
-        - Refactors
-        - CI
-        - Build
         - Performance
-        - Examples
-        - Chore
     validations:
       required: true
   - type: textarea

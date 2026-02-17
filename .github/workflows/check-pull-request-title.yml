@@ -17,9 +17,7 @@ jobs:
     if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Run Insight
-        uses: arghena/insight@2b8f06b7dd47fce33051fbf06789c519218ae6bc # v0.1.0-canary.31
+        uses: arghena/insight@830a052a4d8a1749c1105b62ece759ce088d82e8 # v0.1.0-canary.32
         with:
           check-pull-request-title: true

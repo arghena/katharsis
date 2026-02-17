@@ -12,28 +12,26 @@ Session.vim
 *.iml
 .vscode
 .project
-.vim/
-.helix/
-.zed/
+.vim
+.helix
+.zed
 .favorites.json
-.settings/
-.vs/
-
-## Tool
-.cargo
-.config/vale/styles/Google/
+.settings
+.vs
 
 ## Build
-/target
-/katharsis.toml
-/rss.xml
+target
+
+## Vale
+.config/vale/styles/Google
+
+## Cargo
+.cargo
 
 ## Temporary Files
 *~
 \#*
 \#*\#
 .#*
-tmp/**
-!tmp/.gitkeep
 
 # Before adding new lines, see the comment at the top.

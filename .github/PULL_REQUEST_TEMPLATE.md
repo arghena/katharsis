@@ -1,11 +1,3 @@
-<!--
-
-Thanks for opening a PR! Your contribution is much appreciated.
-
-NOTE: We encourage you to provide as much detail as possible.
-
--->
-
 <!-- markdownlint-disable-file MD041 -->
 
 ### Summary of Changes
@@ -24,18 +16,6 @@ NOTE: We encourage you to provide as much detail as possible.
   - Closes #ISSUE_NUMBER
 - **Does this introduce breaking changes?**
   - EXPLAIN_HERE
-
-### Checklist
-
-<!-- Please check the following before submitting the PR -->
-
-- [ ] I have followed the contribution guidelines.
-- [ ] I have updated the build system.
-- [ ] I have updated the examples.
-- [ ] I have updated the tests.
-- [ ] I have updated the documentation.
-- [ ] I have updated the CI pipeline.
-- [ ] I have reviewed my changes.
 
 ### Additional Notes
 

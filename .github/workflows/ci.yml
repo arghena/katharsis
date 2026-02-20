@@ -10,6 +10,7 @@ on:
     # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-limits-and-control
     branches: [canary]
     paths:
+      # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-details
       - '**/Cargo.toml'
       - '**/Cargo.lock'
     # NOTE: Path filters are not evaluated for pushes of tags.

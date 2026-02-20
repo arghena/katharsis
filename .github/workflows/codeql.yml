@@ -43,6 +43,8 @@ jobs:
           # NOTE: Rust is only supported with `build-mode: none`.
           # https://github.com/orgs/community/discussions/161754#discussioncomment-14025580
           build-mode: none
+          # https://codeql.github.com/codeql-query-help
+          # https://docs.github.com/en/code-security/how-tos/scan-code-for-vulnerabilities/configure-code-scanning/customizing-your-advanced-setup-for-code-scanning#using-queries-in-ql-packs
           queries: security-and-quality
           languages: ${{ matrix.language }}
       - name: Perform CodeQL analysis

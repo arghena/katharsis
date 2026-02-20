@@ -25,9 +25,6 @@ target
 ## Vale
 .config/vale/styles/Google
 
-## Cargo
-.cargo
-
 ## Temporary Files
 *~
 \#*

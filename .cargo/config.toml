@@ -1,0 +1,15 @@
+# NOTE: Statically link CRT to avoid vcruntime DLL dependencies.
+# https://github.com/microsoft/winget-pkgs/pull/207941#issuecomment-2575712665
+[target.'cfg(all(target_os = "windows", target_env = "msvc"))']
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# NOTE: Explicitly enforce full static linking for MUSL to ensure a self-contained binary,
+# protecting against future compiler default changes.
+# https://github.com/rust-lang/compiler-team/issues/422#issuecomment-812135847
+[target.'cfg(all(target_os = "linux", target_env = "musl"))']
+rustflags = [
+  "-C",
+  "target-feature=+crt-static",
+  "-C",
+  "link-self-contained=yes"
+]

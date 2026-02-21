@@ -26,8 +26,8 @@ permissions:
   contents: read
 
 jobs:
-  unit_tests:
-    name: Unit tests
+  tests:
+    name: Tests
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -69,6 +69,7 @@ jobs:
       - name: Cache Rust artifacts
         uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
         with:
+          # NOTE: We need to distinguish the cache when `use-cross` is `true`.
           key: ${{ matrix.job.target }}
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Install cross
@@ -97,13 +98,12 @@ jobs:
         if: ${{ !matrix.job.use-cross }}
         run: cargo test --doc --locked --target ${{ matrix.job.target }}
 
-  integration_tests:
-    name: Integration tests
-    runs-on: ${{ matrix.os }}
+  smoke_tests:
+    name: Smoke tests
+    runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        include:
+        job:
           - os: macos-latest
             target: aarch64-apple-darwin
           - os: ubuntu-latest
@@ -122,11 +122,11 @@ jobs:
         with:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Build for release
-        run: cargo build --release --locked --target ${{ matrix.target }}
-      - name: End to end tests
+        run: cargo build --release --locked --target ${{ matrix.job.target }}
+      - name: Run smoke checks
         run: |
-          cargo run --release --locked --target ${{ matrix.target }} init
-          cargo run --release --locked --target ${{ matrix.target }}
+          cargo run --release --locked --target ${{ matrix.job.target }} init
+          cargo run --release --locked --target ${{ matrix.job.target }}
 
   docs:
     name: Docs

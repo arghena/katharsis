@@ -38,6 +38,8 @@ cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
 # NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
 cargo-tarpaulin = [
   "--locked",
+  "--fail-under",
+  "80",
   "--engine",
   "ptrace",
   "--out",

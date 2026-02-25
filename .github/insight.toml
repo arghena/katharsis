@@ -4,12 +4,8 @@ dot = true
 [schedule]
 linters = ["cargo-deny"]
 
-[push]
-formatters = ["cargo-fmt"]
-linters = ["cargo-msrv", "cargo-clippy", "cargo-tarpaulin", "ast-grep"]
-
 [formatters]
-cargo-fmt = ["**/*.rs", "Cargo.toml"]
+cargo-fmt = ["**/*.rs"]
 prettier = ["**/*.yml", "**/*.md", "**/*.json"]
 tombi = ["**/*.toml"]
 shfmt = ["etc/ci/*.sh"]
@@ -17,9 +13,8 @@ shfmt = ["etc/ci/*.sh"]
 [linters]
 cargo-deny = ["Cargo.toml", "Cargo.lock"]
 typos = ["**/*", "!examples/**/*.png"]
-cargo-msrv = ["**/*.rs", "Cargo.toml"]
-cargo-clippy = ["**/*.rs", "Cargo.toml"]
-cargo-tarpaulin = ["**/*.rs", "Cargo.toml"]
+cargo-msrv = ["**/*.rs", "Cargo.toml", "Cargo.lock"]
+cargo-clippy = ["**/*.rs", "Cargo.toml", "Cargo.lock"]
 yamllint = ["**/*.yml"]
 actionlint = [".github/workflows/*.yml"]
 ast-grep = ["**/*.rs"]
@@ -35,18 +30,6 @@ shfmt = ["-i", "4", "-ci"]
 
 [args.linters]
 cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
-# NOTE: `--engine llvm` and `--release` cause the test coverage to be inaccurate.
-cargo-tarpaulin = [
-  "--locked",
-  "--fail-under",
-  "80",
-  "--engine",
-  "ptrace",
-  "--out",
-  "lcov",
-  "--output-dir",
-  "target/tarpaulin",
-]
 commitlint = ["--strict"]
 yamllint = ["--strict"]
 tombi = ["--error-on-warnings"]

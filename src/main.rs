@@ -1,3 +1,5 @@
+#![cfg_attr(coverage_nightly, feature(coverage_attribute))]
+
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use katharsis::{arg, cmd};
@@ -20,8 +22,8 @@ enum Commands {
     Init,
 }
 
-#[tokio::main] // Order is important.
-#[cfg(not(tarpaulin_include))]
+#[tokio::main]
+#[cfg_attr(coverage_nightly, coverage(off))]
 async fn main() -> Result<()> {
     let cli = Cli::parse();
     let mut path = PathBuf::from("katharsis.toml");

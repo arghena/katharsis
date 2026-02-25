@@ -6,16 +6,11 @@ concurrency:
 
 on:
   push:
-    # NOTE: Caches from base branches are available to PRs and tags, but not across unrelated branches.
-    # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-limits-and-control
     branches: [canary]
     paths:
-      # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-details
+      - '**/*.rs'
       - '**/Cargo.toml'
       - '**/Cargo.lock'
-    # NOTE: Path filters are not evaluated for pushes of tags.
-    # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushpull_requestpull_request_targetpathspaths-ignore
-    tags: ['v[0-9]+.[0-9]+.[0-9]+', 'v[0-9]+.[0-9]+.[0-9]+-canary.[0-9]+']
   pull_request:
     paths:
       - '**/*.rs'
@@ -146,3 +141,46 @@ jobs:
         run: cargo doc --no-deps --document-private-items --locked
         env:
           RUSTDOCFLAGS: -D warnings
+
+  coverage:
+    permissions:
+      id-token: write
+      contents: read
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      # NOTE: Nightly Rust is required for `cargo llvm-cov --doc`.
+      # https://github.com/taiki-e/cargo-llvm-cov/issues/2
+      # https://nexte.st/docs/integrations/test-coverage/#collecting-coverage-data-from-doctests
+      - name: Install Rust nightly
+        run: |
+          rustup toolchain install nightly --profile minimal --no-self-update
+          rustup override set nightly
+      - name: Cache Rust artifacts
+        uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+        with:
+          save-if: ${{ github.ref_name == 'canary' }}
+      - name: Install llvm-tools-preview component
+        run: rustup component add llvm-tools-preview
+      - name: Install llvm-cov
+        uses: taiki-e/install-action@2723513a70062521fb56e5df87a04967751efd2f # v2.68.4
+        with:
+          tool: cargo-llvm-cov
+      - name: Install nextest
+        uses: taiki-e/install-action@2723513a70062521fb56e5df87a04967751efd2f # v2.68.4
+        with:
+          tool: cargo-nextest
+      - name: Collect coverage data
+        run: |
+          cargo llvm-cov --locked --no-report nextest
+          cargo llvm-cov --locked --no-report --doc
+          cargo llvm-cov report --locked --doctests --lcov --output-path lcov.info
+        env:
+          RUSTDOCFLAGS: -D warnings
+      - name: Upload coverage data to codecov
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
+        with:
+          use_oidc: true
+          files: lcov.info

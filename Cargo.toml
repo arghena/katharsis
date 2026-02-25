@@ -49,7 +49,9 @@ tokio-test = "0.4.5"
 pedantic = "warn"
 
 [lints.rust]
-unexpected_cfgs = { level = "warn", check-cfg = ["cfg(tarpaulin_include)"] }
+unexpected_cfgs = { level = "warn", check-cfg = [
+  "cfg(coverage,coverage_nightly)"
+] }
 
 [profile.release]
 strip = true

@@ -9,7 +9,7 @@ This is because users won't have access to those files locally when browsing the
 
 <div align="center">
   <a href="https://github.com/arghena/katharsis">
-    <img height="128" src="https://raw.githubusercontent.com/arghena/assets/refs/heads/canary/katharsis/logo.png" alt="logo" />
+    <img height="128" src="https://raw.githubusercontent.com/arghena/assets/refs/heads/canary/katharsis/logo.png" alt="Katharsis logo" />
   </a>
   <h1>Katharsis</h1>
 

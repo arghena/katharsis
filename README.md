@@ -13,10 +13,10 @@ This is because users won't have access to those files locally when browsing the
   </a>
   <h1>Katharsis</h1>
 
-<a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=canary&style=for-the-badge&logo=github&label=ci&labelColor=1a1b26&color=000000" alt="CI" /></a>
-<a href="https://codecov.io/gh/arghena/katharsis"><img src="https://img.shields.io/codecov/c/github/arghena/katharsis/canary?style=for-the-badge&logo=codecov&label=coverage&labelColor=1a1b26&color=000000" alt="Coverage" /></a>
-<a href="https://github.com/arghena/katharsis/releases/latest"><img src="https://img.shields.io/github/v/release/arghena/katharsis?include_prereleases&style=for-the-badge&logo=github&label=release&labelColor=1a1b26&color=000000" alt="Release" /></a>
-<a href="https://github.com/arghena/katharsis/blob/canary/LICENSE"><img src="https://img.shields.io/github/license/arghena/katharsis?style=for-the-badge&logo=opensourceinitiative&label=license&labelColor=1a1b26&color=000000" alt="License" /></a>
+<a href="https://github.com/arghena/katharsis/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/arghena/katharsis/ci.yml?branch=canary&style=for-the-badge&logo=github&label=ci&labelColor=000000&color=1a1b26" alt="CI" /></a>
+<a href="https://codecov.io/gh/arghena/katharsis"><img src="https://img.shields.io/codecov/c/github/arghena/katharsis/canary?style=for-the-badge&logo=codecov&label=coverage&labelColor=000000&color=1a1b26" alt="Coverage" /></a>
+<a href="https://github.com/arghena/katharsis/releases/latest"><img src="https://img.shields.io/github/v/release/arghena/katharsis?include_prereleases&style=for-the-badge&logo=github&label=release&labelColor=000000&color=1a1b26" alt="Release" /></a>
+<a href="https://github.com/arghena/katharsis/blob/canary/LICENSE"><img src="https://img.shields.io/github/license/arghena/katharsis?style=for-the-badge&logo=opensourceinitiative&label=license&labelColor=000000&color=1a1b26" alt="License" /></a>
 
 </div>
 

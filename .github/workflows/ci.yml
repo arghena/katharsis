@@ -154,14 +154,13 @@ jobs:
       # NOTE: Nightly Rust is required for `cargo llvm-cov --doc`.
       # https://github.com/taiki-e/cargo-llvm-cov/issues/2
       # https://nexte.st/docs/integrations/test-coverage/#collecting-coverage-data-from-doctests
+      #
+      # NOTE: Using `Swatinem/rust-cache` with Nightly Rust is less effective as it will throw away the cache every day.
+      # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-effectiveness
       - name: Install Rust nightly
         run: |
           rustup toolchain install nightly --profile minimal --no-self-update
           rustup override set nightly
-      - name: Cache Rust artifacts
-        uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
-        with:
-          save-if: ${{ github.ref_name == 'canary' }}
       - name: Install llvm-tools-preview component
         run: rustup component add llvm-tools-preview
       - name: Install llvm-cov
@@ -178,6 +177,7 @@ jobs:
           cargo llvm-cov --locked --no-report --doc
           cargo llvm-cov report --locked --doctests --lcov --output-path lcov.info
         env:
+          CARGO_INCREMENTAL: 0
           RUSTDOCFLAGS: -D warnings
       - name: Upload coverage data to codecov
         uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2

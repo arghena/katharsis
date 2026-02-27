@@ -140,11 +140,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  publish-to-cargo:
+  publish-to-crates-io:
     permissions:
       id-token: write
       contents: read
-    name: Publish to Cargo
+    name: Publish to crates.io
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

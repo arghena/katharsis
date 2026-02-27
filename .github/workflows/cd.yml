@@ -80,7 +80,7 @@ jobs:
       - name: Uploading distribution
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: dist
+          name: dist-${{ matrix.job.target }}
           path: |
             katharsis-*-${{ matrix.job.target }}.*
             katharsis*.deb
@@ -98,8 +98,9 @@ jobs:
       - name: Downloading distribution
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
-          name: dist
+          pattern: dist-*
           path: dist
+          merge-multiple: true
       - name: Generate attestation
         uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
         with:
@@ -119,8 +120,9 @@ jobs:
       - name: Downloading distribution
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
-          name: dist
+          pattern: dist-*
           path: dist
+          merge-multiple: true
       - name: Generate release note
         # NOTE: The recommended workflow for publishing an immutable release
         # will be to initially create the release as a draft,

@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build-dist:
-    name: Building for ${{ matrix.job.os }}
+    name: Build for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -50,7 +50,7 @@ jobs:
           rustup override set stable
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@305bebabd4457bed9b82541755f034994382465b # v2.68.10
+        uses: taiki-e/install-action@a3324fb0eb94b8230ec968c3389c1b7929fc2f3b # v2.68.13
         with:
           tool: cross
       - name: Cargo build
@@ -71,14 +71,14 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y binutils-aarch64-linux-gnu
-      - name: Packaging final binary
+      - name: Package final binary
         shell: bash
         env:
           PROJECT_NAME: katharsis
           TARGET: ${{ matrix.job.target }}
         run: ./etc/ci/before_deploy.sh
-      - name: Uploading distribution
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+      - name: Upload artifact
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: dist-${{ matrix.job.target }}
           path: |
@@ -95,8 +95,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Create attestation
     steps:
-      - name: Downloading distribution
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+      - name: Download artifacts
+        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
         with:
           pattern: dist-*
           path: dist
@@ -117,8 +117,8 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
-      - name: Downloading distribution
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+      - name: Download artifacts
+        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
         with:
           pattern: dist-*
           path: dist
@@ -144,7 +144,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    name: Publishing to Cargo
+    name: Publish to Cargo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

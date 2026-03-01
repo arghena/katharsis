@@ -129,7 +129,7 @@ jobs:
         # attach any associated assets, and then publish the draft.
         # https://github.com/orgs/community/discussions/171210#discussioncomment-14237940
         run: |
-          if [[ $GITHUB_REF_NAME = *canary* ]]; then
+          if [[ $GITHUB_REF_NAME == *canary* ]]; then
             npx changelogithub@latest --prerelease --draft
           else
             npx changelogithub@latest --draft

@@ -26,7 +26,6 @@ shellcheck = ["etc/ci/*.sh"]
 
 [args.formatters]
 cargo-fmt = ["--all"]
-shfmt = ["-i", "4", "-ci"]
 
 [args.linters]
 cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]

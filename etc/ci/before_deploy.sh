@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO: Migrate to `cargo-deb`.
+# https://github.com/kornelski/cargo-deb
+
 # Copyright 2020 Dan Davison
 # Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
 
@@ -10,7 +13,7 @@ pack() {
     local out_dir
     local package_name
 
-    tempdir=$(mktemp -d 2>/dev/null || mktemp -d -t tmp)
+    tempdir=$(mktemp -d 2> /dev/null || mktemp -d -t tmp)
     out_dir=$(pwd)
     package_name="$PROJECT_NAME-$GITHUB_REF_NAME-$TARGET"
 
@@ -22,7 +25,7 @@ pack() {
     cp LICENSE "$tempdir/$package_name"
 
     pushd "$tempdir"
-    if [[ $TARGET = *windows* ]]; then
+    if [[ $TARGET == *windows* ]]; then
         7z a "$out_dir/$package_name.zip" "$package_name"/*
     else
         tar czf "$out_dir/$package_name.tar.gz" "$package_name"/*
@@ -68,7 +71,7 @@ make_deb() {
     esac
     version=$(echo "$GITHUB_REF_NAME" | sed -e 's/^v//' -e 's/-canary/~canary/')
 
-    if [[ $TARGET = *musl* ]]; then
+    if [[ $TARGET == *musl* ]]; then
         dpkgname=$PROJECT_NAME-musl
         conflictname=$PROJECT_NAME
     else
@@ -76,17 +79,18 @@ make_deb() {
         conflictname=$PROJECT_NAME-musl
     fi
 
-    tempdir=$(mktemp -d 2>/dev/null || mktemp -d -t tmp)
+    tempdir=$(mktemp -d 2> /dev/null || mktemp -d -t tmp)
 
     install -Dm755 "target/$TARGET/release/$PROJECT_NAME" "$tempdir/usr/bin/$PROJECT_NAME"
 
+    # HACK: Work out shared library dependencies.
     mkdir "./debian"
     touch "./debian/control"
-    depends="$(dpkg-shlibdeps $library_dir -O "$tempdir/usr/bin/$PROJECT_NAME" 2>/dev/null | sed 's/^shlibs:Depends=//')"
+    depends="$(dpkg-shlibdeps $library_dir -O "$tempdir/usr/bin/$PROJECT_NAME" 2> /dev/null | sed 's/^shlibs:Depends=//')"
     rm -rf "./debian"
 
     install -Dm644 README.md "$tempdir/usr/share/doc/$dpkgname/README.md"
-    cat >"$tempdir/usr/share/doc/$dpkgname/copyright" <<EOF
+    cat > "$tempdir/usr/share/doc/$dpkgname/copyright" << EOF
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: $PROJECT_NAME
 Source: $homepage
@@ -123,7 +127,7 @@ EOF
     chmod 644 "$tempdir/usr/share/doc/$dpkgname/copyright"
 
     mkdir "$tempdir/DEBIAN"
-    cat >"$tempdir/DEBIAN/control" <<EOF
+    cat > "$tempdir/DEBIAN/control" << EOF
 Package: $dpkgname
 Version: $version
 Section: utils
@@ -140,7 +144,7 @@ EOF
 
 main() {
     pack
-    if [[ $TARGET = *linux* ]]; then
+    if [[ $TARGET == *linux* ]]; then
         make_deb
     fi
 }

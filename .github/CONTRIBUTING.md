@@ -80,6 +80,8 @@ All pull request submissions to this project must comply with the [DCO](https://
 > [!NOTE]
 > The naming should follow the lowercase format.
 
+<!-- vale Vale.Spelling["ci"] = NO -->
+
 | Type     | Description                                        |
 | -------- | -------------------------------------------------- |
 | docs     | Changes affecting the documentation                |
@@ -93,6 +95,8 @@ All pull request submissions to this project must comply with the [DCO](https://
 | style    | Code formatting                                    |
 | build    | Changes affecting the build system or dependencies |
 | ci       | Changes affecting the CI pipeline                  |
+
+<!-- vale Vale.Spelling["ci"] = YES -->
 
 | Action | Format          |
 | ------ | --------------- |

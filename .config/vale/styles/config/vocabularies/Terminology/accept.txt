@@ -1,4 +1,4 @@
-ci|CI
+CI|ci
 Clippy
 nextest
 toolchain

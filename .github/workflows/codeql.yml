@@ -54,3 +54,5 @@ jobs:
           # NOTE: Delete all the old dynamic analysis to get it back to work.
           # https://github.com/github/codeql-action/issues/1179#issuecomment-2050937338
           category: '/language:${{ matrix.language }}'
+          # Only upload caches from the default branch.
+          # https://github.com/github/codeql-action/blob/0ec47d036c68ae0cf94c629009b1029407111281/src/trap-caching.ts#L135

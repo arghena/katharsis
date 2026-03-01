@@ -9,6 +9,7 @@ updates:
   - package-ecosystem: 'cargo'
     directory: '/'
     schedule:
+      # Runs every Monday.
       interval: 'weekly'
     open-pull-requests-limit: 10
     labels: ['build']
@@ -18,6 +19,7 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
+      # Runs every Monday.
       interval: 'weekly'
     open-pull-requests-limit: 10
     labels: ['ci']

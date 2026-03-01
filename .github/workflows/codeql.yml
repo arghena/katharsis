@@ -7,7 +7,8 @@ concurrency:
 # https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/#languages-and-compilers
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # Runs every Monday.
+    - cron: '0 0 * * 1'
   push:
     branches: [canary]
     paths:

@@ -2,6 +2,7 @@ name: Lock Threads
 
 on:
   schedule:
+    # Runs daily.
     - cron: '0 0 * * *'
 
 permissions:

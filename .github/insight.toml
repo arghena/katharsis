@@ -29,6 +29,5 @@ cargo-fmt = ["--all"]
 
 [args.linters]
 cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
-commitlint = ["--strict"]
 yamllint = ["--strict"]
 tombi = ["--error-on-warnings"]

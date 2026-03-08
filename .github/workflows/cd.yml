@@ -123,6 +123,8 @@ jobs:
           pattern: dist-*
           path: dist
           merge-multiple: true
+      - name: Enable pnpm
+        run: corepack enable pnpm
       - name: Generate release note
         # NOTE: The recommended workflow for publishing an immutable release
         # will be to initially create the release as a draft,
@@ -130,9 +132,9 @@ jobs:
         # https://github.com/orgs/community/discussions/171210#discussioncomment-14237940
         run: |
           if [[ $GITHUB_REF_NAME == *canary* ]]; then
-            npx changelogithub@latest --prerelease --draft
+            pnpm dlx changelogithub --prerelease --draft
           else
-            npx changelogithub@latest --draft
+            pnpm dlx changelogithub --draft
           fi
 
           gh release upload "$GITHUB_REF_NAME" -- dist/katharsis*

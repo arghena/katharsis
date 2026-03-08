@@ -117,14 +117,14 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
+      - name: Enable pnpm
+        run: corepack enable pnpm
       - name: Download artifacts
         uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
         with:
           pattern: dist-*
           path: dist
           merge-multiple: true
-      - name: Enable pnpm
-        run: corepack enable pnpm
       - name: Generate release note
         # NOTE: The recommended workflow for publishing an immutable release
         # will be to initially create the release as a draft,

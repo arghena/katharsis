@@ -1,8 +1,7 @@
 Clippy
-nextest
-toolchain
-rustup
-rustfmt
 config
-perf
 datetime
+nextest
+rustfmt
+rustup
+toolchain

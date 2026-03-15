@@ -109,35 +109,48 @@ All pull request submissions to this project must comply with the [DCO](https://
 ### Local Development
 
 1. Clone the Katharsis repository (download only recent commits for faster clone):
+
    ```bash
    gh repo clone arghena/katharsis -- --filter=blob:none --branch canary --single-branch
    ```
-2. Create a new branch:
+
+1. Create a new branch:
+
    ```bash
    git checkout -b MY_BRANCH_NAME origin/canary
    ```
-3. Install dependencies and run tests:
+
+1. Install dependencies and run tests:
+
    ```bash
    cargo nextest run --locked
    cargo test --doc --locked
    ```
-4. Start making changes to your code.
-5. Run rustfmt and Clippy:
+
+1. Start making changes to your code.
+1. Run rustfmt and Clippy:
+
    ```bash
    cargo fmt --all --check
    cargo clippy --all-targets --locked -- -D warnings
    ```
-6. Run tests:
+
+1. Run tests:
+
    ```bash
    cargo nextest run --locked
    cargo test --doc --locked
    ```
-7. When your changes are finished, commit them to the branch:
+
+1. When your changes are finished, commit them to the branch:
+
    ```bash
    git add .
    git commit -S -s -m "DESCRIBE_YOUR_CHANGES_HERE"
    ```
-8. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
+
+1. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
+
    ```bash
    gh pr create
    ```

@@ -58,9 +58,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Install Rust stable
-        run: |
-          rustup toolchain install stable --profile minimal --no-self-update
-          rustup override set stable
+        run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
         uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
         with:
@@ -69,14 +67,14 @@ jobs:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@b02547a911e77a253533ba63aee769e50e3480dd # v2.68.30
+        uses: taiki-e/install-action@f916cfac5d8efd040e250d0cd6b967616504b3a4 # v2.68.32
         with:
           tool: cross
       - name: Install nextest
         # TODO: Waiting for cross to support nextest.
         # https://github.com/cross-rs/cross/issues/716
         if: ${{ !matrix.job.use-cross }}
-        uses: taiki-e/install-action@b02547a911e77a253533ba63aee769e50e3480dd # v2.68.30
+        uses: taiki-e/install-action@f916cfac5d8efd040e250d0cd6b967616504b3a4 # v2.68.32
         with:
           tool: cargo-nextest
       - name: Run tests
@@ -109,9 +107,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Install Rust stable
-        run: |
-          rustup toolchain install stable --profile minimal --no-self-update
-          rustup override set stable
+        run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
         uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
         with:
@@ -130,9 +126,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Install Rust stable
-        run: |
-          rustup toolchain install stable --profile minimal --no-self-update
-          rustup override set stable
+        run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
         uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
         with:
@@ -158,17 +152,15 @@ jobs:
       # NOTE: Using `Swatinem/rust-cache` with Nightly Rust is less effective as it will throw away the cache every day.
       # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-effectiveness
       - name: Install Rust nightly
-        run: |
-          rustup toolchain install nightly --profile minimal --no-self-update
-          rustup override set nightly
+        run: rustup toolchain install nightly --profile minimal --no-self-update --override
       - name: Install llvm-tools-preview component
         run: rustup component add llvm-tools-preview
       - name: Install llvm-cov
-        uses: taiki-e/install-action@b02547a911e77a253533ba63aee769e50e3480dd # v2.68.30
+        uses: taiki-e/install-action@f916cfac5d8efd040e250d0cd6b967616504b3a4 # v2.68.32
         with:
           tool: cargo-llvm-cov
       - name: Install nextest
-        uses: taiki-e/install-action@b02547a911e77a253533ba63aee769e50e3480dd # v2.68.30
+        uses: taiki-e/install-action@f916cfac5d8efd040e250d0cd6b967616504b3a4 # v2.68.32
         with:
           tool: cargo-nextest
       - name: Collect coverage data

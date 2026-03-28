@@ -16,4 +16,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Run Insight
-        uses: arghena/insight@3d594d6e9994d5f53c8dcc23af700938cb991d43 # v0.1.0-canary.46
+        uses: arghena/insight@02a7687815c0e7113e0b82a5a94317b1cb114525 # v0.1.0-canary.47

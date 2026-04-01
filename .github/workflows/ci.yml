@@ -25,6 +25,7 @@ jobs:
     name: Tests
     runs-on: ${{ matrix.job.os }}
     strategy:
+      fail-fast: false
       matrix:
         job:
           - os: macos-latest
@@ -95,6 +96,7 @@ jobs:
     name: Smoke tests
     runs-on: ${{ matrix.job.os }}
     strategy:
+      fail-fast: false
       matrix:
         job:
           - os: macos-latest

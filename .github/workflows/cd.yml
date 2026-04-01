@@ -12,6 +12,7 @@ jobs:
     name: Build for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:
+      fail-fast: false
       matrix:
         job:
           - os: macos-15-intel

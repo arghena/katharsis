@@ -192,7 +192,7 @@ The LTS version of Katharsis provides security updates and bug fixes for six mon
 
 | Katharsis | MSRV[^1] | Codename  | Released at | End of Life |
 | --------- | -------- | --------- | ----------- | ----------- |
-| v1.0.0    | 1.85.0   | Telescope | -           | -           |
+| v1.0.0    | 1.88.0   | Telescope | -           | -           |
 
 ## License
 

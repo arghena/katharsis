@@ -2,7 +2,7 @@
 name = "katharsis"
 version = "1.0.0-canary.30"
 edition = "2024"
-rust-version = "1.85.0"
+rust-version = "1.88.0"
 description = "CLI tool for generating RSS feeds."
 documentation = "https://docs.rs/katharsis"
 homepage = "https://github.com/arghena/katharsis"

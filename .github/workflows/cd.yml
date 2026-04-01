@@ -12,6 +12,7 @@ jobs:
     name: Build for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:
+      fail-fast: false
       matrix:
         job:
           - os: macos-15-intel
@@ -48,7 +49,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@06203676c62f0d3c765be3f2fcfbebbcb02d09f5 # v2.69.6
+        uses: taiki-e/install-action@fd0f63e180a477d7434580b6d80817978b9ff2b8 # v2.70.1
         with:
           tool: cross
       - name: Cargo build
@@ -152,7 +153,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Authenticate with crates.io
         id: auth
-        uses: rust-lang/crates-io-auth-action@b7e9a28eded4986ec6b1fa40eeee8f8f165559ec # v1.0.3
+        uses: rust-lang/crates-io-auth-action@bbd81622f20ce9e2dd9622e3218b975523e45bbe # v1.0.4
       - name: Cargo publish
         run: cargo publish --locked
         env:

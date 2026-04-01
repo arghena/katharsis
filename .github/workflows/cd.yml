@@ -12,6 +12,7 @@ jobs:
     name: Build for ${{ matrix.job.os }}
     runs-on: ${{ matrix.job.os }}
     strategy:
+      fail-fast: false
       matrix:
         job:
           - os: macos-15-intel
@@ -29,6 +30,9 @@ jobs:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             use-cross: false
+          - os: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+            use-cross: false
           - os: ubuntu-latest
             target: x86_64-unknown-linux-musl
             use-cross: true
@@ -38,9 +42,6 @@ jobs:
           - os: ubuntu-latest
             target: arm-unknown-linux-gnueabihf
             use-cross: true
-          - os: ubuntu-latest
-            target: aarch64-unknown-linux-gnu
-            use-cross: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -48,7 +49,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@f916cfac5d8efd040e250d0cd6b967616504b3a4 # v2.68.32
+        uses: taiki-e/install-action@fd0f63e180a477d7434580b6d80817978b9ff2b8 # v2.70.1
         with:
           tool: cross
       - name: Cargo build
@@ -64,11 +65,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y binutils-arm-linux-gnueabihf
-      - name: Install binutils for ARM64
-        if: ${{ matrix.job.target == 'aarch64-unknown-linux-gnu' }}
-        run: |
-          sudo apt update
-          sudo apt install -y binutils-aarch64-linux-gnu
       - name: Package final binary
         shell: bash
         env:
@@ -157,7 +153,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Authenticate with crates.io
         id: auth
-        uses: rust-lang/crates-io-auth-action@b7e9a28eded4986ec6b1fa40eeee8f8f165559ec # v1.0.3
+        uses: rust-lang/crates-io-auth-action@bbd81622f20ce9e2dd9622e3218b975523e45bbe # v1.0.4
       - name: Cargo publish
         run: cargo publish --locked
         env:

@@ -58,7 +58,7 @@ make_deb() {
             ;;
         aarch64*)
             architecture=arm64
-            library_dir="-l/usr/aarch64-linux-gnu/lib"
+            library_dir=""
             ;;
         arm*hf)
             architecture=armhf

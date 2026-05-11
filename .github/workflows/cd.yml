@@ -120,7 +120,7 @@ jobs:
         with:
           node-version: lts/*
       - name: Install pnpm
-        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6.0.6
         with:
           # NOTE: This isn't a Node.js project, so we need to set the `pnpm` version here.
           # https://github.com/pnpm/action-setup/blob/master/README.md#version

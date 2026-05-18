@@ -39,7 +39,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@68bde559dea0fdcac2102bfdf6230c5f70eb485e # v4.35.4
+        uses: github/codeql-action/init@9e0d7b8d25671d64c341c19c0152d693099fb5ba # v4.35.5
         with:
           # NOTE: Rust is only supported with `build-mode: none`.
           # https://github.com/orgs/community/discussions/161754#discussioncomment-14025580
@@ -49,7 +49,7 @@ jobs:
           queries: security-and-quality
           languages: ${{ matrix.language }}
       - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@68bde559dea0fdcac2102bfdf6230c5f70eb485e # v4.35.4
+        uses: github/codeql-action/analyze@9e0d7b8d25671d64c341c19c0152d693099fb5ba # v4.35.5
         with:
           # NOTE: Delete all the old dynamic analysis to get it back to work.
           # https://github.com/github/codeql-action/issues/1179#issuecomment-2050937338

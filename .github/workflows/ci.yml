@@ -74,14 +74,14 @@ jobs:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Install cross
         if: ${{ matrix.job.use-cross }}
-        uses: taiki-e/install-action@d9be7d8cda89035c9c843f78bd44d4f72d8403d4 # v2.79.7
+        uses: taiki-e/install-action@e49978b799e49ff429d162b7a30601a569ab6538 # v2.81.1
         with:
           tool: cross
       - name: Install nextest
         # TODO: Waiting for cross to support nextest.
         # https://github.com/cross-rs/cross/issues/716
         if: ${{ !matrix.job.use-cross }}
-        uses: taiki-e/install-action@d9be7d8cda89035c9c843f78bd44d4f72d8403d4 # v2.79.7
+        uses: taiki-e/install-action@e49978b799e49ff429d162b7a30601a569ab6538 # v2.81.1
         with:
           tool: cargo-nextest
       - name: Run tests
@@ -164,11 +164,11 @@ jobs:
       - name: Install llvm-tools-preview component
         run: rustup component add llvm-tools-preview
       - name: Install llvm-cov
-        uses: taiki-e/install-action@d9be7d8cda89035c9c843f78bd44d4f72d8403d4 # v2.79.7
+        uses: taiki-e/install-action@e49978b799e49ff429d162b7a30601a569ab6538 # v2.81.1
         with:
           tool: cargo-llvm-cov
       - name: Install nextest
-        uses: taiki-e/install-action@d9be7d8cda89035c9c843f78bd44d4f72d8403d4 # v2.79.7
+        uses: taiki-e/install-action@e49978b799e49ff429d162b7a30601a569ab6538 # v2.81.1
         with:
           tool: cargo-nextest
       - name: Collect coverage data

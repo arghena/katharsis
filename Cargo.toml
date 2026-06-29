@@ -33,12 +33,15 @@ rss = "2.0.13"
 scraper = "0.27.0"
 serde = { version = "1.0.228", features = ["derive"] }
 thiserror = "2.0.18"
-tokio = { version = "1.52.3", features = [
-  "fs",
-  "io-util",
-  "macros",
-  "rt-multi-thread",
-] }
+tokio = {
+  version = "1.52.3",
+  features = [
+    "fs",
+    "io-util",
+    "macros",
+    "rt-multi-thread",
+  ]
+}
 toml = "1.1.2"
 url = { version = "2.5.8", features = ["serde"] }
 
@@ -49,9 +52,10 @@ tokio-test = "0.4.5"
 pedantic = "warn"
 
 [lints.rust]
-unexpected_cfgs = { level = "warn", check-cfg = [
-  "cfg(coverage,coverage_nightly)"
-] }
+unexpected_cfgs = {
+  level = "warn",
+  check-cfg = ["cfg(coverage,coverage_nightly)"]
+}
 
 [profile.release]
 strip = true

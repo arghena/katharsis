@@ -1,3 +1,6 @@
+# TODO: Waiting on `cargo-msrv` and `cross` to support TOML v1.1.
+#:tombi toml-version = "v1.0.0"
+
 [package]
 name = "katharsis"
 version = "1.0.0-canary.30"

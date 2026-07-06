@@ -6,6 +6,8 @@ version: 2
 # TODO: Allow lower case commit message.
 # https://github.com/dependabot/dependabot-core/issues/10586
 updates:
+  # FIX: Dependabot doesn't update `Cargo.toml`.
+  # https://github.com/dependabot/dependabot-core/issues/14196
   - package-ecosystem: 'cargo'
     directory: '/'
     schedule:
@@ -28,3 +30,8 @@ updates:
     commit-message:
       prefix: 'ci'
       include: 'scope'
+    groups:
+      # NOTE: Dependabot now splits path-based actions if they use commit SHAs.
+      # https://github.com/dependabot/dependabot-core/pull/14806
+      codeql:
+        patterns: ['github/codeql-action/*']

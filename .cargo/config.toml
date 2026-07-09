@@ -1,3 +1,6 @@
+[build]
+warnings = "deny"
+
 # NOTE: Statically link CRT to avoid vcruntime DLL dependencies.
 # https://github.com/microsoft/winget-pkgs/pull/207941#issuecomment-2575712665
 [target.'cfg(all(target_os = "windows", target_env = "msvc"))']

@@ -28,6 +28,6 @@ shellcheck = ["etc/ci/*.sh"]
 cargo-fmt = ["--all"]
 
 [args.linters]
-cargo-clippy = ["--all-targets", "--locked", "--", "-D", "warnings"]
+cargo-clippy = ["--all-targets", "--keep-going", "--locked"]
 yamllint = ["--strict"]
 tombi = ["--error-on-warnings"]

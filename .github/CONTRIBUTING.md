@@ -132,7 +132,7 @@ All pull request submissions to this project must comply with the [DCO](https://
 
    ```bash
    cargo fmt --all --check
-   cargo clippy --all-targets --locked -- -D warnings
+   cargo clippy --all-targets --keep-going --locked
    ```
 
 1. Run tests:

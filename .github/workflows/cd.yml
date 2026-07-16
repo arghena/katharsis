@@ -13,6 +13,9 @@ jobs:
     runs-on: ${{ matrix.job.os }}
     strategy:
       fail-fast: false
+      # NOTE: Using `cross` for GNU targets to build against an older glibc,
+      # keeping the binary compatible with older Linux distros.
+      # https://github.com/cross-rs/cross/blob/main/README.md#supported-targets
       matrix:
         job:
           - os: macos-15-intel

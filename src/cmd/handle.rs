@@ -36,7 +36,7 @@ pub async fn init(path: &PathBuf) -> Result<(), Errors> {
         let options: Vec<&str> = vec!["Yes", "No"];
         let ans: &str = Select::new("A katharsis.toml already exists in the current directory. Do you want to overwrite it?", options).prompt()?;
 
-        if ans == "yes" {
+        if ans == "Yes" {
             fs::write(path, config_bytes).await?;
         }
     } else {

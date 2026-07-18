@@ -1,11 +1,11 @@
 use crate::error::app::Errors;
 use anyhow::Result;
-use chrono::{DateTime, Local, NaiveDate};
+use chrono::{DateTime, NaiveDate, Utc};
 use glob::{GlobResult, glob};
 use rss::{Channel, ChannelBuilder, Enclosure, Guid, Image, Item};
 use scraper::{Html, Selector};
 use serde::Deserialize;
-use std::path::PathBuf;
+use std::{cmp, path::PathBuf};
 use tokio::io::AsyncWriteExt;
 use tokio::{fs, fs::File};
 use url::Url;
@@ -88,17 +88,12 @@ pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
         }
 
         if article.sort {
-            items.sort_by(|a, b| {
-                let a_date = a
-                    .pub_date
-                    .as_ref()
-                    .and_then(|d| DateTime::parse_from_rfc2822(d).ok());
-                let b_date = b
-                    .pub_date
-                    .as_ref()
-                    .and_then(|d| DateTime::parse_from_rfc2822(d).ok());
-
-                b_date.cmp(&a_date)
+            items.sort_by_cached_key(|item| {
+                cmp::Reverse(
+                    item.pub_date
+                        .as_ref()
+                        .and_then(|d| DateTime::parse_from_rfc2822(d).ok()),
+                )
             });
         }
 
@@ -107,7 +102,7 @@ pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
         let mut rss_file = File::create(&rss.output).await?;
         let channel = channel_builder(rss, items);
 
-        rss_file.write_all(channel.to_string().as_ref()).await?;
+        rss_file.write_all(channel.to_string().as_bytes()).await?;
 
         Ok(channel)
     } else {
@@ -227,6 +222,6 @@ fn channel_builder(rss: Rss, items: Vec<Item>) -> Channel {
         .items(items)
         .docs(String::from("https://validator.w3.org/feed/docs/rss2.html"))
         .generator(String::from("https://github.com/arghena/katharsis"))
-        .last_build_date(Local::now().format("%a, %d %b %Y %H:%M:%S GMT").to_string())
+        .last_build_date(Utc::now().format("%a, %d %b %Y %H:%M:%S GMT").to_string())
         .build()
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# TODO: Migrate to `cargo-deb`.
-# https://github.com/kornelski/cargo-deb
+# TODO: Migrate to `cargo-dist`.
+# https://github.com/axodotdev/cargo-dist
 
 # Copyright 2020 Dan Davison
 # Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).

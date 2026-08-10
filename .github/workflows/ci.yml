@@ -70,7 +70,7 @@ jobs:
             rustup toolchain install stable --profile minimal --no-self-update --override --target ${{ matrix.job.target }}
           fi
       - name: Cache Rust artifacts
-        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           # NOTE: We need to distinguish the cache when `use-cross` is `true`.
           key: ${{ matrix.job.target }}
@@ -120,7 +120,7 @@ jobs:
       - name: Install Rust stable
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
-        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Build for release
@@ -139,7 +139,7 @@ jobs:
       - name: Install Rust stable
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
-        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Check documentation

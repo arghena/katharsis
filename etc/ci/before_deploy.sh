@@ -3,8 +3,7 @@
 # TODO: Migrate to `cargo-dist`.
 # https://github.com/axodotdev/cargo-dist
 
-# Copyright 2020 Dan Davison
-# Distributed under the [MIT License](https://github.com/dandavison/delta/blob/main/LICENSE).
+# This script is adapted from the release script of the `delta` project by Dan Davison (MIT License).
 
 set -euxo pipefail
 

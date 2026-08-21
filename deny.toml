@@ -1,15 +1,16 @@
-# Copyright (c) Tokio Contributors
-# Distributed under the [MIT License](https://github.com/tokio-rs/tokio/blob/master/LICENSE).
-
 [graph]
 all-features = true
 
-[licenses]
-allow = ["MIT", "Apache-2.0", "MPL-2.0", "Unicode-3.0", "ISC", "BSD-3-Clause"]
+[advisories]
+yanked = "deny"
 
 [bans]
-multiple-versions = "allow"
+multiple-versions = "deny"
 wildcards = "deny"
+skip = [{ name = "syn", version = "2.0.119", reason = "Waiting for the ecosystem to fully migrate to syn v3. It's a build-time dependency, so having two versions is harmless." }]
+
+[licenses]
+allow = ["MIT", "Apache-2.0", "MPL-2.0", "Unicode-3.0", "ISC", "BSD-3-Clause"]
 
 [sources]
 unknown-registry = "deny"

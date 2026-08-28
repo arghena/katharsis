@@ -61,6 +61,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Install Rust stable
         shell: bash
         run: |
@@ -117,6 +119,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Install Rust stable
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
@@ -136,6 +140,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Install Rust stable
         run: rustup toolchain install stable --profile minimal --no-self-update --override
       - name: Cache Rust artifacts
@@ -156,6 +162,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       # NOTE: Nightly Rust is required for `cargo llvm-cov --doc`.
       # https://github.com/taiki-e/cargo-llvm-cov/issues/2
       # https://nexte.st/docs/integrations/test-coverage/#collecting-coverage-data-from-doctests

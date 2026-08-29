@@ -103,7 +103,7 @@ jobs:
         if: ${{ !matrix.job.use-cross }}
         run: cargo test --doc --locked --target ${{ matrix.job.target }}
 
-  smoke_tests:
+  smoke-tests:
     name: Smoke tests
     runs-on: ${{ matrix.job.os }}
     strategy:

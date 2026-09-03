@@ -42,7 +42,7 @@ tokio = { version = "1.53.1", features = [
   "macros",
   "rt-multi-thread",
 ] }
-toml = "1.1.4"
+toml = "1.1.5"
 url = { version = "2.5.8", features = ["serde"] }
 
 [dev-dependencies]

@@ -188,7 +188,6 @@ jobs:
           cargo llvm-cov --locked --no-report --doc
           cargo llvm-cov report --locked --doctests --lcov --output-path lcov.info
         env:
-          CARGO_INCREMENTAL: 0
           RUSTDOCFLAGS: -D warnings
       - name: Upload coverage data to codecov
         uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1

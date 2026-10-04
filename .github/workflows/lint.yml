@@ -7,6 +7,8 @@ concurrency:
 on:
   pull_request:
     types: [opened, synchronize]
+    paths-ignore:
+      - 'examples/**/*.png'
 
 permissions:
   contents: read

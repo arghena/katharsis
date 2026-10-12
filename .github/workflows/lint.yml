@@ -8,7 +8,7 @@ on:
   pull_request:
     types: [opened, synchronize]
     paths-ignore:
-      - 'examples/**/*.png'
+      - '**/*.png'
 
 permissions:
   contents: read

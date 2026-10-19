@@ -34,13 +34,13 @@ rss = "2.1.2"
 scraper = "0.27.0"
 serde = { version = "1.0.229", features = ["derive"] }
 thiserror = "2.0.21"
-tokio = { version = "1.53.2", features = [
+tokio = { version = "1.53.3", features = [
   "fs",
   "io-util",
   "macros",
   "rt-multi-thread",
 ] }
-toml = "1.1.6"
+toml = "1.1.8"
 url = { version = "2.5.8", features = ["serde"] }
 
 [dev-dependencies]

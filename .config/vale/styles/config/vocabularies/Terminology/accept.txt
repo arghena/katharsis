@@ -2,6 +2,7 @@ Clippy
 config
 datetime
 nextest
+PRs
 rustfmt
 rustup
 toolchain

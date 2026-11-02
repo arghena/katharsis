@@ -6,8 +6,6 @@ version: 2
 # TODO: Allow lower case commit message.
 # https://github.com/dependabot/dependabot-core/issues/10586
 updates:
-  # FIX: Dependabot doesn't update `Cargo.toml`.
-  # https://github.com/dependabot/dependabot-core/issues/14196
   - package-ecosystem: 'cargo'
     directory: '/'
     schedule:

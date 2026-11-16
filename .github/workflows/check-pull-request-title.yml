@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Insight
-        uses: arghena/insight@27e7353bf6724e32a813c54a739c5cdfd180ff0d # v0.1.0-canary.57
+        uses: arghena/insight@62d488f37413b5fd1a6e7113a345056a55143865 # v0.1.0-canary.58
         with:
           check-pull-request-title: true

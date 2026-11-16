@@ -4,3 +4,11 @@ min_age:
   value: 1 # days
   # always: true
   # https://github.com/suzuki-shunsuke/pinact/blob/591d74fddd9ff0721fb6afd344a44f689de7ccd6/docs/update.md?plain=1#L50
+
+# https://github.com/suzuki-shunsuke/pinact/blob/main/docs/config.md#rules
+rules:
+  # Lower the `min-age` threshold for trusted actions.
+  - min_age: 0
+    conditions:
+      - expr: |
+          ActionRepoFullName == 'arghena/insight'

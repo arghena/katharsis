@@ -132,7 +132,7 @@ jobs:
       - name: Run smoke checks
         run: |
           cargo run --release --locked --target ${{ matrix.job.target }} init
-          cargo run --release --locked --target ${{ matrix.job.target }}
+          cargo run --release --locked --target ${{ matrix.job.target }} build
 
   benches:
     name: Benchmarks

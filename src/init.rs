@@ -4,7 +4,7 @@ use std::path::Path;
 use tokio::fs;
 use tracing::info;
 
-/// Generate a default `katharsis.toml` configuration file at `path`.
+/// Generate a default configuration file at `path`.
 ///
 /// If `yes` is `true`, any existing file at `path` will be overwritten without
 /// displaying an interactive confirmation prompt.

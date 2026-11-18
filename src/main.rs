@@ -11,22 +11,30 @@ use tracing_subscriber::{EnvFilter, fmt::writer::MakeWriterExt};
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {
-    /// Use a katharsis.toml file as the config
-    #[arg(env = "KATHARSIS_CONFIG", short, long, value_name = "CONFIG_FILE")]
-    config: Option<PathBuf>,
+    /// Specify the path to the configuration file
+    #[arg(
+        short,
+        long,
+        env = "KATHARSIS_CONFIG",
+        global = true,
+        default_value = "katharsis.toml"
+    )]
+    config: PathBuf,
 
     #[command(subcommand)]
-    command: Option<Commands>,
+    command: Commands,
 }
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Generate a katharsis.toml file in the current directory
+    /// Generate a default configuration file
     Init {
-        /// Overwrite existing configuration file without confirmation
+        /// Skip interactive confirmation prompts
         #[arg(short, long)]
         yes: bool,
     },
+    /// Build the RSS feed from the configuration file
+    Build,
 }
 
 #[tokio::main]
@@ -46,14 +54,12 @@ async fn main() -> Result<()> {
         .init();
 
     let cli = Cli::parse();
-    let path = cli
-        .config
-        .unwrap_or_else(|| PathBuf::from("katharsis.toml"));
 
-    if let Some(Commands::Init { yes }) = cli.command {
-        katharsis::init(&path, yes).await?;
-    } else {
-        katharsis::build(&path).await?;
+    match cli.command {
+        Commands::Init { yes } => katharsis::init(&cli.config, yes).await?,
+        Commands::Build => {
+            katharsis::build(&cli.config).await?;
+        }
     }
 
     Ok(())

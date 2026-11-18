@@ -155,5 +155,8 @@ mod tests {
 
         let err = assert_err!(Config::load(&path).await);
         assert!(matches!(err, Error::FileNotFound));
+
+        let io_err = assert_err!(Config::load(Path::new("invalid\0path.toml")).await);
+        assert!(matches!(io_err, Error::Io(_)));
     }
 }

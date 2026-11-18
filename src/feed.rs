@@ -428,6 +428,15 @@ mod tests {
         let none_enclosure =
             assert_ok!(build_enclosure("https://nextjs.org/articles/beta", &missing_path).await);
         assert!(none_enclosure.is_none());
+
+        let io_err = assert_err!(
+            build_enclosure(
+                "https://nextjs.org/articles/beta",
+                Path::new("invalid\0image.png")
+            )
+            .await
+        );
+        assert!(matches!(io_err, Error::Io(_)));
     }
 
     #[test]

@@ -42,8 +42,12 @@ enum Commands {
     Build,
 }
 
-fn should_enable_ansi(is_terminal: bool, no_color: Option<&OsStr>, term: Option<&OsStr>) -> bool {
-    is_terminal && no_color.is_none_or(OsStr::is_empty) && term.is_none_or(|t| t != "dumb")
+#[tokio::main]
+#[cfg_attr(coverage_nightly, coverage(off))]
+async fn main() -> Result<()> {
+    let cli = Cli::parse();
+    init_tracing();
+    run(&cli).await
 }
 
 #[cfg_attr(coverage_nightly, coverage(off))]
@@ -67,6 +71,10 @@ fn init_tracing() {
         .init();
 }
 
+fn should_enable_ansi(is_terminal: bool, no_color: Option<&OsStr>, term: Option<&OsStr>) -> bool {
+    is_terminal && no_color.is_none_or(OsStr::is_empty) && term.is_none_or(|t| t != "dumb")
+}
+
 async fn run(cli: &Cli) -> Result<()> {
     match cli.command {
         Commands::Init { yes } => katharsis::init(&cli.config, yes).await?,
@@ -75,14 +83,6 @@ async fn run(cli: &Cli) -> Result<()> {
         }
     }
     Ok(())
-}
-
-#[tokio::main]
-#[cfg_attr(coverage_nightly, coverage(off))]
-async fn main() -> Result<()> {
-    let cli = Cli::parse();
-    init_tracing();
-    run(&cli).await
 }
 
 #[cfg(test)]

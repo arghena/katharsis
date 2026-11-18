@@ -115,14 +115,22 @@ katharsis
 
 ### Options
 
-| Option | Description                                     |
-| ------ | ----------------------------------------------- |
-| `-c`   | Specifies a `katharsis.toml` file as the config |
-| `-h`   | Displays help information                       |
-| `-V`   | Displays the current version of Katharsis       |
+| Option | Description                                                        |
+| ------ | ------------------------------------------------------------------ |
+| `-c`   | Specifies a `katharsis.toml` file as the config                    |
+| `-y`   | Overwrites the existing `katharsis.toml` file without confirmation |
+| `-h`   | Displays help information                                          |
+| `-V`   | Displays the current version of Katharsis                          |
 
 > [!NOTE]
 > If you do not specify the `-c` option, the `katharsis.toml` file in the current directory will be used by default.
+
+### Environment Variables
+
+| Variable           | Description                                               |
+| ------------------ | --------------------------------------------------------- |
+| `KATHARSIS_CONFIG` | Specifies a `katharsis.toml` file as the config           |
+| `RUST_LOG`         | Controls the log level (`error`, `warn`, `info`, `debug`) |
 
 ### Properties
 
@@ -148,7 +156,7 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 | --------------------- | --------------------------------------------------------- |
 | `article.title`       | The tag containing the article's title                    |
 | `article.description` | The tag or attribute containing the article's description |
-| `article.input`       | The HTML files that needs to be parsed                    |
+| `article.input`       | The HTML files that need to be parsed                     |
 | `article.author`      | Information about the article's author                    |
 | `article.prefix`      | The relative prefix for the article's URL                 |
 | `article.content`     | The tag or attribute containing the article's content     |

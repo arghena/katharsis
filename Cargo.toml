@@ -21,16 +21,24 @@ pkg-fmt = "tgz"
 [package.metadata.binstall.overrides.'cfg(target_os = "windows")']
 pkg-fmt = "zip"
 
+[lib]
+bench = false
+
 [[bin]]
+bench = false
 name = "katharsis"
+
+[[bench]]
+harness = false
+name = "feed"
 
 [dependencies]
 anyhow = "1.0.104"
-chrono = "0.4.45"
-clap = { version = "4.6.7", features = ["derive", "env"] }
+clap = { version = "4.6.8", features = ["derive", "env"] }
 glob = "0.3.4"
-inquire = "0.9.4"
-rss = "2.1.2"
+inquire = "0.9.5"
+jiff = "1.0.0"
+rss = { version = "2.1.2", default-features = false }
 scraper = "0.29.0"
 serde = { version = "1.0.229", features = ["derive"] }
 thiserror = "2.0.21"
@@ -41,15 +49,20 @@ tokio = { version = "1.54.1", features = [
   "rt-multi-thread",
 ] }
 toml = "1.2.1"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 url = { version = "2.5.8", features = ["serde"] }
 
 [dev-dependencies]
+divan = "0.1.21"
+tempfile = "3.27.0"
 tokio-test = "0.4.6"
 
 [lints.clippy]
 pedantic = "warn"
 
 [lints.rust]
+missing_docs = "warn"
 unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage,coverage_nightly)"] }
 
 [profile.release]

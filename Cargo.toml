@@ -1,6 +1,3 @@
-# TODO: Waiting on `cargo-msrv` and `cross` to support TOML v1.1.
-#:tombi toml-version = "v1.0.0"
-
 [package]
 name = "katharsis"
 version = "1.0.0-canary.30"
@@ -42,12 +39,7 @@ rss = { version = "2.1.2", default-features = false }
 scraper = "0.29.0"
 serde = { version = "1.0.229", features = ["derive"] }
 thiserror = "2.0.21"
-tokio = { version = "1.54.1", features = [
-  "fs",
-  "io-util",
-  "macros",
-  "rt-multi-thread",
-] }
+tokio = { version = "1.54.1", features = ["fs", "macros", "rt-multi-thread"] }
 toml = "1.2.1"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }

@@ -17,6 +17,8 @@
 //! }
 //! ```
 
+#![cfg_attr(coverage_nightly, feature(coverage_attribute))]
+
 /// Configuration models and TOML loader.
 pub mod config;
 /// Error types returned by Katharsis operations.

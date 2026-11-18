@@ -132,6 +132,7 @@ katharsis build
 | ------------------ | --------------------------------------------------------- |
 | `KATHARSIS_CONFIG` | Specifies the path to the configuration file              |
 | `RUST_LOG`         | Controls the log level (`error`, `warn`, `info`, `debug`) |
+| `NO_COLOR`         | Disables colored terminal output                          |
 
 ### Properties
 

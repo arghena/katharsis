@@ -101,28 +101,37 @@ katharsis init
 Run the following command to create a default `rss.xml`:
 
 ```bash
-katharsis
+katharsis build
 ```
 
 ## Usage
 
 ### Commands
 
-| Command | Description                                                |
-| ------- | ---------------------------------------------------------- |
-| `init`  | Generates a `katharsis.toml` file in the current directory |
-| `help`  | Displays help information                                  |
+| Command | Description                                     |
+| ------- | ----------------------------------------------- |
+| `init`  | Generates a default configuration file          |
+| `build` | Builds the RSS feed from the configuration file |
+| `help`  | Displays help information                       |
 
 ### Options
 
-| Option | Description                                     |
-| ------ | ----------------------------------------------- |
-| `-c`   | Specifies a `katharsis.toml` file as the config |
-| `-h`   | Displays help information                       |
-| `-V`   | Displays the current version of Katharsis       |
+| Option          | Description                                  |
+| --------------- | -------------------------------------------- |
+| `-c, --config`  | Specifies the path to the configuration file |
+| `-y, --yes`     | Skips interactive confirmation prompts       |
+| `-h, --help`    | Displays help information                    |
+| `-V, --version` | Displays the current version of Katharsis    |
 
 > [!NOTE]
-> If you do not specify the `-c` option, the `katharsis.toml` file in the current directory will be used by default.
+> If you do not specify the `-c` (`--config`) option, the `katharsis.toml` file in the current directory will be used by default.
+
+### Environment Variables
+
+| Variable           | Description                                               |
+| ------------------ | --------------------------------------------------------- |
+| `KATHARSIS_CONFIG` | Specifies the path to the configuration file              |
+| `RUST_LOG`         | Controls the log level (`error`, `warn`, `info`, `debug`) |
 
 ### Properties
 
@@ -148,7 +157,7 @@ You can refer to the [RSS 2.0 at Harvard Law](https://cyber.harvard.edu/rss/rss.
 | --------------------- | --------------------------------------------------------- |
 | `article.title`       | The tag containing the article's title                    |
 | `article.description` | The tag or attribute containing the article's description |
-| `article.input`       | The HTML files that needs to be parsed                    |
+| `article.input`       | The HTML files that need to be parsed                     |
 | `article.author`      | Information about the article's author                    |
 | `article.prefix`      | The relative prefix for the article's URL                 |
 | `article.content`     | The tag or attribute containing the article's content     |

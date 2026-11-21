@@ -21,8 +21,8 @@ permissions:
   contents: read
 
 jobs:
-  tests:
-    name: Tests
+  unittests:
+    name: Unittests
     runs-on: ${{ matrix.job.os }}
     strategy:
       fail-fast: false
@@ -89,22 +89,17 @@ jobs:
         uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
         with:
           tool: cargo-nextest
-      - name: Run tests
+      - name: Run unittests
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            cross test --locked --target ${{ matrix.job.target }}
+            cross test --tests --no-fail-fast --locked --target ${{ matrix.job.target }}
           else
-            cargo nextest run --locked --target ${{ matrix.job.target }}
+            cargo nextest run --no-fail-fast --locked --target ${{ matrix.job.target }}
           fi
-      - name: Run doctests
-        # TODO: Waiting for nextest to support doctests.
-        # https://github.com/nextest-rs/nextest/issues/16
-        if: ${{ !matrix.job.use-cross }}
-        run: cargo test --doc --locked --target ${{ matrix.job.target }}
 
-  smoke-tests:
-    name: Smoke tests
+  smoketests:
+    name: Smoketests
     runs-on: ${{ matrix.job.os }}
     strategy:
       fail-fast: false
@@ -129,13 +124,13 @@ jobs:
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Build for release
         run: cargo build --release --locked --target ${{ matrix.job.target }}
-      - name: Run smoke checks
+      - name: Run smoketests
         run: |
           cargo run --release --locked --target ${{ matrix.job.target }} init
           cargo run --release --locked --target ${{ matrix.job.target }} build
 
-  benches:
-    name: Benchmarks
+  doctests:
+    name: Doctests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -148,8 +143,31 @@ jobs:
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
         with:
           save-if: ${{ github.ref_name == 'canary' }}
-      - name: Run benchmarks
-        run: cargo bench --locked
+      - name: Run doctests
+        # TODO: Waiting for nextest to support doctests.
+        # https://github.com/nextest-rs/nextest/issues/16
+        run: cargo test --doc --locked
+
+  benchtests:
+    name: Benchtests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install Rust stable
+        run: rustup toolchain install stable --profile minimal --no-self-update --override
+      - name: Cache Rust artifacts
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+        with:
+          save-if: ${{ github.ref_name == 'canary' }}
+      - name: Install nextest
+        uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
+        with:
+          tool: cargo-nextest
+      - name: Run benchtests
+        run: cargo nextest run --benches --locked
 
   docs:
     name: Docs

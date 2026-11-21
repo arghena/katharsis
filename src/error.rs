@@ -10,8 +10,8 @@ pub enum Error {
     #[error("an I/O error has occurred")]
     Io(#[from] tokio::io::Error),
 
-    /// An error occurred while displaying interactive terminal options.
-    #[error("error occurred while displaying options")]
+    /// An error occurred while displaying the interactive terminal prompt.
+    #[error("error occurred while displaying the prompt")]
     Prompt(#[from] InquireError),
 
     /// An error occurred while deserializing the TOML configuration.

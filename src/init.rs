@@ -12,11 +12,10 @@ use tracing::info;
 /// # Examples
 ///
 /// ```no_run
-/// use anyhow::Result;
 /// use std::path::Path;
 ///
 /// #[tokio::main]
-/// async fn main() -> Result<()> {
+/// async fn main() -> Result<(), katharsis::Error> {
 ///     katharsis::init(Path::new("katharsis.toml"), false).await?;
 ///     Ok(())
 /// }

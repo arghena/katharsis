@@ -54,11 +54,10 @@ fn parse_selector(raw: &str) -> Result<Selector, Error> {
 /// # Examples
 ///
 /// ```no_run
-/// use anyhow::Result;
 /// use std::path::Path;
 ///
 /// #[tokio::main]
-/// async fn main() -> Result<()> {
+/// async fn main() -> Result<(), katharsis::Error> {
 ///     katharsis::build(Path::new("katharsis.toml")).await?;
 ///     Ok(())
 /// }

@@ -3,11 +3,10 @@
 //! # Examples
 //!
 //! ```no_run
-//! use anyhow::Result;
 //! use std::path::Path;
 //!
 //! #[tokio::main]
-//! async fn main() -> Result<()> {
+//! async fn main() -> Result<(), katharsis::Error> {
 //!     let config_path = Path::new("katharsis.toml");
 //!
 //!     katharsis::init(config_path, false).await?;
@@ -19,14 +18,10 @@
 
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 
-/// Configuration models and TOML loader.
 pub mod config;
-/// Error types returned by Katharsis operations.
-pub mod error;
-/// RSS feed scraping and generation logic.
-pub mod feed;
-/// Configuration file initialization logic.
-pub mod init;
+mod error;
+mod feed;
+mod init;
 
 pub use config::Config;
 pub use error::Error;

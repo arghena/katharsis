@@ -54,8 +54,10 @@ tokio-test = "0.4.6"
 pedantic = "warn"
 
 [lints.rust]
+missing_debug_implementations = "warn"
 missing_docs = "warn"
 unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage,coverage_nightly)"] }
+unreachable_pub = "warn"
 
 [profile.release]
 strip = true

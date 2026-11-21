@@ -4,6 +4,7 @@ use thiserror::Error;
 use tokio::task::JoinError;
 
 /// Errors that can occur during configuration initialization or RSS feed generation.
+#[non_exhaustive]
 #[derive(Error, Debug)]
 pub enum Error {
     /// An I/O error occurred while reading or writing files.

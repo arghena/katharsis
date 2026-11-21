@@ -1,5 +1,5 @@
 use crate::{config::DEFAULT_TEMPLATE, error::Error};
-use inquire::Select;
+use inquire::Confirm;
 use std::path::Path;
 use tokio::fs;
 use tracing::info;
@@ -52,9 +52,7 @@ fn prompt_overwrite(path: &Path) -> Result<bool, Error> {
         "`{}` already exists. Do you want to overwrite it?",
         path.display()
     );
-    let ans = Select::new(&message, vec!["Yes", "No"]).prompt()?;
-
-    Ok(ans == "Yes")
+    Ok(Confirm::new(&message).with_default(false).prompt()?)
 }
 
 #[cfg(test)]

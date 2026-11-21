@@ -13,7 +13,7 @@ use url::Url;
 pub const DEFAULT_TEMPLATE: &str = include_str!("katharsis.toml");
 
 /// Root configuration structure parsed from `katharsis.toml`.
-#[derive(Debug, Deserialize, PartialEq, Eq)]
+#[derive(Clone, Debug, Deserialize, PartialEq, Eq)]
 pub struct Config {
     /// RSS channel configuration properties.
     pub rss: Rss,
@@ -22,7 +22,7 @@ pub struct Config {
 }
 
 /// RSS channel configuration properties.
-#[derive(Debug, Deserialize, PartialEq, Eq)]
+#[derive(Clone, Debug, Deserialize, PartialEq, Eq)]
 pub struct Rss {
     /// The title of the website.
     pub title: String,
@@ -41,7 +41,7 @@ pub struct Rss {
 }
 
 /// Article scraping and discovery configuration properties.
-#[derive(Debug, Deserialize, PartialEq, Eq)]
+#[derive(Clone, Debug, Deserialize, PartialEq, Eq)]
 pub struct Article {
     /// The tag containing the article's title.
     pub title: String,
@@ -64,7 +64,7 @@ pub struct Article {
 }
 
 /// Article author metadata.
-#[derive(Debug, Deserialize, PartialEq, Eq)]
+#[derive(Clone, Debug, Deserialize, PartialEq, Eq)]
 pub struct Author {
     /// The author's display name.
     pub name: String,

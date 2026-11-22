@@ -147,6 +147,8 @@ jobs:
         # TODO: Waiting for nextest to support doctests.
         # https://github.com/nextest-rs/nextest/issues/16
         run: cargo test --doc --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
 
   benchtests:
     name: Benchtests

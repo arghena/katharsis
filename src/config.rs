@@ -1,3 +1,5 @@
+//! Configuration models and TOML loader.
+
 use crate::error::Error;
 use serde::Deserialize;
 use std::{
@@ -13,6 +15,21 @@ use url::Url;
 pub const DEFAULT_TEMPLATE: &str = include_str!("katharsis.toml");
 
 /// Root configuration structure parsed from `katharsis.toml`.
+///
+/// # Examples
+///
+/// Parsing a [`Config`] from a TOML string in memory:
+///
+/// ```
+/// use katharsis::Config;
+/// use katharsis::config::DEFAULT_TEMPLATE;
+/// use std::str::FromStr;
+///
+/// let config = Config::from_str(DEFAULT_TEMPLATE)?;
+/// assert_eq!(config.rss.language, "en");
+/// assert!(config.article.sort);
+/// # Ok::<(), katharsis::Error>(())
+/// ```
 #[derive(Clone, Debug, Deserialize, PartialEq, Eq)]
 pub struct Config {
     /// RSS channel configuration properties.
@@ -83,6 +100,20 @@ impl FromStr for Config {
 impl Config {
     /// Load and deserialize the configuration file from the given `path`.
     ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// use katharsis::Config;
+    /// use std::path::Path;
+    ///
+    /// #[tokio::main]
+    /// async fn main() -> Result<(), katharsis::Error> {
+    ///     let config = Config::load(Path::new("katharsis.toml")).await?;
+    ///     println!("Title: {}", config.rss.title);
+    ///     Ok(())
+    /// }
+    /// ```
+    ///
     /// # Errors
     ///
     /// - When the file does not exist ([`Error::FileNotFound`]).
@@ -119,6 +150,7 @@ mod tests {
         assert_eq!(rss.copyright, "© Year Your Name");
         assert_eq!(rss.language, "en");
         assert_eq!(rss.output, PathBuf::from("rss.xml"));
+
         assert_eq!(article.title, "h1");
         assert_eq!(article.description, "[data-description]");
         assert_eq!(article.input, "articles/*.html");

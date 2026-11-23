@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build-dist:
-    name: Build for ${{ matrix.job.os }}
+    name: Build for ${{ matrix.job.target }}
     runs-on: ${{ matrix.job.os }}
     strategy:
       fail-fast: false
@@ -39,7 +39,9 @@ jobs:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             use-cross: true
-          - os: ubuntu-26.04-arm
+          # NOTE: `cross` only provides `linux/amd64` container images and requires
+          # an `x86_64` host toolchain, so `use-cross: true` must run on `ubuntu-latest`.
+          - os: ubuntu-latest
             target: aarch64-unknown-linux-gnu
             use-cross: true
           - os: ubuntu-latest
@@ -74,9 +76,6 @@ jobs:
           else
             cargo build --release --locked --target ${{ matrix.job.target }}
           fi
-      - name: Install binutils for ARM32
-        if: ${{ matrix.job.target == 'arm-unknown-linux-gnueabihf' }}
-        run: sudo apt update && sudo apt install -y binutils-arm-linux-gnueabihf
       - name: Package final binary
         shell: bash
         env:

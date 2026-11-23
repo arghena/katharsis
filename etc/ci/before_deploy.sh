@@ -3,8 +3,6 @@
 # TODO: Migrate to `cargo-dist`.
 # https://github.com/axodotdev/cargo-dist
 
-# This script is adapted from the release script of the `delta` project by Dan Davison (MIT License).
-
 set -euxo pipefail
 
 pack() {
@@ -41,33 +39,35 @@ make_deb() {
     local conflictname
     local homepage
     local maintainer
+    local copyright_years
+    local bin_path
+    local glibc_ver
+    local gcc_ver
+    local depends_line
 
     homepage="https://github.com/arghena/katharsis"
     maintainer="Shigure Kurosaki <shigure@hqsy.net>"
-    copyright_years="2024 - "$(date "+%Y")
+    copyright_years="2024 - $(date "+%Y")"
 
     case $TARGET in
         x86_64*)
             architecture=amd64
-            library_dir=""
             ;;
         i686*)
             architecture=i386
-            library_dir=""
             ;;
         aarch64*)
             architecture=arm64
-            library_dir=""
             ;;
         arm*hf)
             architecture=armhf
-            library_dir="-l/usr/arm-linux-gnueabihf/lib"
             ;;
         *)
             echo "make_deb: skipping target '${TARGET}'" >&2
             return 0
             ;;
     esac
+
     version=$(echo "$GITHUB_REF_NAME" | sed -e 's/^v//' -e 's/-canary/~canary/')
 
     if [[ $TARGET == *musl* ]]; then
@@ -79,18 +79,25 @@ make_deb() {
     fi
 
     tempdir=$(mktemp -d 2> /dev/null || mktemp -d -t tmp)
+    bin_path="$tempdir/usr/bin/$PROJECT_NAME"
+    install -Dm755 "target/$TARGET/release/$PROJECT_NAME" "$bin_path"
 
-    install -Dm755 "target/$TARGET/release/$PROJECT_NAME" "$tempdir/usr/bin/$PROJECT_NAME"
+    # Extract minimum required GLIBC and GCC symbol versions directly from the ELF
+    # `.gnu.version_r` section using architecture-independent `readelf -V`.
+    depends_line=""
+    if [[ $TARGET != *musl* ]]; then
+        glibc_ver="$(LC_ALL=C readelf -V "$bin_path" | awk 'match($0, /GLIBC_[0-9.]+/) { print substr($0, RSTART+6, RLENGTH-6) }' | sort -V | tail -n 1)"
+        gcc_ver="$(LC_ALL=C readelf -V "$bin_path" | awk 'match($0, /GCC_[0-9.]+/) { print substr($0, RSTART+4, RLENGTH-4) }' | sort -V | tail -n 1)"
 
-    # HACK: Work out shared library dependencies.
-    mkdir "./debian"
-    touch "./debian/control"
-    depends="$(dpkg-shlibdeps $library_dir -O "$tempdir/usr/bin/$PROJECT_NAME" 2> /dev/null | sed 's/^shlibs:Depends=//')"
-    rm -rf "./debian"
+        depends_line="Depends: libc6 (>= ${glibc_ver:-2.17})"
+        if [[ -n $gcc_ver ]]; then
+            depends_line+=", libgcc-s1 (>= $gcc_ver) | libgcc1 (>= 1:$gcc_ver)"
+        fi
+    fi
 
     install -Dm644 README.md "$tempdir/usr/share/doc/$dpkgname/README.md"
     cat > "$tempdir/usr/share/doc/$dpkgname/copyright" << EOF
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: $PROJECT_NAME
 Source: $homepage
 
@@ -126,19 +133,22 @@ EOF
     chmod 644 "$tempdir/usr/share/doc/$dpkgname/copyright"
 
     mkdir "$tempdir/DEBIAN"
-    cat > "$tempdir/DEBIAN/control" << EOF
-Package: $dpkgname
-Version: $version
-Section: utils
-Priority: optional
-Maintainer: Shigure Kurosaki <shigure@hqsy.net>
-Architecture: $architecture
-Depends: $depends
-Conflicts: $conflictname
-Description: CLI tool for generating RSS feeds.
-EOF
+    {
+        echo "Package: $dpkgname"
+        echo "Version: $version"
+        echo "Section: utils"
+        echo "Priority: optional"
+        echo "Maintainer: $maintainer"
+        echo "Architecture: $architecture"
+        if [[ -n $depends_line ]]; then
+            echo "$depends_line"
+        fi
+        echo "Conflicts: $conflictname"
+        echo "Description: CLI tool for generating RSS feeds."
+    } > "$tempdir/DEBIAN/control"
 
-    fakeroot dpkg-deb -Zxz --build "$tempdir" "${dpkgname}_${version}_${architecture}.deb"
+    dpkg-deb --root-owner-group -Zxz --build "$tempdir" "${dpkgname}_${version}_${architecture}.deb"
+    rm -r "$tempdir"
 }
 
 main() {

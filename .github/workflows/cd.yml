@@ -175,17 +175,29 @@ jobs:
           CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
 
   publish-to-winget:
-    # NOTE: The action will only work when the release is published (not a draft),
-    # because the release assets (binaries) aren't available publicly until the release is published.
-    # https://github.com/vedantmgoyal9/winget-releaser/blob/main/README.md#getting-started-
+    # NOTE: `komac` needs the release assets (binaries) to be publicly available.
     needs: create-release-note
     name: Publish to WinGet
     runs-on: ubuntu-latest
     steps:
-      - uses: vedantmgoyal9/winget-releaser@b7370d4d152efdce803a26cc6ca9eee58cb2ad54 # v2
+      - name: Install komac
+        uses: taiki-e/install-action@fe3acb53a98b62c772db35de75ce0e4595e7ca8c # v2.90.8
         with:
-          identifier: arghena.katharsis
-          installers-regex: '-pc-windows-msvc\.zip$'
-          # NOTE: New fine-grained PATs aren't supported by the action.
-          # https://github.com/vedantmgoyal9/winget-releaser/issues/172
-          token: ${{ secrets.WINGET_TOKEN }}
+          tool: komac
+      - name: Publish to WinGet
+        run: |
+          base_url="https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME"
+          komac sync-fork
+          komac update arghena.katharsis \
+            --version "${GITHUB_REF_NAME#v}" \
+            --urls \
+              "$base_url/katharsis-$GITHUB_REF_NAME-x86_64-pc-windows-msvc.zip" \
+              "$base_url/katharsis-$GITHUB_REF_NAME-aarch64-pc-windows-msvc.zip" \
+            --submit
+          komac cleanup --only-merged
+        env:
+          FORCE_HYPERLINK: '0'
+          # NOTE: Classic PAT with `public_repo` and `workflow` scopes is required
+          # because fine-grained PATs do not support cross-organization PRs.
+          GITHUB_TOKEN: ${{ secrets.WINGET_TOKEN }}
+          KOMAC_FORK_OWNER: ${{ github.repository_owner }}

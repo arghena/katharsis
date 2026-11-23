@@ -72,8 +72,8 @@ winget install arghena.katharsis
   <summary>Apt</summary>
 
 ```bash
-curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.31/katharsis_1.0.0-canary.31_amd64.deb
-sudo apt install katharsis_1.0.0-canary.31_amd64.deb
+curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.31/katharsis_1.0.0.canary.31_amd64.deb
+sudo apt install ./katharsis_1.0.0.canary.31_amd64.deb
 ```
 
 </details>

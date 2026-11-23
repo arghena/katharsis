@@ -3,7 +3,10 @@
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 
 use anyhow::Result;
-use clap::{Parser, Subcommand};
+use clap::{
+    Parser, Subcommand,
+    builder::styling::{AnsiColor, Effects, Styles},
+};
 use std::{
     env,
     ffi::OsStr,
@@ -13,8 +16,18 @@ use std::{
 use tracing::{Level, level_filters::LevelFilter};
 use tracing_subscriber::{EnvFilter, fmt::writer::MakeWriterExt};
 
+/// Cargo-style ANSI color palette for CLI help and error output.
+const STYLES: Styles = Styles::styled()
+    .header(AnsiColor::BrightGreen.on_default().effects(Effects::BOLD))
+    .usage(AnsiColor::BrightGreen.on_default().effects(Effects::BOLD))
+    .literal(AnsiColor::BrightCyan.on_default().effects(Effects::BOLD))
+    .placeholder(AnsiColor::Cyan.on_default())
+    .error(AnsiColor::BrightRed.on_default().effects(Effects::BOLD))
+    .valid(AnsiColor::BrightCyan.on_default().effects(Effects::BOLD))
+    .invalid(AnsiColor::Yellow.on_default().effects(Effects::BOLD));
+
 #[derive(Debug, Parser, PartialEq, Eq)]
-#[command(version, about, long_about = None)]
+#[command(version, about, long_about = None, styles = STYLES)]
 struct Cli {
     /// Specify the path to the configuration file
     #[arg(

@@ -50,19 +50,19 @@ winget install arghena.katharsis
 - **B(inary)Install:**
 
   ```bash
-  cargo binstall katharsis@1.0.0-canary.30
+  cargo binstall katharsis@1.0.0-canary.31
   ```
 
 - **Crates.io:**
 
   ```bash
-  cargo install --locked katharsis@1.0.0-canary.30
+  cargo install --locked katharsis@1.0.0-canary.31
   ```
 
 - **Git:**
 
   ```bash
-  git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.30 --depth 1
+  git clone https://github.com/arghena/katharsis.git --branch v1.0.0-canary.31 --depth 1
   cd katharsis && cargo install --locked --path .
   ```
 
@@ -72,8 +72,8 @@ winget install arghena.katharsis
   <summary>Apt</summary>
 
 ```bash
-curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.30/katharsis_1.0.0-canary.30_amd64.deb
-sudo apt install katharsis_1.0.0-canary.30_amd64.deb
+curl -fsSLO https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.31/katharsis_1.0.0-canary.31_amd64.deb
+sudo apt install katharsis_1.0.0-canary.31_amd64.deb
 ```
 
 </details>
@@ -83,8 +83,8 @@ sudo apt install katharsis_1.0.0-canary.30_amd64.deb
 ### Manual
 
 ```bash
-curl -fsSL https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.30/katharsis-v1.0.0-canary.30-x86_64-unknown-linux-gnu.tar.gz | tar -xz
-mv katharsis-v1.0.0-canary.30-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
+curl -fsSL https://github.com/arghena/katharsis/releases/download/v1.0.0-canary.31/katharsis-v1.0.0-canary.31-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+mv katharsis-v1.0.0-canary.31-x86_64-unknown-linux-gnu/katharsis /usr/local/bin
 ```
 
 ## Get Started

@@ -64,17 +64,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Install Rust stable
-        shell: bash
-        run: |
-          if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
-            rustup toolchain install stable --profile minimal --no-self-update --override
-          else
-            rustup toolchain install stable --profile minimal --no-self-update --override --target ${{ matrix.job.target }}
-          fi
+        run: rustup toolchain install stable --profile minimal --no-self-update --override --target ${{ matrix.job.target }}
       - name: Cache Rust artifacts
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
         with:
-          # NOTE: We need to distinguish the cache when `use-cross` is `true`.
+          # NOTE: Distinguish cache between different targets running on the same host OS.
           key: ${{ matrix.job.target }}
           save-if: ${{ github.ref_name == 'canary' }}
       - name: Install cross
@@ -117,7 +111,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Install Rust stable
-        run: rustup toolchain install stable --profile minimal --no-self-update --override
+        run: rustup toolchain install stable --profile minimal --no-self-update --override --target ${{ matrix.job.target }}
       - name: Cache Rust artifacts
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
         with:
@@ -206,17 +200,11 @@ jobs:
       # NOTE: Using `Swatinem/rust-cache` with Nightly Rust is less effective as it will throw away the cache every day.
       # https://github.com/Swatinem/rust-cache/blob/master/README.md#cache-effectiveness
       - name: Install Rust nightly
-        run: rustup toolchain install nightly --profile minimal --no-self-update --override
-      - name: Install llvm-tools component
-        run: rustup component add llvm-tools
-      - name: Install llvm-cov
+        run: rustup toolchain install nightly --profile minimal --no-self-update --override --component llvm-tools
+      - name: Install llvm-cov and nextest
         uses: taiki-e/install-action@fe3acb53a98b62c772db35de75ce0e4595e7ca8c # v2.90.8
         with:
-          tool: cargo-llvm-cov
-      - name: Install nextest
-        uses: taiki-e/install-action@fe3acb53a98b62c772db35de75ce0e4595e7ca8c # v2.90.8
-        with:
-          tool: cargo-nextest
+          tool: cargo-llvm-cov,cargo-nextest
       - name: Collect coverage data
         run: cargo llvm-cov nextest --locked --lcov --output-path lcov.info
       - name: Upload coverage data to codecov

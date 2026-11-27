@@ -2,18 +2,20 @@
 
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 
-use anyhow::Result;
 use clap::{
     Parser, Subcommand,
     builder::styling::{AnsiColor, Effects, Styles},
 };
+use katharsis::Error;
 use std::{
     env,
+    error::Error as _,
     ffi::OsStr,
     io::{self, IsTerminal},
     path::PathBuf,
+    process::ExitCode,
 };
-use tracing::{Level, level_filters::LevelFilter};
+use tracing::{Level, error, level_filters::LevelFilter};
 use tracing_subscriber::{EnvFilter, fmt::writer::MakeWriterExt};
 
 /// Cargo-style ANSI color palette for CLI help and error output.
@@ -57,10 +59,18 @@ enum Commands {
 
 #[tokio::main]
 #[cfg_attr(coverage_nightly, coverage(off))]
-async fn main() -> Result<()> {
+async fn main() -> ExitCode {
     let cli = Cli::parse();
     init_tracing();
-    run(&cli).await
+    if let Err(err) = run(&cli).await {
+        if let Some(source) = err.source() {
+            error!("{err}: {source}");
+        } else {
+            error!("{err}");
+        }
+        return ExitCode::FAILURE;
+    }
+    ExitCode::SUCCESS
 }
 
 #[cfg_attr(coverage_nightly, coverage(off))]
@@ -88,7 +98,7 @@ fn should_enable_ansi(is_terminal: bool, no_color: Option<&OsStr>, term: Option<
     is_terminal && no_color.is_none_or(OsStr::is_empty) && term.is_none_or(|t| t != "dumb")
 }
 
-async fn run(cli: &Cli) -> Result<()> {
+async fn run(cli: &Cli) -> Result<(), Error> {
     match cli.command {
         Commands::Init { yes } => katharsis::init(&cli.config, yes).await?,
         Commands::Build => {

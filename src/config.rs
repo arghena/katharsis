@@ -8,7 +8,6 @@ use std::{
     str::FromStr,
 };
 use tokio::fs;
-use tracing::error;
 use url::Url;
 
 /// Embedded default configuration template (`katharsis.toml`).
@@ -117,14 +116,13 @@ impl Config {
     /// # Errors
     ///
     /// - When the file does not exist ([`Error::FileNotFound`]).
-    /// - When the file cannot be read.
-    /// - When the TOML content cannot be deserialized.
+    /// - When the file cannot be read ([`Error::Io`]).
+    /// - When the TOML content cannot be deserialized ([`Error::TomlDeserialize`]).
     pub async fn load(path: &Path) -> Result<Self, Error> {
         let content = match fs::read_to_string(path).await {
             Ok(content) => content,
             Err(err) if err.kind() == ErrorKind::NotFound => {
-                error!(config = %path.display(), "configuration file does not exist");
-                return Err(Error::FileNotFound);
+                return Err(Error::FileNotFound(path.to_path_buf()));
             }
             Err(err) => return Err(Error::Io(err)),
         };
@@ -186,7 +184,7 @@ mod tests {
         let path = dir.path().join("missing.toml");
 
         let err = assert_err!(Config::load(&path).await);
-        assert!(matches!(err, Error::FileNotFound));
+        assert!(matches!(err, Error::FileNotFound(p) if p == path));
 
         let io_err = assert_err!(Config::load(Path::new("invalid\0path.toml")).await);
         assert!(matches!(io_err, Error::Io(_)));

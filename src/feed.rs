@@ -65,13 +65,13 @@ fn parse_selector(raw: &str) -> Result<Selector, Error> {
 ///
 /// # Errors
 ///
-/// - When the configuration file cannot be loaded or parsed.
-/// - When any CSS selector in the configuration is invalid.
-/// - When the glob pattern is invalid or a matched path cannot be read.
-/// - When a concurrent article-processing task fails to complete.
-/// - When article files or image metadata cannot be read.
-/// - When an article's publication date cannot be parsed.
-/// - When the output RSS file cannot be written to disk.
+/// - When the configuration file cannot be loaded or parsed ([`Error::FileNotFound`], [`Error::Io`], [`Error::TomlDeserialize`]).
+/// - When any CSS selector in the configuration is invalid ([`Error::Selector`]).
+/// - When the glob pattern is invalid or a matched path cannot be read ([`Error::Pattern`], [`Error::Iteration`]).
+/// - When a concurrent article-processing task fails to complete ([`Error::Task`]).
+/// - When article files or image metadata cannot be read ([`Error::Io`]).
+/// - When an article's publication date cannot be parsed ([`Error::Date`]).
+/// - When the output RSS file cannot be written to disk ([`Error::Io`]).
 pub async fn build(config_path: &Path) -> Result<Channel, Error> {
     let Config { mut rss, article } = Config::load(config_path).await?;
     let selectors = Selectors::parse(&article)?;

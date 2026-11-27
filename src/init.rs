@@ -23,9 +23,9 @@ use tracing::info;
 ///
 /// # Errors
 ///
-/// - When the file's existence cannot be verified.
-/// - When the interactive prompt fails to display.
-/// - When the file cannot be created or written to.
+/// - When the file's existence cannot be verified ([`Error::Io`]).
+/// - When the interactive prompt fails to display ([`Error::Prompt`]).
+/// - When the file cannot be created or written to ([`Error::Io`]).
 pub async fn init(path: &Path, yes: bool) -> Result<(), Error> {
     init_with_prompt(path, yes, prompt_overwrite).await
 }
